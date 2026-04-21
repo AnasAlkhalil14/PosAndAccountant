@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../PosAndAccountant_business/PosAndAccountant_business.csproj" Id="91d92b66-a772-4bd3-b155-35ad33466e58" />
+  <Project Path="../PosAndAccountant_DataAccess/PosAndAccountant_DataAccess.csproj" Id="8d5857e3-848c-4f66-b8aa-97f8a55387a4" />
+  <Project Path="../PosAndAccountant_DataTransfer/PosAndAccountant_DataTransfer.csproj" Id="a8ea84c0-9dd8-4430-a8b0-aa99e5c23d24" />
+  <Project Path="PosAndAccountant.csproj" Id="44b1dd85-911f-4989-b99d-898336dfec4f" />
+</Solution>
