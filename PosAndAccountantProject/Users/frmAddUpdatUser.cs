@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace PosAndAccountantProject.Users
 {
-    public partial class frmListUsers : Form
+    public partial class frmAddUpdatUser : Form
     {
-        public frmListUsers()
+        public frmAddUpdatUser()
         {
             InitializeComponent();
         }
 
-       
+        
     }
 }

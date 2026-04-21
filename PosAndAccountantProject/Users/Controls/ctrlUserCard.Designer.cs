@@ -186,6 +186,7 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Name = "ctrlUserCard";
             this.Size = new System.Drawing.Size(850, 545);
+            this.Load += new System.EventHandler(this.ctrlUserCard_Load);
             this.gbLoginInfo.ResumeLayout(false);
             this.gbLoginInfo.PerformLayout();
             this.ResumeLayout(false);

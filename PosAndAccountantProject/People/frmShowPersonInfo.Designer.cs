@@ -90,7 +90,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "عرض تفاصيل الشخص";
-             this.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 

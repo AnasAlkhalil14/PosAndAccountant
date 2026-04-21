@@ -103,13 +103,20 @@ namespace PosAndAccountantProject.People
                     }
                     else
                     {
+
                         MessageBox.Show("خطأ غي نسخ الصورة", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                    
 
                 }
-               
+                else
+                {
+                    _Person.ImagePath = "";
+
+
+                }
+
 
 
 
@@ -191,7 +198,7 @@ namespace PosAndAccountantProject.People
 
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-pbPersonImage.ImageLocation= null;
+            pbPersonImage.ImageLocation= null;
 
             pbPersonImage.Image = Resources.Male_512;
             llRemoveImage.Visible = false;

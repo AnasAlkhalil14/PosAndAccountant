@@ -43,7 +43,7 @@ namespace PosAndAccountantProject.People.Controls
             {
 
                 ResetPersonInfo();
-                MessageBox.Show("No Person with PersonID = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("لا يوجد شخص بمعرف  = " + PersonID.ToString(), "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
  
 
                 return false;
@@ -80,6 +80,7 @@ namespace PosAndAccountantProject.People.Controls
 
         public void ResetPersonInfo()
         {
+            llEditPersonInfo.Enabled = false;
             lblPersonID.Text = "[????]";
             lblPhone.Text = "[????]";
             lblAddress.Text = "[????]";
@@ -95,12 +96,14 @@ namespace PosAndAccountantProject.People.Controls
         {
             pbPersonImage.Image = Resources.Male_512;
 
-            if (_Person.ImagePath!=null )
+            if (!string.IsNullOrEmpty(_Person.ImagePath ) )
             {
                 if (File.Exists(_Person.ImagePath))
                 {
+                    pbPersonImage.ImageLocation = null;
                     pbPersonImage.ImageLocation = _Person.ImagePath;
-                }
+
+                 }
                 else
                 {
                     MessageBox.Show("Could not find this image: = " +_Person.ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -115,6 +118,7 @@ namespace PosAndAccountantProject.People.Controls
         }
         private void _FillPersonInfo()
         {
+            llEditPersonInfo.Enabled = true;
             lblPersonID.Text=_Person.ID.ToString();
             lblPhone.Text=_Person.Phone??"N/A";
             lblAddress.Text=_Person.Address??"N/A";
@@ -133,10 +137,17 @@ namespace PosAndAccountantProject.People.Controls
         {
            if( _Person != null )
             {
-                frmAddUpdatePerson frm=new frmAddUpdatePerson();
+                frmAddUpdatePerson frm=new frmAddUpdatePerson(_PersonID);
                 frm.ShowDialog();
+                if(frm.WasSaved)
+                {
+                    LoadPersoDataToControl(_PersonID);
+                }
+
             }
 
         }
+
+         
     }
 }

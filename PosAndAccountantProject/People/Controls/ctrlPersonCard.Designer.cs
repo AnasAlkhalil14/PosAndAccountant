@@ -119,6 +119,7 @@
             // llEditPersonInfo
             // 
             this.llEditPersonInfo.AutoSize = true;
+            this.llEditPersonInfo.Enabled = false;
             this.llEditPersonInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.llEditPersonInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.llEditPersonInfo.Location = new System.Drawing.Point(55, 235);

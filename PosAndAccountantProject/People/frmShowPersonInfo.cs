@@ -12,10 +12,12 @@ namespace PosAndAccountantProject.People
 {
     public partial class frmShowPersonInfo : Form
     {
+        int _PersonID;
 
          public frmShowPersonInfo(int PersonID)
         {
             InitializeComponent();
+            _PersonID = PersonID;
             ctrlPersonCard1.LoadPersoDataToControl(PersonID);
 
 
@@ -25,5 +27,7 @@ namespace PosAndAccountantProject.People
         {
             this.Close();
         }
+
+        
     }
 }
