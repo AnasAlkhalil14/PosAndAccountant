@@ -133,7 +133,10 @@ namespace PosAndAccountant_business
          }
 
 
-        public bool 
+        public static bool DeleteUserByID(int UserID)
+        {
+            return clsUserData.DeleteUserByID(UserID);
+        }
         public static clsUser FindUserByID(int UserID)
         {
             clsUserDTO UserDTO = clsUserData.GetUserByID(UserID);
