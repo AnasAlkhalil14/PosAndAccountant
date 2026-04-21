@@ -2,6 +2,7 @@
 using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +98,11 @@ namespace PosAndAccountant_business
         public DateTime CreatedDate { get; set; }
         public bool IsActive { get; set; }
 
+        public string Permission()
+        {
+            //Complite it When Complite The System to Know all Permissions Exist;
+            return "";
+        }
 
         public bool Save()
         {
@@ -132,11 +138,15 @@ namespace PosAndAccountant_business
 
          }
 
-
+        public static DataTable GetAllUsersList()
+        {
+            return clsUserData.GetAllUsers();
+        }
         public static bool DeleteUserByID(int UserID)
         {
             return clsUserData.DeleteUserByID(UserID);
         }
+
         public static clsUser FindUserByID(int UserID)
         {
             clsUserDTO UserDTO = clsUserData.GetUserByID(UserID);

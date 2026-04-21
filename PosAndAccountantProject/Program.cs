@@ -1,5 +1,6 @@
 ﻿using PosAndAccountantProject.Login;
 using PosAndAccountantProject.People;
+using PosAndAccountantProject.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmChangePassword(1));
         }
     }
 }
