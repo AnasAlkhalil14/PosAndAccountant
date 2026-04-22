@@ -21,17 +21,7 @@ namespace PosAndAccountantProject.Users
 
         private void InitializeComponent()
         {
-            // This prevents the user from expanding the form
-            this.MaximizeBox = false;
-
-            // This prevents manual resizing by dragging edges
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-
-             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
-             this.MinimizeBox = true;
-
-
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCurrentPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
@@ -40,7 +30,9 @@ namespace PosAndAccountantProject.Users
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ctrlUserCard1 = new PosAndAccountantProject.Users.Controls.ctrlUserCard();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +61,8 @@ namespace PosAndAccountantProject.Users
             this.txtCurrentPassword.Size = new System.Drawing.Size(220, 36);
             this.txtCurrentPassword.TabIndex = 138;
             this.txtCurrentPassword.UseSystemPasswordChar = true;
+            this.txtCurrentPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCurrentPassword_KeyPress);
+            this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
             // 
             // btnClose
             // 
@@ -82,6 +76,7 @@ namespace PosAndAccountantProject.Users
             this.btnClose.Size = new System.Drawing.Size(126, 40);
             this.btnClose.TabIndex = 142;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -101,6 +96,7 @@ namespace PosAndAccountantProject.Users
             this.txtConfirmPassword.BorderRadius = 5;
             this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmPassword.DefaultText = "";
+            this.txtConfirmPassword.Enabled = false;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtConfirmPassword.Location = new System.Drawing.Point(211, 657);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -112,6 +108,7 @@ namespace PosAndAccountantProject.Users
             this.txtConfirmPassword.Size = new System.Drawing.Size(220, 36);
             this.txtConfirmPassword.TabIndex = 140;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // label3
             // 
@@ -149,6 +146,12 @@ namespace PosAndAccountantProject.Users
             this.txtNewPassword.Size = new System.Drawing.Size(220, 36);
             this.txtNewPassword.TabIndex = 139;
             this.txtNewPassword.UseSystemPasswordChar = true;
+            this.txtNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewPassword_KeyPress);
+            this.txtNewPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewPassword_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ctrlUserCard1
             // 
@@ -174,12 +177,14 @@ namespace PosAndAccountantProject.Users
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.ctrlUserCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "frmChangePassword";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تغيير كلمة المرور";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +201,6 @@ namespace PosAndAccountantProject.Users
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtNewPassword;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

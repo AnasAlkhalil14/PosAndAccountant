@@ -20,7 +20,9 @@ namespace PosAndAccountantProject.Users.Controls
 
         private int _UserID;
         private clsUser _User;
-       public int UserID { get { return _UserID; } }
+
+        public bool WasPersonUpdated { get { return ctrlPersonCard1.WasUpdated; } }
+        public int UserID { get { return _UserID; } }
         public clsUser User { get { return _User; } }   
 
 
@@ -66,9 +68,6 @@ namespace PosAndAccountantProject.Users.Controls
         }
 
 
-        private void ctrlUserCard_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

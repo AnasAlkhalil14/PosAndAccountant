@@ -186,6 +186,11 @@ namespace PosAndAccountant_business
 
         }
 
+        public bool IsPasswordEqual(string Password)
+        {
+            return HashPassword==clsCryptography.Hashing(Password,this.PasswordSalt);
+        }
+
 
     }
 }

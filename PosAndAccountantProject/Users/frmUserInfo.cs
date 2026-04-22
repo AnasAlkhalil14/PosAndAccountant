@@ -19,6 +19,9 @@ namespace PosAndAccountantProject.Users
            _UserID = UserID;
         }
 
+
+        public bool WasPersonUpdated { get { return ctrlUserCard1.WasPersonUpdated; }  }
+
         private int _UserID;
         public int UserID { get { return _UserID; }  }
 
