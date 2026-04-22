@@ -309,7 +309,7 @@ namespace PosAndAccountant_DataAccess
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    using (SqlCommand command = new SqlCommand("[People].[SP_UpdatePersonByID]", connection))
+                    using (SqlCommand command = new SqlCommand("[Users].[SP_UpdateUserByID]", connection))
                     {
                         command.Parameters.AddWithValue("@PersonID", UserDTO.PersonID);
                         command.Parameters.AddWithValue("@UserID", UserDTO.UserID);

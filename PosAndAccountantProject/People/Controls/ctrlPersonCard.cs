@@ -19,6 +19,7 @@ namespace PosAndAccountantProject.People.Controls
 
         private int _PersonID=-1;
 
+        public bool WasUpdated { get;set;}=false;
         public int PersonID{ get { return _PersonID; } }
         public clsPerson PersonSelected { get { return _Person; } }
 
@@ -143,6 +144,8 @@ namespace PosAndAccountantProject.People.Controls
                 {
                     LoadPersoDataToControl(_PersonID);
                 }
+                WasUpdated = frm.WasSaved;
+
 
             }
 

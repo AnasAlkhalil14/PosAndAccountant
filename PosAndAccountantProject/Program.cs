@@ -19,7 +19,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmChangePassword(1));
+            Application.Run(new frmAddUpdatUser(1));
         }
     }
 }

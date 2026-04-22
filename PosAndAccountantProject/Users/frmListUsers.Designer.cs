@@ -32,7 +32,6 @@ namespace PosAndAccountantProject.Users
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangePasswordtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +41,7 @@ namespace PosAndAccountantProject.Users
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.btnAddUser = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.cmsUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
@@ -63,12 +62,13 @@ namespace PosAndAccountantProject.Users
             "الكل",
             "نعم",
             "لا"});
-            this.cbIsActive.Location = new System.Drawing.Point(340, 260);
+            this.cbIsActive.Location = new System.Drawing.Point(369, 261);
             this.cbIsActive.Name = "cbIsActive";
             this.cbIsActive.Size = new System.Drawing.Size(160, 36);
             this.cbIsActive.StartIndex = 0;
             this.cbIsActive.TabIndex = 114;
             this.cbIsActive.Visible = false;
+            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
             // 
             // dgvUsers
             // 
@@ -105,7 +105,7 @@ namespace PosAndAccountantProject.Users
             this.dgvUsers.RowHeadersVisible = false;
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 35;
-            this.dgvUsers.Size = new System.Drawing.Size(1028, 360);
+            this.dgvUsers.Size = new System.Drawing.Size(1081, 360);
             this.dgvUsers.TabIndex = 104;
             this.dgvUsers.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvUsers.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -141,7 +141,6 @@ namespace PosAndAccountantProject.Users
             this.deleteToolStripMenuItem,
             this.ChangePasswordtoolStripMenuItem,
             this.toolStripSeparator1,
-            this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.cmsUsers.Name = "cmsUsers";
             this.cmsUsers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -152,6 +151,7 @@ namespace PosAndAccountantProject.Users
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(226, 28);
             this.showDetailsToolStripMenuItem.Text = "عرض التفاصيل";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -163,41 +163,40 @@ namespace PosAndAccountantProject.Users
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(226, 28);
             this.toolStripMenuItem1.Text = "إضافة مستخدم جديد";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(226, 28);
             this.editToolStripMenuItem.Text = "تعديل";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(226, 28);
             this.deleteToolStripMenuItem.Text = "حذف";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // ChangePasswordtoolStripMenuItem
             // 
             this.ChangePasswordtoolStripMenuItem.Name = "ChangePasswordtoolStripMenuItem";
             this.ChangePasswordtoolStripMenuItem.Size = new System.Drawing.Size(226, 28);
             this.ChangePasswordtoolStripMenuItem.Text = "تغيير كلمة المرور";
+            this.ChangePasswordtoolStripMenuItem.Click += new System.EventHandler(this.ChangePasswordtoolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
             // 
-            // sendEmailToolStripMenuItem
-            // 
-            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(226, 28);
-            this.sendEmailToolStripMenuItem.Text = "إرسال بريد إلكتروني";
-            // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(226, 28);
             this.phoneCallToolStripMenuItem.Text = "اتصال هاتف";
+            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
             // 
             // lblRecordsCount
             // 
@@ -233,16 +232,17 @@ namespace PosAndAccountantProject.Users
             this.cbFilterBy.ItemHeight = 30;
             this.cbFilterBy.Items.AddRange(new object[] {
             "لا شيء",
-            "رقم المستخدم",
+            "معرف المستخدم",
             "اسم المستخدم",
-            "رقم الشخص",
+            "معرف الشخص",
             "الاسم الكامل",
             "هل هو نشط؟"});
             this.cbFilterBy.Location = new System.Drawing.Point(158, 260);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(180, 36);
+            this.cbFilterBy.Size = new System.Drawing.Size(188, 36);
             this.cbFilterBy.StartIndex = 0;
             this.cbFilterBy.TabIndex = 107;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 
@@ -252,7 +252,7 @@ namespace PosAndAccountantProject.Users
             this.txtFilterValue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(361, 260);
+            this.txtFilterValue.Location = new System.Drawing.Point(390, 261);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "ابحث هنا...";
@@ -260,6 +260,7 @@ namespace PosAndAccountantProject.Users
             this.txtFilterValue.Size = new System.Drawing.Size(300, 36);
             this.txtFilterValue.TabIndex = 106;
             this.txtFilterValue.Visible = false;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             // 
             // label1
             // 
@@ -275,7 +276,7 @@ namespace PosAndAccountantProject.Users
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(74, 193);
+            this.lblTitle.Location = new System.Drawing.Point(149, 165);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(789, 50);
             this.lblTitle.TabIndex = 111;
@@ -286,9 +287,9 @@ namespace PosAndAccountantProject.Users
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.Users_2_400;
-            this.pbPersonImage.Location = new System.Drawing.Point(350, 10);
+            this.pbPersonImage.Location = new System.Drawing.Point(390, 10);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(350, 180);
+            this.pbPersonImage.Size = new System.Drawing.Size(310, 152);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 110;
             this.pbPersonImage.TabStop = false;
@@ -300,33 +301,35 @@ namespace PosAndAccountantProject.Users
             this.btnAddUser.ForeColor = System.Drawing.Color.White;
             this.btnAddUser.Image = global::PosAndAccountantProject.Properties.Resources.Add_New_User_72;
             this.btnAddUser.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAddUser.Location = new System.Drawing.Point(953, 234);
+            this.btnAddUser.Location = new System.Drawing.Point(993, 234);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(87, 65);
             this.btnAddUser.TabIndex = 112;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // guna2Button1
+            // btnClose
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(887, 678);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(135, 45);
-            this.guna2Button1.TabIndex = 115;
-            this.guna2Button1.Text = "إغلاق";
+            this.btnClose.Animated = true;
+            this.btnClose.BorderRadius = 10;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(887, 678);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(135, 45);
+            this.btnClose.TabIndex = 115;
+            this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1056, 735);
-            this.Controls.Add(this.guna2Button1);
+            this.ClientSize = new System.Drawing.Size(1105, 735);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbIsActive);
             this.Controls.Add(this.pbPersonImage);
             this.Controls.Add(this.dgvUsers);
@@ -343,6 +346,7 @@ namespace PosAndAccountantProject.Users
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة المستخدمين";
+            this.Load += new System.EventHandler(this.frmListUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.cmsUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
@@ -364,7 +368,6 @@ namespace PosAndAccountantProject.Users
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChangePasswordtoolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2CircleButton btnAddUser;
         private System.Windows.Forms.Label lblRecordsCount;
@@ -373,6 +376,6 @@ namespace PosAndAccountantProject.Users
         private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnClose;
     }
 }

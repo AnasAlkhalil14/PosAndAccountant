@@ -96,16 +96,16 @@ namespace PosAndAccountantProject.People
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int PersonID = Convert.ToInt32(dgvPeople.CurrentRow.Cells[0].Value);
-            if (MessageBox.Show($"Are you sure you want to delete Person with ID:{PersonID}","Confirm deltete",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show($"هل متاكد من حذف الشخص ذو المعرف:{PersonID}","تأكيد الحذف",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
             {
                  if(clsPerson.DeletePersonByID(PersonID))
                 {
                     _RefreshForm();
-                    MessageBox.Show($"Person with ID={PersonID} deleted Successfully", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"الشخص ذو المعرف={PersonID} حذف بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show($"Failed to delete Person with ID={PersonID},he has data linked to him", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"فشل في حذف الشخص ذو المعرف={PersonID},يوجد بيانات مربوطة به", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
 

@@ -17,9 +17,19 @@ namespace PosAndAccountantProject.People.Controls
         {
             InitializeComponent();
         }
+        public class PersonSelectedEventArgs : EventArgs
+        {
+            public int PersonID { get; }
+            public PersonSelectedEventArgs(int personId) => PersonID = personId;
+        }
 
-        public Action<int> OnPersonSelected;
 
+
+        [Category("Action"), Description("Fired when a person is selected"), Browsable(true)]
+        public event EventHandler<PersonSelectedEventArgs> PersonSelected;
+
+        [Category("Action"), Description("Fired when no person is found"), Browsable(true)]
+        public event EventHandler PersonNotFound;
 
         private void SettingTextBoxsForFiltering()
         {
@@ -42,7 +52,7 @@ namespace PosAndAccountantProject.People.Controls
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtFilterValue.Clear();
-            
+
             txtFilterValue.Focus();
             SettingTextBoxsForFiltering();
         }
@@ -54,7 +64,7 @@ namespace PosAndAccountantProject.People.Controls
                 btnFind.PerformClick();
             }
             else
-                 e.Handled=!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar);
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
 
         }
@@ -66,36 +76,42 @@ namespace PosAndAccountantProject.People.Controls
             {
                 case 0:
                     {
-                        
-                        
-                        if(ctrlPersonCard1.PersonSelected==null||(   txtFilterValue.Text!=ctrlPersonCard1.PersonSelected.ID.ToString()))
 
 
+                        if (ctrlPersonCard1.PersonSelected == null || (txtFilterValue.Text != ctrlPersonCard1.PersonSelected.ID.ToString()))
                         {
                             if (ctrlPersonCard1.LoadPersoDataToControl(int.Parse(txtFilterValue.Text)))
                             {
-                                //raise evetn
+                                PersonSelected?.Invoke(this, new PersonSelectedEventArgs(int.Parse(txtFilterValue.Text)));
+                            }
+                            else
+                            {
+                                PersonNotFound?.Invoke(this, new EventArgs());
                             }
                         }
-                       
+
 
                         break;
                     }
                 case 1:
                     {
-                        if(ctrlPersonCard1.PersonSelected == null || (txtFilterValue.Text!=ctrlPersonCard1.PersonSelected.Phone))
+                        if (ctrlPersonCard1.PersonSelected == null || (txtFilterValue.Text != ctrlPersonCard1.PersonSelected.Phone))
                         {
                             if (ctrlPersonCard1.LoadPersoDataToControl(txtFilterValue.Text))
                             {
-                                //raise evetn
+                                PersonSelected?.Invoke(this, new PersonSelectedEventArgs(int.Parse(txtFilterValue.Text)));
+                            }
+                            else
+                            {
+                                PersonNotFound?.Invoke(this, new EventArgs());
                             }
                         }
-                       
+
 
                         break;
 
 
-                     }
+                    }
 
                 default:
                     {
@@ -108,7 +124,13 @@ namespace PosAndAccountantProject.People.Controls
             }
 
         }
+        public void FindNow(int PersonID)
+        {
 
+            txtFilterValue.Text = PersonID.ToString();
+            cbFilterBy.SelectedIndex = 0;
+            FindNow();
+        }
         private void btnFind_Click(object sender, EventArgs e)
         {
 
@@ -119,12 +141,12 @@ namespace PosAndAccountantProject.People.Controls
 
                 return;
             }
-             
-             FindNow();
+
+            FindNow();
 
         }
 
-        
+
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
             cbFilterBy.SelectedIndex = 0;
@@ -133,10 +155,10 @@ namespace PosAndAccountantProject.People.Controls
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-            frmAddUpdatePerson frm=new frmAddUpdatePerson();
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
 
-            if(frm.WasSaved)
+            if (frm.WasSaved)
             {
                 ctrlPersonCard1.LoadPersoDataToControl(frm.PersonID);
 
@@ -146,3 +168,5 @@ namespace PosAndAccountantProject.People.Controls
         }
     }
 }
+
+   
