@@ -27,6 +27,8 @@ namespace PosAndAccountantProject.Users
             this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             this.btnPersonInfoNext = new Guna.UI2.WinForms.Guna2Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
+            this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.gbForPermissions = new Guna.UI2.WinForms.Guna2GroupBox();
             this.chbManageTransaction = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -137,6 +139,8 @@ namespace PosAndAccountantProject.Users
             // tpLoginInfo
             // 
             this.tpLoginInfo.BackColor = System.Drawing.Color.White;
+            this.tpLoginInfo.Controls.Add(this.txtNotes);
+            this.tpLoginInfo.Controls.Add(this.label6);
             this.tpLoginInfo.Controls.Add(this.btnPrevious);
             this.tpLoginInfo.Controls.Add(this.gbForPermissions);
             this.tpLoginInfo.Controls.Add(this.lblUserID);
@@ -154,6 +158,32 @@ namespace PosAndAccountantProject.Users
             this.tpLoginInfo.Size = new System.Drawing.Size(955, 532);
             this.tpLoginInfo.TabIndex = 1;
             this.tpLoginInfo.Text = "بيانات الحساب";
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.BorderRadius = 5;
+            this.txtNotes.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNotes.DefaultText = "";
+            this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNotes.Location = new System.Drawing.Point(470, 306);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.PasswordChar = '●';
+            this.txtNotes.PlaceholderText = "";
+            this.txtNotes.SelectedText = "";
+            this.txtNotes.Size = new System.Drawing.Size(200, 36);
+            this.txtNotes.TabIndex = 132;
+            this.txtNotes.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.label6.Location = new System.Drawing.Point(690, 313);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 25);
+            this.label6.TabIndex = 133;
+            this.label6.Text = " الملاحظات:";
             // 
             // btnPrevious
             // 
@@ -184,7 +214,7 @@ namespace PosAndAccountantProject.Users
             this.gbForPermissions.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(14)))), ((int)(((byte)(150)))));
             this.gbForPermissions.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gbForPermissions.ForeColor = System.Drawing.Color.Black;
-            this.gbForPermissions.Location = new System.Drawing.Point(159, 49);
+            this.gbForPermissions.Location = new System.Drawing.Point(158, 91);
             this.gbForPermissions.Name = "gbForPermissions";
             this.gbForPermissions.Size = new System.Drawing.Size(262, 311);
             this.gbForPermissions.TabIndex = 130;
@@ -377,7 +407,7 @@ namespace PosAndAccountantProject.Users
             this.chkIsActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
             this.chkIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.chkIsActive.Location = new System.Drawing.Point(570, 336);
+            this.chkIsActive.Location = new System.Drawing.Point(587, 378);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(100, 24);
             this.chkIsActive.TabIndex = 127;
@@ -400,6 +430,8 @@ namespace PosAndAccountantProject.Users
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(200, 36);
             this.txtUserName.TabIndex = 118;
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
+            this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
             // 
             // txtConfirmPassword
             // 
@@ -408,7 +440,7 @@ namespace PosAndAccountantProject.Users
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.Enabled = false;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(470, 262);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(470, 258);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '●';
@@ -417,6 +449,7 @@ namespace PosAndAccountantProject.Users
             this.txtConfirmPassword.Size = new System.Drawing.Size(200, 36);
             this.txtConfirmPassword.TabIndex = 124;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // label1
             // 
@@ -454,7 +487,7 @@ namespace PosAndAccountantProject.Users
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(470, 212);
+            this.txtPassword.Location = new System.Drawing.Point(470, 210);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -490,6 +523,7 @@ namespace PosAndAccountantProject.Users
             this.btnClose.Size = new System.Drawing.Size(120, 40);
             this.btnClose.TabIndex = 120;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmAddUpdatUser
             // 
@@ -549,5 +583,7 @@ namespace PosAndAccountantProject.Users
         private Guna.UI2.WinForms.Guna2CheckBox chbManageCustomer;
         private Guna.UI2.WinForms.Guna2CheckBox chbAllPermission;
         private Guna.UI2.WinForms.Guna2Button btnPrevious;
+        private Guna.UI2.WinForms.Guna2TextBox txtNotes;
+        private System.Windows.Forms.Label label6;
     }
 }

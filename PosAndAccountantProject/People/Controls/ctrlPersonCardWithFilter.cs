@@ -136,7 +136,7 @@ namespace PosAndAccountantProject.People.Controls
 
             if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
             {
-                MessageBox.Show("Some fileds are not valide!,fill them with real data", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("حقل البحث فارغ ضع البيانات الي تريد البحث عبرها", "خطأ في بيانات البحث", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                 return;
@@ -160,8 +160,10 @@ namespace PosAndAccountantProject.People.Controls
 
             if (frm.WasSaved)
             {
-                ctrlPersonCard1.LoadPersoDataToControl(frm.PersonID);
+                
 
+                ctrlPersonCard1.LoadPersoDataToControl(frm.PersonID);
+                PersonSelected?.Invoke(this,new PersonSelectedEventArgs(frm.PersonID));
             }
 
 

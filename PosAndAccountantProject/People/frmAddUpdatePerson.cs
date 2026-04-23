@@ -20,6 +20,7 @@ namespace PosAndAccountantProject.People
         {
             InitializeComponent();
             _Person=new clsPerson();
+            _PersonID = -1;
         }
 
         int _PersonID;
@@ -171,9 +172,15 @@ namespace PosAndAccountantProject.People
         private void frmAddUpdatePerson_Load(object sender, EventArgs e)
         {
 
-            if(_Person!=null)
+            if(_PersonID!=-1)
             {
                 _FillPersonData();
+            }
+            else
+            {
+                lblTitle.Text = $"اضافة شخص جديد";
+
+
             }
 
         }
