@@ -191,6 +191,10 @@ namespace PosAndAccountant_business
             return HashPassword==clsCryptography.Hashing(Password,this.PasswordSalt);
         }
 
+        public static bool IsUserExistByUserName(string UserName)
+        {
+            return clsUserData.IsUserExistByUserName(UserName);
+        }
 
     }
 }

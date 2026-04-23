@@ -354,7 +354,7 @@ namespace PosAndAccountant_DataAccess
             return RowAffected > 0;
         }
 
-        public static bool IsUserExistByUserNameAndHashPassword(string UserName,string HashPassword)
+        public static bool IsUserExistByUserName(string UserName)
         {
 
             bool IsFound = false ;
@@ -363,20 +363,19 @@ namespace PosAndAccountant_DataAccess
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    using (SqlCommand command = new SqlCommand("[Users].[SP_IsUserExistByUserNameAndHashPassword]", connection))
+                    using (SqlCommand command = new SqlCommand("[Users].[SP_IsUserExistByUserName]", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
                          command.Parameters.AddWithValue("@UserName", UserName);
-                        command.Parameters.AddWithValue("@HashPassword",  HashPassword);
  
 
                         connection.Open();
 
                         object result = command.ExecuteScalar();
-                        if (result != null && bool.TryParse(result.ToString(), out IsFound))
+                        if (result != null && int.TryParse(result.ToString(), out int r))
                         {
-
+                            IsFound = r != 0;
                         }
                         else
                         {
