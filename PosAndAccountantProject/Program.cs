@@ -1,4 +1,5 @@
-﻿using PosAndAccountantProject.Login;
+﻿using PosAndAccountantProject.Customers;
+using PosAndAccountantProject.Login;
 using PosAndAccountantProject.People;
 using PosAndAccountantProject.Users;
 using System;
@@ -19,7 +20,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmCustomerInfo());
         }
     }
 }
