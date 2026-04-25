@@ -32,7 +32,7 @@ namespace PosAndAccountantProject.Users
             {
                 txtFilterValue.Visible = false;
             }
-            else if (cbFilterBy.SelectedIndex != 6)
+            else if (cbFilterBy.SelectedIndex != 5)
             {
                 txtFilterValue.Visible = true;
 

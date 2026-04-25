@@ -37,8 +37,6 @@ namespace PosAndAccountantProject.GlobalClasses
 
         }
 
-
-
         public static string CreateGuideString()
         {
             Guid guid = Guid.NewGuid();

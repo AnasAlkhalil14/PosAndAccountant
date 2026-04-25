@@ -21,5 +21,12 @@ namespace PosAndAccountantProject
         {
             MessageBox.Show("يرجى مراجعة مسؤول النظام لإعادة تعيين كلمة المرور", "طلب المساعدة", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+
+        private void frmTest_Load(object sender, EventArgs e)
+         {
+       
+         }
+
+
     }
 }
