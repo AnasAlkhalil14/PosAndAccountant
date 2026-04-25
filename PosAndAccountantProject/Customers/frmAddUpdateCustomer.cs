@@ -16,5 +16,7 @@ namespace PosAndAccountantProject.Customers
         {
             InitializeComponent();
         }
+
+        
     }
 }
