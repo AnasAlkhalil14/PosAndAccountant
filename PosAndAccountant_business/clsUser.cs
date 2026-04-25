@@ -3,7 +3,9 @@ using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,7 +48,14 @@ namespace PosAndAccountant_business
 
         }
 
+       private static readonly byte[] _Salt = Encoding.UTF8.GetBytes("PosAndAccounting");
+        private static readonly string _PathForRememberMe = Path.Combine(
 
+                   Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+
+                 "RememberMeData","RememberMe.dat"
+
+       );
 
         public enum enMode { eAdd,eUpdate}
         public enMode Mode { get; set; }
@@ -194,6 +203,44 @@ namespace PosAndAccountant_business
         public static bool IsUserExistByUserName(string UserName)
         {
             return clsUserData.IsUserExistByUserName(UserName);
+        }
+
+        public static void SaveDataForRememberMe(string UserName,string Password)
+        {
+           
+
+            string Data = $"{UserName}#//#{Password}";
+            byte[]DataBytes=Encoding.UTF8.GetBytes(Data);
+
+            byte[] EncryptedData = ProtectedData.Protect(DataBytes, _Salt, DataProtectionScope.CurrentUser);
+
+            Directory.CreateDirectory(Path.GetDirectoryName(_PathForRememberMe));
+
+            File.WriteAllBytes(_PathForRememberMe,EncryptedData);
+        }
+        public static (string UserName, string Password)? LoadDataForRemeberMe()
+        {
+            if (!File.Exists(_PathForRememberMe)) return null;
+
+            byte[]ProtectBytes=File.ReadAllBytes(_PathForRememberMe);
+
+           byte [] DataBytes= ProtectedData.Unprotect(ProtectBytes, _Salt, DataProtectionScope.CurrentUser);
+       
+            string DataString= Encoding.UTF8.GetString(DataBytes);
+
+            string[] DataStringArray = DataString.Split(new string[] { "#//#" },
+    StringSplitOptions.None);
+
+            if (DataStringArray.Length != 2) return null;
+            
+            return (DataStringArray[0], DataStringArray[1]);
+
+        }
+
+       public static void ClearDataOfRemeberMe()
+        {
+            if(File.Exists(_PathForRememberMe))
+                File.Delete(_PathForRememberMe);
         }
 
     }

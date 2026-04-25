@@ -24,7 +24,6 @@ namespace PosAndAccountantProject.Users
             this.lblTitle = new System.Windows.Forms.Label();
             this.tcUserInfo = new Guna.UI2.WinForms.Guna2TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
-            this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             this.btnPersonInfoNext = new Guna.UI2.WinForms.Guna2Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,6 +49,7 @@ namespace PosAndAccountantProject.Users
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tcUserInfo.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
@@ -112,16 +112,6 @@ namespace PosAndAccountantProject.Users
             this.tpPersonalInfo.Size = new System.Drawing.Size(955, 532);
             this.tpPersonalInfo.TabIndex = 0;
             this.tpPersonalInfo.Text = "المعلومات الشخصية";
-            // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(15, 15);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(846, 400);
-            this.ctrlPersonCardWithFilter1.TabIndex = 120;
-            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
-            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
             // 
             // btnPersonInfoNext
             // 
@@ -477,9 +467,9 @@ namespace PosAndAccountantProject.Users
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
             this.label2.Location = new System.Drawing.Point(690, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 25);
+            this.label2.Size = new System.Drawing.Size(168, 25);
             this.label2.TabIndex = 121;
-            this.label2.Text = "كلمة المرور:";
+            this.label2.Text = "كلمة المرور الجديدة:";
             // 
             // txtPassword
             // 
@@ -524,6 +514,16 @@ namespace PosAndAccountantProject.Users
             this.btnClose.TabIndex = 120;
             this.btnClose.Text = "إغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(15, 15);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(846, 400);
+            this.ctrlPersonCardWithFilter1.TabIndex = 120;
+            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
+            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
             // 
             // frmAddUpdatUser
             // 
