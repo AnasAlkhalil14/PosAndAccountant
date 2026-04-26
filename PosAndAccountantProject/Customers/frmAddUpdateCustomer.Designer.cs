@@ -33,6 +33,7 @@
             this.numCreditLimit = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.gbCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCreditLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
@@ -55,7 +56,7 @@
             this.gbCustomerInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.gbCustomerInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gbCustomerInfo.ForeColor = System.Drawing.Color.White;
-            this.gbCustomerInfo.Location = new System.Drawing.Point(25, 446);
+            this.gbCustomerInfo.Location = new System.Drawing.Point(43, 552);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
             this.gbCustomerInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gbCustomerInfo.Size = new System.Drawing.Size(821, 220);
@@ -183,7 +184,7 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(448, 693);
+            this.btnSave.Location = new System.Drawing.Point(466, 799);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 45);
             this.btnSave.TabIndex = 1;
@@ -195,7 +196,7 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(293, 693);
+            this.btnClose.Location = new System.Drawing.Point(311, 799);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(140, 45);
             this.btnClose.TabIndex = 0;
@@ -207,7 +208,7 @@
             this.numCreditLimit.BorderRadius = 10;
             this.numCreditLimit.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numCreditLimit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numCreditLimit.Location = new System.Drawing.Point(143, 559);
+            this.numCreditLimit.Location = new System.Drawing.Point(161, 665);
             this.numCreditLimit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numCreditLimit.Name = "numCreditLimit";
             this.numCreditLimit.Size = new System.Drawing.Size(144, 36);
@@ -220,7 +221,7 @@
             this.guna2NumericUpDown1.BorderRadius = 10;
             this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(161, 614);
+            this.guna2NumericUpDown1.Location = new System.Drawing.Point(179, 720);
             this.guna2NumericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
             this.guna2NumericUpDown1.Size = new System.Drawing.Size(113, 36);
@@ -230,17 +231,29 @@
             // ctrlPersonCardWithFilter1
             // 
             this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(12, 20);
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(30, 126);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(854, 420);
             this.ctrlPersonCardWithFilter1.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
+            this.lblTitle.Location = new System.Drawing.Point(76, 23);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(779, 50);
+            this.lblTitle.TabIndex = 123;
+            this.lblTitle.Text = "تعديل بيانات العميل";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAddUpdateCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(905, 750);
+            this.ClientSize = new System.Drawing.Size(905, 877);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.guna2NumericUpDown1);
             this.Controls.Add(this.numCreditLimit);
             this.Controls.Add(this.btnClose);
@@ -278,5 +291,6 @@
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2NumericUpDown numCreditLimit;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
