@@ -131,6 +131,12 @@ namespace PosAndAccountantProject.People.Controls
             cbFilterBy.SelectedIndex = 0;
             FindNow();
         }
+
+        public void ResetePersonInfo()
+        {
+            ctrlPersonCard1.ResetPersonInfo();
+        }
+
         private void btnFind_Click(object sender, EventArgs e)
         {
 

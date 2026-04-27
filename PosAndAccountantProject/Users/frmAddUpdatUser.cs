@@ -80,6 +80,9 @@ namespace PosAndAccountantProject.Users
 
         private void frmAddUpdatUser_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Add the unique person feture for users");
+
+
             if (_UserID!=-1)
             {
                 _User = clsUser.FindUserByID(_UserID);

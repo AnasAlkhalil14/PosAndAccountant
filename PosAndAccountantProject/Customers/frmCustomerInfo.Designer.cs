@@ -72,6 +72,7 @@
             this.btnClose.Size = new System.Drawing.Size(150, 45);
             this.btnClose.TabIndex = 20;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmCustomerInfo
             // 
@@ -89,6 +90,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "معلومات العميل";
+            this.Load += new System.EventHandler(this.frmCustomerInfo_Load);
             this.ResumeLayout(false);
 
         }
