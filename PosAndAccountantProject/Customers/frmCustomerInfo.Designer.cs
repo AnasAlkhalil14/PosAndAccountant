@@ -36,10 +36,10 @@
             // ctrlCustomerCard1
             // 
             this.ctrlCustomerCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlCustomerCard1.Location = new System.Drawing.Point(12, 70);
+            this.ctrlCustomerCard1.Location = new System.Drawing.Point(12, 82);
             this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
             this.ctrlCustomerCard1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ctrlCustomerCard1.Size = new System.Drawing.Size(835, 640);
+            this.ctrlCustomerCard1.Size = new System.Drawing.Size(854, 640);
             this.ctrlCustomerCard1.TabIndex = 0;
             // 
             // lblHeader
@@ -67,7 +67,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(80)))), ((int)(((byte)(130)))));
-            this.btnClose.Location = new System.Drawing.Point(336, 716);
+            this.btnClose.Location = new System.Drawing.Point(390, 728);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(150, 45);
             this.btnClose.TabIndex = 20;
@@ -78,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(865, 785);
+            this.ClientSize = new System.Drawing.Size(873, 785);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.ctrlCustomerCard1);
