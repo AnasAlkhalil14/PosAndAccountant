@@ -93,6 +93,16 @@ namespace PosAndAccountantProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addCustomer {
+            get {
+                object obj = ResourceManager.GetObject("addCustomer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddPerson_32 {
             get {
                 object obj = ResourceManager.GetObject("AddPerson 32", resourceCulture);
@@ -133,6 +143,16 @@ namespace PosAndAccountantProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Customers {
+            get {
+                object obj = ResourceManager.GetObject("Customers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_32 {
             get {
                 object obj = ResourceManager.GetObject("Delete 32", resourceCulture);
@@ -156,6 +176,16 @@ namespace PosAndAccountantProject.Properties {
         internal static System.Drawing.Bitmap Gemini_Generated_Image_59khgc59khgc59kh {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_59khgc59khgc59kh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MakeOrder {
+            get {
+                object obj = ResourceManager.GetObject("MakeOrder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
