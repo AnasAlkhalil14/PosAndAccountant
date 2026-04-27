@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PosAndAccountant_business
 {
-    internal class clsCustomer
+    public class clsCustomer
     {
         public enum enMode { eAdd,eUpdate}
         public enMode Mode;
@@ -47,9 +47,12 @@ namespace PosAndAccountant_business
 
         }
 
+        public string CustomerTypeString()
+        {
+            return "Customer Typ String will be implemented soon";
+        }
 
-
-
+        public clsPerson PersonInfo {  get; set; }
         public int CustomerID { get; set; }
         public int PersonID { get; set; }
         public bool IsActive { get; set; }
@@ -89,6 +92,7 @@ namespace PosAndAccountant_business
             DiscountPercentage = CustomerDTO.DiscountPercentage;
             CreatedDate = CustomerDTO.CreatedDate;
             ModifiedDate = CustomerDTO.ModifiedDate;
+            PersonInfo = clsPerson.FindPersonByID(PersonID);
             Mode = enMode.eUpdate;
 
         }
@@ -161,6 +165,10 @@ namespace PosAndAccountant_business
             return null;
         }
 
+        public static bool IsPersonCustomer(int PersonID)
+        {
+            return clsCustomerData.IsPersonCustomer(PersonID);
+        }
 
     }
 }

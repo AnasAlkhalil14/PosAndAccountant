@@ -39,7 +39,7 @@
             this.انشاءفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCustomers = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
-            this.btnAddCustomer = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnAddCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.cmsCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
@@ -59,6 +59,7 @@
             this.btnClose.Size = new System.Drawing.Size(135, 45);
             this.btnClose.TabIndex = 126;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblRecordsCount
             // 
@@ -290,19 +291,26 @@
             // 
             // btnAddCustomer
             // 
+            this.btnAddCustomer.Animated = true;
+            this.btnAddCustomer.BorderRadius = 10;
+            this.btnAddCustomer.BorderThickness = 1;
+            this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCustomer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddCustomer.FillColor = System.Drawing.Color.Transparent;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAddCustomer.ForeColor = System.Drawing.Color.YellowGreen;
             this.btnAddCustomer.Image = global::PosAndAccountantProject.Properties.Resources.addCustomer;
-            this.btnAddCustomer.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAddCustomer.Location = new System.Drawing.Point(999, 236);
+            this.btnAddCustomer.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddCustomer.Location = new System.Drawing.Point(1006, 247);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(87, 65);
-            this.btnAddCustomer.TabIndex = 124;
+            this.btnAddCustomer.Size = new System.Drawing.Size(84, 51);
+            this.btnAddCustomer.TabIndex = 127;
             // 
             // frmListCustomers
             // 
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1120, 746);
+            this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbPersonImage);
             this.Controls.Add(this.lblRecordsCount);
@@ -312,10 +320,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvCustomers);
-            this.Controls.Add(this.btnAddCustomer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmListCustomers";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.Load += new System.EventHandler(this.frmListCustomers_Load);
             this.cmsCustomers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
@@ -342,9 +352,9 @@
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cmsCustomers;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCustomers;
-        private Guna.UI2.WinForms.Guna2CircleButton btnAddCustomer;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem انشاءفاتورةToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2Button btnAddCustomer;
     }
         #endregion
 }

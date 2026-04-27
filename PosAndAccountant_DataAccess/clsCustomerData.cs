@@ -246,6 +246,8 @@ namespace PosAndAccountant_DataAccess
 
                     using (SqlCommand command = new SqlCommand("[Customers].[SP_UpdateCustomerByID]", connection))
                     {
+                        command.Parameters.AddWithValue("@CustomerID", CustomerDTO.CustomerID);
+
                         command.Parameters.AddWithValue("@PersonID", CustomerDTO.PersonID);
                         command.Parameters.AddWithValue("@IsActive", CustomerDTO.IsActive);
                         command.Parameters.AddWithValue("@TotalRemainingDebt", CustomerDTO.TotalRemainingDebt);
@@ -335,6 +337,58 @@ namespace PosAndAccountant_DataAccess
             }
 
             return CustomerID;
+
+        }
+
+        public static bool IsPersonCustomer(int PersonID)
+        {
+
+            bool IsFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("[Customers].[SP_IsPersonCustomer]", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            IsFound = Convert.ToBoolean(result);
+                        }
+                        else
+                        {
+                            IsFound = false;
+                        }
+
+
+                    }
+
+
+
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+                //LogInEventLog;
+                IsFound = false;
+            }
+
+
+            return IsFound;
+
+
+
 
         }
 

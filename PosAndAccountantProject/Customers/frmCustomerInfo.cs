@@ -12,11 +12,25 @@ namespace PosAndAccountantProject.Customers
 {
     public partial class frmCustomerInfo : Form
     {
-        public frmCustomerInfo()
+        public frmCustomerInfo(int CustomerID)
         {
             InitializeComponent();
+            _CustomerID = CustomerID;
+        }
+        private int _CustomerID;
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-       
+        private void frmCustomerInfo_Load(object sender, EventArgs e)
+        {
+            if(!ctrlCustomerCard1.LoadDataToControl(_CustomerID))
+            {
+                MessageBox.Show($"خطأ عند تحميل بيانات العميل ذو المعرف:{_CustomerID}","خطأ",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
     }
 }

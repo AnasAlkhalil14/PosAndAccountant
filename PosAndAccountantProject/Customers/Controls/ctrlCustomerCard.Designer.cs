@@ -18,6 +18,10 @@
         private void InitializeComponent()
         {
             this.gbCustomerInfo = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.lblIsActive = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -32,15 +36,17 @@
             this.lblCreditLimit = new System.Windows.Forms.Label();
             this.lblTotalRemainingDebt = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
-            this.lblIsActive = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.ctrlPersonCard1 = new PosAndAccountantProject.People.Controls.ctrlPersonCard();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.gbCustomerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCustomerInfo
             // 
             this.gbCustomerInfo.BorderRadius = 10;
+            this.gbCustomerInfo.Controls.Add(this.linkLabel1);
+            this.gbCustomerInfo.Controls.Add(this.label9);
+            this.gbCustomerInfo.Controls.Add(this.lblNotes);
             this.gbCustomerInfo.Controls.Add(this.lblIsActive);
             this.gbCustomerInfo.Controls.Add(this.label8);
             this.gbCustomerInfo.Controls.Add(this.label7);
@@ -62,10 +68,53 @@
             this.gbCustomerInfo.ForeColor = System.Drawing.Color.White;
             this.gbCustomerInfo.Location = new System.Drawing.Point(12, 317);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
-            this.gbCustomerInfo.Size = new System.Drawing.Size(830, 310);
+            this.gbCustomerInfo.Size = new System.Drawing.Size(830, 340);
             this.gbCustomerInfo.TabIndex = 1;
             this.gbCustomerInfo.Text = "بيانات العميل ";
             this.gbCustomerInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(612, 269);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 25);
+            this.label9.TabIndex = 144;
+            this.label9.Text = "ملاحظات:";
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblNotes.Location = new System.Drawing.Point(492, 269);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(47, 23);
+            this.lblNotes.TabIndex = 143;
+            this.lblNotes.Text = "[???]";
+            // 
+            // lblIsActive
+            // 
+            this.lblIsActive.AutoSize = true;
+            this.lblIsActive.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIsActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.lblIsActive.Location = new System.Drawing.Point(102, 212);
+            this.lblIsActive.Name = "lblIsActive";
+            this.lblIsActive.Size = new System.Drawing.Size(56, 25);
+            this.lblIsActive.TabIndex = 142;
+            this.lblIsActive.Text = "[???]";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(222, 202);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 25);
+            this.label8.TabIndex = 141;
+            this.label8.Text = "نشط : ";
             // 
             // label7
             // 
@@ -214,28 +263,6 @@
             this.lblCustomerID.TabIndex = 0;
             this.lblCustomerID.Text = "[???]";
             // 
-            // lblIsActive
-            // 
-            this.lblIsActive.AutoSize = true;
-            this.lblIsActive.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblIsActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.lblIsActive.Location = new System.Drawing.Point(102, 212);
-            this.lblIsActive.Name = "lblIsActive";
-            this.lblIsActive.Size = new System.Drawing.Size(56, 25);
-            this.lblIsActive.TabIndex = 142;
-            this.lblIsActive.Text = "[???]";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(222, 202);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 25);
-            this.label8.TabIndex = 141;
-            this.label8.Text = "نشط : ";
-            // 
             // ctrlPersonCard1
             // 
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.Transparent;
@@ -246,6 +273,18 @@
             this.ctrlPersonCard1.TabIndex = 0;
             this.ctrlPersonCard1.WasUpdated = false;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(112, 269);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(175, 29);
+            this.linkLabel1.TabIndex = 145;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "عرض الفواتير السابقة";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // ctrlCustomerCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,7 +294,7 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Name = "ctrlCustomerCard";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(853, 632);
+            this.Size = new System.Drawing.Size(853, 660);
             this.gbCustomerInfo.ResumeLayout(false);
             this.gbCustomerInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -282,5 +321,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblIsActive;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
