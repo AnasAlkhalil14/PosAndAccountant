@@ -307,7 +307,7 @@ namespace PosAndAccountant_DataAccess
                     }
                     else
                     {
-                        command.Parameters.AddWithValue("@IsActive", DBNull.Value);
+                        command.Parameters.AddWithValue("@Notes", DBNull.Value);
 
                     }
                     command.Parameters.AddWithValue("@TotalRemainingDebt", CustomerDTO.TotalRemainingDebt);

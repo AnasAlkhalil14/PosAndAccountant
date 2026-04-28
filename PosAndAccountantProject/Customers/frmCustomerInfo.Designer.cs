@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlCustomerCard1 = new PosAndAccountantProject.Customers.Controls.ctrlCustomerCard();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.ctrlCustomerCard1 = new PosAndAccountantProject.Customers.Controls.ctrlCustomerCard();
             this.SuspendLayout();
-            // 
-            // ctrlCustomerCard1
-            // 
-            this.ctrlCustomerCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlCustomerCard1.Location = new System.Drawing.Point(12, 82);
-            this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
-            this.ctrlCustomerCard1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ctrlCustomerCard1.Size = new System.Drawing.Size(854, 640);
-            this.ctrlCustomerCard1.TabIndex = 0;
             // 
             // lblHeader
             // 
@@ -67,19 +58,28 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(80)))), ((int)(((byte)(130)))));
-            this.btnClose.Location = new System.Drawing.Point(390, 728);
+            this.btnClose.Location = new System.Drawing.Point(411, 812);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(150, 45);
             this.btnClose.TabIndex = 20;
             this.btnClose.Text = "إغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // ctrlCustomerCard1
+            // 
+            this.ctrlCustomerCard1.BackColor = System.Drawing.Color.White;
+            this.ctrlCustomerCard1.Location = new System.Drawing.Point(12, 82);
+            this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
+            this.ctrlCustomerCard1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ctrlCustomerCard1.Size = new System.Drawing.Size(854, 699);
+            this.ctrlCustomerCard1.TabIndex = 0;
+            // 
             // frmCustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(873, 785);
+            this.ClientSize = new System.Drawing.Size(873, 869);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.ctrlCustomerCard1);

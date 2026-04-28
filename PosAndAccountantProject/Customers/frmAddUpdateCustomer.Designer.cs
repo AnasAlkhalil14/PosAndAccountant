@@ -21,7 +21,8 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lnkMakeOrder = new System.Windows.Forms.LinkLabel();
+            this.lnkShowLastPurchases = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.numCreditLimit = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -49,7 +50,7 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(498, 856);
+            this.btnSave.Location = new System.Drawing.Point(269, 856);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 45);
             this.btnSave.TabIndex = 1;
@@ -62,7 +63,7 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(244, 856);
+            this.btnClose.Location = new System.Drawing.Point(506, 856);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(140, 45);
             this.btnClose.TabIndex = 0;
@@ -85,7 +86,8 @@
             this.guna2Panel1.BorderRadius = 40;
             this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.linkLabel1);
+            this.guna2Panel1.Controls.Add(this.lnkMakeOrder);
+            this.guna2Panel1.Controls.Add(this.lnkShowLastPurchases);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.txtNotes);
             this.guna2Panel1.Controls.Add(this.numCreditLimit);
@@ -108,17 +110,29 @@
             this.guna2Panel1.Size = new System.Drawing.Size(821, 350);
             this.guna2Panel1.TabIndex = 124;
             // 
-            // linkLabel1
+            // lnkMakeOrder
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(626, 311);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(175, 29);
-            this.linkLabel1.TabIndex = 29;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "عرض الفواتير السابقة";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lnkMakeOrder.AutoSize = true;
+            this.lnkMakeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkMakeOrder.Location = new System.Drawing.Point(50, 311);
+            this.lnkMakeOrder.Name = "lnkMakeOrder";
+            this.lnkMakeOrder.Size = new System.Drawing.Size(137, 29);
+            this.lnkMakeOrder.TabIndex = 31;
+            this.lnkMakeOrder.TabStop = true;
+            this.lnkMakeOrder.Text = "انشاء فاتورة مبيع";
+            this.lnkMakeOrder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMakeOrder_LinkClicked);
+            // 
+            // lnkShowLastPurchases
+            // 
+            this.lnkShowLastPurchases.AutoSize = true;
+            this.lnkShowLastPurchases.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkShowLastPurchases.Location = new System.Drawing.Point(626, 311);
+            this.lnkShowLastPurchases.Name = "lnkShowLastPurchases";
+            this.lnkShowLastPurchases.Size = new System.Drawing.Size(175, 29);
+            this.lnkShowLastPurchases.TabIndex = 29;
+            this.lnkShowLastPurchases.TabStop = true;
+            this.lnkShowLastPurchases.Text = "عرض الفواتير السابقة";
+            this.lnkShowLastPurchases.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
             // 
@@ -341,6 +355,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "frmAddUpdateCustomer";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة / تعديل عميل";
             this.Load += new System.EventHandler(this.frmAddUpdateCustomer_Load);
@@ -374,6 +390,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomerID;
         private System.Windows.Forms.Label labeld;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lnkShowLastPurchases;
+        private System.Windows.Forms.LinkLabel lnkMakeOrder;
     }
 }
