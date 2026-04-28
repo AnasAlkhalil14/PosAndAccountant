@@ -26,6 +26,7 @@ namespace PosAndAccountantProject.Customers
         }
        private int _CustomerID=-1;
         private clsCustomer _Customer;
+
         public bool WasSaved = false;
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -50,18 +51,26 @@ namespace PosAndAccountantProject.Customers
             {
                 lblTitle.Text = "تعديل بيانات العميل";
                 _Customer = clsCustomer.FindCustomerByID(_CustomerID);
+               
                 if( _Customer!=null )
                 {
+                    lnkMakeOrder.Enabled = true;
+                    lnkShowLastPurchases.Enabled = true;
                     _FillCustomerData();
                 }
                 else
                 {
+                    lnkMakeOrder.Enabled = false;
+                    lnkShowLastPurchases.Enabled = false;
+                    btnSave.Enabled = false;
                     MessageBox.Show($"لا يوجد عميل بمعرف {_CustomerID}", "خطأ", MessageBoxButtons.OK);
                 }
                 
             }
             else
             {
+                lnkMakeOrder.Enabled = false;
+                lnkShowLastPurchases.Enabled = false;
                 lblTitle.Text = "اضافة عميل جديد";
                 _Customer = new clsCustomer();
             }
@@ -92,6 +101,8 @@ namespace PosAndAccountantProject.Customers
 
             if(_Customer.Save())
             {
+                lnkMakeOrder.Enabled = true;
+                lnkShowLastPurchases.Enabled = true;
                 WasSaved = true;
                 lblTitle.Text = "تعديل بيانات العميل";
                 lblCustomerID.Text = _Customer.CustomerID.ToString();
@@ -142,6 +153,12 @@ namespace PosAndAccountantProject.Customers
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lnkMakeOrder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("This feture will implemented soon");
+
         }
     }
 }

@@ -18,6 +18,7 @@
         private void InitializeComponent()
         {
             this.gbCustomerInfo = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
             this.lblIsActive = new System.Windows.Forms.Label();
@@ -37,14 +38,13 @@
             this.lblTotalRemainingDebt = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.ctrlPersonCard1 = new PosAndAccountantProject.People.Controls.ctrlPersonCard();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.gbCustomerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCustomerInfo
             // 
             this.gbCustomerInfo.BorderRadius = 10;
-            this.gbCustomerInfo.Controls.Add(this.linkLabel1);
             this.gbCustomerInfo.Controls.Add(this.label9);
             this.gbCustomerInfo.Controls.Add(this.lblNotes);
             this.gbCustomerInfo.Controls.Add(this.lblIsActive);
@@ -72,6 +72,18 @@
             this.gbCustomerInfo.TabIndex = 1;
             this.gbCustomerInfo.Text = "بيانات العميل ";
             this.gbCustomerInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(12, 660);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(175, 29);
+            this.linkLabel1.TabIndex = 145;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "عرض الفواتير السابقة";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label9
             // 
@@ -273,31 +285,34 @@
             this.ctrlPersonCard1.TabIndex = 0;
             this.ctrlPersonCard1.WasUpdated = false;
             // 
-            // linkLabel1
+            // linkLabel2
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(112, 269);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(175, 29);
-            this.linkLabel1.TabIndex = 145;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "عرض الفواتير السابقة";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(234, 660);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(137, 29);
+            this.linkLabel2.TabIndex = 146;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "انشاء فاتورة مبيع";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // ctrlCustomerCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.gbCustomerInfo);
             this.Controls.Add(this.ctrlPersonCard1);
             this.Name = "ctrlCustomerCard";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(853, 660);
+            this.Size = new System.Drawing.Size(853, 696);
             this.gbCustomerInfo.ResumeLayout(false);
             this.gbCustomerInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -324,5 +339,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

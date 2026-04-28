@@ -35,6 +35,7 @@ namespace PosAndAccountantProject.Customers.Controls
             {
                 return _FillCustomerInfo();
             }
+            ReseteCustomerInfo();
             return false;
 
         }
@@ -75,6 +76,12 @@ namespace PosAndAccountantProject.Customers.Controls
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("This feture will implemented soon");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("This feture will implemented soon");
+
         }
     }
 }

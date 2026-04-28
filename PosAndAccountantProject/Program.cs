@@ -1,6 +1,7 @@
 ﻿using PosAndAccountantProject.Customers;
 using PosAndAccountantProject.Login;
 using PosAndAccountantProject.People;
+using PosAndAccountantProject.Suppliers;
 using PosAndAccountantProject.Users;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListCustomers());
+            Application.Run(new frmListSuppliers());
         }
     }
 }

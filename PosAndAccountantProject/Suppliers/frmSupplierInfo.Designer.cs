@@ -1,6 +1,6 @@
-﻿namespace PosAndAccountantProject.Customers
+﻿namespace PosAndAccountantProject.Suppliers
 {
-    partial class frmCustomerInfo
+    partial class frmSupplierInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,18 @@
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.ctrlCustomerCard1 = new PosAndAccountantProject.Customers.Controls.ctrlCustomerCard();
+            this.ctrlSupplierCard1 = new PosAndAccountantProject.Suppliers.Controls.ctrlSupplierCard();
             this.SuspendLayout();
             // 
             // lblHeader
             // 
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblHeader.Location = new System.Drawing.Point(48, 15);
+            this.lblHeader.Location = new System.Drawing.Point(71, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(745, 45);
-            this.lblHeader.TabIndex = 19;
-            this.lblHeader.Text = "تفاصيل حساب العميل";
+            this.lblHeader.TabIndex = 20;
+            this.lblHeader.Text = "تفاصيل حساب المورد";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
@@ -58,46 +58,46 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(80)))), ((int)(((byte)(130)))));
-            this.btnClose.Location = new System.Drawing.Point(411, 812);
+            this.btnClose.Location = new System.Drawing.Point(395, 757);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(150, 45);
-            this.btnClose.TabIndex = 20;
+            this.btnClose.TabIndex = 21;
             this.btnClose.Text = "إغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ctrlCustomerCard1
+            // ctrlSupplierCard1
             // 
-            this.ctrlCustomerCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlCustomerCard1.Location = new System.Drawing.Point(12, 82);
-            this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
-            this.ctrlCustomerCard1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ctrlCustomerCard1.Size = new System.Drawing.Size(854, 699);
-            this.ctrlCustomerCard1.TabIndex = 0;
+            this.ctrlSupplierCard1.BackColor = System.Drawing.Color.White;
+            this.ctrlSupplierCard1.Location = new System.Drawing.Point(31, 73);
+            this.ctrlSupplierCard1.Name = "ctrlSupplierCard1";
+            this.ctrlSupplierCard1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ctrlSupplierCard1.Size = new System.Drawing.Size(853, 654);
+            this.ctrlSupplierCard1.TabIndex = 0;
             // 
-            // frmCustomerInfo
+            // frmSupplierInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(873, 869);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(896, 835);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.ctrlCustomerCard1);
+            this.Controls.Add(this.ctrlSupplierCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmCustomerInfo";
+            this.Name = "frmSupplierInfo";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "معلومات العميل";
-            this.Load += new System.EventHandler(this.frmCustomerInfo_Load);
+            this.Text = "معلومات المورد";
+            this.Load += new System.EventHandler(this.frmSupplierInfo_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Controls.ctrlCustomerCard ctrlCustomerCard1;
+        private Controls.ctrlSupplierCard ctrlSupplierCard1;
         private System.Windows.Forms.Label lblHeader;
         private Guna.UI2.WinForms.Guna2Button btnClose;
     }

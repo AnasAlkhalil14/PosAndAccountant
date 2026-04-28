@@ -9,22 +9,24 @@ using System.Threading.Tasks;
 
 namespace PosAndAccountant_DataAccess
 {
-    public class clsCustomerData
+    public class clsSupplierData
     {
 
-        public static clsCustomerDTO FindCustomerByID(int CustomerID)
+
+
+        public static clsSupplierDTO FindSupplierByID(int SupplierID)
         {
 
-            clsCustomerDTO CustomerDTO = null;
+            clsSupplierDTO SupplierDTO = null;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
-                using (SqlCommand command = new SqlCommand("[Customers].[SP_GetCustomerByID]", connection))
+                using (SqlCommand command = new SqlCommand("[Suppliers].[SP_GetSupplierByID]", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    command.Parameters.AddWithValue("@SupplierID", SupplierID);
 
                     try
                     {
@@ -33,18 +35,15 @@ namespace PosAndAccountant_DataAccess
                         {
                             if (reader.Read())
                             {
-                                CustomerDTO = new clsCustomerDTO();
+                                SupplierDTO = new clsSupplierDTO();
 
-                                CustomerDTO.CustomerID = CustomerID;
-                                CustomerDTO.PersonID = Convert.ToInt32(reader["PersonID"]);
-                                CustomerDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
-                                CustomerDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
-                                CustomerDTO.TotalRemainingDebt = Convert.ToDouble(reader["TotalRemainingDebt"]);
-                                CustomerDTO.CreditLimit = Convert.ToDouble(reader["CreditLimit"]);
-                                CustomerDTO.CustomerType =reader["CustomerType"]!=DBNull.Value? Convert.ToInt32(reader["CustomerType"]):1;
-                                CustomerDTO.DiscountPercentage = Convert.ToDouble(reader["DiscountPercentage"]);
-                                CustomerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
-                                CustomerDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
+                                SupplierDTO.SupplierID = SupplierID;
+                                SupplierDTO.PersonID = Convert.ToInt32(reader["PersonID"]);
+                                SupplierDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
+                                SupplierDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
+                                SupplierDTO.TotalRemainingDebt = Convert.ToDouble(reader["TotalRemainingDebt"]);
+                                SupplierDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
+                                SupplierDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
 
                             }
 
@@ -72,18 +71,18 @@ namespace PosAndAccountant_DataAccess
 
 
 
-            return CustomerDTO;
+            return SupplierDTO;
         }
 
 
-        public static clsCustomerDTO FindCustomerByPersonID(int PersonID)
+        public static clsSupplierDTO FindSupplierByPersonID(int PersonID)
         {
-            clsCustomerDTO CustomerDTO = null;
+            clsSupplierDTO SupplierDTO = null;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
-                using (SqlCommand command = new SqlCommand("[Customers].[SP_GetCustomerByPersonID]", connection))
+                using (SqlCommand command = new SqlCommand("[Suppliers].[SP_GetSupplierByPersonID]", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -96,18 +95,14 @@ namespace PosAndAccountant_DataAccess
                         {
                             if (reader.Read())
                             {
-                                CustomerDTO = new clsCustomerDTO();
-
-                                CustomerDTO.CustomerID = Convert.ToInt32(reader["CustomerID"]);
-                                CustomerDTO.PersonID = PersonID;
-                                CustomerDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
-                                CustomerDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
-                                CustomerDTO.TotalRemainingDebt = Convert.ToDouble(reader["TotalRemainingDebt"]);
-                                CustomerDTO.CreditLimit = Convert.ToDouble(reader["CreditLimit"]);
-                                CustomerDTO.CustomerType = reader["CustomerType"] != DBNull.Value ? Convert.ToInt32(reader["CustomerType"]) : 1;
-                                CustomerDTO.DiscountPercentage = Convert.ToDouble(reader["DiscountPercentage"]);
-                                CustomerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
-                                CustomerDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
+                               SupplierDTO = new clsSupplierDTO();
+                                SupplierDTO.SupplierID = Convert.ToInt32(reader["SupplierID"]);
+                               SupplierDTO.PersonID = PersonID;
+                               SupplierDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
+                               SupplierDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
+                                SupplierDTO.TotalRemainingDebt = Convert.ToDouble(reader["TotalRemainingDebt"]);
+                               SupplierDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
+                                SupplierDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
 
                             }
 
@@ -135,11 +130,11 @@ namespace PosAndAccountant_DataAccess
 
 
 
-            return CustomerDTO;
+            return SupplierDTO;
         }
 
 
-        public static DataTable GetAllCustomers()
+        public static DataTable GetAllSuppliers()
         {
 
             DataTable dataTable = new DataTable();
@@ -147,7 +142,7 @@ namespace PosAndAccountant_DataAccess
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
-                using (SqlCommand command = new SqlCommand("[Customers].[SP_GetAllCustomers]", connection))
+                using (SqlCommand command = new SqlCommand("[Suppliers].[SP_GetAllSuppliers]", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -195,7 +190,7 @@ namespace PosAndAccountant_DataAccess
 
         }
 
-        public static bool DeleteCustomerByID(int CustomerID)
+        public static bool DeleteSupplierByID(int SupplierID)
         {
             bool IsDeleted = false;
             try
@@ -203,11 +198,11 @@ namespace PosAndAccountant_DataAccess
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    using (SqlCommand command = new SqlCommand("[Customers].[SP_DeleteCustomerByID]", connection))
+                    using (SqlCommand command = new SqlCommand("[Suppliers].[SP_DeleteSupplierByID]", connection))
                     {
 
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@CustomerID", CustomerID);
+                        command.Parameters.AddWithValue("@SupplierID", SupplierID);
                         connection.Open();
                         IsDeleted = command.ExecuteNonQuery() != 0;
 
@@ -232,7 +227,7 @@ namespace PosAndAccountant_DataAccess
         }
 
 
-        public static bool UpdateCustomerByID(clsCustomerDTO CustomerDTO)
+        public static bool UpdateSupplierByID(clsSupplierDTO SupplierDTO)
         {
             int RowAffected = 0;
 
@@ -244,27 +239,23 @@ namespace PosAndAccountant_DataAccess
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    using (SqlCommand command = new SqlCommand("[Customers].[SP_UpdateCustomerByID]", connection))
+                    using (SqlCommand command = new SqlCommand("[Suppliers].[SP_UpdateSupplierByID]", connection))
                     {
-                        command.Parameters.AddWithValue("@CustomerID", CustomerDTO.CustomerID);
+                        command.Parameters.AddWithValue("@SupplierID", SupplierDTO.SupplierID);
 
-                        command.Parameters.AddWithValue("@PersonID", CustomerDTO.PersonID);
-                        command.Parameters.AddWithValue("@IsActive", CustomerDTO.IsActive);
-                        command.Parameters.AddWithValue("@TotalRemainingDebt", CustomerDTO.TotalRemainingDebt);
+                        command.Parameters.AddWithValue("@PersonID", SupplierDTO.PersonID);
+                        command.Parameters.AddWithValue("@IsActive", SupplierDTO.IsActive);
+                        command.Parameters.AddWithValue("@TotalRemainingDebt", SupplierDTO.TotalRemainingDebt);
 
-                        if (!string.IsNullOrEmpty(CustomerDTO.Notes))
+                        if (!string.IsNullOrEmpty(SupplierDTO.Notes))
                         {
-                            command.Parameters.AddWithValue("@Notes", CustomerDTO.Notes);
+                            command.Parameters.AddWithValue("@Notes", SupplierDTO.Notes);
                         }
                         else
                         {
                             command.Parameters.AddWithValue("@Notes", DBNull.Value);
 
                         }
-
-                        command.Parameters.AddWithValue("@CreditLimit", CustomerDTO.CreditLimit);
-                        command.Parameters.AddWithValue("@CustomerType", CustomerDTO.CustomerType);
-                        command.Parameters.AddWithValue("@DiscountPercentage", CustomerDTO.DiscountPercentage);
 
 
 
@@ -289,44 +280,41 @@ namespace PosAndAccountant_DataAccess
             return RowAffected > 0;
         }
 
-        public static int AddNewCustomer(clsCustomerDTO CustomerDTO)
+        public static int AddNewSupplier(clsSupplierDTO SupplierDTO)
         {
-            int CustomerID = -1;
+            int SupplierID = -1;
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                using (SqlCommand command = new SqlCommand("[Customers].[SP_AddNewCustomer]", connection))
+                using (SqlCommand command = new SqlCommand("[Suppliers].[SP_AddNewSupplier]", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@PersonID", CustomerDTO.PersonID);
-                    command.Parameters.AddWithValue("@IsActive", CustomerDTO.IsActive);
+                    command.Parameters.AddWithValue("@PersonID", SupplierDTO.PersonID);
+                    command.Parameters.AddWithValue("@IsActive", SupplierDTO.IsActive);
 
-                    if (!string.IsNullOrEmpty(CustomerDTO.Notes))
+                    if (!string.IsNullOrEmpty(SupplierDTO.Notes))
                     {
-                        command.Parameters.AddWithValue("@Notes", CustomerDTO.IsActive);
+                        command.Parameters.AddWithValue("@Notes", SupplierDTO.IsActive);
                     }
                     else
                     {
                         command.Parameters.AddWithValue("@Notes", DBNull.Value);
 
                     }
-                    command.Parameters.AddWithValue("@TotalRemainingDebt", CustomerDTO.TotalRemainingDebt);
-                    command.Parameters.AddWithValue("@CreditLimit", CustomerDTO.CreditLimit);
-                    command.Parameters.AddWithValue("@CustomerType", CustomerDTO.CustomerType);
-                    command.Parameters.AddWithValue("@DiscountPercentage", CustomerDTO.DiscountPercentage);
-
+                    command.Parameters.AddWithValue("@TotalRemainingDebt", SupplierDTO.TotalRemainingDebt);
+                  
 
 
                     connection.Open();
 
                     object result = command.ExecuteScalar();
-                    if (result != null && int.TryParse(result.ToString(), out CustomerID))
+                    if (result != null && int.TryParse(result.ToString(), out SupplierID))
                     {
 
                     }
                     else
                     {
-                        CustomerID = -1;
+                        SupplierID = -1;
                     }
 
 
@@ -336,11 +324,11 @@ namespace PosAndAccountant_DataAccess
 
             }
 
-            return CustomerID;
+            return SupplierID;
 
         }
 
-        public static bool IsPersonCustomer(int PersonID)
+        public static bool IsPersonSupplier(int PersonID)
         {
 
             bool IsFound = false;
@@ -349,7 +337,7 @@ namespace PosAndAccountant_DataAccess
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    using (SqlCommand command = new SqlCommand("[Customers].[SP_IsPersonCustomer]", connection))
+                    using (SqlCommand command = new SqlCommand("[Suppliers].[SP_IsPersonSupplier]", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 

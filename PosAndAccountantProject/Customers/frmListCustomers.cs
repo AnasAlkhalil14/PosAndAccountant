@@ -191,5 +191,11 @@ namespace PosAndAccountantProject.Customers
 
 
         }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feture will be implemented soon");
+
+        }
     }
 }

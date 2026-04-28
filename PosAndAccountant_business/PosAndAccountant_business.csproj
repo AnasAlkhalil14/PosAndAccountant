@@ -45,6 +45,7 @@
     <Compile Include="clsCryptography.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsSupplier.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
