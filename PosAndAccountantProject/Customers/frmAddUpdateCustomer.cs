@@ -26,6 +26,7 @@ namespace PosAndAccountantProject.Customers
         }
        private int _CustomerID=-1;
         private clsCustomer _Customer;
+        public bool WasSaved = false;
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -91,6 +92,7 @@ namespace PosAndAccountantProject.Customers
 
             if(_Customer.Save())
             {
+                WasSaved = true;
                 lblTitle.Text = "تعديل بيانات العميل";
                 lblCustomerID.Text = _Customer.CustomerID.ToString();
                 MessageBox.Show("تم جفظ بيانات العميل بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);

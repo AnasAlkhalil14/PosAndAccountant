@@ -61,5 +61,135 @@ namespace PosAndAccountantProject.Customers
             }
 
         }
+        private void RefreshForm()
+        {
+
+            _AllCustomers=clsCustomer.GetAllCustombersList();
+            dgvCustomers.DataSource= _AllCustomers;
+            lblRecordsCount.Text=dgvCustomers.Rows.Count.ToString();
+
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateCustomer frm=new frmAddUpdateCustomer();
+            frm.ShowDialog();
+            if(frm.WasSaved)
+            {
+                RefreshForm();
+
+            }
+
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomerInfo frm = new frmCustomerInfo(Convert.ToInt32(dgvCustomers.CurrentRow.Cells[0].Value));
+            frm.ShowDialog();
+            if(frm.WasPersonUpdated)
+            {
+                RefreshForm();
+            }
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateCustomer frm = new frmAddUpdateCustomer();
+            frm.ShowDialog();
+            if (frm.WasSaved)
+            {
+                RefreshForm();
+
+            }
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateCustomer frm = new frmAddUpdateCustomer(Convert.ToInt32(dgvCustomers.CurrentRow.Cells[0].Value));
+            frm.ShowDialog();
+            if (frm.WasSaved)
+            {
+                RefreshForm();
+
+            }
+
+        }
+
+        private void انشاءفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feture will be implemented soon");
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CustomerID = Convert.ToInt32(dgvCustomers.CurrentRow.Cells[0].Value);
+            if (MessageBox.Show($"هل متاكد من حذف العميل ذو المعرف:{CustomerID}", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (clsCustomer.DeleteCustomerByID(CustomerID))
+                {
+                    RefreshForm();
+                    MessageBox.Show($"العميل ذو المعرف={CustomerID} حذف بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show($"فشل في حذف العميل ذو المعرف={CustomerID},يوجد بيانات مربوطة به", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
+
+            }
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Visible = false;
+
+            
+            if(cbFilterBy.SelectedIndex == 3)
+            {
+                _AllCustomers.DefaultView.RowFilter = string.Format("[{0}]>0", "TotalRemainingDebt");
+
+            }
+            else if(cbFilterBy.SelectedIndex==0)
+            {
+                _AllCustomers.DefaultView.RowFilter = "";
+
+            }
+            else
+            {
+                txtFilterValue.Visible = true;
+            }
+
+            lblRecordsCount.Text=dgvCustomers.Rows.Count.ToString();
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
+            {
+                _AllCustomers.DefaultView.RowFilter = "";
+                lblRecordsCount.Text=dgvCustomers.Rows.Count.ToString() ;
+                return;
+            }
+
+
+
+            if (cbFilterBy.SelectedIndex==1)
+            {
+                _AllCustomers.DefaultView.RowFilter = string.Format("[{0}]={1}", "CustomerID",Convert.ToInt32(txtFilterValue.Text));
+
+            }
+            else
+            {
+                _AllCustomers.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "FullName",txtFilterValue.Text.Trim());
+
+            }
+            lblRecordsCount.Text = dgvCustomers.Rows.Count.ToString();
+
+
+        }
     }
 }
