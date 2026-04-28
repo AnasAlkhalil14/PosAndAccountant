@@ -22,6 +22,9 @@ namespace PosAndAccountantProject.Customers.Controls
         }
 
 
+        public bool WasPersonUpdated { get { return ctrlPersonCard1.WasUpdated; } }
+
+
         public int CustomerID { get { return _CustomerID; } }
         public clsCustomer Customer { get { return _Customer; } }
 
@@ -44,7 +47,7 @@ namespace PosAndAccountantProject.Customers.Controls
                 lblCustomerID.Text=Customer.CustomerID.ToString();
                 lblCustomerType.Text=Customer.CustomerTypeString();
                 lblDiscountPercentage.Text=Customer.DiscountPercentage.ToString();
-                lblIsActive.Text = Customer.IsActive ? "Yes" : "No";
+                lblIsActive.Text = Customer.IsActive ? "نعم" : "لا";
                 lblModifiedDate.Text=Customer.ModifiedDate.ToShortDateString();
                 lblTotalRemainingDebt.Text=Customer.TotalRemainingDebt.ToString();
                 lblCreditLimit.Text=Customer.CreditLimit.ToString();

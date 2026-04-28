@@ -24,6 +24,7 @@ namespace PosAndAccountantProject.Customers
             this.Close();
         }
 
+        public bool WasPersonUpdated { get { return ctrlCustomerCard1.WasPersonUpdated;  }  }
         private void frmCustomerInfo_Load(object sender, EventArgs e)
         {
             if(!ctrlCustomerCard1.LoadDataToControl(_CustomerID))
@@ -32,5 +33,7 @@ namespace PosAndAccountantProject.Customers
             }
 
         }
+
+     
     }
 }
