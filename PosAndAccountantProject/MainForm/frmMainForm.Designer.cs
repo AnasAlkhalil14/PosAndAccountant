@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
-            this.msMainMenue = new System.Windows.Forms.MenuStrip();
             this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drivingLicensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oNewDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,26 +59,10 @@
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMainMenue = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.msMainMenue.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // msMainMenue
-            // 
-            this.msMainMenue.BackColor = System.Drawing.Color.White;
-            this.msMainMenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msMainMenue.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.msMainMenue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.servicesToolStripMenuItem,
-            this.peopleToolStripMenuItem,
-            this.driversToolStripMenuItem,
-            this.employeesToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.msMainMenue.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.msMainMenue.Location = new System.Drawing.Point(0, 0);
-            this.msMainMenue.Name = "msMainMenue";
-            this.msMainMenue.Size = new System.Drawing.Size(1467, 72);
-            this.msMainMenue.TabIndex = 2;
-            this.msMainMenue.Text = "menuStrip1";
             // 
             // servicesToolStripMenuItem
             // 
@@ -313,6 +296,31 @@
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
             this.signOutToolStripMenuItem.Text = "Sign &Out";
             // 
+            // msMainMenue
+            // 
+            this.msMainMenue.BackColor = System.Drawing.Color.White;
+            this.msMainMenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msMainMenue.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMainMenue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.servicesToolStripMenuItem,
+            this.peopleToolStripMenuItem,
+            this.driversToolStripMenuItem,
+            this.employeesToolStripMenuItem,
+            this.closeToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.msMainMenue.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.msMainMenue.Location = new System.Drawing.Point(0, 0);
+            this.msMainMenue.Name = "msMainMenue";
+            this.msMainMenue.Size = new System.Drawing.Size(1467, 72);
+            this.msMainMenue.TabIndex = 2;
+            this.msMainMenue.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(32, 32);
+            this.toolStripMenuItem1.Text = " ";
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,7 +338,6 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip msMainMenue;
         private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem drivingLicensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oNewDrivingLicenseToolStripMenuItem;
@@ -361,5 +368,7 @@
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip msMainMenue;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

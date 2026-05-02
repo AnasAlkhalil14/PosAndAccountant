@@ -370,5 +370,9 @@
   <ItemGroup>
     <None Include="Resources\MakeOrder.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Partners\Controls\" />
+    <Folder Include="Products\Controls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
