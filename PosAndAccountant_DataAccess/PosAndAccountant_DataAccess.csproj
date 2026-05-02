@@ -45,6 +45,7 @@
     <Compile Include="clsCustomerData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsPersonData.cs" />
+    <Compile Include="clsProductData.cs" />
     <Compile Include="clsSupplierData.cs" />
     <Compile Include="clsUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
