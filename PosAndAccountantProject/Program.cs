@@ -2,6 +2,7 @@
 using PosAndAccountantProject.Login;
 using PosAndAccountantProject.People;
 using PosAndAccountantProject.Products;
+using PosAndAccountantProject.Products.ProductsCategory;
 using PosAndAccountantProject.Suppliers;
 using PosAndAccountantProject.Users;
 using System;
@@ -22,7 +23,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProductInfo());
+            Application.Run(new frmListCategories());
         }
     }
 }

@@ -108,6 +108,8 @@ namespace PosAndAccountant_DataAccess
             return dt;
         }
 
+       
+
         public static int AddNewProduct(clsProductDTO ProductDTO)
         {
             int NewID = -1;
