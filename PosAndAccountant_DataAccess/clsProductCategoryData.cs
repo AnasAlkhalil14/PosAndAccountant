@@ -120,9 +120,10 @@ namespace PosAndAccountant_DataAccess
                             if (reader.Read())
                             {
                                 CategoryDTO = new clsProductCategoryDTO();
+                                CategoryDTO.CategoryID = CategoryID;
                                 CategoryDTO.CategoryName = reader["CategoryName"].ToString();
                                 CategoryDTO.Description= reader["Description"]!=DBNull.Value?reader["Description"].ToString():"";
-                                CategoryDTO.CreateDate = Convert.ToDateTime(reader["CreateDate"]);
+                                CategoryDTO.CreateDate = Convert.ToDateTime(reader["CreatedDate"]);
                             }
                         }
                     }
@@ -131,7 +132,57 @@ namespace PosAndAccountant_DataAccess
             }
             return CategoryDTO;
         }
+        public static bool IsCategoryExistByName(string CategoryName)
+        {
 
+            bool IsFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("[Products].[SP_IsProductCategoryExistByName]", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            IsFound = Convert.ToBoolean(result);
+                        }
+                        else
+                        {
+                            IsFound = false;
+                        }
+
+
+                    }
+
+
+
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+                //LogInEventLog;
+                IsFound = false;
+            }
+
+
+            return IsFound;
+
+
+
+
+        }
 
     }
 }

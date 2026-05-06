@@ -30,6 +30,7 @@
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.cmsCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -65,7 +66,7 @@
             this.dgvCategories.RowHeadersVisible = false;
             this.dgvCategories.RowHeadersWidth = 51;
             this.dgvCategories.RowTemplate.Height = 35;
-            this.dgvCategories.Size = new System.Drawing.Size(593, 375);
+            this.dgvCategories.Size = new System.Drawing.Size(679, 375);
             this.dgvCategories.TabIndex = 0;
             this.dgvCategories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCategories.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -106,18 +107,19 @@
             this.cmsCategories.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.cmsCategories.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.cmsCategories.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsCategories.Size = new System.Drawing.Size(211, 80);
+            this.cmsCategories.Size = new System.Drawing.Size(116, 52);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.editToolStripMenuItem.Text = "تعديل";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.deleteToolStripMenuItem.Text = "حذف";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -126,7 +128,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.lblTitle.Location = new System.Drawing.Point(183, 127);
+            this.lblTitle.Location = new System.Drawing.Point(258, 137);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(240, 36);
             this.lblTitle.TabIndex = 1;
@@ -154,7 +156,7 @@
             this.btnAddCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.Location = new System.Drawing.Point(478, 212);
+            this.btnAddCategory.Location = new System.Drawing.Point(563, 214);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(146, 45);
             this.btnAddCategory.TabIndex = 3;
@@ -176,7 +178,7 @@
             // 
             this.guna2PictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.classification;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(212, 17);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(287, 27);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(182, 107);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -194,12 +196,26 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "0";
             // 
+            // btnClose
+            // 
+            this.btnClose.BorderRadius = 10;
+            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(585, 655);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(140, 45);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmListCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(632, 700);
+            this.ClientSize = new System.Drawing.Size(737, 707);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.lblRecordsCount);
@@ -235,5 +251,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnClose;
     }
 }

@@ -12,7 +12,7 @@ namespace PosAndAccountant_business
     public class clsProductCategory
     {
 
-        public enum enMode { eAdd,eUpdate}
+        public enum enMode { eAdd, eUpdate }
         public enMode Mode { get; set; }
         public clsProductCategory()
         {
@@ -20,14 +20,14 @@ namespace PosAndAccountant_business
             CategoryName = "";
             Description = "";
             CreateDate = DateTime.Now;
-            Mode=enMode.eAdd;
+            Mode = enMode.eAdd;
         }
         public clsProductCategory(clsProductCategoryDTO categoryDTO)
         {
-            CategoryID=categoryDTO.CategoryID;
-            CategoryName=categoryDTO.CategoryName;
-            Description=categoryDTO.Description;
-            CreateDate=categoryDTO.CreateDate;
+            CategoryID = categoryDTO.CategoryID;
+            CategoryName = categoryDTO.CategoryName;
+            Description = categoryDTO.Description;
+            CreateDate = categoryDTO.CreateDate;
             Mode = enMode.eUpdate;
         }
 
@@ -52,7 +52,7 @@ namespace PosAndAccountant_business
             // Map business properties to DTO
             categoryDTO.CategoryName = this.CategoryName;
             categoryDTO.Description = this.Description;
-            
+
 
             this.CategoryID = clsProductCategoryData.AddNewProductCategory(categoryDTO);
             return (this.CategoryID != -1);
@@ -66,7 +66,7 @@ namespace PosAndAccountant_business
             // Map business properties to DTO
             categoryDTO.CategoryName = this.CategoryName;
             categoryDTO.Description = this.Description;
-            categoryDTO.CategoryID=this.CategoryID;
+            categoryDTO.CategoryID = this.CategoryID;
 
 
             return clsProductCategoryData.UpdateProducCategorytByID(categoryDTO);
@@ -100,7 +100,10 @@ namespace PosAndAccountant_business
             return null;
         }
 
-
+        public static bool IsCategoryExistByName(string CategoryName)
+        {
+            return clsProductCategoryData.IsCategoryExistByName(CategoryName);
+        }
 
 
     }

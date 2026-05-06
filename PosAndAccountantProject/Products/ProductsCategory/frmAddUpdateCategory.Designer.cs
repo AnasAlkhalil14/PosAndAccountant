@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbCategoryInfo = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -27,7 +28,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbCategoryInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -101,6 +104,7 @@
             this.txtCategoryName.Size = new System.Drawing.Size(440, 40);
             this.txtCategoryName.TabIndex = 0;
             this.txtCategoryName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCategoryName.Validating += new System.ComponentModel.CancelEventHandler(this.txtCategoryName_Validating);
             // 
             // label2
             // 
@@ -145,6 +149,7 @@
             this.btnSave.Size = new System.Drawing.Size(140, 45);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "حفظ";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -156,7 +161,12 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(140, 45);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "إلغاء";
+            this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddUpdateCategory
             // 
@@ -175,8 +185,10 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "إضافة / تعديل تصنيف";
+            this.Load += new System.EventHandler(this.frmAddUpdateCategory_Load);
             this.gbCategoryInfo.ResumeLayout(false);
             this.gbCategoryInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +205,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

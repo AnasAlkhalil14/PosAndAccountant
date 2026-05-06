@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using System.Windows.Forms;
 
 namespace PosAndAccountantProject.Products.ProductsCategory
@@ -18,12 +19,17 @@ namespace PosAndAccountantProject.Products.ProductsCategory
             InitializeComponent();
         }
 
-        DataTable _AllCategories = clsProduct.GetAllProductsCategory();
+        DataTable _AllCategories = clsProductCategory.GetAllProductsCategory();
 
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-
+            frmAddUpdateCategory frm=new frmAddUpdateCategory();
+            frm.ShowDialog();
+            if(frm.WasSaved)
+            {
+                _RefreshForm();
+            }
         }
 
         private void frmListCategories_Load(object sender, EventArgs e)
@@ -41,24 +47,49 @@ lblRecordsCount.Text=dgvCategories.Rows.Count.ToString();
             }
             }
 
+        private void _RefreshForm()
+        {
+            _AllCategories=clsProductCategory.GetAllProductsCategory();
+            dgvCategories.DataSource= _AllCategories;
+            lblRecordsCount.Text = dgvCategories.Rows.Count.ToString();
+        }
+
+
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int CategoryID = Convert.ToInt32(dgvCategories.CurrentRow.Cells[0].Value);
             if (MessageBox.Show($"هل متاكد من حذف الصنف ذو المعرف:{CategoryID}", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                if (clsProduct(CategoryID))
+                if (clsProductCategory.Delete(CategoryID))
                 {
                     _RefreshForm();
 
-                    MessageBox.Show($"المستخدم ذو المعرف={CategoryID} حذف بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"الصنف ذو المعرف={CategoryID} حذف بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show($"فشل في حذف المستخدم ذو المعرف={CategoryID},يوجد بيانات مربوطة به", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"فشل في حذف الصنف ذو المعرف={CategoryID},يوجد بيانات مربوطة به", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
 
             }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateCategory frm=new frmAddUpdateCategory(Convert.ToInt32(dgvCategories.CurrentRow.Cells[0].Value));
+
+            frm.ShowDialog();
+            if (frm.WasSaved)
+            {
+                _RefreshForm();
+            }
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
