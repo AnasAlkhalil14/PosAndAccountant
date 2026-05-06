@@ -29,6 +29,7 @@ namespace PosAndAccountant_business
         public DateTime CreateDate { get; set; }
         public DateTime ModifyDate { get; set; }
         public bool IsActive { get; set; }
+        public clsProductCategory ProductCategory { get; set; }
 
         // Default Constructor
         public clsProduct()
@@ -56,6 +57,7 @@ namespace PosAndAccountant_business
         {
             this.ProductID = ProductDTO.ProductID;
             this.ProductCategoryID = ProductDTO.ProductCategoryID;
+            ProductCategory = clsProductCategory.FindByID(this.ProductCategoryID);
             this.CostPrice = ProductDTO.CostPrice;
             this.SellingPrice = ProductDTO.SellingPrice;
             this.UnitOfSale = ProductDTO.UnitOfSale;
@@ -138,7 +140,7 @@ namespace PosAndAccountant_business
         {
             return clsProductData.GetAllProducts();
         }
-
+        
         public static DataTable GetLowStockProducts()
         {
             return clsProductData.GetLowStockProducts();
