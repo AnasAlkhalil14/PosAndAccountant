@@ -34,6 +34,7 @@ namespace PosAndAccountantProject.Products.ProductsCategory
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+
             if(!this.ValidateChildren())
             {
                 MessageBox.Show("خطأ في البيانات ضع المؤشر على العلامة الحمراء", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
