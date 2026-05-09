@@ -35,14 +35,20 @@ namespace PosAndAccountantProject.Products.ProductsCategory
         private void frmListCategories_Load(object sender, EventArgs e)
         {
             dgvCategories.DataSource = _AllCategories;
-lblRecordsCount.Text=dgvCategories.Rows.Count.ToString();
+            lblRecordsCount.Text=dgvCategories.Rows.Count.ToString();
             if (dgvCategories.Rows.Count > 0)
             {
                 dgvCategories.Columns[0].HeaderText = "معرف الصنف";
+                dgvCategories.Columns[0].Width = 80;
+
                 dgvCategories.Columns[1].HeaderText = "اسم الصنف";
-                dgvCategories.Columns[2].HeaderText = "الصنف";
+                dgvCategories.Columns[1].Width = 100;
+
+                dgvCategories.Columns[2].HeaderText = "التفاصيل";
+                dgvCategories.Columns[2].Width = 200;
+
                 dgvCategories.Columns[3].HeaderText = "تاريخ الانشاء";
-                dgvCategories.Columns[3].DefaultCellStyle.Format= "yyyy-MM  -dd";
+                dgvCategories.Columns[3].DefaultCellStyle.Format= "yyyy-MM -dd";
 
             }
             }
@@ -90,6 +96,22 @@ lblRecordsCount.Text=dgvCategories.Rows.Count.ToString();
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtSearch.Text.Trim()))
+            {
+                _AllCategories.DefaultView.RowFilter = "";
+                lblRecordsCount.Text=dgvCategories.Rows.Count.ToString();
+                return;
+            }
+
+            _AllCategories.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "CategoryName", txtSearch.Text.Trim());
+
+            lblRecordsCount.Text = dgvCategories.Rows.Count.ToString();
+
+
         }
     }
 }
