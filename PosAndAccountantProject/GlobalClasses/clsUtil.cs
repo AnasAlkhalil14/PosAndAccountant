@@ -51,14 +51,14 @@ namespace PosAndAccountantProject.GlobalClasses
 
         }
 
-        public static bool CopyImageToProjectImagesFolder(ref string sourceFile)
+        public static bool CopyImageToProjectImagesFolder(ref string sourceFile,string ProjectImagesFolder)
         {
-            if (!CreateFolderIfNotExist(ConfigurationManager.AppSettings["DestinationImagesFolder"]))
+            if (!CreateFolderIfNotExist(ProjectImagesFolder))
             {
                 return false;
 
             }
-            string Destination = ConfigurationManager.AppSettings["DestinationImagesFolder"] +ReplaceFileNameWithGuied(sourceFile);
+            string Destination = ProjectImagesFolder + ReplaceFileNameWithGuied(sourceFile);
             try
             {
                 File.Copy(sourceFile, Destination);

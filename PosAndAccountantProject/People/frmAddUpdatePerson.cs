@@ -4,6 +4,7 @@ using PosAndAccountantProject.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -97,7 +98,7 @@ namespace PosAndAccountantProject.People
                 if (pbPersonImage.ImageLocation != null)
                 {
                     string SourcePath = pbPersonImage.ImageLocation;
-                    if (clsUtil.CopyImageToProjectImagesFolder(ref SourcePath))
+                    if (clsUtil.CopyImageToProjectImagesFolder(ref SourcePath, ConfigurationManager.AppSettings["DestinationPeopleImagesFolder"]))
                     {
                         _Person.ImagePath = SourcePath;
                         return true;
