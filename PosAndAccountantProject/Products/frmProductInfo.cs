@@ -12,9 +12,22 @@ namespace PosAndAccountantProject.Products
 {
     public partial class frmProductInfo : Form
     {
-        public frmProductInfo()
+        
+        public frmProductInfo(int ProductID)
         {
             InitializeComponent();
+            _ProductID = ProductID;
+        }
+
+        private int _ProductID;
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmProductInfo_Load(object sender, EventArgs e)
+        {
+            ctrlProductCard1.LoadProductInfoToControl(_ProductID);
         }
     }
 }

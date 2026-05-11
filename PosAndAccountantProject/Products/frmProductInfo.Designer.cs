@@ -32,11 +32,13 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(612, 545);
+            this.btnClose.Location = new System.Drawing.Point(413, 570);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(150, 45);
+            this.btnClose.Size = new System.Drawing.Size(112, 37);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "إغلاق النافذة";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrintBarcode
             // 
@@ -47,43 +49,46 @@
             this.btnPrintBarcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPrintBarcode.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrintBarcode.ForeColor = System.Drawing.Color.White;
-            this.btnPrintBarcode.Location = new System.Drawing.Point(62, 545);
+            this.btnPrintBarcode.Location = new System.Drawing.Point(103, 570);
+            this.btnPrintBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintBarcode.Name = "btnPrintBarcode";
-            this.btnPrintBarcode.Size = new System.Drawing.Size(180, 45);
+            this.btnPrintBarcode.Size = new System.Drawing.Size(135, 37);
             this.btnPrintBarcode.TabIndex = 1;
             this.btnPrintBarcode.Text = "طباعة باركود المنتج";
             // 
             // ctrlProductCard1
             // 
-            this.ctrlProductCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlProductCard1.Location = new System.Drawing.Point(62, 60);
+            this.ctrlProductCard1.Location = new System.Drawing.Point(54, 22);
+            this.ctrlProductCard1.Margin = new System.Windows.Forms.Padding(2);
             this.ctrlProductCard1.Name = "ctrlProductCard1";
-            this.ctrlProductCard1.Size = new System.Drawing.Size(700, 475);
-            this.ctrlProductCard1.TabIndex = 0;
+            this.ctrlProductCard1.Size = new System.Drawing.Size(525, 529);
+            this.ctrlProductCard1.TabIndex = 3;
             // 
             // frmProductInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(828, 620);
+            this.ClientSize = new System.Drawing.Size(621, 630);
+            this.Controls.Add(this.ctrlProductCard1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPrintBarcode);
-            this.Controls.Add(this.ctrlProductCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "frmProductInfo";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "معلومات المنتج";
+            this.Load += new System.EventHandler(this.frmProductInfo_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Controls.ctrlProductCard ctrlProductCard1;
         private Guna.UI2.WinForms.Guna2Button btnPrintBarcode;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private Controls.ctrlProductCard ctrlProductCard1;
     }
 }
