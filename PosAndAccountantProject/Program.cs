@@ -23,7 +23,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateProduct(1) );
+            Application.Run(new frmListProducts() );
         }
     }
 }

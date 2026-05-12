@@ -124,7 +124,7 @@ namespace PosAndAccountant_DataAccess
                     command.Parameters.AddWithValue("@CostPrice", ProductDTO.CostPrice);
                     command.Parameters.AddWithValue("@SellingPrice", ProductDTO.SellingPrice);
                     command.Parameters.AddWithValue("@UnitOfSale", ProductDTO.UnitOfSale);
-                    command.Parameters.AddWithValue("@Name", ProductDTO.ProductName);
+                    command.Parameters.AddWithValue("@ProductName", ProductDTO.ProductName);
                     command.Parameters.AddWithValue("@Description", (object)ProductDTO.Description ?? DBNull.Value);
                     command.Parameters.AddWithValue("@ImagePath", (object)ProductDTO.ImagePath ?? DBNull.Value);
                     command.Parameters.AddWithValue("@BarCode", (object)ProductDTO.BarCode ?? DBNull.Value);
