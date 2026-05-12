@@ -1,12 +1,16 @@
 ﻿using Guna.UI2.WinForms;
 using PosAndAccountant_business;
+using PosAndAccountantProject.GlobalClasses;
 using PosAndAccountantProject.Products.ProductsCategory;
 using PosAndAccountantProject.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,8 +43,103 @@ namespace PosAndAccountantProject.Products
 
         }
 
+        private bool _HandleProductImage()
+        {
+            if(_Product.ImagePath!=pbProductImage.ImageLocation)
+            {
+                if(!string.IsNullOrEmpty(_Product.ImagePath))
+                {
+                    try
+                    {
+                        if(File.Exists(_Product.ImagePath))
+                        {
+                            File.Delete(_Product.ImagePath);
+                           
+
+                        }
+
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("خطأ عند مسحصورة المنتج القديمة " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+
+                }
+
+                if (!string.IsNullOrEmpty(pbProductImage.ImageLocation))
+                {
+                    string Source=pbProductImage.ImageLocation;
+                  if(  clsUtil.CopyImageToProjectImagesFolder(ref Source, ConfigurationManager.AppSettings["DestinationProductsImagesFolder"]))
+                    {
+                        _Product.ImagePath = Source;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("خطأ غي نسخ الصورة", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+          
+               
+                }
+
+
+
+
+            }    
+            else
+            {
+                return true;
+
+            }
+
+            return true;
+
+
+        }
+
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
+            if(!this.ValidateChildren())
+            {
+                MessageBox.Show("تأكد من تعبئة الحقول ب البيانات الصحيحة", "خطأ في البيانات", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(!_HandleProductImage())
+            {
+                return;
+            }
+
+            _Product.UnitOfSale=txtUnitOfSale.Text.Trim();
+            _Product.Description=txtDescription.Text.Trim();
+            _Product.CostPrice=Convert.ToDecimal(txtPurchasePrice.Text.Trim());
+            _Product.SellingPrice=Convert.ToDecimal(txtSalePrice.Text.Trim())   ;
+            _Product.MinimumQuantityForWarning=Convert.ToInt32(txtMinimamQuantity.Text.Trim());
+            _Product.QuantityInStock=Convert.ToInt32(txtQuantity.Text.Trim());
+            _Product.BarCode=txtBarcode.Text.Trim();
+            _Product.ProductName=txtProductName.Text.Trim();
+            _Product.ProductCategoryID = Convert.ToInt32(cbCategory.SelectedValue);
+            _Product.IsActive = tsStatus.Checked;
+            if(_Product.Save())
+            {
+                _ProductID = _Product.ProductID;
+                lblTitle.Text = "تعديل بيانات منتج";
+                lblProductID.Text = _Product.ProductID.ToString();
+                MessageBox.Show("تم تخزين البيانات بنجاح", "نتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //invoke event;
+                WasSaved = true;
+            }
+            else
+            {
+                MessageBox.Show("خطأو لم يتم تخزين البيانات", "نتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+         
+
 
         }
 

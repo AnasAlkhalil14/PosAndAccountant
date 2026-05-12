@@ -297,7 +297,6 @@
             this.txtBarcode.SelectedText = "";
             this.txtBarcode.Size = new System.Drawing.Size(184, 32);
             this.txtBarcode.TabIndex = 6;
-            this.txtBarcode.Validating += new System.ComponentModel.CancelEventHandler(this.txx_Validating_NotEmpty);
             // 
             // lblCategory
             // 
