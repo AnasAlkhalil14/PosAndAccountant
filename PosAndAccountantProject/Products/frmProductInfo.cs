@@ -19,6 +19,8 @@ namespace PosAndAccountantProject.Products
             _ProductID = ProductID;
         }
 
+        public bool WasUpated { get { return ctrlProductCard1.WasUpdated; }  }
+
         private int _ProductID;
         private void btnClose_Click(object sender, EventArgs e)
         {
