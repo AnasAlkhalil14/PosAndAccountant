@@ -233,9 +233,39 @@ namespace PosAndAccountantProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MaherLogo {
+            get {
+                object obj = ResourceManager.GetObject("MaherLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaherLogo1 {
+            get {
+                object obj = ResourceManager.GetObject("MaherLogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MakeOrder {
             get {
                 object obj = ResourceManager.GetObject("MakeOrder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MakingSale {
+            get {
+                object obj = ResourceManager.GetObject("MakingSale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,16 @@ namespace PosAndAccountantProject.Properties {
         internal static System.Drawing.Bitmap Phone_321 {
             get {
                 object obj = ResourceManager.GetObject("Phone 321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProductList {
+            get {
+                object obj = ResourceManager.GetObject("ProductList", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
