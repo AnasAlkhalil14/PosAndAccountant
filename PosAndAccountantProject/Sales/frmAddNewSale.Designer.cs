@@ -30,12 +30,12 @@ namespace PosAndAccountantProject.Sales
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,9 +48,6 @@ namespace PosAndAccountantProject.Sales
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvProductList = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.cbPayBy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -84,6 +81,11 @@ namespace PosAndAccountantProject.Sales
             this.lblProductName = new System.Windows.Forms.Label();
             this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblTotalAmountWithOutDebtAndDiscout = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.txtTotalAmountWithDiscoount = new System.Windows.Forms.Label();
+            this.lblTotalDebt = new System.Windows.Forms.Label();
+            this.lblTotalAmountWithDebt = new System.Windows.Forms.Label();
             this.lblTotalQuantity = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -102,11 +104,7 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblTotalAmountWithDebt = new System.Windows.Forms.Label();
-            this.lblTotalDebt = new System.Windows.Forms.Label();
-            this.txtTotalAmountWithDiscoount = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.lblTotalAmountWithOutDebtAndDiscout = new System.Windows.Forms.Label();
+            this.btnEditQuantity = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -225,6 +223,7 @@ namespace PosAndAccountantProject.Sales
             this.cbProductCategory.Name = "cbProductCategory";
             this.cbProductCategory.Size = new System.Drawing.Size(140, 36);
             this.cbProductCategory.TabIndex = 5;
+            this.cbProductCategory.SelectedIndexChanged += new System.EventHandler(this.cbProductCategory_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -253,30 +252,26 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.AllowUserToAddRows = false;
             this.dgvProductList.AllowUserToDeleteRows = false;
             this.dgvProductList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProductList.ColumnHeadersHeight = 35;
-            this.dgvProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column9,
-            this.Column10});
             this.dgvProductList.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProductList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvProductList.Location = new System.Drawing.Point(12, 232);
             this.dgvProductList.Name = "dgvProductList";
@@ -309,24 +304,6 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.ThemeStyle.RowsStyle.Height = 30;
             this.dgvProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "اسم الصنف";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "سعر البيع";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "الكمية المتاحة";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
             // 
             // panel3
             // 
@@ -510,16 +487,16 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.AllowUserToAddRows = false;
             this.dgvSaleDetails.AllowUserToDeleteRows = false;
             this.dgvSaleDetails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvSaleDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvSaleDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvSaleDetails.ColumnHeadersHeight = 35;
             this.dgvSaleDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -530,14 +507,14 @@ namespace PosAndAccountantProject.Sales
             this.Column6,
             this.Column7});
             this.dgvSaleDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSaleDetails.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSaleDetails.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvSaleDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvSaleDetails.Location = new System.Drawing.Point(707, 182);
             this.dgvSaleDetails.Name = "dgvSaleDetails";
@@ -625,6 +602,7 @@ namespace PosAndAccountantProject.Sales
             this.pnlPreview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.pnlPreview.BorderRadius = 8;
             this.pnlPreview.BorderThickness = 2;
+            this.pnlPreview.Controls.Add(this.btnEditQuantity);
             this.pnlPreview.Controls.Add(this.label19);
             this.pnlPreview.Controls.Add(this.guna2TextBox1);
             this.pnlPreview.Controls.Add(this.guna2Button1);
@@ -648,7 +626,7 @@ namespace PosAndAccountantProject.Sales
             this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(101, 404);
+            this.label19.Location = new System.Drawing.Point(103, 345);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label19.Size = new System.Drawing.Size(59, 28);
@@ -666,7 +644,7 @@ namespace PosAndAccountantProject.Sales
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(10, 400);
+            this.guna2TextBox1.Location = new System.Drawing.Point(12, 341);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
@@ -696,7 +674,7 @@ namespace PosAndAccountantProject.Sales
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(162, 73);
+            this.label10.Size = new System.Drawing.Size(162, 43);
             this.label10.TabIndex = 7;
             this.label10.Text = "تفاصيل المنتج المختار";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -706,7 +684,7 @@ namespace PosAndAccountantProject.Sales
             this.lblCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic);
             this.lblCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lblCategory.Location = new System.Drawing.Point(10, 368);
+            this.lblCategory.Location = new System.Drawing.Point(12, 309);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(150, 20);
@@ -719,7 +697,7 @@ namespace PosAndAccountantProject.Sales
             this.lblMinQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lblMinQuantity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblMinQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.lblMinQuantity.Location = new System.Drawing.Point(10, 339);
+            this.lblMinQuantity.Location = new System.Drawing.Point(12, 280);
             this.lblMinQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMinQuantity.Name = "lblMinQuantity";
             this.lblMinQuantity.Size = new System.Drawing.Size(150, 20);
@@ -732,7 +710,7 @@ namespace PosAndAccountantProject.Sales
             this.lblQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.lblQuantity.Location = new System.Drawing.Point(9, 315);
+            this.lblQuantity.Location = new System.Drawing.Point(11, 256);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(147, 24);
@@ -745,7 +723,7 @@ namespace PosAndAccountantProject.Sales
             this.lblBarcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lblBarcode.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
-            this.lblBarcode.Location = new System.Drawing.Point(10, 290);
+            this.lblBarcode.Location = new System.Drawing.Point(12, 231);
             this.lblBarcode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBarcode.Name = "lblBarcode";
             this.lblBarcode.Size = new System.Drawing.Size(150, 20);
@@ -757,7 +735,7 @@ namespace PosAndAccountantProject.Sales
             // 
             this.lblSalePrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lblSalePrice.Location = new System.Drawing.Point(9, 261);
+            this.lblSalePrice.Location = new System.Drawing.Point(11, 202);
             this.lblSalePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalePrice.Name = "lblSalePrice";
             this.lblSalePrice.Size = new System.Drawing.Size(150, 24);
@@ -769,7 +747,7 @@ namespace PosAndAccountantProject.Sales
             // 
             this.lblProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lblProductName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblProductName.Location = new System.Drawing.Point(12, 229);
+            this.lblProductName.Location = new System.Drawing.Point(14, 170);
             this.lblProductName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(150, 32);
@@ -782,10 +760,10 @@ namespace PosAndAccountantProject.Sales
             this.pbProductImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
             this.pbProductImage.ImageRotate = 0F;
-            this.pbProductImage.Location = new System.Drawing.Point(17, 83);
+            this.pbProductImage.Location = new System.Drawing.Point(2, 45);
             this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
             this.pbProductImage.Name = "pbProductImage";
-            this.pbProductImage.Size = new System.Drawing.Size(135, 138);
+            this.pbProductImage.Size = new System.Drawing.Size(161, 115);
             this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProductImage.TabIndex = 0;
             this.pbProductImage.TabStop = false;
@@ -815,6 +793,46 @@ namespace PosAndAccountantProject.Sales
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1442, 159);
             this.panel4.TabIndex = 12;
+            // 
+            // lblTotalAmountWithOutDebtAndDiscout
+            // 
+            this.lblTotalAmountWithOutDebtAndDiscout.BackColor = System.Drawing.Color.White;
+            this.lblTotalAmountWithOutDebtAndDiscout.Location = new System.Drawing.Point(43, 25);
+            this.lblTotalAmountWithOutDebtAndDiscout.Name = "lblTotalAmountWithOutDebtAndDiscout";
+            this.lblTotalAmountWithOutDebtAndDiscout.Size = new System.Drawing.Size(124, 30);
+            this.lblTotalAmountWithOutDebtAndDiscout.TabIndex = 38;
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.BackColor = System.Drawing.Color.White;
+            this.lblDiscount.Location = new System.Drawing.Point(43, 66);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(124, 30);
+            this.lblDiscount.TabIndex = 37;
+            // 
+            // txtTotalAmountWithDiscoount
+            // 
+            this.txtTotalAmountWithDiscoount.BackColor = System.Drawing.Color.White;
+            this.txtTotalAmountWithDiscoount.Location = new System.Drawing.Point(39, 104);
+            this.txtTotalAmountWithDiscoount.Name = "txtTotalAmountWithDiscoount";
+            this.txtTotalAmountWithDiscoount.Size = new System.Drawing.Size(124, 30);
+            this.txtTotalAmountWithDiscoount.TabIndex = 36;
+            // 
+            // lblTotalDebt
+            // 
+            this.lblTotalDebt.BackColor = System.Drawing.Color.White;
+            this.lblTotalDebt.Location = new System.Drawing.Point(435, 22);
+            this.lblTotalDebt.Name = "lblTotalDebt";
+            this.lblTotalDebt.Size = new System.Drawing.Size(124, 30);
+            this.lblTotalDebt.TabIndex = 34;
+            // 
+            // lblTotalAmountWithDebt
+            // 
+            this.lblTotalAmountWithDebt.BackColor = System.Drawing.Color.White;
+            this.lblTotalAmountWithDebt.Location = new System.Drawing.Point(435, 67);
+            this.lblTotalAmountWithDebt.Name = "lblTotalAmountWithDebt";
+            this.lblTotalAmountWithDebt.Size = new System.Drawing.Size(124, 30);
+            this.lblTotalAmountWithDebt.TabIndex = 32;
             // 
             // lblTotalQuantity
             // 
@@ -971,7 +989,7 @@ namespace PosAndAccountantProject.Sales
             // btnSave
             // 
             this.btnSave.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSave.BorderRadius = 5;
+            this.btnSave.BorderRadius = 10;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -989,7 +1007,7 @@ namespace PosAndAccountantProject.Sales
             // btnPrint
             // 
             this.btnPrint.BorderColor = System.Drawing.Color.Transparent;
-            this.btnPrint.BorderRadius = 5;
+            this.btnPrint.BorderRadius = 10;
             this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1007,7 +1025,7 @@ namespace PosAndAccountantProject.Sales
             // btnOpenNewSale
             // 
             this.btnOpenNewSale.BorderColor = System.Drawing.Color.Transparent;
-            this.btnOpenNewSale.BorderRadius = 5;
+            this.btnOpenNewSale.BorderRadius = 10;
             this.btnOpenNewSale.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOpenNewSale.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOpenNewSale.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1032,45 +1050,23 @@ namespace PosAndAccountantProject.Sales
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // lblTotalAmountWithDebt
+            // btnEditQuantity
             // 
-            this.lblTotalAmountWithDebt.BackColor = System.Drawing.Color.White;
-            this.lblTotalAmountWithDebt.Location = new System.Drawing.Point(435, 67);
-            this.lblTotalAmountWithDebt.Name = "lblTotalAmountWithDebt";
-            this.lblTotalAmountWithDebt.Size = new System.Drawing.Size(124, 30);
-            this.lblTotalAmountWithDebt.TabIndex = 32;
-            // 
-            // lblTotalDebt
-            // 
-            this.lblTotalDebt.BackColor = System.Drawing.Color.White;
-            this.lblTotalDebt.Location = new System.Drawing.Point(435, 22);
-            this.lblTotalDebt.Name = "lblTotalDebt";
-            this.lblTotalDebt.Size = new System.Drawing.Size(124, 30);
-            this.lblTotalDebt.TabIndex = 34;
-            // 
-            // txtTotalAmountWithDiscoount
-            // 
-            this.txtTotalAmountWithDiscoount.BackColor = System.Drawing.Color.White;
-            this.txtTotalAmountWithDiscoount.Location = new System.Drawing.Point(39, 104);
-            this.txtTotalAmountWithDiscoount.Name = "txtTotalAmountWithDiscoount";
-            this.txtTotalAmountWithDiscoount.Size = new System.Drawing.Size(124, 30);
-            this.txtTotalAmountWithDiscoount.TabIndex = 36;
-            // 
-            // lblDiscount
-            // 
-            this.lblDiscount.BackColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(43, 66);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(124, 30);
-            this.lblDiscount.TabIndex = 37;
-            // 
-            // lblTotalAmountWithOutDebtAndDiscout
-            // 
-            this.lblTotalAmountWithOutDebtAndDiscout.BackColor = System.Drawing.Color.White;
-            this.lblTotalAmountWithOutDebtAndDiscout.Location = new System.Drawing.Point(43, 25);
-            this.lblTotalAmountWithOutDebtAndDiscout.Name = "lblTotalAmountWithOutDebtAndDiscout";
-            this.lblTotalAmountWithOutDebtAndDiscout.Size = new System.Drawing.Size(124, 30);
-            this.lblTotalAmountWithOutDebtAndDiscout.TabIndex = 38;
+            this.btnEditQuantity.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEditQuantity.BorderRadius = 10;
+            this.btnEditQuantity.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditQuantity.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditQuantity.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnEditQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditQuantity.ForeColor = System.Drawing.Color.White;
+            this.btnEditQuantity.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnEditQuantity.Location = new System.Drawing.Point(20, 383);
+            this.btnEditQuantity.Name = "btnEditQuantity";
+            this.btnEditQuantity.Size = new System.Drawing.Size(116, 45);
+            this.btnEditQuantity.TabIndex = 16;
+            this.btnEditQuantity.Text = "تحديث الكمية";
             // 
             // frmAddNewSale
             // 
@@ -1099,6 +1095,7 @@ namespace PosAndAccountantProject.Sales
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "فاتورة بيع نقدي";
+            this.Load += new System.EventHandler(this.frmAddNewSale_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1171,9 +1168,6 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label label19;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1189,5 +1183,6 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label lblTotalAmountWithOutDebtAndDiscout;
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label txtTotalAmountWithDiscoount;
+        private Guna.UI2.WinForms.Guna2Button btnEditQuantity;
     }
 }
