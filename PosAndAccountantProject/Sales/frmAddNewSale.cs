@@ -17,6 +17,6 @@ namespace PosAndAccountantProject.Sales
             InitializeComponent();
         }
 
-          
+      
     }
 }
