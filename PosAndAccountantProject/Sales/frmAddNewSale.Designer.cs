@@ -30,16 +30,16 @@ namespace PosAndAccountantProject.Sales
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,6 +48,9 @@ namespace PosAndAccountantProject.Sales
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvProductList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cmsProduct = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAddToSale = new System.Windows.Forms.ToolStripMenuItem();
+            this.عرضToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.cbPayBy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -64,13 +67,15 @@ namespace PosAndAccountantProject.Sales
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPreview = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnEditQuantity = new Guna.UI2.WinForms.Guna2Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtProductQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label10 = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
@@ -102,14 +107,13 @@ namespace PosAndAccountantProject.Sales
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnEditQuantity = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
+            this.cmsProduct.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetails)).BeginInit();
             this.pnlPreview.SuspendLayout();
@@ -148,15 +152,6 @@ namespace PosAndAccountantProject.Sales
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // guna2VSeparator1
-            // 
-            this.guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.guna2VSeparator1.FillThickness = 3;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(511, 94);
-            this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(23, 747);
-            this.guna2VSeparator1.TabIndex = 2;
             // 
             // panel2
             // 
@@ -208,6 +203,8 @@ namespace PosAndAccountantProject.Sales
             this.txtProductName.SelectedText = "";
             this.txtProductName.Size = new System.Drawing.Size(124, 30);
             this.txtProductName.TabIndex = 4;
+            this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // cbProductCategory
             // 
@@ -252,26 +249,27 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.AllowUserToAddRows = false;
             this.dgvProductList.AllowUserToDeleteRows = false;
             this.dgvProductList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductList.ColumnHeadersHeight = 35;
+            this.dgvProductList.ContextMenuStrip = this.cmsProduct;
             this.dgvProductList.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvProductList.Location = new System.Drawing.Point(12, 232);
             this.dgvProductList.Name = "dgvProductList";
@@ -279,6 +277,8 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvProductList.RowHeadersVisible = false;
             this.dgvProductList.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgvProductList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProductList.RowTemplate.Height = 30;
             this.dgvProductList.Size = new System.Drawing.Size(493, 397);
             this.dgvProductList.TabIndex = 8;
@@ -304,6 +304,32 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.ThemeStyle.RowsStyle.Height = 30;
             this.dgvProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProductList.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvProductList_RowPrePaint);
+            // 
+            // cmsProduct
+            // 
+            this.cmsProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsProduct.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddToSale,
+            this.عرضToolStripMenuItem});
+            this.cmsProduct.Name = "contextMenuStrip1";
+            this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmsProduct.Size = new System.Drawing.Size(181, 78);
+            this.cmsProduct.Opening += new System.ComponentModel.CancelEventHandler(this.cmsProduct_Opening);
+            // 
+            // tsmiAddToSale
+            // 
+            this.tsmiAddToSale.Name = "tsmiAddToSale";
+            this.tsmiAddToSale.Size = new System.Drawing.Size(180, 26);
+            this.tsmiAddToSale.Text = "اضافة للفاتورة";
+            this.tsmiAddToSale.Click += new System.EventHandler(this.اضافةللفاتورةToolStripMenuItem_Click);
+            // 
+            // عرضToolStripMenuItem
+            // 
+            this.عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
+            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.عرضToolStripMenuItem.Text = "عرض لتفاصيل";
+            this.عرضToolStripMenuItem.Click += new System.EventHandler(this.عرضToolStripMenuItem_Click);
             // 
             // panel3
             // 
@@ -487,36 +513,37 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.AllowUserToAddRows = false;
             this.dgvSaleDetails.AllowUserToDeleteRows = false;
             this.dgvSaleDetails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvSaleDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvSaleDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSaleDetails.ColumnHeadersHeight = 35;
             this.dgvSaleDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
+            this.clmQuantity,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.clmDiscount,
+            this.clmProductID});
             this.dgvSaleDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSaleDetails.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSaleDetails.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSaleDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvSaleDetails.Location = new System.Drawing.Point(707, 182);
+            this.dgvSaleDetails.Location = new System.Drawing.Point(709, 188);
             this.dgvSaleDetails.Name = "dgvSaleDetails";
             this.dgvSaleDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvSaleDetails.RowHeadersVisible = false;
@@ -547,6 +574,9 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.ThemeStyle.RowsStyle.Height = 30;
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
+            this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
+            this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
             // 
             // Column1
             // 
@@ -569,11 +599,11 @@ namespace PosAndAccountantProject.Sales
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // Column4
+            // clmQuantity
             // 
-            this.Column4.FillWeight = 92.978F;
-            this.Column4.HeaderText = "الكمية";
-            this.Column4.Name = "Column4";
+            this.clmQuantity.FillWeight = 92.978F;
+            this.clmQuantity.HeaderText = "الكمية";
+            this.clmQuantity.Name = "clmQuantity";
             // 
             // Column5
             // 
@@ -589,11 +619,17 @@ namespace PosAndAccountantProject.Sales
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
-            // Column7
+            // clmDiscount
             // 
-            this.Column7.FillWeight = 92.978F;
-            this.Column7.HeaderText = "قيمة الخصم";
-            this.Column7.Name = "Column7";
+            this.clmDiscount.FillWeight = 92.978F;
+            this.clmDiscount.HeaderText = "قيمة الخصم";
+            this.clmDiscount.Name = "clmDiscount";
+            // 
+            // clmProductID
+            // 
+            this.clmProductID.HeaderText = "ProductID";
+            this.clmProductID.Name = "clmProductID";
+            this.clmProductID.Visible = false;
             // 
             // pnlPreview
             // 
@@ -604,7 +640,7 @@ namespace PosAndAccountantProject.Sales
             this.pnlPreview.BorderThickness = 2;
             this.pnlPreview.Controls.Add(this.btnEditQuantity);
             this.pnlPreview.Controls.Add(this.label19);
-            this.pnlPreview.Controls.Add(this.guna2TextBox1);
+            this.pnlPreview.Controls.Add(this.txtProductQuantity);
             this.pnlPreview.Controls.Add(this.guna2Button1);
             this.pnlPreview.Controls.Add(this.label10);
             this.pnlPreview.Controls.Add(this.lblCategory);
@@ -615,11 +651,31 @@ namespace PosAndAccountantProject.Sales
             this.pnlPreview.Controls.Add(this.lblProductName);
             this.pnlPreview.Controls.Add(this.pbProductImage);
             this.pnlPreview.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.pnlPreview.Location = new System.Drawing.Point(539, 182);
+            this.pnlPreview.Location = new System.Drawing.Point(529, 182);
             this.pnlPreview.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPreview.Name = "pnlPreview";
-            this.pnlPreview.Size = new System.Drawing.Size(165, 447);
+            this.pnlPreview.Size = new System.Drawing.Size(175, 447);
             this.pnlPreview.TabIndex = 11;
+            // 
+            // btnEditQuantity
+            // 
+            this.btnEditQuantity.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEditQuantity.BorderRadius = 10;
+            this.btnEditQuantity.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditQuantity.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditQuantity.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnEditQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditQuantity.ForeColor = System.Drawing.Color.White;
+            this.btnEditQuantity.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnEditQuantity.Location = new System.Drawing.Point(20, 383);
+            this.btnEditQuantity.Name = "btnEditQuantity";
+            this.btnEditQuantity.Size = new System.Drawing.Size(118, 45);
+            this.btnEditQuantity.TabIndex = 16;
+            this.btnEditQuantity.Text = "تحديث الكمية";
+            this.btnEditQuantity.Click += new System.EventHandler(this.btnEditQuantity_Click);
+            this.btnEditQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // label19
             // 
@@ -629,27 +685,27 @@ namespace PosAndAccountantProject.Sales
             this.label19.Location = new System.Drawing.Point(103, 345);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label19.Size = new System.Drawing.Size(59, 28);
+            this.label19.Size = new System.Drawing.Size(61, 28);
             this.label19.TabIndex = 12;
             this.label19.Text = "الكمية:";
             // 
-            // guna2TextBox1
+            // txtProductQuantity
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(12, 341);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(86, 36);
-            this.guna2TextBox1.TabIndex = 11;
+            this.txtProductQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtProductQuantity.DefaultText = "";
+            this.txtProductQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProductQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProductQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtProductQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtProductQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtProductQuantity.Location = new System.Drawing.Point(12, 341);
+            this.txtProductQuantity.Name = "txtProductQuantity";
+            this.txtProductQuantity.PlaceholderText = "";
+            this.txtProductQuantity.SelectedText = "";
+            this.txtProductQuantity.Size = new System.Drawing.Size(88, 36);
+            this.txtProductQuantity.TabIndex = 11;
             // 
             // guna2Button1
             // 
@@ -674,7 +730,7 @@ namespace PosAndAccountantProject.Sales
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(162, 43);
+            this.label10.Size = new System.Drawing.Size(169, 43);
             this.label10.TabIndex = 7;
             this.label10.Text = "تفاصيل المنتج المختار";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -687,7 +743,7 @@ namespace PosAndAccountantProject.Sales
             this.lblCategory.Location = new System.Drawing.Point(12, 309);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(150, 20);
+            this.lblCategory.Size = new System.Drawing.Size(152, 20);
             this.lblCategory.TabIndex = 6;
             this.lblCategory.Text = "التصنيف: غير محدد";
             this.lblCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -700,7 +756,7 @@ namespace PosAndAccountantProject.Sales
             this.lblMinQuantity.Location = new System.Drawing.Point(12, 280);
             this.lblMinQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMinQuantity.Name = "lblMinQuantity";
-            this.lblMinQuantity.Size = new System.Drawing.Size(150, 20);
+            this.lblMinQuantity.Size = new System.Drawing.Size(152, 20);
             this.lblMinQuantity.TabIndex = 5;
             this.lblMinQuantity.Text = "حد الطلب: 0";
             this.lblMinQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -713,7 +769,7 @@ namespace PosAndAccountantProject.Sales
             this.lblQuantity.Location = new System.Drawing.Point(11, 256);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(147, 24);
+            this.lblQuantity.Size = new System.Drawing.Size(149, 24);
             this.lblQuantity.TabIndex = 4;
             this.lblQuantity.Text = "المخزون الحالي: 0";
             this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -726,7 +782,7 @@ namespace PosAndAccountantProject.Sales
             this.lblBarcode.Location = new System.Drawing.Point(12, 231);
             this.lblBarcode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(150, 20);
+            this.lblBarcode.Size = new System.Drawing.Size(152, 20);
             this.lblBarcode.TabIndex = 3;
             this.lblBarcode.Text = "Barcode: 000000";
             this.lblBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -738,7 +794,7 @@ namespace PosAndAccountantProject.Sales
             this.lblSalePrice.Location = new System.Drawing.Point(11, 202);
             this.lblSalePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalePrice.Name = "lblSalePrice";
-            this.lblSalePrice.Size = new System.Drawing.Size(150, 24);
+            this.lblSalePrice.Size = new System.Drawing.Size(152, 24);
             this.lblSalePrice.TabIndex = 2;
             this.lblSalePrice.Text = "0.00 ل.س";
             this.lblSalePrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -750,7 +806,7 @@ namespace PosAndAccountantProject.Sales
             this.lblProductName.Location = new System.Drawing.Point(14, 170);
             this.lblProductName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(150, 32);
+            this.lblProductName.Size = new System.Drawing.Size(152, 32);
             this.lblProductName.TabIndex = 1;
             this.lblProductName.Text = "اسم المنتج";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -763,7 +819,7 @@ namespace PosAndAccountantProject.Sales
             this.pbProductImage.Location = new System.Drawing.Point(2, 45);
             this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
             this.pbProductImage.Name = "pbProductImage";
-            this.pbProductImage.Size = new System.Drawing.Size(161, 115);
+            this.pbProductImage.Size = new System.Drawing.Size(163, 115);
             this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProductImage.TabIndex = 0;
             this.pbProductImage.TabStop = false;
@@ -855,6 +911,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // label18
             // 
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label18.Location = new System.Drawing.Point(599, 114);
@@ -881,6 +938,7 @@ namespace PosAndAccountantProject.Sales
             this.txtPaidAmount.SelectedText = "";
             this.txtPaidAmount.Size = new System.Drawing.Size(124, 30);
             this.txtPaidAmount.TabIndex = 27;
+            this.txtPaidAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // label17
             // 
@@ -895,8 +953,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // guna2VSeparator3
             // 
-            this.guna2VSeparator3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2VSeparator3.FillThickness = 3;
+            this.guna2VSeparator3.FillColor = System.Drawing.Color.Gray;
             this.guna2VSeparator3.Location = new System.Drawing.Point(798, 6);
             this.guna2VSeparator3.Name = "guna2VSeparator3";
             this.guna2VSeparator3.Size = new System.Drawing.Size(22, 156);
@@ -926,8 +983,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // guna2VSeparator2
             // 
-            this.guna2VSeparator2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2VSeparator2.FillThickness = 3;
+            this.guna2VSeparator2.FillColor = System.Drawing.Color.Gray;
             this.guna2VSeparator2.Location = new System.Drawing.Point(404, 6);
             this.guna2VSeparator2.Name = "guna2VSeparator2";
             this.guna2VSeparator2.Size = new System.Drawing.Size(22, 156);
@@ -1040,33 +1096,10 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale.TabIndex = 15;
             this.btnOpenNewSale.Text = "فاتورة جديدة";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btnEditQuantity
-            // 
-            this.btnEditQuantity.BorderColor = System.Drawing.Color.Transparent;
-            this.btnEditQuantity.BorderRadius = 10;
-            this.btnEditQuantity.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditQuantity.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditQuantity.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnEditQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditQuantity.ForeColor = System.Drawing.Color.White;
-            this.btnEditQuantity.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnEditQuantity.Location = new System.Drawing.Point(20, 383);
-            this.btnEditQuantity.Name = "btnEditQuantity";
-            this.btnEditQuantity.Size = new System.Drawing.Size(116, 45);
-            this.btnEditQuantity.TabIndex = 16;
-            this.btnEditQuantity.Text = "تحديث الكمية";
             // 
             // frmAddNewSale
             // 
@@ -1087,7 +1120,6 @@ namespace PosAndAccountantProject.Sales
             this.Controls.Add(this.cbProductCategory);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.guna2VSeparator1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -1101,6 +1133,7 @@ namespace PosAndAccountantProject.Sales
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
+            this.cmsProduct.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetails)).EndInit();
@@ -1118,7 +1151,6 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1166,17 +1198,10 @@ namespace PosAndAccountantProject.Sales
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnOpenNewSale;
         private System.Windows.Forms.Label label19;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtProductQuantity;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Label lblTotalQuantity;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip cmsProduct;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.Label lblTotalDebt;
         private System.Windows.Forms.Label lblTotalAmountWithDebt;
@@ -1184,5 +1209,15 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label txtTotalAmountWithDiscoount;
         private Guna.UI2.WinForms.Guna2Button btnEditQuantity;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddToSale;
+        private System.Windows.Forms.ToolStripMenuItem عرضToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
     }
 }
