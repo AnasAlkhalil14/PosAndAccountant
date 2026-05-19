@@ -312,7 +312,14 @@ namespace PosAndAccountant_DataAccess
                     }
                     command.Parameters.AddWithValue("@TotalRemainingDebt", CustomerDTO.TotalRemainingDebt);
                     command.Parameters.AddWithValue("@CreditLimit", CustomerDTO.CreditLimit);
-                    command.Parameters.AddWithValue("@CustomerType", CustomerDTO.CustomerType);
+                    if (CustomerDTO.CustomerType < 1)
+                        command.Parameters.AddWithValue("@CustomerType", DBNull.Value);
+                    else
+                    {
+                        command.Parameters.AddWithValue("@CustomerType", CustomerDTO.CustomerType);
+
+                    }
+
                     command.Parameters.AddWithValue("@DiscountPercentage", CustomerDTO.DiscountPercentage);
 
 
