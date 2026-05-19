@@ -64,14 +64,6 @@ namespace PosAndAccountantProject.Sales
             this.label5 = new System.Windows.Forms.Label();
             this.txtSaleID = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPreview = new Guna.UI2.WinForms.Guna2Panel();
             this.btnEditQuantity = new Guna.UI2.WinForms.Guna2Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -87,8 +79,7 @@ namespace PosAndAccountantProject.Sales
             this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotalAmountWithOutDebtAndDiscout = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.txtTotalAmountWithDiscoount = new System.Windows.Forms.Label();
+            this.lblTotalAmountWithDiscoount = new System.Windows.Forms.Label();
             this.lblTotalDebt = new System.Windows.Forms.Label();
             this.lblTotalAmountWithDebt = new System.Windows.Forms.Label();
             this.lblTotalQuantity = new System.Windows.Forms.Label();
@@ -108,6 +99,15 @@ namespace PosAndAccountantProject.Sales
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -314,20 +314,20 @@ namespace PosAndAccountantProject.Sales
             this.عرضToolStripMenuItem});
             this.cmsProduct.Name = "contextMenuStrip1";
             this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsProduct.Size = new System.Drawing.Size(181, 78);
+            this.cmsProduct.Size = new System.Drawing.Size(175, 56);
             this.cmsProduct.Opening += new System.ComponentModel.CancelEventHandler(this.cmsProduct_Opening);
             // 
             // tsmiAddToSale
             // 
             this.tsmiAddToSale.Name = "tsmiAddToSale";
-            this.tsmiAddToSale.Size = new System.Drawing.Size(180, 26);
+            this.tsmiAddToSale.Size = new System.Drawing.Size(174, 26);
             this.tsmiAddToSale.Text = "اضافة للفاتورة";
             this.tsmiAddToSale.Click += new System.EventHandler(this.اضافةللفاتورةToolStripMenuItem_Click);
             // 
             // عرضToolStripMenuItem
             // 
             this.عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
-            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.عرضToolStripMenuItem.Text = "عرض لتفاصيل";
             this.عرضToolStripMenuItem.Click += new System.EventHandler(this.عرضToolStripMenuItem_Click);
             // 
@@ -478,6 +478,7 @@ namespace PosAndAccountantProject.Sales
             this.txtCustomerID.SelectedText = "";
             this.txtCustomerID.Size = new System.Drawing.Size(124, 30);
             this.txtCustomerID.TabIndex = 9;
+            this.txtCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // label5
             // 
@@ -507,6 +508,7 @@ namespace PosAndAccountantProject.Sales
             this.txtSaleID.SelectedText = "";
             this.txtSaleID.Size = new System.Drawing.Size(124, 30);
             this.txtSaleID.TabIndex = 7;
+            this.txtSaleID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // dgvSaleDetails
             // 
@@ -527,10 +529,10 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
+            this.clmSalePrice,
             this.clmQuantity,
             this.Column5,
-            this.Column6,
+            this.clmReturnQ,
             this.clmDiscount,
             this.clmProductID});
             this.dgvSaleDetails.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -543,7 +545,7 @@ namespace PosAndAccountantProject.Sales
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSaleDetails.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSaleDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvSaleDetails.Location = new System.Drawing.Point(709, 188);
+            this.dgvSaleDetails.Location = new System.Drawing.Point(710, 183);
             this.dgvSaleDetails.Name = "dgvSaleDetails";
             this.dgvSaleDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvSaleDetails.RowHeadersVisible = false;
@@ -574,62 +576,10 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.ThemeStyle.RowsStyle.Height = 30;
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
+             this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
+            this.dgvSaleDetails.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEnter);
             this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
             this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 40F;
-            this.Column1.HeaderText = "م";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 92.978F;
-            this.Column2.HeaderText = "اسم المنتج";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 92.978F;
-            this.Column3.HeaderText = "سعر البيع";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.FillWeight = 92.978F;
-            this.clmQuantity.HeaderText = "الكمية";
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 92.978F;
-            this.Column5.HeaderText = "السعر الكلي";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 92.978F;
-            this.Column6.HeaderText = "الكمية المعادة";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // clmDiscount
-            // 
-            this.clmDiscount.FillWeight = 92.978F;
-            this.clmDiscount.HeaderText = "قيمة الخصم";
-            this.clmDiscount.Name = "clmDiscount";
-            // 
-            // clmProductID
-            // 
-            this.clmProductID.HeaderText = "ProductID";
-            this.clmProductID.Name = "clmProductID";
-            this.clmProductID.Visible = false;
             // 
             // pnlPreview
             // 
@@ -706,6 +656,7 @@ namespace PosAndAccountantProject.Sales
             this.txtProductQuantity.SelectedText = "";
             this.txtProductQuantity.Size = new System.Drawing.Size(88, 36);
             this.txtProductQuantity.TabIndex = 11;
+            this.txtProductQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // guna2Button1
             // 
@@ -827,9 +778,9 @@ namespace PosAndAccountantProject.Sales
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel4.Controls.Add(this.txtDiscount);
             this.panel4.Controls.Add(this.lblTotalAmountWithOutDebtAndDiscout);
-            this.panel4.Controls.Add(this.lblDiscount);
-            this.panel4.Controls.Add(this.txtTotalAmountWithDiscoount);
+            this.panel4.Controls.Add(this.lblTotalAmountWithDiscoount);
             this.panel4.Controls.Add(this.lblTotalDebt);
             this.panel4.Controls.Add(this.lblTotalAmountWithDebt);
             this.panel4.Controls.Add(this.lblTotalQuantity);
@@ -857,22 +808,18 @@ namespace PosAndAccountantProject.Sales
             this.lblTotalAmountWithOutDebtAndDiscout.Name = "lblTotalAmountWithOutDebtAndDiscout";
             this.lblTotalAmountWithOutDebtAndDiscout.Size = new System.Drawing.Size(124, 30);
             this.lblTotalAmountWithOutDebtAndDiscout.TabIndex = 38;
+            this.lblTotalAmountWithOutDebtAndDiscout.Tag = "0";
+            this.lblTotalAmountWithOutDebtAndDiscout.Text = "0";
             // 
-            // lblDiscount
+            // lblTotalAmountWithDiscoount
             // 
-            this.lblDiscount.BackColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(43, 66);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(124, 30);
-            this.lblDiscount.TabIndex = 37;
-            // 
-            // txtTotalAmountWithDiscoount
-            // 
-            this.txtTotalAmountWithDiscoount.BackColor = System.Drawing.Color.White;
-            this.txtTotalAmountWithDiscoount.Location = new System.Drawing.Point(39, 104);
-            this.txtTotalAmountWithDiscoount.Name = "txtTotalAmountWithDiscoount";
-            this.txtTotalAmountWithDiscoount.Size = new System.Drawing.Size(124, 30);
-            this.txtTotalAmountWithDiscoount.TabIndex = 36;
+            this.lblTotalAmountWithDiscoount.BackColor = System.Drawing.Color.White;
+            this.lblTotalAmountWithDiscoount.Location = new System.Drawing.Point(43, 111);
+            this.lblTotalAmountWithDiscoount.Name = "lblTotalAmountWithDiscoount";
+            this.lblTotalAmountWithDiscoount.Size = new System.Drawing.Size(124, 30);
+            this.lblTotalAmountWithDiscoount.TabIndex = 36;
+            this.lblTotalAmountWithDiscoount.Tag = "0";
+            this.lblTotalAmountWithDiscoount.Text = "0";
             // 
             // lblTotalDebt
             // 
@@ -893,17 +840,18 @@ namespace PosAndAccountantProject.Sales
             // lblTotalQuantity
             // 
             this.lblTotalQuantity.BackColor = System.Drawing.Color.White;
-            this.lblTotalQuantity.Location = new System.Drawing.Point(1000, 14);
+            this.lblTotalQuantity.Location = new System.Drawing.Point(1048, 14);
             this.lblTotalQuantity.Name = "lblTotalQuantity";
             this.lblTotalQuantity.Size = new System.Drawing.Size(124, 30);
             this.lblTotalQuantity.TabIndex = 31;
+            this.lblTotalQuantity.Text = "0";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label20.Location = new System.Drawing.Point(1134, 17);
+            this.label20.Location = new System.Drawing.Point(1218, 17);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(136, 20);
             this.label20.TabIndex = 29;
@@ -963,7 +911,7 @@ namespace PosAndAccountantProject.Sales
             // 
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label16.Location = new System.Drawing.Point(1213, 59);
+            this.label16.Location = new System.Drawing.Point(1229, 58);
             this.label16.Name = "label16";
             this.label16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label16.Size = new System.Drawing.Size(96, 38);
@@ -997,11 +945,10 @@ namespace PosAndAccountantProject.Sales
             this.txtNotes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNotes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNotes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNotes.Enabled = false;
             this.txtNotes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtNotes.Location = new System.Drawing.Point(817, 59);
+            this.txtNotes.Location = new System.Drawing.Point(826, 59);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.PlaceholderText = "";
             this.txtNotes.ReadOnly = true;
@@ -1100,6 +1047,80 @@ namespace PosAndAccountantProject.Sales
             // 
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiscount.DefaultText = "0";
+            this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtDiscount.Location = new System.Drawing.Point(43, 69);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.PlaceholderText = "";
+            this.txtDiscount.SelectedText = "";
+            this.txtDiscount.Size = new System.Drawing.Size(124, 30);
+            this.txtDiscount.TabIndex = 39;
+            this.txtDiscount.Tag = "0";
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
+            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 40F;
+            this.Column1.HeaderText = "م";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 92.978F;
+            this.Column2.HeaderText = "اسم المنتج";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // clmSalePrice
+            // 
+            this.clmSalePrice.FillWeight = 92.978F;
+            this.clmSalePrice.HeaderText = "سعر البيع";
+            this.clmSalePrice.Name = "clmSalePrice";
+            this.clmSalePrice.ReadOnly = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.FillWeight = 92.978F;
+            this.clmQuantity.HeaderText = "الكمية";
+            this.clmQuantity.Name = "clmQuantity";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 92.978F;
+            this.Column5.HeaderText = "السعر الكلي";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // clmReturnQ
+            // 
+            this.clmReturnQ.FillWeight = 92.978F;
+            this.clmReturnQ.HeaderText = "الكمية المعادة";
+            this.clmReturnQ.Name = "clmReturnQ";
+            this.clmReturnQ.ReadOnly = true;
+            // 
+            // clmDiscount
+            // 
+            this.clmDiscount.FillWeight = 92.978F;
+            this.clmDiscount.HeaderText = "قيمة الخصم";
+            this.clmDiscount.Name = "clmDiscount";
+            // 
+            // clmProductID
+            // 
+            this.clmProductID.HeaderText = "ProductID";
+            this.clmProductID.Name = "clmProductID";
+            this.clmProductID.Visible = false;
             // 
             // frmAddNewSale
             // 
@@ -1206,17 +1227,17 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label lblTotalDebt;
         private System.Windows.Forms.Label lblTotalAmountWithDebt;
         private System.Windows.Forms.Label lblTotalAmountWithOutDebtAndDiscout;
-        private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.Label txtTotalAmountWithDiscoount;
+        private System.Windows.Forms.Label lblTotalAmountWithDiscoount;
         private Guna.UI2.WinForms.Guna2Button btnEditQuantity;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddToSale;
         private System.Windows.Forms.ToolStripMenuItem عرضToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSalePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
     }
