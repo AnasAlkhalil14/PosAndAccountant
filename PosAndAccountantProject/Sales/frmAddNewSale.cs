@@ -27,7 +27,8 @@ namespace PosAndAccountantProject.Sales
          public   int NewQ;
          public   int OldReturnQ;
          public   int NewReturnQ;
-         public   double Discount;
+         public   double NewDiscount;
+            public double OldDiscount;
 
         }
 
@@ -35,8 +36,8 @@ namespace PosAndAccountantProject.Sales
        
         private void _UpdatTotalAmountWhenUpdatInSaleProductData(stProductSaleForTotalPriceInfo info)
         {
-            double OldPrice = info.SalePrice * (info.OldQ - info.OldReturnQ) - info.Discount;
-            double NewPrice = info.SalePrice * (info.NewQ - info.NewReturnQ) - info.Discount;
+            double OldPrice = info.SalePrice * (info.OldQ - info.OldReturnQ) - info.OldDiscount;
+            double NewPrice = info.SalePrice * (info.NewQ - info.NewReturnQ) - info.NewDiscount;
             double OldTotal = Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text);
             lblTotalAmountWithOutDebtAndDiscout.Text = (OldTotal - OldPrice + NewPrice).ToString();
             lblTotalAmountWithDiscoount.Text= _GetTotalAmountWithDisCount().ToString();
@@ -148,6 +149,12 @@ namespace PosAndAccountantProject.Sales
 
         }
 
+        private void _UpdatQuantityOfProductInDGVlistProduct(int NumberToSubtract,int ProductID)
+        {
+            DataRow row=_AllProducts.Select($"ProductID={ProductID}")[0];
+            row["QuantityInStock"] = (Convert.ToInt32(row["QuantityInStock"]) - NumberToSubtract);
+
+        }
         private void _ActionOnAddProductToSale()
         {
             //handle TotalProductCount
@@ -160,6 +167,10 @@ namespace PosAndAccountantProject.Sales
             double SellingPrice = Convert.ToDouble(dgvProductList.SelectedRows[0].Cells["SellingPrice"].Value);
             lblTotalAmountWithOutDebtAndDiscout.Text = (Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text)+SellingPrice).ToString();
             lblTotalAmountWithDiscoount.Text = _GetTotalAmountWithDisCount().ToString();
+
+            //Handl Quantity of product (-)
+            _UpdatQuantityOfProductInDGVlistProduct(1,Convert.ToInt32(dgvProductList.SelectedRows[0].Cells["ProductID"].Value));
+
         }
         private void اضافةللفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -249,33 +260,94 @@ dgvProductList.DataSource = _AllProducts;
 
         private void dgvSaleDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewCell cell = dgvSaleDetails.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
             if (e.ColumnIndex == dgvSaleDetails.Columns["clmQuantity"].Index)
             {
-
-                DataGridViewCell cell = dgvSaleDetails.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
+              
+                int RowIndex = e.RowIndex;
+                int OldQ = Convert.ToInt32(cell.Tag);
+                int NewQ;
                 if ((cell.Value == null || string.IsNullOrEmpty(cell.Value.ToString())) )
                 {
 
                     cell.Value = "1";
-                    return;
-
+                    NewQ = 1;
+                    
                 }
                
                 else
                 {
-                    int NewQ = Convert.ToInt32(cell.Value);
-                    int RowIndex = e.RowIndex;
-                    int OldQ = Convert.ToInt32(cell.Tag) ;
-                    HandleChangeQuantityInListSales(NewQ,RowIndex,OldQ);
-
+                      NewQ = Convert.ToInt32(cell.Value);
 
                 }
-                
+                HandleChangeQuantityInListSales(NewQ, RowIndex, OldQ);
+                return;
+            }
 
+            stProductSaleForTotalPriceInfo info=new stProductSaleForTotalPriceInfo();
+            info.NewQ = Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmQuantity"].Value);
+            info.OldQ= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmQuantity"].Value);
+           info.SalePrice= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Value);
+
+            if (e.ColumnIndex == dgvSaleDetails.Columns["clmDiscount"].Index)
+            {
+                info.OldDiscount = Convert.ToInt32(cell.Tag);
+                info.OldReturnQ= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmReturnQ"].Value);
+                info.NewReturnQ = info.OldReturnQ;
+                if (string.IsNullOrEmpty(cell.Value.ToString().Trim()))
+                {
+                    cell.Value = 0;
+                    info.NewDiscount = 0;
+
+                }
+                else
+                {
+
+                    info.NewDiscount=Convert.ToDouble(cell.Value);
+                    cell.Value = info.NewDiscount;
+                }
+                _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                return;
 
             }
 
+            info.NewDiscount = Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmDiscount"].Value); ;
+            info.OldDiscount = info.NewDiscount;
+
+            if (e.ColumnIndex == dgvSaleDetails.Columns["clmReturnQ"].Index)
+            {
+                info.OldReturnQ = Convert.ToInt32(cell.Tag);
+                if (cell.Value==null|| string.IsNullOrEmpty(cell.Value.ToString().Trim()))
+                {
+                    cell.Value = 0;
+                    info.NewReturnQ = 0;
+
+                }
+                else
+                {
+                   
+                    if(info.NewQ>= Convert.ToInt32(cell.Value))
+                    {
+                        info.NewReturnQ = Convert.ToInt32(cell.Value);
+                        cell.Value = info.NewReturnQ;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"الكمية الكلية المفوترة من هذا المنتج :{info.NewQ} يرجى اختيار كمية مناسبة سيتم اعادة الحقل الى القيمة صفر 0","كمية كبيرة جدا خطأ",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        cell.Value = 0;
+                        info.NewReturnQ = 0;
+
+                    }
+
+                }
+                _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                return;
+
+
+
+            }
 
         }
 
@@ -316,6 +388,7 @@ dgvProductList.DataSource = _AllProducts;
 
         void _UpdateTotalQuantityForUpdatQuantityItem(int OldQ,int NewQ)
         {
+            _UpdatQuantityOfProductInDGVlistProduct(NewQ - OldQ, Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmProductID"].Value));
             lblTotalQuantity.Text = (Convert.ToInt32(lblTotalQuantity.Text) - OldQ + NewQ).ToString();
         }
             private void HandleChangeQuantityInListSales(int  quantity,int RowIndex,int OldQuantity)
@@ -325,7 +398,9 @@ dgvProductList.DataSource = _AllProducts;
             {
                 stProductSaleForTotalPriceInfo info = new stProductSaleForTotalPriceInfo();
                 info.OldQ = OldQuantity;
-                info.Discount = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmDiscount"].Value);
+                info.OldDiscount = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmDiscount"].Value);
+                info.NewDiscount = info.OldDiscount;
+
                 info.NewReturnQ = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmReturnQ"].Value);
                 info.OldReturnQ = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmReturnQ"].Value);
                 info.SalePrice = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmSalePrice"].Value);
@@ -344,7 +419,7 @@ dgvProductList.DataSource = _AllProducts;
                 DataRow ProductInfRow = _AllProducts.Select($"ProductID={dgvSaleDetails.Rows[RowIndex].Cells["clmProductID"].Value.ToString()}")[0];
 
                 int TotalQuantityExist = Convert.ToInt32(ProductInfRow["QuantityInStock"].ToString());
-                if (quantity <= TotalQuantityExist)
+                if (quantity - OldQuantity <= TotalQuantityExist)
                 {
                     txtProductQuantity.Tag = quantity;
                     dgvSaleDetails.Rows[RowIndex].Cells["clmQuantity"].Value = quantity;
@@ -396,6 +471,14 @@ dgvProductList.DataSource = _AllProducts;
                 row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
                 row.DefaultCellStyle.SelectionForeColor = Color.White;
             }
+            else
+            {
+                row.DefaultCellStyle.BackColor = Color.White;
+                row.DefaultCellStyle.ForeColor = Color.Black;
+
+                row.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 192, 192);
+                row.DefaultCellStyle.SelectionForeColor = Color.White;
+            }
         }
 
         private void cmsProduct_Opening(object sender, CancelEventArgs e)
@@ -440,6 +523,6 @@ dgvProductList.DataSource = _AllProducts;
             lblTotalAmountWithDiscoount.Text = _GetTotalAmountWithDisCount().ToString();
         }
 
-         
+        
     }
 }

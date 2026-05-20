@@ -64,6 +64,14 @@ namespace PosAndAccountantProject.Sales
             this.label5 = new System.Windows.Forms.Label();
             this.txtSaleID = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPreview = new Guna.UI2.WinForms.Guna2Panel();
             this.btnEditQuantity = new Guna.UI2.WinForms.Guna2Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -78,6 +86,7 @@ namespace PosAndAccountantProject.Sales
             this.lblProductName = new System.Windows.Forms.Label();
             this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTotalAmountWithOutDebtAndDiscout = new System.Windows.Forms.Label();
             this.lblTotalAmountWithDiscoount = new System.Windows.Forms.Label();
             this.lblTotalDebt = new System.Windows.Forms.Label();
@@ -98,16 +107,9 @@ namespace PosAndAccountantProject.Sales
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -119,6 +121,7 @@ namespace PosAndAccountantProject.Sales
             this.pnlPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.panel4.SuspendLayout();
+            this.cmsSaleDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -535,6 +538,7 @@ namespace PosAndAccountantProject.Sales
             this.clmReturnQ,
             this.clmDiscount,
             this.clmProductID});
+            this.dgvSaleDetails.ContextMenuStrip = this.cmsSaleDetails;
             this.dgvSaleDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
@@ -576,10 +580,61 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.ThemeStyle.RowsStyle.Height = 30;
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-             this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
+            this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
             this.dgvSaleDetails.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEnter);
             this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
             this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 40F;
+            this.Column1.HeaderText = "م";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 92.978F;
+            this.Column2.HeaderText = "اسم المنتج";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // clmSalePrice
+            // 
+            this.clmSalePrice.FillWeight = 92.978F;
+            this.clmSalePrice.HeaderText = "سعر البيع";
+            this.clmSalePrice.Name = "clmSalePrice";
+            this.clmSalePrice.ReadOnly = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.FillWeight = 92.978F;
+            this.clmQuantity.HeaderText = "الكمية";
+            this.clmQuantity.Name = "clmQuantity";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 92.978F;
+            this.Column5.HeaderText = "السعر الكلي";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // clmReturnQ
+            // 
+            this.clmReturnQ.FillWeight = 92.978F;
+            this.clmReturnQ.HeaderText = "الكمية المعادة";
+            this.clmReturnQ.Name = "clmReturnQ";
+            // 
+            // clmDiscount
+            // 
+            this.clmDiscount.FillWeight = 92.978F;
+            this.clmDiscount.HeaderText = "قيمة الخصم";
+            this.clmDiscount.Name = "clmDiscount";
+            // 
+            // clmProductID
+            // 
+            this.clmProductID.HeaderText = "ProductID";
+            this.clmProductID.Name = "clmProductID";
+            this.clmProductID.Visible = false;
             // 
             // pnlPreview
             // 
@@ -800,6 +855,28 @@ namespace PosAndAccountantProject.Sales
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1442, 159);
             this.panel4.TabIndex = 12;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiscount.DefaultText = "0";
+            this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtDiscount.Location = new System.Drawing.Point(43, 69);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.PlaceholderText = "";
+            this.txtDiscount.SelectedText = "";
+            this.txtDiscount.Size = new System.Drawing.Size(124, 30);
+            this.txtDiscount.TabIndex = 39;
+            this.txtDiscount.Tag = "0";
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
+            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
             // 
             // lblTotalAmountWithOutDebtAndDiscout
             // 
@@ -1043,84 +1120,26 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale.TabIndex = 15;
             this.btnOpenNewSale.Text = "فاتورة جديدة";
             // 
-            // contextMenuStrip2
+            // cmsSaleDetails
             // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.cmsSaleDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsSaleDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.الغاءمنالفاتورةToolStripMenuItem,
+            this.jgToolStripMenuItem});
+            this.cmsSaleDetails.Name = "contextMenuStrip2";
+            this.cmsSaleDetails.Size = new System.Drawing.Size(237, 56);
             // 
-            // txtDiscount
+            // الغاءمنالفاتورةToolStripMenuItem
             // 
-            this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.DefaultText = "0";
-            this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiscount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtDiscount.Location = new System.Drawing.Point(43, 69);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.PlaceholderText = "";
-            this.txtDiscount.SelectedText = "";
-            this.txtDiscount.Size = new System.Drawing.Size(124, 30);
-            this.txtDiscount.TabIndex = 39;
-            this.txtDiscount.Tag = "0";
-            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
-            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
+            this.الغاءمنالفاتورةToolStripMenuItem.Name = "الغاءمنالفاتورةToolStripMenuItem";
+            this.الغاءمنالفاتورةToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.الغاءمنالفاتورةToolStripMenuItem.Text = "الغاء من الفاتورة";
             // 
-            // Column1
+            // jgToolStripMenuItem
             // 
-            this.Column1.FillWeight = 40F;
-            this.Column1.HeaderText = "م";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 92.978F;
-            this.Column2.HeaderText = "اسم المنتج";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // clmSalePrice
-            // 
-            this.clmSalePrice.FillWeight = 92.978F;
-            this.clmSalePrice.HeaderText = "سعر البيع";
-            this.clmSalePrice.Name = "clmSalePrice";
-            this.clmSalePrice.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.FillWeight = 92.978F;
-            this.clmQuantity.HeaderText = "الكمية";
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 92.978F;
-            this.Column5.HeaderText = "السعر الكلي";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // clmReturnQ
-            // 
-            this.clmReturnQ.FillWeight = 92.978F;
-            this.clmReturnQ.HeaderText = "الكمية المعادة";
-            this.clmReturnQ.Name = "clmReturnQ";
-            this.clmReturnQ.ReadOnly = true;
-            // 
-            // clmDiscount
-            // 
-            this.clmDiscount.FillWeight = 92.978F;
-            this.clmDiscount.HeaderText = "قيمة الخصم";
-            this.clmDiscount.Name = "clmDiscount";
-            // 
-            // clmProductID
-            // 
-            this.clmProductID.HeaderText = "ProductID";
-            this.clmProductID.Name = "clmProductID";
-            this.clmProductID.Visible = false;
+            this.jgToolStripMenuItem.Name = "jgToolStripMenuItem";
+            this.jgToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.jgToolStripMenuItem.Text = "تعديل المنتح في الفاتورة";
             // 
             // frmAddNewSale
             // 
@@ -1162,6 +1181,7 @@ namespace PosAndAccountantProject.Sales
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.cmsSaleDetails.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1223,7 +1243,7 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblTotalQuantity;
         private System.Windows.Forms.ContextMenuStrip cmsProduct;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ContextMenuStrip cmsSaleDetails;
         private System.Windows.Forms.Label lblTotalDebt;
         private System.Windows.Forms.Label lblTotalAmountWithDebt;
         private System.Windows.Forms.Label lblTotalAmountWithOutDebtAndDiscout;
@@ -1240,5 +1260,7 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
+        private System.Windows.Forms.ToolStripMenuItem الغاءمنالفاتورةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jgToolStripMenuItem;
     }
 }
