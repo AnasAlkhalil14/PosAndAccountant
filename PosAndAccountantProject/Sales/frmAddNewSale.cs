@@ -1,4 +1,5 @@
 ﻿using PosAndAccountant_business;
+using PosAndAccountantProject.Customers;
 using PosAndAccountantProject.Products;
 using PosAndAccountantProject.Properties;
 using System;
@@ -9,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using System.Windows.Forms;
 
 namespace PosAndAccountantProject.Sales
@@ -20,6 +22,7 @@ namespace PosAndAccountantProject.Sales
             InitializeComponent();
         }
 
+        clsCustomer _SelectedCustomer;
         struct stProductSaleForTotalPriceInfo
         {
          public   double SalePrice;
@@ -34,13 +37,26 @@ namespace PosAndAccountantProject.Sales
 
         private DataTable _AllProducts=clsProduct.GetAllProducts();
        
+private void _LoadCustomerData(int CustomerID)
+        {
+            _SelectedCustomer = clsCustomer.FindCustomerByID(CustomerID);
+            if( _SelectedCustomer != null )
+            {
+                lblCustomerID.Text=_SelectedCustomer.CustomerID.ToString();
+                lblCustomerName.Text = _SelectedCustomer.PersonInfo.FullName;
+                lblCustomerPhone.Text= _SelectedCustomer.PersonInfo.Phone;
+                lblTotalDebt.Text=_SelectedCustomer.TotalRemainingDebt.ToString();
+                _GetAndSetTotalAmountWithDebt(); 
+
+            }
+        }
         private void _UpdatTotalAmountWhenUpdatInSaleProductData(stProductSaleForTotalPriceInfo info)
         {
             double OldPrice = info.SalePrice * (info.OldQ - info.OldReturnQ) - info.OldDiscount;
             double NewPrice = info.SalePrice * (info.NewQ - info.NewReturnQ) - info.NewDiscount;
             double OldTotal = Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text);
             lblTotalAmountWithOutDebtAndDiscout.Text = (OldTotal - OldPrice + NewPrice).ToString();
-            lblTotalAmountWithDiscoount.Text= _GetTotalAmountWithDisCount().ToString();
+            _GetAndSetTotalAmountWithDisCount();
         }
 
         private int _GetTotalQuantity()
@@ -118,7 +134,7 @@ namespace PosAndAccountantProject.Sales
         {
             _SettleTheProductSideOnFormLoad();
             _LoadPaymentMethodToCompoBox();
-
+            _LoadCustomerData(6);
             dgvSaleDetails.Columns[1].Width = 234;
             dgvSaleDetails.Columns[3].Width = 60;
 
@@ -153,8 +169,17 @@ namespace PosAndAccountantProject.Sales
         {
             DataRow row=_AllProducts.Select($"ProductID={ProductID}")[0];
             row["QuantityInStock"] = (Convert.ToInt32(row["QuantityInStock"]) - NumberToSubtract);
-
+ 
+            _SetQuantityOfProductInGroupProductInfo(Convert.ToInt32(row["QuantityInStock"]), Convert.ToInt32(row["MinimumQuantityForWarning"]));
         }
+       
+        double _GetAndSetTotalAmountWithDebt()
+        {
+            lblTotalAmountWithDebt.Text = (Convert.ToDouble(lblTotalAmountWithDiscoount.Text) + Convert.ToDouble(lblTotalDebt.Text)).ToString();
+            return Convert.ToDouble(lblTotalAmountWithDebt.Text);
+            
+        }
+        
         private void _ActionOnAddProductToSale()
         {
             //handle TotalProductCount
@@ -166,10 +191,10 @@ namespace PosAndAccountantProject.Sales
             }
             double SellingPrice = Convert.ToDouble(dgvProductList.SelectedRows[0].Cells["SellingPrice"].Value);
             lblTotalAmountWithOutDebtAndDiscout.Text = (Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text)+SellingPrice).ToString();
-            lblTotalAmountWithDiscoount.Text = _GetTotalAmountWithDisCount().ToString();
+            _GetAndSetTotalAmountWithDisCount();       
 
-            //Handl Quantity of product (-)
-            _UpdatQuantityOfProductInDGVlistProduct(1,Convert.ToInt32(dgvProductList.SelectedRows[0].Cells["ProductID"].Value));
+        //Handl Quantity of product (-)
+        _UpdatQuantityOfProductInDGVlistProduct(1,Convert.ToInt32(dgvProductList.SelectedRows[0].Cells["ProductID"].Value));
 
         }
         private void اضافةللفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
@@ -282,6 +307,8 @@ dgvProductList.DataSource = _AllProducts;
 
                 }
                 HandleChangeQuantityInListSales(NewQ, RowIndex, OldQ);
+                //for case if he repeate editing in same row and column
+                dgvSaleDetails_CellEnter(null, new DataGridViewCellEventArgs(e.ColumnIndex, e.RowIndex));
                 return;
             }
 
@@ -351,6 +378,23 @@ dgvProductList.DataSource = _AllProducts;
 
         }
 
+        private void _SetQuantityOfProductInGroupProductInfo(int Quantity, int MinQuantity)
+        {
+            lblQuantity.Text = $"الكمية: {Quantity}";
+            if (Quantity <= MinQuantity)
+            {
+                lblQuantity.BackColor = Color.FromArgb(255, 128, 128);
+                lblQuantity.ForeColor = Color.White;
+            }
+            else
+            {
+
+                lblQuantity.BackColor = Color.White;
+                lblQuantity.ForeColor = Color.FromArgb(46, 204, 113);
+            }
+        }
+
+
         private void dgvSaleDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             DataRow[] ProductsInf = _AllProducts.Select($"ProductID={dgvSaleDetails.Rows[e.RowIndex].Cells["clmProductID"].Value.ToString()}");
@@ -371,18 +415,9 @@ dgvProductList.DataSource = _AllProducts;
             lblMinQuantity.Text = $"حد الطلب: {ProductsInf[0]["MinimumQuantityForWarning"].ToString()}";
             lblSalePrice.Text = $"سعر البيع: {ProductsInf[0]["SellingPrice"].ToString()}ل.س";
             lblCategory.Text = $"الصنف: {ProductsInf[0]["CategoryName"] .ToString()}";
-            if (Convert.ToInt32(ProductsInf[0]["QuantityInStock"].ToString()) <= Convert.ToInt32(ProductsInf[0]["MinimumQuantityForWarning"].ToString()))
-            {
-                lblQuantity.BackColor = Color.FromArgb(255, 128, 128);
-                lblQuantity.ForeColor = Color.White;
-            }
-            else
-            {
 
-                lblQuantity.BackColor = Color.White;
-                lblQuantity.ForeColor = Color.FromArgb(46, 204, 113);
-            }
-
+            _SetQuantityOfProductInGroupProductInfo(Convert.ToInt32(ProductsInf[0]["QuantityInStock"]),Convert.ToInt32(ProductsInf[0]["MinimumQuantityForWarning"]));
+            
 
         }
 
@@ -390,6 +425,11 @@ dgvProductList.DataSource = _AllProducts;
         {
             _UpdatQuantityOfProductInDGVlistProduct(NewQ - OldQ, Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmProductID"].Value));
             lblTotalQuantity.Text = (Convert.ToInt32(lblTotalQuantity.Text) - OldQ + NewQ).ToString();
+        }
+
+        private void _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(double SellPrice,int NewQ,int RowIndex)
+        {
+            dgvSaleDetails.Rows[RowIndex].Cells["clmTotalPrice"].Value = (SellPrice * NewQ);
         }
             private void HandleChangeQuantityInListSales(int  quantity,int RowIndex,int OldQuantity)
         {
@@ -412,6 +452,7 @@ dgvProductList.DataSource = _AllProducts;
                     info.NewQ = 1;
 
                     txtProductQuantity.Tag = 1; ;
+                    _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice,info.NewQ,RowIndex);
                     _UpdatTotalAmountWhenUpdatInSaleProductData(info);
                     return;
                 }
@@ -420,12 +461,13 @@ dgvProductList.DataSource = _AllProducts;
 
                 int TotalQuantityExist = Convert.ToInt32(ProductInfRow["QuantityInStock"].ToString());
                 if (quantity - OldQuantity <= TotalQuantityExist)
-                {
+                 {
                     txtProductQuantity.Tag = quantity;
                     dgvSaleDetails.Rows[RowIndex].Cells["clmQuantity"].Value = quantity;
                     info.NewQ = quantity;
                     _UpdateTotalQuantityForUpdatQuantityItem(OldQuantity, quantity);
                     _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                    _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ, RowIndex);
 
                 }
                 else
@@ -436,6 +478,7 @@ dgvProductList.DataSource = _AllProducts;
                     info.NewQ = 1;
                     txtProductQuantity.Tag = 1; 
                     _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                    _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ, RowIndex);
 
                 }
             }
@@ -506,23 +549,36 @@ dgvProductList.DataSource = _AllProducts;
 
 
         }
-
-        private double _GetTotalAmountWithDisCount()
+        private double _GetAndSetTotalAmountWithDisCount()
         {
-            if(string.IsNullOrEmpty(txtDiscount.Text.Trim()))
+            if (string.IsNullOrEmpty(txtDiscount.Text.Trim()))
             {
                 txtDiscount.Tag = 0;
                 txtDiscount.Text = "0";
             }
-            return Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text) - Convert.ToDouble(txtDiscount.Text);
+            lblTotalAmountWithDiscoount.Text =( Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text) - Convert.ToDouble(txtDiscount.Text)).ToString();
+            _GetAndSetTotalAmountWithDebt();
+            return Convert.ToDouble(lblTotalAmountWithDiscoount.Text);
 
 
         }
+
+       
         private void txtDiscount_Leave(object sender, EventArgs e)
         {
-            lblTotalAmountWithDiscoount.Text = _GetTotalAmountWithDisCount().ToString();
+            _GetAndSetTotalAmountWithDisCount();     
         }
 
-        
+        private void lnkSelectCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmFindCustomer frm = new frmFindCustomer();
+            frm.SelectCustomer += Frm_SelectCustomer;
+            frm.ShowDialog();
+        }
+
+        private void Frm_SelectCustomer(object sender, frmFindCustomer.CustomerSelectedEventArgs e)
+        {
+            _LoadCustomerData(e.CustomrID);
+        }
     }
 }

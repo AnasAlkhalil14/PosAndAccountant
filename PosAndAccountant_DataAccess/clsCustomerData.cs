@@ -74,7 +74,68 @@ namespace PosAndAccountant_DataAccess
 
             return CustomerDTO;
         }
+        public static clsCustomerDTO FindCustomerByPhone(string Phone)
+        {
 
+             clsCustomerDTO CustomerDTO = null;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand("[Customers].[SP_GetCustomerByPhone]", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Phone", Phone);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                CustomerDTO = new clsCustomerDTO();
+
+                                CustomerDTO.CustomerID = Convert.ToInt32(reader["CustomerID"]); ;
+                                CustomerDTO.PersonID = Convert.ToInt32(reader["PersonID"]);
+                                CustomerDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
+                                CustomerDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
+                                CustomerDTO.TotalRemainingDebt = Convert.ToDouble(reader["TotalRemainingDebt"]);
+                                CustomerDTO.CreditLimit = Convert.ToDouble(reader["CreditLimit"]);
+                                CustomerDTO.CustomerType = reader["CustomerType"] != DBNull.Value ? Convert.ToInt32(reader["CustomerType"]) : 1;
+                                CustomerDTO.DiscountPercentage = Convert.ToDouble(reader["DiscountPercentage"]);
+                                CustomerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
+                                CustomerDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
+
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+            return CustomerDTO;
+        }
 
         public static clsCustomerDTO FindCustomerByPersonID(int PersonID)
         {

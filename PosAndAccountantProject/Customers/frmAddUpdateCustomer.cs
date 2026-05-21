@@ -27,6 +27,7 @@ namespace PosAndAccountantProject.Customers
        private int _CustomerID=-1;
         private clsCustomer _Customer;
 
+        public int CustomerID { get { return _CustomerID; } }
         public bool WasSaved = false;
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -101,6 +102,7 @@ namespace PosAndAccountantProject.Customers
 
             if(_Customer.Save())
             {
+                _CustomerID = _Customer.CustomerID;
                 lnkMakeOrder.Enabled = true;
                 lnkShowLastPurchases.Enabled = true;
                 WasSaved = true;
@@ -111,6 +113,7 @@ namespace PosAndAccountantProject.Customers
             }
             else
             {
+                _CustomerID = -1;
                 MessageBox.Show("حدث خطا,فشل في حفظ بيانات العميل", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
