@@ -55,12 +55,8 @@ namespace PosAndAccountantProject.Sales
             this.label9 = new System.Windows.Forms.Label();
             this.cbPayBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lnkSelectCustomer = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSaleID = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -68,10 +64,13 @@ namespace PosAndAccountantProject.Sales
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPreview = new Guna.UI2.WinForms.Guna2Panel();
             this.btnEditQuantity = new Guna.UI2.WinForms.Guna2Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -107,9 +106,10 @@ namespace PosAndAccountantProject.Sales
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
-            this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCustomerID = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.lblCustomerPhone = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -118,10 +118,10 @@ namespace PosAndAccountantProject.Sales
             this.cmsProduct.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetails)).BeginInit();
+            this.cmsSaleDetails.SuspendLayout();
             this.pnlPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.panel4.SuspendLayout();
-            this.cmsSaleDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -317,35 +317,35 @@ namespace PosAndAccountantProject.Sales
             this.عرضToolStripMenuItem});
             this.cmsProduct.Name = "contextMenuStrip1";
             this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsProduct.Size = new System.Drawing.Size(175, 56);
+            this.cmsProduct.Size = new System.Drawing.Size(181, 78);
             this.cmsProduct.Opening += new System.ComponentModel.CancelEventHandler(this.cmsProduct_Opening);
             // 
             // tsmiAddToSale
             // 
             this.tsmiAddToSale.Name = "tsmiAddToSale";
-            this.tsmiAddToSale.Size = new System.Drawing.Size(174, 26);
+            this.tsmiAddToSale.Size = new System.Drawing.Size(180, 26);
             this.tsmiAddToSale.Text = "اضافة للفاتورة";
             this.tsmiAddToSale.Click += new System.EventHandler(this.اضافةللفاتورةToolStripMenuItem_Click);
             // 
             // عرضToolStripMenuItem
             // 
             this.عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
-            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.عرضToolStripMenuItem.Text = "عرض لتفاصيل";
             this.عرضToolStripMenuItem.Click += new System.EventHandler(this.عرضToolStripMenuItem_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel3.Controls.Add(this.lblCustomerPhone);
+            this.panel3.Controls.Add(this.lblCustomerName);
+            this.panel3.Controls.Add(this.lblCustomerID);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cbPayBy);
             this.panel3.Controls.Add(this.lnkSelectCustomer);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.txtPhoneNumber);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.txtCustomerName);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.txtCustomerID);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.txtSaleID);
             this.panel3.Location = new System.Drawing.Point(524, 77);
@@ -390,37 +390,7 @@ namespace PosAndAccountantProject.Sales
             this.lnkSelectCustomer.TabIndex = 17;
             this.lnkSelectCustomer.TabStop = true;
             this.lnkSelectCustomer.Text = "اختار عميل";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label7.Location = new System.Drawing.Point(188, 48);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(98, 38);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "رقم الهاتف:";
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.DefaultText = "";
-            this.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNumber.Enabled = false;
-            this.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(42, 50);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.PlaceholderText = "رقم الهاتف";
-            this.txtPhoneNumber.ReadOnly = true;
-            this.txtPhoneNumber.SelectedText = "";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(140, 30);
-            this.txtPhoneNumber.TabIndex = 15;
+            this.lnkSelectCustomer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSelectCustomer_LinkClicked);
             // 
             // label8
             // 
@@ -433,26 +403,6 @@ namespace PosAndAccountantProject.Sales
             this.label8.TabIndex = 14;
             this.label8.Text = "اسم العميل:";
             // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerName.DefaultText = "";
-            this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerName.Enabled = false;
-            this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtCustomerName.Location = new System.Drawing.Point(429, 52);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.PlaceholderText = "اسم العميل";
-            this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.SelectedText = "";
-            this.txtCustomerName.Size = new System.Drawing.Size(124, 30);
-            this.txtCustomerName.TabIndex = 13;
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,25 +413,6 @@ namespace PosAndAccountantProject.Sales
             this.label6.Size = new System.Drawing.Size(117, 38);
             this.label6.TabIndex = 10;
             this.label6.Text = "معرف العميل:";
-            // 
-            // txtCustomerID
-            // 
-            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerID.DefaultText = "";
-            this.txtCustomerID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtCustomerID.Location = new System.Drawing.Point(663, 50);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.PlaceholderText = "اكتب للبحث";
-            this.txtCustomerID.SelectedText = "";
-            this.txtCustomerID.Size = new System.Drawing.Size(124, 30);
-            this.txtCustomerID.TabIndex = 9;
-            this.txtCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // label5
             // 
@@ -534,7 +465,7 @@ namespace PosAndAccountantProject.Sales
             this.Column2,
             this.clmSalePrice,
             this.clmQuantity,
-            this.Column5,
+            this.clmTotalPrice,
             this.clmReturnQ,
             this.clmDiscount,
             this.clmProductID});
@@ -611,12 +542,12 @@ namespace PosAndAccountantProject.Sales
             this.clmQuantity.HeaderText = "الكمية";
             this.clmQuantity.Name = "clmQuantity";
             // 
-            // Column5
+            // clmTotalPrice
             // 
-            this.Column5.FillWeight = 92.978F;
-            this.Column5.HeaderText = "السعر الكلي";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.clmTotalPrice.FillWeight = 92.978F;
+            this.clmTotalPrice.HeaderText = "السعر الكلي";
+            this.clmTotalPrice.Name = "clmTotalPrice";
+            this.clmTotalPrice.ReadOnly = true;
             // 
             // clmReturnQ
             // 
@@ -635,6 +566,27 @@ namespace PosAndAccountantProject.Sales
             this.clmProductID.HeaderText = "ProductID";
             this.clmProductID.Name = "clmProductID";
             this.clmProductID.Visible = false;
+            // 
+            // cmsSaleDetails
+            // 
+            this.cmsSaleDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsSaleDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.الغاءمنالفاتورةToolStripMenuItem,
+            this.jgToolStripMenuItem});
+            this.cmsSaleDetails.Name = "contextMenuStrip2";
+            this.cmsSaleDetails.Size = new System.Drawing.Size(237, 56);
+            // 
+            // الغاءمنالفاتورةToolStripMenuItem
+            // 
+            this.الغاءمنالفاتورةToolStripMenuItem.Name = "الغاءمنالفاتورةToolStripMenuItem";
+            this.الغاءمنالفاتورةToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.الغاءمنالفاتورةToolStripMenuItem.Text = "الغاء من الفاتورة";
+            // 
+            // jgToolStripMenuItem
+            // 
+            this.jgToolStripMenuItem.Name = "jgToolStripMenuItem";
+            this.jgToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.jgToolStripMenuItem.Text = "تعديل المنتح في الفاتورة";
             // 
             // pnlPreview
             // 
@@ -1120,26 +1072,40 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale.TabIndex = 15;
             this.btnOpenNewSale.Text = "فاتورة جديدة";
             // 
-            // cmsSaleDetails
+            // lblCustomerID
             // 
-            this.cmsSaleDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmsSaleDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.الغاءمنالفاتورةToolStripMenuItem,
-            this.jgToolStripMenuItem});
-            this.cmsSaleDetails.Name = "contextMenuStrip2";
-            this.cmsSaleDetails.Size = new System.Drawing.Size(237, 56);
+            this.lblCustomerID.BackColor = System.Drawing.Color.White;
+            this.lblCustomerID.Location = new System.Drawing.Point(671, 45);
+            this.lblCustomerID.Name = "lblCustomerID";
+            this.lblCustomerID.Size = new System.Drawing.Size(124, 30);
+            this.lblCustomerID.TabIndex = 35;
             // 
-            // الغاءمنالفاتورةToolStripMenuItem
+            // lblCustomerName
             // 
-            this.الغاءمنالفاتورةToolStripMenuItem.Name = "الغاءمنالفاتورةToolStripMenuItem";
-            this.الغاءمنالفاتورةToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.الغاءمنالفاتورةToolStripMenuItem.Text = "الغاء من الفاتورة";
+            this.lblCustomerName.BackColor = System.Drawing.Color.White;
+            this.lblCustomerName.Location = new System.Drawing.Point(404, 47);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(124, 30);
+            this.lblCustomerName.TabIndex = 36;
             // 
-            // jgToolStripMenuItem
+            // lblCustomerPhone
             // 
-            this.jgToolStripMenuItem.Name = "jgToolStripMenuItem";
-            this.jgToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.jgToolStripMenuItem.Text = "تعديل المنتح في الفاتورة";
+            this.lblCustomerPhone.BackColor = System.Drawing.Color.White;
+            this.lblCustomerPhone.Location = new System.Drawing.Point(43, 50);
+            this.lblCustomerPhone.Name = "lblCustomerPhone";
+            this.lblCustomerPhone.Size = new System.Drawing.Size(140, 36);
+            this.lblCustomerPhone.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label7.Location = new System.Drawing.Point(188, 53);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label7.Size = new System.Drawing.Size(98, 38);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "رقم الهاتف:";
             // 
             // frmAddNewSale
             // 
@@ -1177,11 +1143,11 @@ namespace PosAndAccountantProject.Sales
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetails)).EndInit();
+            this.cmsSaleDetails.ResumeLayout(false);
             this.pnlPreview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.cmsSaleDetails.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1203,12 +1169,8 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtSaleID;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomerName;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomerID;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox cbPayBy;
         private System.Windows.Forms.LinkLabel lnkSelectCustomer;
@@ -1252,15 +1214,19 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.ToolStripMenuItem tsmiAddToSale;
         private System.Windows.Forms.ToolStripMenuItem عرضToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
+        private System.Windows.Forms.ToolStripMenuItem الغاءمنالفاتورةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jgToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSalePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
-        private System.Windows.Forms.ToolStripMenuItem الغاءمنالفاتورةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jgToolStripMenuItem;
+        private System.Windows.Forms.Label lblCustomerPhone;
+        private System.Windows.Forms.Label lblCustomerName;
+        private System.Windows.Forms.Label lblCustomerID;
+        private System.Windows.Forms.Label label7;
     }
 }

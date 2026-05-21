@@ -67,6 +67,12 @@
     <Compile Include="Customers\Controls\ctrlCustomerCard.Designer.cs">
       <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customers\Controls\ctrlCustomerCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customers\Controls\ctrlCustomerCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlCustomerCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers\frmAddUpdateCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="Customers\frmCustomerInfo.Designer.cs">
       <DependentUpon>frmCustomerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmFindCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmFindCustomer.Designer.cs">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\frmListCustomers.cs">
       <SubType>Form</SubType>
@@ -244,11 +256,17 @@
     <EmbeddedResource Include="Customers\Controls\ctrlCustomerCard.resx">
       <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customers\Controls\ctrlCustomerCardWithFilter.resx">
+      <DependentUpon>ctrlCustomerCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmAddUpdateCustomer.resx">
       <DependentUpon>frmAddUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmCustomerInfo.resx">
       <DependentUpon>frmCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmFindCustomer.resx">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>

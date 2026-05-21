@@ -152,7 +152,7 @@ namespace PosAndAccountant_business
 
 
         }
-        public static clsCustomer FindUserByPersonID(int PersonID)
+        public static clsCustomer FindCustomerByPersonID(int PersonID)
         {
             clsCustomerDTO customerDTO = clsCustomerData.FindCustomerByPersonID(PersonID);
             if (customerDTO != null)
@@ -165,6 +165,19 @@ namespace PosAndAccountant_business
             return null;
         }
 
+        public static clsCustomer FindCustomerByPhone(string Phone)
+        {
+
+            clsCustomerDTO customerDTO = clsCustomerData.FindCustomerByPhone(Phone);
+            if (customerDTO != null)
+            {
+                return new clsCustomer(customerDTO);
+
+
+            }
+
+            return null;
+        }
         public static bool IsPersonCustomer(int PersonID)
         {
             return clsCustomerData.IsPersonCustomer(PersonID);

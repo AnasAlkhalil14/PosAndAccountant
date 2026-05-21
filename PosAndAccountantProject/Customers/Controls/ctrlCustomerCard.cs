@@ -23,8 +23,7 @@ namespace PosAndAccountantProject.Customers.Controls
 
 
         public bool WasPersonUpdated { get { return ctrlPersonCard1.WasUpdated; } }
-
-
+        
         public int CustomerID { get { return _CustomerID; } }
         public clsCustomer Customer { get { return _Customer; } }
 
@@ -32,6 +31,17 @@ namespace PosAndAccountantProject.Customers.Controls
         {
             _Customer = clsCustomer.FindCustomerByID(CustomerID);
             if (Customer!=null)
+            {
+                return _FillCustomerInfo();
+            }
+            ReseteCustomerInfo();
+            return false;
+
+        }
+        public bool LoadDataToControl(string Phone)
+        {
+            _Customer = clsCustomer.FindCustomerByPhone(Phone);
+            if (Customer != null)
             {
                 return _FillCustomerInfo();
             }
