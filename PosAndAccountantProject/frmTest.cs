@@ -27,6 +27,14 @@ namespace PosAndAccountantProject
        
          }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void printDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
     }
 }
