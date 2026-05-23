@@ -21,7 +21,7 @@ namespace PosAndAccountantProject.Sales
         {
             InitializeComponent();
         }
-
+        private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
         clsCustomer _SelectedCustomer;
         struct stProductSaleForTotalPriceInfo
         {
@@ -258,7 +258,8 @@ dgvProductList.DataSource = _AllProducts;
         private void dgvSaleDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["clmQuantity"].Index
-                | dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["clmDiscount"].Index)
+                || dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["clmDiscount"].Index
+                || dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["clmReturnQ"].Index)
             {
                 TextBox txt=e.Control as TextBox;
                 if(txt!=null)
@@ -308,14 +309,16 @@ dgvProductList.DataSource = _AllProducts;
                 }
                 HandleChangeQuantityInListSales(NewQ, RowIndex, OldQ);
                 //for case if he repeate editing in same row and column
+
                 dgvSaleDetails_CellEnter(null, new DataGridViewCellEventArgs(e.ColumnIndex, e.RowIndex));
+
                 return;
             }
 
             stProductSaleForTotalPriceInfo info=new stProductSaleForTotalPriceInfo();
             info.NewQ = Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmQuantity"].Value);
             info.OldQ= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmQuantity"].Value);
-           info.SalePrice= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Value);
+           info.SalePrice= Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Value);
 
             if (e.ColumnIndex == dgvSaleDetails.Columns["clmDiscount"].Index)
             {
@@ -335,6 +338,8 @@ dgvProductList.DataSource = _AllProducts;
                     cell.Value = info.NewDiscount;
                 }
                 _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                dgvSaleDetails_CellEnter(null, new DataGridViewCellEventArgs(e.ColumnIndex, e.RowIndex));
+
                 return;
 
             }
@@ -349,6 +354,7 @@ dgvProductList.DataSource = _AllProducts;
                 {
                     cell.Value = 0;
                     info.NewReturnQ = 0;
+
 
                 }
                 else
@@ -370,6 +376,11 @@ dgvProductList.DataSource = _AllProducts;
 
                 }
                 _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                _UpdateTotalQuantityWhenUpdatteReturnQuantity(info.OldReturnQ, info.NewReturnQ);
+                _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ-info.NewReturnQ, e.RowIndex);
+
+                dgvSaleDetails_CellEnter(null, new DataGridViewCellEventArgs(e.ColumnIndex, e.RowIndex));
+
                 return;
 
 
@@ -421,6 +432,11 @@ dgvProductList.DataSource = _AllProducts;
 
         }
 
+        private void _UpdateTotalQuantityWhenUpdatteReturnQuantity(int OldReturnQ,int NewReturnQ)
+        {
+            lblTotalQuantity.Text = (Convert.ToInt32(lblTotalQuantity.Text) - (NewReturnQ-OldReturnQ)).ToString();
+
+        }
         void _UpdateTotalQuantityForUpdatQuantityItem(int OldQ,int NewQ)
         {
             _UpdatQuantityOfProductInDGVlistProduct(NewQ - OldQ, Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmProductID"].Value));
@@ -443,7 +459,7 @@ dgvProductList.DataSource = _AllProducts;
 
                 info.NewReturnQ = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmReturnQ"].Value);
                 info.OldReturnQ = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmReturnQ"].Value);
-                info.SalePrice = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmSalePrice"].Value);
+                info.SalePrice = Convert.ToDouble(dgvSaleDetails.CurrentRow.Cells["clmSalePrice"].Value);
                 if (quantity == 0)
                 {
                     dgvSaleDetails.Rows[RowIndex].Cells["clmQuantity"].Value = "1";
@@ -535,7 +551,7 @@ dgvProductList.DataSource = _AllProducts;
         }
 
         private void dgvSaleDetails_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
             if (e.ColumnIndex == dgvSaleDetails.Columns["clmQuantity"].Index||
                 e.ColumnIndex == dgvSaleDetails.Columns["clmDiscount"].Index||
                 e.ColumnIndex == dgvSaleDetails.Columns["clmReturnQ"].Index)
@@ -579,6 +595,57 @@ dgvProductList.DataSource = _AllProducts;
         private void Frm_SelectCustomer(object sender, frmFindCustomer.CustomerSelectedEventArgs e)
         {
             _LoadCustomerData(e.CustomrID);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {// 1. Create the receipt control instance here first
+            _currentReceipt = new PosAndAccountantProject.Printing.ctrlSaleInvoice();
+
+            // 2. Pass your textboxes and DataGridView data to it so it resizes its height dynamically
+            string invId = txtSaleID.Text;
+            string custName = lblCustomerName.Text;
+            string totalAmt = lblTotalAmountWithOutDebtAndDiscout.Text;
+            string netAmt = lblTotalAmountWithDiscoount.Text;
+            _currentReceipt.PopulateAndResize(invId, custName, dgvSaleDetails, totalAmt, netAmt);
+
+            // 3. Convert the UserControl's pixel dimensions to hundredths of an inch (Printer standard at 96 DPI)
+            int paperWidth = (int)((_currentReceipt.Width / 96.0) * 100);
+            int paperHeight = (int)((_currentReceipt.Height / 96.0) * 100);
+
+            // 4. Force the PrintDocument to use this exact custom paper size
+            printDoc.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("CustomReceipt", paperWidth, paperHeight);
+
+            // 5. Configure and open the Print Preview window
+            printPreviewDlg.Width = 500;
+            printPreviewDlg.Height = 700;
+            printPreviewDlg.StartPosition = FormStartPosition.CenterScreen;
+
+            printPreviewDlg.ShowDialog();
+
+            // 6. Clean up memory safely after the user closes the preview window
+            if (_currentReceipt != null)
+            {
+                _currentReceipt.Dispose();
+                _currentReceipt = null;
+            }
+        }
+
+        private void printDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            if (_currentReceipt == null) return;
+
+            // 1. Create a blank digital image canvas using the exact size of our receipt
+            Bitmap bmp = new Bitmap(_currentReceipt.Width, _currentReceipt.Height);
+
+            // 2. Take a visual snapshot of the user control layout
+            _currentReceipt.DrawToBitmap(bmp, new Rectangle(0, 0, _currentReceipt.Width, _currentReceipt.Height));
+
+            // 3. Stamp it onto the page. Because the paper size now matches the bitmap perfectly, 
+            // it will fill the page entirely with no blank margins on the right!
+            e.Graphics.DrawImage(bmp, 0, 0);
+
+            // 4. Dispose of the image asset immediately
+            bmp.Dispose();
         }
     }
 }

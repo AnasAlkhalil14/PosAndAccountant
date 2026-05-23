@@ -152,6 +152,12 @@
     <Compile Include="People\frmShowPersonInfo.Designer.cs">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Printing\ctrlSaleInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Printing\ctrlSaleInvoice.Designer.cs">
+      <DependentUpon>ctrlSaleInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products\Controls\ctrlProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="People\frmShowPersonInfo.resx">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printing\ctrlSaleInvoice.resx">
+      <DependentUpon>ctrlSaleInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products\Controls\ctrlProductCard.resx">
       <DependentUpon>ctrlProductCard.cs</DependentUpon>
