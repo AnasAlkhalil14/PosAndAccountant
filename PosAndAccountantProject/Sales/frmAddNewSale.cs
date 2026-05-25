@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Hosting;
@@ -646,6 +647,36 @@ dgvProductList.DataSource = _AllProducts;
 
             // 4. Dispose of the image asset immediately
             bmp.Dispose();
+        }
+
+        private void _SubtractFromTotalQuantity(int n)
+        {
+            if(n<=Convert.ToInt32(lblTotalQuantity.Text))
+            {
+                lblTotalQuantity.Text = (Convert.ToInt32(lblTotalQuantity.Text) - n).ToString();
+            }
+           
+        }
+        private void _SubtractProductPriceFromAllTotalAmount(double PriceProductAmount)
+        {
+            lblTotalAmountWithOutDebtAndDiscout.Text = (Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text) - PriceProductAmount).ToString();
+            lblTotalAmountWithDiscoount.Text = (Convert.ToDouble(lblTotalAmountWithDiscoount.Text) - PriceProductAmount).ToString();
+            lblTotalAmountWithDebt.Text = (Convert.ToDouble(lblTotalAmountWithDebt.Text) - PriceProductAmount).ToString();
+        }
+        private void _ActionOnDeleteItemFromSalesInvoice(DataGridViewRow row)
+        {
+            int Quantity = Convert.ToInt32(row.Cells["clmQuantity"].Value) - Convert.ToInt32(row.Cells["clmReturnQ"].Value);
+            _SubtractFromTotalQuantity(Quantity);
+            double PriceProductAmount = Convert.ToDouble(row.Cells["clmSalePrice"].Value) *
+                (Convert.ToDouble(row.Cells["clmQuantity"].Value) - Convert.ToDouble(row.Cells["clmReturnQ"].Value));
+            _SubtractProductPriceFromAllTotalAmount(PriceProductAmount);
+        }
+        private void الغاءمنالفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvSaleDetails.CurrentRow == null) return;
+            _ActionOnDeleteItemFromSalesInvoice(dgvSaleDetails.CurrentRow);
+            dgvSaleDetails.Rows.Remove(dgvSaleDetails.CurrentRow);
+
         }
     }
 }
