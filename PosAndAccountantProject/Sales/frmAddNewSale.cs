@@ -27,13 +27,12 @@ namespace PosAndAccountantProject.Sales
         struct stProductSaleForTotalPriceInfo
         {
          public   double SalePrice;
+            public double OldSalePrice;
          public   int OldQ;
          public   int NewQ;
          public   int OldReturnQ;
          public   int NewReturnQ;
-         public   double NewDiscount;
-            public double OldDiscount;
-
+      
         }
 
         private DataTable _AllProducts=clsProduct.GetAllProducts();
@@ -53,8 +52,8 @@ private void _LoadCustomerData(int CustomerID)
         }
         private void _UpdatTotalAmountWhenUpdatInSaleProductData(stProductSaleForTotalPriceInfo info)
         {
-            double OldPrice = info.SalePrice * (info.OldQ - info.OldReturnQ) - info.OldDiscount;
-            double NewPrice = info.SalePrice * (info.NewQ - info.NewReturnQ) - info.NewDiscount;
+            double OldPrice = info.OldSalePrice * (info.OldQ - info.OldReturnQ);
+            double NewPrice = info.SalePrice * (info.NewQ - info.NewReturnQ) ;
             double OldTotal = Convert.ToDouble(lblTotalAmountWithOutDebtAndDiscout.Text);
             lblTotalAmountWithOutDebtAndDiscout.Text = (OldTotal - OldPrice + NewPrice).ToString();
             _GetAndSetTotalAmountWithDisCount();
@@ -198,6 +197,8 @@ private void _LoadCustomerData(int CustomerID)
         _UpdatQuantityOfProductInDGVlistProduct(1,Convert.ToInt32(dgvProductList.SelectedRows[0].Cells["ProductID"].Value));
 
         }
+
+       
         private void اضافةللفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvProductList.SelectedRows.Count ==0)
@@ -217,6 +218,9 @@ private void _LoadCustomerData(int CustomerID)
 
             row.Cells[1].Value = SelectedRow.Cells["ProductName"].Value;
             row.Cells[2].Value = SelectedRow.Cells["SellingPrice"].Value;
+            //Saving Orginal Selling Price In its tag
+            row.Cells[2].Tag = SelectedRow.Cells["SellingPrice"].Value;
+
             row.Cells[3].Value = 1;
             row.Cells [4].Value = Convert.ToDecimal(row.Cells[2].Value) * Convert.ToDecimal(row.Cells[3].Value);
             row.Cells[5].Value = 0;
@@ -319,35 +323,39 @@ dgvProductList.DataSource = _AllProducts;
             stProductSaleForTotalPriceInfo info=new stProductSaleForTotalPriceInfo();
             info.NewQ = Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmQuantity"].Value);
             info.OldQ= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmQuantity"].Value);
-           info.SalePrice= Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Value);
+           info.OldSalePrice= Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Value);
 
             if (e.ColumnIndex == dgvSaleDetails.Columns["clmDiscount"].Index)
             {
-                info.OldDiscount = Convert.ToInt32(cell.Tag);
                 info.OldReturnQ= Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmReturnQ"].Value);
                 info.NewReturnQ = info.OldReturnQ;
-                if (string.IsNullOrEmpty(cell.Value.ToString().Trim()))
+                if (string.IsNullOrEmpty(cell.Value.ToString().Trim()) || Convert.ToDouble(cell.Value)>
+                    Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Tag))
                 {
                     cell.Value = 0;
-                    info.NewDiscount = 0;
+                   
 
                 }
                 else
                 {
 
-                    info.NewDiscount=Convert.ToDouble(cell.Value);
-                    cell.Value = info.NewDiscount;
+                   
+                    cell.Value = Convert.ToDouble(cell.Value); ;
                 }
+
+                info.SalePrice = Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Tag)- Convert.ToDouble(cell.Value);
+                dgvSaleDetails.Rows[e.RowIndex].Cells["clmSalePrice"].Value = info.SalePrice;
                 _UpdatTotalAmountWhenUpdatInSaleProductData(info);
+                _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ - info.NewReturnQ, e.RowIndex);
+
                 dgvSaleDetails_CellEnter(null, new DataGridViewCellEventArgs(e.ColumnIndex, e.RowIndex));
 
                 return;
 
             }
 
-            info.NewDiscount = Convert.ToDouble(dgvSaleDetails.Rows[e.RowIndex].Cells["clmDiscount"].Value); ;
-            info.OldDiscount = info.NewDiscount;
-
+          
+            info.SalePrice = info.OldSalePrice;
             if (e.ColumnIndex == dgvSaleDetails.Columns["clmReturnQ"].Index)
             {
                 info.OldReturnQ = Convert.ToInt32(cell.Tag);
@@ -455,12 +463,11 @@ dgvProductList.DataSource = _AllProducts;
             {
                 stProductSaleForTotalPriceInfo info = new stProductSaleForTotalPriceInfo();
                 info.OldQ = OldQuantity;
-                info.OldDiscount = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmDiscount"].Value);
-                info.NewDiscount = info.OldDiscount;
 
                 info.NewReturnQ = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmReturnQ"].Value);
                 info.OldReturnQ = Convert.ToInt32(dgvSaleDetails.CurrentRow.Cells["clmReturnQ"].Value);
                 info.SalePrice = Convert.ToDouble(dgvSaleDetails.CurrentRow.Cells["clmSalePrice"].Value);
+                info.OldSalePrice = info.SalePrice;
                 if (quantity == 0)
                 {
                     dgvSaleDetails.Rows[RowIndex].Cells["clmQuantity"].Value = "1";
@@ -607,7 +614,9 @@ dgvProductList.DataSource = _AllProducts;
             string custName = lblCustomerName.Text;
             string totalAmt = lblTotalAmountWithOutDebtAndDiscout.Text;
             string netAmt = lblTotalAmountWithDiscoount.Text;
-            _currentReceipt.PopulateAndResize(invId, custName, dgvSaleDetails, totalAmt, netAmt);
+            string totalItemsCount = lblTotalQuantity.Text;
+            string debt=lblTotalDebt.Text;
+            _currentReceipt.PopulateAndResize(invId, custName, dgvSaleDetails, totalAmt, netAmt,debt, totalItemsCount);
 
             // 3. Convert the UserControl's pixel dimensions to hundredths of an inch (Printer standard at 96 DPI)
             int paperWidth = (int)((_currentReceipt.Width / 96.0) * 100);
