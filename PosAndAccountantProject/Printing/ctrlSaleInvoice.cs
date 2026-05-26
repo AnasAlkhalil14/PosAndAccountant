@@ -70,6 +70,8 @@ namespace PosAndAccountantProject.Printing
             separator2.Top = heightDelta;
             separator3.Top = heightDelta;
             lblFooter.Top += heightDelta;
+            lblDiscount.Top += heightDelta;
+            lblDiscountValue.Top += heightDelta;
             // Grow usercontrol container boundary
             this.Height += heightDelta;
             this.PerformLayout();
