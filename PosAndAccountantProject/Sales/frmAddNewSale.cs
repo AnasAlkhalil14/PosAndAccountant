@@ -1,5 +1,6 @@
 ﻿using PosAndAccountant_business;
 using PosAndAccountantProject.Customers;
+using PosAndAccountantProject.GlobalClasses;
 using PosAndAccountantProject.Products;
 using PosAndAccountantProject.Properties;
 using System;
@@ -21,7 +22,15 @@ namespace PosAndAccountantProject.Sales
         public frmAddNewSale()
         {
             InitializeComponent();
+            _Sale = new clsSale();
         }
+        public frmAddNewSale(int saleID)
+        {
+            InitializeComponent();
+            //_Sale=clsSale.Find(saleID);
+        }
+        private clsSale _Sale;
+
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
         clsCustomer _SelectedCustomer;
         struct stProductSaleForTotalPriceInfo
@@ -130,8 +139,21 @@ private void _LoadCustomerData(int CustomerID)
 
            
         }
+
+        private void _HandleSaleDataOnLoad()
+        {
+            if(_Sale.Mode==clsSale.enMode.eAdd)
+            {
+                _Sale.UserID = 1;
+                _Sale.Save();
+            }
+            lblSaleID.Text = _Sale.SaleID.ToString();
+            
+
+        }
         private void frmAddNewSale_Load(object sender, EventArgs e)
         {
+            _HandleSaleDataOnLoad();
             _SettleTheProductSideOnFormLoad();
             _LoadPaymentMethodToCompoBox();
             _LoadCustomerData(6);
@@ -611,7 +633,7 @@ dgvProductList.DataSource = _AllProducts;
             _currentReceipt = new PosAndAccountantProject.Printing.ctrlSaleInvoice();
 
             // 2. Pass your textboxes and DataGridView data to it so it resizes its height dynamically
-            string invId = txtSaleID.Text;
+            string invId = lblSaleID.Text;
             string custName = lblCustomerName.Text;
             string totalAmt = lblTotalAmountWithOutDebtAndDiscout.Text;
             string netAmt = lblTotalAmountWithDiscoount.Text;
