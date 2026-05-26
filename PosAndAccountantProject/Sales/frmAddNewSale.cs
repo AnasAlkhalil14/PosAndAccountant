@@ -384,6 +384,7 @@ dgvProductList.DataSource = _AllProducts;
                     }
 
                 }
+                _AddQuantityProductOnDGVofProducts(info.NewReturnQ - info.OldReturnQ, Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmProductID"].Value));
                 _UpdatTotalAmountWhenUpdatInSaleProductData(info);
                 _UpdateTotalQuantityWhenUpdatteReturnQuantity(info.OldReturnQ, info.NewReturnQ);
                 _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ-info.NewReturnQ, e.RowIndex);
@@ -672,9 +673,18 @@ dgvProductList.DataSource = _AllProducts;
             lblTotalAmountWithDiscoount.Text = (Convert.ToDouble(lblTotalAmountWithDiscoount.Text) - PriceProductAmount).ToString();
             lblTotalAmountWithDebt.Text = (Convert.ToDouble(lblTotalAmountWithDebt.Text) - PriceProductAmount).ToString();
         }
+
+        private void _AddQuantityProductOnDGVofProducts(int Quantity,int ProductID)
+        {
+            DataRow row = _AllProducts.Select($"ProductID={ProductID}")[0];
+            int OldQ =Convert.ToInt32( row["QuantityInStock"]);
+            row["QuantityInStock"] = (OldQ + Quantity);
+        }
         private void _ActionOnDeleteItemFromSalesInvoice(DataGridViewRow row)
         {
             int Quantity = Convert.ToInt32(row.Cells["clmQuantity"].Value) - Convert.ToInt32(row.Cells["clmReturnQ"].Value);
+
+            _AddQuantityProductOnDGVofProducts(Quantity, Convert.ToInt32(row.Cells["clmProductID"].Value));
             _SubtractFromTotalQuantity(Quantity);
             double PriceProductAmount = Convert.ToDouble(row.Cells["clmSalePrice"].Value) *
                 (Convert.ToDouble(row.Cells["clmQuantity"].Value) - Convert.ToDouble(row.Cells["clmReturnQ"].Value));

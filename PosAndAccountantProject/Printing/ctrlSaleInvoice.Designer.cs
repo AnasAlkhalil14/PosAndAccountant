@@ -39,6 +39,11 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.dgvReceiptItems = new System.Windows.Forms.DataGridView();
+            this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalLabel = new System.Windows.Forms.Label();
             this.lblTotalValue = new System.Windows.Forms.Label();
             this.pnlHeaderBorder = new System.Windows.Forms.Panel();
@@ -50,8 +55,8 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblDiscountValue = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblDebtValue = new System.Windows.Forms.Label();
             this.lblDebt = new System.Windows.Forms.Label();
             this.lblTotalAmountWithDebtValue = new System.Windows.Forms.Label();
@@ -60,11 +65,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceiptItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,6 +187,42 @@
             this.dgvReceiptItems.Size = new System.Drawing.Size(516, 308);
             this.dgvReceiptItems.TabIndex = 6;
             // 
+            // colIndex
+            // 
+            this.colIndex.FillWeight = 30F;
+            this.colIndex.HeaderText = "م";
+            this.colIndex.Name = "colIndex";
+            this.colIndex.ReadOnly = true;
+            this.colIndex.Width = 30;
+            // 
+            // colDescription
+            // 
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescription.HeaderText = "البيان";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "السعر";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            this.colPrice.Width = 50;
+            // 
+            // colQty
+            // 
+            this.colQty.HeaderText = "الكمية";
+            this.colQty.Name = "colQty";
+            this.colQty.ReadOnly = true;
+            this.colQty.Width = 70;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "الإجمالي";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            this.colTotal.Width = 80;
+            // 
             // lblTotalLabel
             // 
             this.lblTotalLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,27 +312,27 @@
             this.separator2.Size = new System.Drawing.Size(526, 10);
             this.separator2.TabIndex = 15;
             // 
+            // lblDiscountValue
+            // 
+            this.lblDiscountValue.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountValue.Location = new System.Drawing.Point(297, 591);
+            this.lblDiscountValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDiscountValue.Name = "lblDiscountValue";
+            this.lblDiscountValue.Size = new System.Drawing.Size(127, 38);
+            this.lblDiscountValue.TabIndex = 17;
+            this.lblDiscountValue.Text = "0.00";
+            this.lblDiscountValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblDiscount
             // 
-            this.lblDiscount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(297, 591);
+            this.lblDiscount.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.Location = new System.Drawing.Point(446, 591);
             this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(127, 38);
-            this.lblDiscount.TabIndex = 17;
-            this.lblDiscount.Text = "0.00";
-            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(446, 591);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 38);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "الخصم:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDiscount.Size = new System.Drawing.Size(78, 38);
+            this.lblDiscount.TabIndex = 16;
+            this.lblDiscount.Text = "الخصم:";
+            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDebtValue
             // 
@@ -382,42 +418,6 @@
             this.lblFooter.Text = "الماهر للمحااسبة";
             this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // colIndex
-            // 
-            this.colIndex.FillWeight = 30F;
-            this.colIndex.HeaderText = "م";
-            this.colIndex.Name = "colIndex";
-            this.colIndex.ReadOnly = true;
-            this.colIndex.Width = 30;
-            // 
-            // colDescription
-            // 
-            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescription.HeaderText = "البيان";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            this.colPrice.HeaderText = "السعر";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            this.colPrice.Width = 50;
-            // 
-            // colQty
-            // 
-            this.colQty.HeaderText = "الكمية";
-            this.colQty.Name = "colQty";
-            this.colQty.ReadOnly = true;
-            this.colQty.Width = 70;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "الإجمالي";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            this.colTotal.Width = 80;
-            // 
             // ctrlSaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -431,8 +431,8 @@
             this.Controls.Add(this.lblTotalAmountWithDebt);
             this.Controls.Add(this.lblDebtValue);
             this.Controls.Add(this.lblDebt);
+            this.Controls.Add(this.lblDiscountValue);
             this.Controls.Add(this.lblDiscount);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.separator2);
             this.Controls.Add(this.separator1);
             this.Controls.Add(this.lblTotalQtyValue);
@@ -479,8 +479,8 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Separator separator2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private System.Windows.Forms.Label lblDiscountValue;
         private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDebtValue;
         private System.Windows.Forms.Label lblDebt;
         private System.Windows.Forms.Label lblTotalAmountWithDebtValue;
