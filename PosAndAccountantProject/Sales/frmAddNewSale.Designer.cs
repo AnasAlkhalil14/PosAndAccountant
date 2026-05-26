@@ -63,7 +63,6 @@ namespace PosAndAccountantProject.Sales
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSaleID = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +112,7 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
+            this.lblSaleID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -340,6 +340,7 @@ namespace PosAndAccountantProject.Sales
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel3.Controls.Add(this.lblSaleID);
             this.panel3.Controls.Add(this.lblCustomerPhone);
             this.panel3.Controls.Add(this.lblCustomerName);
             this.panel3.Controls.Add(this.lblCustomerID);
@@ -350,7 +351,6 @@ namespace PosAndAccountantProject.Sales
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txtSaleID);
             this.panel3.Location = new System.Drawing.Point(524, 77);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(928, 99);
@@ -456,31 +456,12 @@ namespace PosAndAccountantProject.Sales
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label5.Location = new System.Drawing.Point(797, 1);
+            this.label5.Location = new System.Drawing.Point(797, 9);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(128, 38);
+            this.label5.Size = new System.Drawing.Size(128, 29);
             this.label5.TabIndex = 8;
             this.label5.Text = "معرف الفاتورة:";
-            // 
-            // txtSaleID
-            // 
-            this.txtSaleID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSaleID.DefaultText = "1";
-            this.txtSaleID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSaleID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSaleID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSaleID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSaleID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtSaleID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSaleID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtSaleID.Location = new System.Drawing.Point(667, 3);
-            this.txtSaleID.Name = "txtSaleID";
-            this.txtSaleID.PlaceholderText = "اكتب للبحث";
-            this.txtSaleID.SelectedText = "";
-            this.txtSaleID.Size = new System.Drawing.Size(124, 30);
-            this.txtSaleID.TabIndex = 7;
-            this.txtSaleID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // dgvSaleDetails
             // 
@@ -613,7 +594,7 @@ namespace PosAndAccountantProject.Sales
             this.jgToolStripMenuItem});
             this.cmsSaleDetails.Name = "contextMenuStrip2";
             this.cmsSaleDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsSaleDetails.Size = new System.Drawing.Size(237, 78);
+            this.cmsSaleDetails.Size = new System.Drawing.Size(237, 56);
             // 
             // الغاءمنالفاتورةToolStripMenuItem
             // 
@@ -1128,6 +1109,14 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
             // 
+            // lblSaleID
+            // 
+            this.lblSaleID.BackColor = System.Drawing.Color.White;
+            this.lblSaleID.Location = new System.Drawing.Point(671, 5);
+            this.lblSaleID.Name = "lblSaleID";
+            this.lblSaleID.Size = new System.Drawing.Size(124, 30);
+            this.lblSaleID.TabIndex = 38;
+            // 
             // frmAddNewSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1189,7 +1178,6 @@ namespace PosAndAccountantProject.Sales
         private Guna.UI2.WinForms.Guna2DataGridView dgvProductList;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtSaleID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
@@ -1251,5 +1239,6 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label label7;
         private System.Drawing.Printing.PrintDocument printDoc;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDlg;
+        private System.Windows.Forms.Label lblSaleID;
     }
 }

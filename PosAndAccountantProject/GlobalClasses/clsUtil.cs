@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosAndAccountant_business;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -11,6 +12,7 @@ namespace PosAndAccountantProject.GlobalClasses
 {
     internal class clsUtil
     {
+        public static clsUser CurrentUser;
 
         public static bool CreateFolderIfNotExist(string FolderPath)
         {

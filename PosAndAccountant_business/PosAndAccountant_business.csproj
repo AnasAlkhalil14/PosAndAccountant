@@ -49,6 +49,7 @@
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsProductCategory.cs" />
     <Compile Include="clsProducts.cs" />
+    <Compile Include="clsSale.cs" />
     <Compile Include="clsSupplier.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
