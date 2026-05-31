@@ -28,6 +28,7 @@ namespace PosAndAccountant_business
         public DateTime CreateDate { get; set; }
         public string Notes { get; set; }
 
+        public DataTable dtSaleDetails {  get; set; }
         // Private Add Method using the DTO
         private bool _AddSale()
         {
@@ -41,12 +42,39 @@ namespace PosAndAccountant_business
         // Private Update Method Placeholder
         private bool _UpdateSale()
         {
-            // Placeholder: Implement when you add Update functionality to your Data Access Layer
-            return false;
+           clsSaleDTO saleDTO=new clsSaleDTO();
+            saleDTO.SaleID = this._SaleID;
+            saleDTO.CustomerID = this.CustomerID;
+            saleDTO.UserID = this.UserID;
+            saleDTO.Notes = this.Notes;
+            saleDTO.Status = this.Status;
+            saleDTO.TotalAmount = this.TotalAmount;
+            saleDTO.DiscountAmount = this.DiscountAmount;
+            saleDTO.PaymentMethodID = this.PaymentMethodID;
+            saleDTO.PaidAmount = this.PaidAmount;
+
+            return clsSaleData.SaveSale(saleDTO,dtSaleDetails);
         }
 
         // Constructor 1: From DTO (Used when retrieving an existing sale)
-        public clsSale(clsSaleDTO dto)
+
+        private void _AddColumnsOfDetail()
+        {
+            dtSaleDetails.Columns.Add("ProductID", typeof(int));
+            dtSaleDetails.Columns.Add("CostPrice", typeof(double));
+            dtSaleDetails.Columns.Add("SellingPrice", typeof(int));
+            dtSaleDetails.Columns.Add("Quantity", typeof(int));
+            dtSaleDetails.Columns.Add("ReturnedQuantity", typeof(int));
+            dtSaleDetails.Columns.Add("ProductName", typeof(int)); 
+            dtSaleDetails.Columns.Add("DiscountAmount", typeof(int));
+
+             
+
+
+
+
+        }
+        public clsSale(clsSaleDTO dto,DataTable Details)
         {
             _SaleID = dto.SaleID;
             UserID = dto.UserID;
@@ -58,8 +86,9 @@ namespace PosAndAccountant_business
             DiscountAmount = dto.DiscountAmount ; 
             CreateDate = dto.CreateDate;
             Notes = dto.Notes;
-
+            dtSaleDetails= Details;
             Mode = enMode.eUpdate;
+            
         }
 
         // Constructor 2: Parameterless (Used when creating a new sale)
@@ -75,6 +104,10 @@ namespace PosAndAccountant_business
             DiscountAmount = 0;
             CreateDate = DateTime.Now;
             Notes = "";
+            dtSaleDetails = new DataTable();
+            DataColumn[] dc = new DataColumn[] { new DataColumn(), new DataColumn(), new DataColumn(), new DataColumn(), new DataColumn() };
+            
+            dtSaleDetails.Columns.AddRange(dc);
 
             Mode = enMode.eAdd;
         }

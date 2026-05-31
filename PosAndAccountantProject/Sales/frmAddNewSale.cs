@@ -719,5 +719,44 @@ dgvProductList.DataSource = _AllProducts;
             dgvSaleDetails.Rows.Remove(dgvSaleDetails.CurrentRow);
 
         }
+        private bool _SaveSale()
+        {
+            _Sale.CustomerID=Convert.ToInt32(lblCustomerID.Text.Trim());
+            _Sale.Notes=txtNotes.Text.Trim();
+            _Sale.DiscountAmount=Convert.ToDouble(txtDiscount.Text.Trim());
+            _Sale.TotalAmount=Convert.ToDouble (lblTotalAmountWithOutDebtAndDiscout.Text.Trim());
+            _Sale.Status = 2;
+            _Sale.PaidAmount=Convert.ToDouble(txtPaidAmount.Text.Trim());
+            _Sale.PaymentMethodID = Convert.ToInt32(cbPayBy.SelectedValue);
+
+            foreach (DataGridViewRow row in dgvSaleDetails.Rows)
+            {
+                if (row.IsNewRow) continue;
+                _Sale.dtSaleDetails.Rows.Add(                 
+                    row.Cells["clmProductID"].Value,
+                       row.Cells["clmSalePrice"].Value,
+                    row.Cells["clmQuantity"].Value,
+                    row.Cells["clmReturnQ"].Value,
+                
+                  row.Cells["clmDiscount"].Value
+
+
+                );
+            }
+
+          return  _Sale.Save();
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(_SaveSale())
+            {
+                MessageBox.Show("تم حفظ الفاتورة بنجاح", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnPrint.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("حدث خطأ لم يتم حفظ الفاتورة", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
