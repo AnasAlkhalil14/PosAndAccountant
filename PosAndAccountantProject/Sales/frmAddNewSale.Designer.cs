@@ -53,6 +53,7 @@ namespace PosAndAccountantProject.Sales
             this.tsmiAddToSale = new System.Windows.Forms.ToolStripMenuItem();
             this.عرضToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblSaleID = new System.Windows.Forms.Label();
             this.lblCustomerPhone = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
-            this.lblSaleID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -355,6 +355,14 @@ namespace PosAndAccountantProject.Sales
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(928, 99);
             this.panel3.TabIndex = 9;
+            // 
+            // lblSaleID
+            // 
+            this.lblSaleID.BackColor = System.Drawing.Color.White;
+            this.lblSaleID.Location = new System.Drawing.Point(671, 5);
+            this.lblSaleID.Name = "lblSaleID";
+            this.lblSaleID.Size = new System.Drawing.Size(124, 30);
+            this.lblSaleID.TabIndex = 38;
             // 
             // lblCustomerPhone
             // 
@@ -922,13 +930,13 @@ namespace PosAndAccountantProject.Sales
             // txtPaidAmount
             // 
             this.txtPaidAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPaidAmount.DefaultText = "";
+            this.txtPaidAmount.DefaultText = "0";
             this.txtPaidAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPaidAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPaidAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPaidAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPaidAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtPaidAmount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPaidAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaidAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtPaidAmount.Location = new System.Drawing.Point(435, 112);
             this.txtPaidAmount.Name = "txtPaidAmount";
@@ -1056,6 +1064,7 @@ namespace PosAndAccountantProject.Sales
             this.btnSave.Size = new System.Drawing.Size(152, 45);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "حفظ الفاتورة";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrint
             // 
@@ -1108,14 +1117,6 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDlg.Icon")));
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
-            // 
-            // lblSaleID
-            // 
-            this.lblSaleID.BackColor = System.Drawing.Color.White;
-            this.lblSaleID.Location = new System.Drawing.Point(671, 5);
-            this.lblSaleID.Name = "lblSaleID";
-            this.lblSaleID.Size = new System.Drawing.Size(124, 30);
-            this.lblSaleID.TabIndex = 38;
             // 
             // frmAddNewSale
             // 

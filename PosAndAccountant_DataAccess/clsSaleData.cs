@@ -56,5 +56,44 @@ namespace PosAndAccountant_DataAccess
 
             return newSaleID;
         }
+    
+       public static bool SaveSale(clsSaleDTO SaleDTO,DataTable SaleDetails)
+        {
+
+
+            try
+            {  // Send everything in ONE call
+                using (var conn = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using (var cmd = new SqlCommand("Sales.SP_SaveSale", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@SaleID", SaleDTO.SaleID);  
+                       cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
+                    cmd.Parameters.AddWithValue("@CustomerID", SaleDTO.CustomerID);
+                    cmd.Parameters.AddWithValue("@PaymentMethodID", SaleDTO.PaymentMethodID);
+                    cmd.Parameters.AddWithValue("@Status", SaleDTO.Status);
+                    cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                    cmd.Parameters.AddWithValue("@DiscountAmount", SaleDTO.DiscountAmount);
+                    cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
+
+
+                    var p = cmd.Parameters.AddWithValue("@Details", SaleDetails); // ✅ DataTable directly
+                    p.SqlDbType = SqlDbType.Structured;
+                    p.TypeName = "SaleDetailType";
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch(Exception ex)
+            {
+                //loging erro
+            return false;
+            }
+
+
+            return true;
+
+        }
     }
 }
