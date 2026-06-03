@@ -10,7 +10,7 @@ namespace PosAndAccountantProject.Printing
             InitializeComponent();
         }
 
-        public void PopulateAndResize(string invoiceId, string customerName, DataGridView sourceDgv, string totalAmount, string netAmount,string debt,string totalItemsCount)
+        public void PopulateAndResize(string invoiceId, string customerName, DataGridView sourceDgv, string totalAmount, string netAmount,string debt,string totalItemsCount,string paidAmount)
         {
             // 1. Populate metadata matching the layout pattern from your photo
             lblInvoiceNumber.Text = $" فاتورة رقم : {invoiceId}";
@@ -22,7 +22,7 @@ namespace PosAndAccountantProject.Printing
             lblTotalValue.Text = totalAmount;
             lblNetValue.Text = netAmount;
             lblTotalQtyValue.Text = totalItemsCount;
-
+            lblPaidAmountValue.Text = paidAmount;
             // 2. Clear old lines and transfer item rows safely
             dgvReceiptItems.Rows.Clear();
           
@@ -72,6 +72,8 @@ namespace PosAndAccountantProject.Printing
             lblFooter.Top += heightDelta;
             lblDiscount.Top += heightDelta;
             lblDiscountValue.Top += heightDelta;
+            lblPaidAmountValue.Top += heightDelta;
+            lblPaidAmount.Top += heightDelta;
             // Grow usercontrol container boundary
             this.Height += heightDelta;
             this.PerformLayout();

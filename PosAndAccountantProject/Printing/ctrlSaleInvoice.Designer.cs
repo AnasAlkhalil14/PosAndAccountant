@@ -61,8 +61,8 @@
             this.lblDebt = new System.Windows.Forms.Label();
             this.lblTotalAmountWithDebtValue = new System.Windows.Forms.Label();
             this.lblTotalAmountWithDebt = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPaidAmountValue = new System.Windows.Forms.Label();
+            this.lblPaidAmount = new System.Windows.Forms.Label();
             this.separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblFooter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceiptItems)).BeginInit();
@@ -378,27 +378,27 @@
             this.lblTotalAmountWithDebt.Text = "الصافي مع الدين:";
             this.lblTotalAmountWithDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // lblPaidAmountValue
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 667);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 37);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "0.00";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPaidAmountValue.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaidAmountValue.Location = new System.Drawing.Point(139, 667);
+            this.lblPaidAmountValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPaidAmountValue.Name = "lblPaidAmountValue";
+            this.lblPaidAmountValue.Size = new System.Drawing.Size(127, 37);
+            this.lblPaidAmountValue.TabIndex = 23;
+            this.lblPaidAmountValue.Text = "0.00";
+            this.lblPaidAmountValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
+            // lblPaidAmount
             // 
-            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(296, 667);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 37);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "الدفعة الحالية:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPaidAmount.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaidAmount.Location = new System.Drawing.Point(296, 667);
+            this.lblPaidAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPaidAmount.Name = "lblPaidAmount";
+            this.lblPaidAmount.Size = new System.Drawing.Size(128, 37);
+            this.lblPaidAmount.TabIndex = 22;
+            this.lblPaidAmount.Text = "الدفعة الحالية:";
+            this.lblPaidAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // separator3
             // 
@@ -425,8 +425,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblFooter);
             this.Controls.Add(this.separator3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblPaidAmountValue);
+            this.Controls.Add(this.lblPaidAmount);
             this.Controls.Add(this.lblTotalAmountWithDebtValue);
             this.Controls.Add(this.lblTotalAmountWithDebt);
             this.Controls.Add(this.lblDebtValue);
@@ -485,8 +485,8 @@
         private System.Windows.Forms.Label lblDebt;
         private System.Windows.Forms.Label lblTotalAmountWithDebtValue;
         private System.Windows.Forms.Label lblTotalAmountWithDebt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPaidAmountValue;
+        private System.Windows.Forms.Label lblPaidAmount;
         private Guna.UI2.WinForms.Guna2Separator separator3;
         private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIndex;
