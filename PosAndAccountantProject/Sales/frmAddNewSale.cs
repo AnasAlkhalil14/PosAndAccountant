@@ -220,7 +220,26 @@ private void _LoadCustomerData(int CustomerID)
 
         }
 
-       
+        private DataGridViewRow _GetRowByProductIDInSaleDetails(int ProductID)
+        {
+
+            foreach (DataGridViewRow row in dgvSaleDetails.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["clmProductID"].Value != null)
+                {
+                    if (Convert.ToInt32(row.Cells["clmProductID"].Value) == ProductID)
+                    {
+                        return row;
+                    }
+                }
+
+
+
+            }
+
+            return null;
+
+        }
         private void اضافةللفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvProductList.SelectedRows.Count ==0)
@@ -230,27 +249,41 @@ private void _LoadCustomerData(int CustomerID)
 
             DataGridViewRow SelectedRow = dgvProductList.SelectedRows[0];
 
-            DataGridViewRow row = new DataGridViewRow();
-            row.CreateCells(dgvSaleDetails);
-            if(dgvSaleDetails.Rows.Count > 0 ) 
+            int ProductID = Convert.ToInt32(SelectedRow.Cells["ProductID"].Value);
+            DataGridViewRow SaleDetailRow = _GetRowByProductIDInSaleDetails(ProductID);
 
-            row.Cells[0].Value = Convert.ToInt32(dgvSaleDetails.Rows[dgvSaleDetails.Rows.Count - 1].Cells[0].Value) + 1;
-       else
-                row.Cells[0].Value = 1;
+            if (SaleDetailRow == null)
+            {
+        SaleDetailRow = new DataGridViewRow();
+                SaleDetailRow.CreateCells(dgvSaleDetails);
+                if (dgvSaleDetails.Rows.Count > 0)
 
-            row.Cells[1].Value = SelectedRow.Cells["ProductName"].Value;
-            row.Cells[2].Value = SelectedRow.Cells["SellingPrice"].Value;
-            //Saving Orginal Selling Price In its tag
-            row.Cells[2].Tag = SelectedRow.Cells["SellingPrice"].Value;
+                    SaleDetailRow.Cells[0].Value = Convert.ToInt32(dgvSaleDetails.Rows[dgvSaleDetails.Rows.Count - 1].Cells[0].Value) + 1;
+                else
+                    SaleDetailRow.Cells[0].Value = 1;
 
-            row.Cells[3].Value = 1;
-            row.Cells [4].Value = Convert.ToDecimal(row.Cells[2].Value) * Convert.ToDecimal(row.Cells[3].Value);
-            row.Cells[5].Value = 0;
-            row.Cells[6].Value = 0;
-            row.Cells[7].Value = SelectedRow.Cells["ProductID"].Value;
+                SaleDetailRow.Cells[1].Value = SelectedRow.Cells["ProductName"].Value;
+                SaleDetailRow.Cells[2].Value = SelectedRow.Cells["SellingPrice"].Value;
+                //Saving Orginal Selling Price In its tag
+                SaleDetailRow.Cells[2].Tag = SelectedRow.Cells["SellingPrice"].Value;
 
-            _ActionOnAddProductToSale();
-            dgvSaleDetails.Rows.Add(row);
+                SaleDetailRow.Cells[3].Value = 1;
+                SaleDetailRow.Cells[4].Value = Convert.ToDecimal(SaleDetailRow.Cells[2].Value) * Convert.ToDecimal(SaleDetailRow.Cells[3].Value);
+                SaleDetailRow.Cells[5].Value = 0;
+                SaleDetailRow.Cells[6].Value = 0;
+                SaleDetailRow.Cells[7].Value = SelectedRow.Cells["ProductID"].Value;
+
+                dgvSaleDetails.Rows.Add(SaleDetailRow);
+                _ActionOnAddProductToSale();
+            }
+            else
+            {
+                HandleChangeQuantityInListSales(Convert.ToInt32(SaleDetailRow.Cells["clmQuantity"].Value)+1, SaleDetailRow.Index, Convert.ToInt32(SaleDetailRow.Cells["clmQuantity"].Value));
+                return;
+            }
+
+           
+          
         }
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
@@ -409,7 +442,7 @@ dgvProductList.DataSource = _AllProducts;
                 _AddQuantityProductOnDGVofProducts(info.NewReturnQ - info.OldReturnQ, Convert.ToInt32(dgvSaleDetails.Rows[e.RowIndex].Cells["clmProductID"].Value));
                 _UpdatTotalAmountWhenUpdatInSaleProductData(info);
                 _UpdateTotalQuantityWhenUpdatteReturnQuantity(info.OldReturnQ, info.NewReturnQ);
-                _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ-info.NewReturnQ, e.RowIndex);
+                _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(info.SalePrice, info.NewQ, e.RowIndex);
 
                 dgvSaleDetails_CellEnter(null, new DataGridViewCellEventArgs(e.ColumnIndex, e.RowIndex));
 
@@ -477,7 +510,9 @@ dgvProductList.DataSource = _AllProducts;
 
         private void _UpateTotalPriceInDGVForOneProductWhenChangeQuantity(double SellPrice,int NewQ,int RowIndex)
         {
-            dgvSaleDetails.Rows[RowIndex].Cells["clmTotalPrice"].Value = (SellPrice * NewQ);
+            int ReturnQ = Convert.ToInt32(dgvSaleDetails.Rows[RowIndex].Cells["clmReturnQ"].Value);
+            dgvSaleDetails.Rows[RowIndex].Cells["clmTotalPrice"].Value = (SellPrice * (NewQ - ReturnQ));
+            //dgvSaleDetails.Rows[RowIndex].Cells["clmTotalPrice"].Value = (SellPrice * NewQ);
         }
             private void HandleChangeQuantityInListSales(int  quantity,int RowIndex,int OldQuantity)
         {
@@ -639,7 +674,7 @@ dgvProductList.DataSource = _AllProducts;
             string netAmt = lblTotalAmountWithDiscoount.Text;
             string totalItemsCount = lblTotalQuantity.Text;
             string debt=lblTotalDebt.Text;
-            _currentReceipt.PopulateAndResize(invId, custName, dgvSaleDetails, totalAmt, netAmt,debt, totalItemsCount);
+            _currentReceipt.PopulateAndResize(invId, custName, dgvSaleDetails, totalAmt, netAmt,debt, totalItemsCount,txtPaidAmount.Text);
 
             // 3. Convert the UserControl's pixel dimensions to hundredths of an inch (Printer standard at 96 DPI)
             int paperWidth = (int)((_currentReceipt.Width / 96.0) * 100);

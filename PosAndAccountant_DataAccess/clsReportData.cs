@@ -19,6 +19,7 @@ namespace PosAndAccountant_DataAccess
             {
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
+                    connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if(reader.HasRows)
