@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using PosAndAccountant_DataTransfer;
 using PosAndAccountant_DataAccess;
 using System.Data;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace PosAndAccountant_business
 {
     public class clsSale
     {
-        public enum enMode { eAdd = 0, eUpdate }
+        public enum enMode { eAdd = 0, eUpdate,eUpdate2 }
         public enMode Mode = enMode.eAdd;
 
         private int _SaleID;
@@ -20,6 +22,7 @@ namespace PosAndAccountant_business
         public int SaleID { get { return _SaleID; } }
         public int UserID { get; set; }
         public int  CustomerID { get; set; }
+        public clsCustomer CustomerInfo { get;private set;  }
         public int PaymentMethodID { get; set; }
         public byte Status { get; set; }
         public double TotalAmount { get; set; }
@@ -58,27 +61,13 @@ namespace PosAndAccountant_business
 
         // Constructor 1: From DTO (Used when retrieving an existing sale)
 
-        private void _AddColumnsOfDetail()
-        {
-            dtSaleDetails.Columns.Add("ProductID", typeof(int));
-            dtSaleDetails.Columns.Add("CostPrice", typeof(double));
-            dtSaleDetails.Columns.Add("SellingPrice", typeof(int));
-            dtSaleDetails.Columns.Add("Quantity", typeof(int));
-            dtSaleDetails.Columns.Add("ReturnedQuantity", typeof(int));
-            dtSaleDetails.Columns.Add("ProductName", typeof(int)); 
-            dtSaleDetails.Columns.Add("DiscountAmount", typeof(int));
-
-             
-
-
-
-
-        }
+     
         public clsSale(clsSaleDTO dto,DataTable Details)
         {
             _SaleID = dto.SaleID;
             UserID = dto.UserID;
             CustomerID = dto.CustomerID;
+            CustomerInfo = clsCustomer.FindCustomerByID(CustomerID);
             PaymentMethodID = dto.PaymentMethodID;
             Status = dto.Status;
             TotalAmount = dto.TotalAmount;
@@ -113,8 +102,17 @@ namespace PosAndAccountant_business
         }
 
         // Public Save Method matching your business state machine pattern
+        public static clsSale Find(int SaleID)
+        {
+          clsSaleDTO SaleDTO=clsSaleData.GetSaleByID(SaleID);
+            if (SaleDTO == null) return null;
+
+            DataTable SaleDetails=clsSaleData.GetSaleDetailBySaleID(SaleID);
+            return new clsSale(SaleDTO, SaleDetails);
+        }
         public bool Save()
         {
+            
             switch (Mode)
             {
                 case enMode.eAdd:
@@ -132,6 +130,10 @@ namespace PosAndAccountant_business
                         {
                             return true;
                         }
+                        break;
+                    }
+                case enMode.eUpdate2:
+                    {
                         break;
                     }
             }

@@ -65,14 +65,6 @@ namespace PosAndAccountantProject.Sales
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,6 +105,14 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
+            this.clmCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -367,7 +367,7 @@ namespace PosAndAccountantProject.Sales
             // lblCustomerPhone
             // 
             this.lblCustomerPhone.BackColor = System.Drawing.Color.White;
-            this.lblCustomerPhone.Location = new System.Drawing.Point(43, 50);
+            this.lblCustomerPhone.Location = new System.Drawing.Point(42, 45);
             this.lblCustomerPhone.Name = "lblCustomerPhone";
             this.lblCustomerPhone.Size = new System.Drawing.Size(140, 36);
             this.lblCustomerPhone.TabIndex = 37;
@@ -488,8 +488,8 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSaleDetails.ColumnHeadersHeight = 35;
             this.dgvSaleDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
+            this.clmCounter,
+            this.clmProductName,
             this.clmSalePrice,
             this.clmQuantity,
             this.clmTotalPrice,
@@ -542,57 +542,6 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEnter);
             this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
             this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 40F;
-            this.Column1.HeaderText = "م";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 92.978F;
-            this.Column2.HeaderText = "اسم المنتج";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // clmSalePrice
-            // 
-            this.clmSalePrice.FillWeight = 92.978F;
-            this.clmSalePrice.HeaderText = "سعر البيع";
-            this.clmSalePrice.Name = "clmSalePrice";
-            this.clmSalePrice.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.FillWeight = 92.978F;
-            this.clmQuantity.HeaderText = "الكمية";
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmTotalPrice
-            // 
-            this.clmTotalPrice.FillWeight = 92.978F;
-            this.clmTotalPrice.HeaderText = "السعر الكلي";
-            this.clmTotalPrice.Name = "clmTotalPrice";
-            this.clmTotalPrice.ReadOnly = true;
-            // 
-            // clmReturnQ
-            // 
-            this.clmReturnQ.FillWeight = 92.978F;
-            this.clmReturnQ.HeaderText = "الكمية المعادة";
-            this.clmReturnQ.Name = "clmReturnQ";
-            // 
-            // clmDiscount
-            // 
-            this.clmDiscount.FillWeight = 92.978F;
-            this.clmDiscount.HeaderText = "قيمة الخصم";
-            this.clmDiscount.Name = "clmDiscount";
-            // 
-            // clmProductID
-            // 
-            this.clmProductID.HeaderText = "ProductID";
-            this.clmProductID.Name = "clmProductID";
-            this.clmProductID.Visible = false;
             // 
             // cmsSaleDetails
             // 
@@ -909,7 +858,7 @@ namespace PosAndAccountantProject.Sales
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label20.Location = new System.Drawing.Point(1218, 17);
+            this.label20.Location = new System.Drawing.Point(1218, 14);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(136, 20);
             this.label20.TabIndex = 29;
@@ -939,6 +888,7 @@ namespace PosAndAccountantProject.Sales
             this.txtPaidAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaidAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtPaidAmount.Location = new System.Drawing.Point(435, 112);
+            this.txtPaidAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.PlaceholderText = "دفعة الزبون";
             this.txtPaidAmount.SelectedText = "";
@@ -1118,6 +1068,57 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
             // 
+            // clmCounter
+            // 
+            this.clmCounter.FillWeight = 40F;
+            this.clmCounter.HeaderText = "م";
+            this.clmCounter.Name = "clmCounter";
+            // 
+            // clmProductName
+            // 
+            this.clmProductName.FillWeight = 92.978F;
+            this.clmProductName.HeaderText = "اسم المنتج";
+            this.clmProductName.Name = "clmProductName";
+            this.clmProductName.ReadOnly = true;
+            // 
+            // clmSalePrice
+            // 
+            this.clmSalePrice.FillWeight = 92.978F;
+            this.clmSalePrice.HeaderText = "سعر البيع";
+            this.clmSalePrice.Name = "clmSalePrice";
+            this.clmSalePrice.ReadOnly = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.FillWeight = 92.978F;
+            this.clmQuantity.HeaderText = "الكمية";
+            this.clmQuantity.Name = "clmQuantity";
+            // 
+            // clmTotalPrice
+            // 
+            this.clmTotalPrice.FillWeight = 92.978F;
+            this.clmTotalPrice.HeaderText = "السعر الكلي";
+            this.clmTotalPrice.Name = "clmTotalPrice";
+            this.clmTotalPrice.ReadOnly = true;
+            // 
+            // clmReturnQ
+            // 
+            this.clmReturnQ.FillWeight = 92.978F;
+            this.clmReturnQ.HeaderText = "الكمية المعادة";
+            this.clmReturnQ.Name = "clmReturnQ";
+            // 
+            // clmDiscount
+            // 
+            this.clmDiscount.FillWeight = 92.978F;
+            this.clmDiscount.HeaderText = "قيمة الخصم";
+            this.clmDiscount.Name = "clmDiscount";
+            // 
+            // clmProductID
+            // 
+            this.clmProductID.HeaderText = "ProductID";
+            this.clmProductID.Name = "clmProductID";
+            this.clmProductID.Visible = false;
+            // 
             // frmAddNewSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1226,14 +1227,6 @@ namespace PosAndAccountantProject.Sales
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private System.Windows.Forms.ToolStripMenuItem الغاءمنالفاتورةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jgToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSalePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
         private System.Windows.Forms.Label lblCustomerPhone;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblCustomerID;
@@ -1241,5 +1234,13 @@ namespace PosAndAccountantProject.Sales
         private System.Drawing.Printing.PrintDocument printDoc;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDlg;
         private System.Windows.Forms.Label lblSaleID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCounter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
     }
 }
