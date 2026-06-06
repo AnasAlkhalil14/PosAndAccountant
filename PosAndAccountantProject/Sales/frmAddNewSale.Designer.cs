@@ -65,6 +65,14 @@ namespace PosAndAccountantProject.Sales
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.clmCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,14 +113,6 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
-            this.clmCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -315,6 +315,7 @@ namespace PosAndAccountantProject.Sales
             // cmsProduct
             // 
             this.cmsProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsProduct.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsProduct.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiAddToSale,
             this.عرضToolStripMenuItem});
@@ -543,9 +544,69 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
             this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
             // 
+            // clmCounter
+            // 
+            this.clmCounter.FillWeight = 40F;
+            this.clmCounter.HeaderText = "م";
+            this.clmCounter.MinimumWidth = 6;
+            this.clmCounter.Name = "clmCounter";
+            // 
+            // clmProductName
+            // 
+            this.clmProductName.FillWeight = 92.978F;
+            this.clmProductName.HeaderText = "اسم المنتج";
+            this.clmProductName.MinimumWidth = 6;
+            this.clmProductName.Name = "clmProductName";
+            this.clmProductName.ReadOnly = true;
+            // 
+            // clmSalePrice
+            // 
+            this.clmSalePrice.FillWeight = 92.978F;
+            this.clmSalePrice.HeaderText = "سعر البيع";
+            this.clmSalePrice.MinimumWidth = 6;
+            this.clmSalePrice.Name = "clmSalePrice";
+            this.clmSalePrice.ReadOnly = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.FillWeight = 92.978F;
+            this.clmQuantity.HeaderText = "الكمية";
+            this.clmQuantity.MinimumWidth = 6;
+            this.clmQuantity.Name = "clmQuantity";
+            // 
+            // clmTotalPrice
+            // 
+            this.clmTotalPrice.FillWeight = 92.978F;
+            this.clmTotalPrice.HeaderText = "السعر الكلي";
+            this.clmTotalPrice.MinimumWidth = 6;
+            this.clmTotalPrice.Name = "clmTotalPrice";
+            this.clmTotalPrice.ReadOnly = true;
+            // 
+            // clmReturnQ
+            // 
+            this.clmReturnQ.FillWeight = 92.978F;
+            this.clmReturnQ.HeaderText = "الكمية المعادة";
+            this.clmReturnQ.MinimumWidth = 6;
+            this.clmReturnQ.Name = "clmReturnQ";
+            // 
+            // clmDiscount
+            // 
+            this.clmDiscount.FillWeight = 92.978F;
+            this.clmDiscount.HeaderText = "قيمة الخصم";
+            this.clmDiscount.MinimumWidth = 6;
+            this.clmDiscount.Name = "clmDiscount";
+            // 
+            // clmProductID
+            // 
+            this.clmProductID.HeaderText = "ProductID";
+            this.clmProductID.MinimumWidth = 6;
+            this.clmProductID.Name = "clmProductID";
+            this.clmProductID.Visible = false;
+            // 
             // cmsSaleDetails
             // 
             this.cmsSaleDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsSaleDetails.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsSaleDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.الغاءمنالفاتورةToolStripMenuItem,
             this.jgToolStripMenuItem});
@@ -636,6 +697,7 @@ namespace PosAndAccountantProject.Sales
             this.txtProductQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtProductQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtProductQuantity.Location = new System.Drawing.Point(12, 341);
+            this.txtProductQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductQuantity.Name = "txtProductQuantity";
             this.txtProductQuantity.PlaceholderText = "";
             this.txtProductQuantity.SelectedText = "";
@@ -957,6 +1019,7 @@ namespace PosAndAccountantProject.Sales
             this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtNotes.Location = new System.Drawing.Point(826, 59);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.PlaceholderText = "";
             this.txtNotes.ReadOnly = true;
@@ -1052,6 +1115,7 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale.Size = new System.Drawing.Size(152, 45);
             this.btnOpenNewSale.TabIndex = 15;
             this.btnOpenNewSale.Text = "فاتورة جديدة";
+            this.btnOpenNewSale.Click += new System.EventHandler(this.btnOpenNewSale_Click);
             // 
             // printDoc
             // 
@@ -1067,57 +1131,6 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDlg.Icon")));
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
-            // 
-            // clmCounter
-            // 
-            this.clmCounter.FillWeight = 40F;
-            this.clmCounter.HeaderText = "م";
-            this.clmCounter.Name = "clmCounter";
-            // 
-            // clmProductName
-            // 
-            this.clmProductName.FillWeight = 92.978F;
-            this.clmProductName.HeaderText = "اسم المنتج";
-            this.clmProductName.Name = "clmProductName";
-            this.clmProductName.ReadOnly = true;
-            // 
-            // clmSalePrice
-            // 
-            this.clmSalePrice.FillWeight = 92.978F;
-            this.clmSalePrice.HeaderText = "سعر البيع";
-            this.clmSalePrice.Name = "clmSalePrice";
-            this.clmSalePrice.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.FillWeight = 92.978F;
-            this.clmQuantity.HeaderText = "الكمية";
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmTotalPrice
-            // 
-            this.clmTotalPrice.FillWeight = 92.978F;
-            this.clmTotalPrice.HeaderText = "السعر الكلي";
-            this.clmTotalPrice.Name = "clmTotalPrice";
-            this.clmTotalPrice.ReadOnly = true;
-            // 
-            // clmReturnQ
-            // 
-            this.clmReturnQ.FillWeight = 92.978F;
-            this.clmReturnQ.HeaderText = "الكمية المعادة";
-            this.clmReturnQ.Name = "clmReturnQ";
-            // 
-            // clmDiscount
-            // 
-            this.clmDiscount.FillWeight = 92.978F;
-            this.clmDiscount.HeaderText = "قيمة الخصم";
-            this.clmDiscount.Name = "clmDiscount";
-            // 
-            // clmProductID
-            // 
-            this.clmProductID.HeaderText = "ProductID";
-            this.clmProductID.Name = "clmProductID";
-            this.clmProductID.Visible = false;
             // 
             // frmAddNewSale
             // 

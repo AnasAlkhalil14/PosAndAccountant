@@ -835,11 +835,72 @@ dgvProductList.DataSource = _AllProducts;
             {
                 MessageBox.Show("تم حفظ الفاتورة بنجاح", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPrint.PerformClick();
+                btnOpenNewSale.PerformClick();
             }
             else
             {
                 MessageBox.Show("حدث خطأ لم يتم حفظ الفاتورة", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void _ReturnProductsToTable()
+        {
+            foreach(DataGridViewRow  DetailRow in dgvSaleDetails.Rows)
+            {
+
+                if (DetailRow.IsNewRow) continue;
+                
+                    int productId = Convert.ToInt32(DetailRow.Cells["clmProductID"].Value);
+                int returnQty = Convert.ToInt32(DetailRow.Cells["clmQuantity"].Value)- Convert.ToInt32(DetailRow.Cells["clmReturnQ"].Value);
+                DataRow[] matchedRows = _AllProducts.Select($"ProductID = {productId}");
+            if(matchedRows.Length > 0)
+                {
+                    matchedRows[0]["QuantityInStock"] = Convert.ToInt32(matchedRows[0]["QuantityInStock"]) + returnQty;
+                }
+            
+            }
+
+            dgvSaleDetails.Rows.Clear();
+
+
+        }
+        private void _ReseteProductInfo()
+        {
+            pbProductImage.Image = Resources.default_product;
+            lblProductName.Text = "اسم المنتج";
+            lblSalePrice.Text = "0.00 ل.س";
+            lblBarcode.Text = "Barcode: 000000";
+            lblQuantity.Text = "المخزون الحالي: 0";
+            lblMinQuantity.Text = "حد الطلب: 0";
+            lblCategory.Text = "حد الطلب: 0";
+            txtProductQuantity.Text = "";
+        }
+        private void _ReseteForNewSale()
+        {
+            lblTotalQuantity.Text = "0";
+            lblTotalDebt.Text = "0";
+            lblTotalAmountWithOutDebtAndDiscout.Text = "0";
+            lblTotalAmountWithDiscoount.Text = "0";
+            lblTotalAmountWithDebt.Text = "0";
+            lblCustomerID.Text = "6";
+            lblCustomerName.Text = "زبون نقدي";
+            lblCustomerPhone.Text = "";
+            cbPayBy.SelectedIndex = 0;
+            txtDiscount.Text = "0";
+            txtNotes.Text = "";
+            txtPaidAmount.Text = "0";
+            _ReturnProductsToTable();
+            _ReseteProductInfo();
+            _Sale = new clsSale();
+            _Sale.UserID = 1;
+            _Sale.Save();
+            lblSaleID.Text = _Sale.SaleID.ToString();
+        }
+
+        private void btnOpenNewSale_Click(object sender, EventArgs e)
+        {
+            _ReseteForNewSale();
         }
     }
 }
