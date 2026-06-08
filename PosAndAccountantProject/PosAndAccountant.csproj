@@ -116,6 +116,36 @@
     <Compile Include="MainForm\frmMainForm.Designer.cs">
       <DependentUpon>frmMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Partners\Controls\ctrlPartnerCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Partners\Controls\ctrlPartnerCard.Designer.cs">
+      <DependentUpon>ctrlPartnerCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partners\frmAddUpdatePartners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partners\frmAddUpdatePartners.Designer.cs">
+      <DependentUpon>frmAddUpdatePartners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partners\frmListPartners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partners\frmListPartners.Designer.cs">
+      <DependentUpon>frmListPartners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partners\frmPartnerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partners\frmPartnerInfo.Designer.cs">
+      <DependentUpon>frmPartnerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partners\frmWithdrawDeposite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partners\frmWithdrawDeposite.Designer.cs">
+      <DependentUpon>frmWithdrawDeposite.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\Controls\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,6 +321,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\Controls\ctrlPartnerCard.resx">
+      <DependentUpon>ctrlPartnerCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\frmAddUpdatePartners.resx">
+      <DependentUpon>frmAddUpdatePartners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\frmListPartners.resx">
+      <DependentUpon>frmListPartners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\frmPartnerInfo.resx">
+      <DependentUpon>frmPartnerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\frmWithdrawDeposite.resx">
+      <DependentUpon>frmWithdrawDeposite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
@@ -470,7 +515,7 @@
     <None Include="Resources\MakeOrder.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Partners\Controls\" />
+    <None Include="Resources\PartnersList.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\features.png" />
