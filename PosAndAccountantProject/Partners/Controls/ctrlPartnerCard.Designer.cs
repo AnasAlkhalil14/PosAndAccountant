@@ -235,6 +235,7 @@
             this.lnkTransactionHistory.TabIndex = 146;
             this.lnkTransactionHistory.TabStop = true;
             this.lnkTransactionHistory.Text = "عرض الحركات السابقة";
+            this.lnkTransactionHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkTransactionHistory_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -247,6 +248,7 @@
             this.linkLabel1.TabIndex = 147;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = " سحب او ايداع";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // ctrlPartnerCard
             // 

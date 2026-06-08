@@ -53,6 +53,7 @@
             this.btnClose.Size = new System.Drawing.Size(112, 37);
             this.btnClose.TabIndex = 21;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ctrlPartnerCard1
             // 
@@ -90,6 +91,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPartnerInfo";
+            this.Load += new System.EventHandler(this.frmPartnerInfo_Load);
             this.ResumeLayout(false);
 
         }
