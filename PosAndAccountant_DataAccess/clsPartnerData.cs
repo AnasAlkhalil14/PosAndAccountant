@@ -196,7 +196,15 @@ namespace PosAndAccountant_DataAccess
 
                         connection.Open();
 
-                        RowAffected = command.ExecuteNonQuery();
+                        object resutl = command.ExecuteScalar();
+                        if(resutl != null)
+                        {
+                            RowAffected= Convert.ToInt32(resutl);
+                        }
+                        else
+                        {
+                            return false;
+                        }
 
                     }
 

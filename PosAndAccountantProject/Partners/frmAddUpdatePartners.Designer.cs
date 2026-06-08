@@ -74,6 +74,7 @@
             this.btnClose.Size = new System.Drawing.Size(105, 37);
             this.btnClose.TabIndex = 126;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -87,6 +88,7 @@
             this.btnSave.Size = new System.Drawing.Size(105, 37);
             this.btnSave.TabIndex = 127;
             this.btnSave.Text = "حفظ";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // gbCustomerInfo
             // 
@@ -274,6 +276,8 @@
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(640, 327);
             this.ctrlPersonCardWithFilter1.TabIndex = 125;
+            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
+            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
             // 
             // frmAddUpdatePartners
             // 
@@ -291,6 +295,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddUpdatePartners";
+            this.Load += new System.EventHandler(this.frmAddUpdatePartners_Load);
             this.gbCustomerInfo.ResumeLayout(false);
             this.gbCustomerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProfitPercentage)).EndInit();
