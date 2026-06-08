@@ -140,6 +140,12 @@
     <Compile Include="Partners\frmPartnerInfo.Designer.cs">
       <DependentUpon>frmPartnerInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Partners\frmPartnerTransactionsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partners\frmPartnerTransactionsList.Designer.cs">
+      <DependentUpon>frmPartnerTransactionsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Partners\frmWithdrawDeposite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Partners\frmPartnerInfo.resx">
       <DependentUpon>frmPartnerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\frmPartnerTransactionsList.resx">
+      <DependentUpon>frmPartnerTransactionsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Partners\frmWithdrawDeposite.resx">
       <DependentUpon>frmWithdrawDeposite.cs</DependentUpon>
@@ -543,6 +552,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ProductList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

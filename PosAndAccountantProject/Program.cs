@@ -1,5 +1,6 @@
 ﻿using PosAndAccountantProject.Customers;
 using PosAndAccountantProject.Login;
+using PosAndAccountantProject.Partners;
 using PosAndAccountantProject.People;
 using PosAndAccountantProject.Products;
 using PosAndAccountantProject.Products.ProductsCategory;
@@ -25,7 +26,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddNewSale() );
+            Application.Run(new frmPartnerInfo(1) );
         }
     }
 }

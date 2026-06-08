@@ -41,7 +41,7 @@ namespace PosAndAccountant_DataAccess
                                 PartnerDTO.CurrentBalance = Convert.ToDouble(reader["CurrentBalance"]);
                                 PartnerDTO.ProfitPercentage = Convert.ToDouble(reader["ProfitPercentage"]);
                                 PartnerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
-                                PartnerDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
+                                PartnerDTO.ModifiedDate = reader["CreatedDate"]!=DBNull.Value?Convert.ToDateTime(reader["CreatedDate"]):PartnerDTO.CreatedDate;
 
                             }
 
