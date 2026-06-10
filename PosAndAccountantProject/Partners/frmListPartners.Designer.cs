@@ -32,11 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvCustomers = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvPartners = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsPartners = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -46,24 +45,22 @@
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnAddCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.انشاءفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddPartner = new Guna.UI2.WinForms.Guna2Button();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).BeginInit();
             this.cmsPartners.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvCustomers
+            // dgvPartners
             // 
-            this.dgvCustomers.AllowUserToAddRows = false;
-            this.dgvCustomers.AllowUserToDeleteRows = false;
-            this.dgvCustomers.AllowUserToResizeRows = false;
+            this.dgvPartners.AllowUserToAddRows = false;
+            this.dgvPartners.AllowUserToDeleteRows = false;
+            this.dgvPartners.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvCustomers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPartners.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
@@ -71,10 +68,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCustomers.ColumnHeadersHeight = 40;
-            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCustomers.ContextMenuStrip = this.cmsPartners;
+            this.dgvPartners.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPartners.ColumnHeadersHeight = 40;
+            this.dgvPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvPartners.ContextMenuStrip = this.cmsPartners;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -82,39 +79,39 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomers.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCustomers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomers.Location = new System.Drawing.Point(27, 307);
-            this.dgvCustomers.MultiSelect = false;
-            this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvCustomers.RowHeadersVisible = false;
-            this.dgvCustomers.RowHeadersWidth = 51;
-            this.dgvCustomers.RowTemplate.Height = 35;
-            this.dgvCustomers.Size = new System.Drawing.Size(1081, 360);
-            this.dgvCustomers.TabIndex = 128;
-            this.dgvCustomers.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCustomers.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvCustomers.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvCustomers.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvCustomers.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvCustomers.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCustomers.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomers.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.dgvCustomers.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCustomers.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.dgvCustomers.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvCustomers.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCustomers.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvCustomers.ThemeStyle.ReadOnly = true;
-            this.dgvCustomers.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCustomers.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCustomers.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvCustomers.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvCustomers.ThemeStyle.RowsStyle.Height = 35;
-            this.dgvCustomers.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPartners.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPartners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPartners.Location = new System.Drawing.Point(27, 307);
+            this.dgvPartners.MultiSelect = false;
+            this.dgvPartners.Name = "dgvPartners";
+            this.dgvPartners.ReadOnly = true;
+            this.dgvPartners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvPartners.RowHeadersVisible = false;
+            this.dgvPartners.RowHeadersWidth = 51;
+            this.dgvPartners.RowTemplate.Height = 35;
+            this.dgvPartners.Size = new System.Drawing.Size(1081, 360);
+            this.dgvPartners.TabIndex = 128;
+            this.dgvPartners.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPartners.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvPartners.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvPartners.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvPartners.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvPartners.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPartners.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPartners.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
+            this.dgvPartners.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPartners.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
+            this.dgvPartners.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPartners.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvPartners.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvPartners.ThemeStyle.ReadOnly = true;
+            this.dgvPartners.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPartners.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPartners.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvPartners.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPartners.ThemeStyle.RowsStyle.Height = 35;
+            this.dgvPartners.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPartners.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // cmsPartners
             // 
@@ -123,61 +120,56 @@
             this.cmsPartners.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDetailsToolStripMenuItem,
             this.toolStripSeparator2,
-            this.toolStripMenuItem1,
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.toolStripSeparator1,
             this.phoneCallToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.انشاءفاتورةToolStripMenuItem});
+            this.toolStripMenuItem2});
             this.cmsPartners.Name = "cmsUsers";
             this.cmsPartners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsPartners.Size = new System.Drawing.Size(196, 250);
+            this.cmsPartners.Size = new System.Drawing.Size(181, 140);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(195, 38);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.showDetailsToolStripMenuItem.Text = "عرض التفاصيل";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(195, 38);
-            this.toolStripMenuItem1.Text = "إضافة عميل جديد";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(195, 38);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.editToolStripMenuItem.Text = "تعديل";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(195, 38);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.deleteToolStripMenuItem.Text = "حذف";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(195, 38);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.phoneCallToolStripMenuItem.Text = "اتصال هاتف";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(192, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // btnClose
             // 
@@ -193,6 +185,7 @@
             this.btnClose.Size = new System.Drawing.Size(135, 45);
             this.btnClose.TabIndex = 136;
             this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblRecordsCount
             // 
@@ -201,7 +194,7 @@
             this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.lblRecordsCount.Location = new System.Drawing.Point(168, 700);
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(24, 21);
+            this.lblRecordsCount.Size = new System.Drawing.Size(26, 21);
             this.lblRecordsCount.TabIndex = 133;
             this.lblRecordsCount.Text = "??";
             // 
@@ -230,28 +223,11 @@
             "لا شيء",
             "معرف الشريك",
             "اسم الشريك"});
-            this.cbFilterBy.Location = new System.Drawing.Point(173, 262);
+            this.cbFilterBy.Location = new System.Drawing.Point(155, 262);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(188, 36);
             this.cbFilterBy.StartIndex = 0;
             this.cbFilterBy.TabIndex = 131;
-            // 
-            // txtFilterValue
-            // 
-            this.txtFilterValue.BorderRadius = 8;
-            this.txtFilterValue.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFilterValue.DefaultText = "";
-            this.txtFilterValue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(388, 262);
-            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.PlaceholderText = "ابحث هنا...";
-            this.txtFilterValue.SelectedText = "";
-            this.txtFilterValue.Size = new System.Drawing.Size(300, 36);
-            this.txtFilterValue.TabIndex = 130;
-            this.txtFilterValue.Visible = false;
             // 
             // label1
             // 
@@ -259,9 +235,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(31, 262);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 21);
+            this.label1.Size = new System.Drawing.Size(59, 21);
             this.label1.TabIndex = 129;
-            this.label1.Text = "التصفية حسب:";
+            this.label1.Text = "استعلام";
             // 
             // lblTitle
             // 
@@ -274,29 +250,23 @@
             this.lblTitle.Text = "إدارة الشركاء";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAddCustomer
+            // btnAddPartner
             // 
-            this.btnAddCustomer.Animated = true;
-            this.btnAddCustomer.BorderRadius = 10;
-            this.btnAddCustomer.BorderThickness = 1;
-            this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCustomer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAddCustomer.FillColor = System.Drawing.Color.Transparent;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAddCustomer.ForeColor = System.Drawing.Color.YellowGreen;
-            this.btnAddCustomer.Image = global::PosAndAccountantProject.Properties.Resources.addCustomer;
-            this.btnAddCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddCustomer.Location = new System.Drawing.Point(1015, 247);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(84, 51);
-            this.btnAddCustomer.TabIndex = 137;
-            // 
-            // انشاءفاتورةToolStripMenuItem
-            // 
-            this.انشاءفاتورةToolStripMenuItem.Image = global::PosAndAccountantProject.Properties.Resources.MakeOrder;
-            this.انشاءفاتورةToolStripMenuItem.Name = "انشاءفاتورةToolStripMenuItem";
-            this.انشاءفاتورةToolStripMenuItem.Size = new System.Drawing.Size(195, 38);
-            this.انشاءفاتورةToolStripMenuItem.Text = "انشاء فاتورة";
+            this.btnAddPartner.Animated = true;
+            this.btnAddPartner.BorderRadius = 10;
+            this.btnAddPartner.BorderThickness = 1;
+            this.btnAddPartner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddPartner.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAddPartner.FillColor = System.Drawing.Color.Transparent;
+            this.btnAddPartner.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAddPartner.ForeColor = System.Drawing.Color.YellowGreen;
+            this.btnAddPartner.Image = global::PosAndAccountantProject.Properties.Resources.addCustomer;
+            this.btnAddPartner.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddPartner.Location = new System.Drawing.Point(1015, 247);
+            this.btnAddPartner.Name = "btnAddPartner";
+            this.btnAddPartner.Size = new System.Drawing.Size(84, 51);
+            this.btnAddPartner.TabIndex = 137;
+            this.btnAddPartner.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // pbPersonImage
             // 
@@ -315,20 +285,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1127, 744);
-            this.Controls.Add(this.btnAddCustomer);
-            this.Controls.Add(this.dgvCustomers);
+            this.Controls.Add(this.btnAddPartner);
+            this.Controls.Add(this.dgvPartners);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbPersonImage);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbFilterBy);
-            this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmListPartners";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListPartners";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            this.Load += new System.EventHandler(this.frmListPartners_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).EndInit();
             this.cmsPartners.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             this.ResumeLayout(false);
@@ -337,14 +309,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripMenuItem انشاءفاتورةToolStripMenuItem;
-        private Guna.UI2.WinForms.Guna2Button btnAddCustomer;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvCustomers;
+        private Guna.UI2.WinForms.Guna2Button btnAddPartner;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvPartners;
         private System.Windows.Forms.ContextMenuStrip cmsPartners;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -355,7 +324,6 @@
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilterBy;
-        private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
     }

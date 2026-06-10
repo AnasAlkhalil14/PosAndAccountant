@@ -26,7 +26,7 @@ namespace PosAndAccountantProject.Partners
         }
         private int _PartnerID;
         private clsPartner _Partner;
-
+        public bool WasSaved { get; private set; } = false;
         private void _SetEnability(bool Enable)
         {
             btnSave.Enabled = Enable;
@@ -124,11 +124,13 @@ namespace PosAndAccountantProject.Partners
             {
                 lblPartnerID.Text = _Partner.PartnerID.ToString();
                 lblTitle.Text = "تعديل بيانات الشريك";
+                WasSaved = true;
                 MessageBox.Show("تم جفظ بيانات الشريك بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
+                
                 MessageBox.Show("حدث خطا,فشل في حفظ بيانات الشريك", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }

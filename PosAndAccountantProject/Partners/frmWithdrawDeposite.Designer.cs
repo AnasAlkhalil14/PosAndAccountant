@@ -130,6 +130,7 @@
             // rbWithdraw
             // 
             this.rbWithdraw.AutoSize = true;
+            this.rbWithdraw.Checked = true;
             this.rbWithdraw.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(37)))), ((int)(((byte)(133)))));
             this.rbWithdraw.CheckedState.BorderThickness = 0;
             this.rbWithdraw.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(37)))), ((int)(((byte)(133)))));
@@ -141,6 +142,7 @@
             this.rbWithdraw.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rbWithdraw.Size = new System.Drawing.Size(63, 24);
             this.rbWithdraw.TabIndex = 5;
+            this.rbWithdraw.TabStop = true;
             this.rbWithdraw.Text = "سحب";
             this.rbWithdraw.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rbWithdraw.UncheckedState.BorderThickness = 2;
@@ -178,6 +180,7 @@
             this.txtAmount.Size = new System.Drawing.Size(400, 40);
             this.txtAmount.TabIndex = 7;
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblDate
             // 
@@ -306,6 +309,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.frmWithdrawDeposite_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
