@@ -45,6 +45,7 @@
     <Compile Include="clsCustomerData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsPartnerData.cs" />
+    <Compile Include="clsPartnerTransactionData.cs" />
     <Compile Include="clsPaymentMethodData.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="clsProductCategoryData.cs" />

@@ -16,5 +16,18 @@ namespace PosAndAccountantProject.Partners
         {
             InitializeComponent();
         }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar)&&!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void frmWithdrawDeposite_Load(object sender, EventArgs e)
+        {
+            dtpDate.Value = DateTime.Now;
+        }
     }
 }

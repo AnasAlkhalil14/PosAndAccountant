@@ -51,6 +51,7 @@
     <Compile Include="clsCryptography.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsPartner.cs" />
+    <Compile Include="clsPartnerTransaction.cs" />
     <Compile Include="clsPaymentMethod.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsProductCategory.cs" />

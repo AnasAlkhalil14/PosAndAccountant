@@ -121,7 +121,7 @@ namespace PosAndAccountant_business
 
         }
 
-        public static DataTable GetAllCustombersList()
+        public static DataTable GetAllPartners()
         {
             return clsPartnerData.GetAllPartners();
         }

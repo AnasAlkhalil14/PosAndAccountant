@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsCustomerDTO.cs" />
     <Compile Include="clsPartnerDTO.cs" />
+    <Compile Include="clsPartnerTransactionDTO.cs" />
     <Compile Include="clsPersonDTO.cs" />
     <Compile Include="clsProductCategoryDTO.cs" />
     <Compile Include="clsProductDTO.cs" />
