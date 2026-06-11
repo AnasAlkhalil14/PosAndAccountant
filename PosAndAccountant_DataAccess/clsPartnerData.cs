@@ -71,10 +71,65 @@ namespace PosAndAccountant_DataAccess
 
             return PartnerDTO;
         }
+
+
+
         
+        public static DataTable GetAllPartnersShort()
+        {
+
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand("[Partners].[SP_GetAllPartnersShort]", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
 
 
 
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
         public static DataTable GetAllPartners()
         {
 

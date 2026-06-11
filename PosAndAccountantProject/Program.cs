@@ -26,7 +26,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListPartners() );
+            Application.Run(new frmWithdrawDeposite() );
         }
     }
 }

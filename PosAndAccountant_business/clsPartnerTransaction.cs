@@ -12,13 +12,14 @@ namespace PosAndAccountant_business
     public class clsPartnerTransaction
     {
         public enum enMode { eAdd,eUpdate}
+        public enum enTransactionType { eWithDraw=1,eDeposit,eProfit,eExpense}
         public enMode Mode;
 
         public clsPartnerTransaction()
         {
             PartnerTransactionID =-1;
             PartnerID = -1;
-            TransactionType = -1;
+            TransactionType = enTransactionType.eProfit;
             Amount = 0;
             CreatedDate = DateTime.Now;
             Notes ="";
@@ -29,7 +30,7 @@ namespace PosAndAccountant_business
         {
             PartnerTransactionID = partnerTransactionDTO.PartnerTransactionID;
             PartnerID = partnerTransactionDTO.PartnerID;
-            TransactionType = partnerTransactionDTO.TransactionType;
+            TransactionType = (enTransactionType)partnerTransactionDTO.TransactionType;
             Amount = partnerTransactionDTO.Amount;
             CreatedDate = partnerTransactionDTO.CreatedDate;
             Notes = partnerTransactionDTO.Notes;
@@ -38,7 +39,7 @@ namespace PosAndAccountant_business
 
         public int PartnerTransactionID { get; set; }
         public int PartnerID { get; set; }
-        public int TransactionType { get; set; }
+        public enTransactionType TransactionType { get; set; }
         public double Amount { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Notes { get; set; }
@@ -46,7 +47,7 @@ namespace PosAndAccountant_business
         private bool _Add()
         {
             clsPartnerTransactionDTO partnerTransactionDTO = new clsPartnerTransactionDTO();
-            partnerTransactionDTO.TransactionType = TransactionType;
+            partnerTransactionDTO.TransactionType = (int)TransactionType;
             partnerTransactionDTO.Amount = Amount;
             partnerTransactionDTO.PartnerID = PartnerID;
             partnerTransactionDTO.Notes = Notes;
@@ -63,7 +64,7 @@ namespace PosAndAccountant_business
                     {
                         if(_Add())
                         {
-                            Mode= enMode.eUpdate;
+                       
                         }
                         return true ;
                     }
