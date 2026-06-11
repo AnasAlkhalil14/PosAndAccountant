@@ -120,6 +120,10 @@ namespace PosAndAccountant_business
 
 
         }
+        public static DataTable GetAllPartnersShort()
+        {
+            return clsPartnerData.GetAllPartnersShort();
+        }
 
         public static DataTable GetAllPartners()
         {
