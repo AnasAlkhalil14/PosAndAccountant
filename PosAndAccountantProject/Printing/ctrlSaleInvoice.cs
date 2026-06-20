@@ -23,6 +23,7 @@ namespace PosAndAccountantProject.Printing
             lblNetValue.Text = netAmount;
             lblTotalQtyValue.Text = totalItemsCount;
             lblPaidAmountValue.Text = paidAmount;
+            lblDiscountValue.Text=(Convert.ToDouble(totalAmount) - Convert.ToDouble(netAmount)).ToString();
             // 2. Clear old lines and transfer item rows safely
             dgvReceiptItems.Rows.Clear();
           
@@ -38,7 +39,7 @@ namespace PosAndAccountantProject.Printing
                 string price = sourceRow.Cells[2].Value?.ToString() ?? "0.00";       // Price
                 string total = sourceRow.Cells[4].Value?.ToString() ?? "0.00";       // Total Line Price
 
-                dgvReceiptItems.Rows.Add(sourceRow.Cells[0].Value.ToString(), itemDescription, qty, price, total);
+                dgvReceiptItems.Rows.Add(sourceRow.Cells[0].Value.ToString(), itemDescription, price, qty, total);
 
                
                 

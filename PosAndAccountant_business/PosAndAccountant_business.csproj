@@ -50,6 +50,7 @@
     <Compile Include="clsAiReportManager.cs" />
     <Compile Include="clsCryptography.cs" />
     <Compile Include="clsCustomer.cs" />
+    <Compile Include="clsExpense.cs" />
     <Compile Include="clsPartner.cs" />
     <Compile Include="clsPartnerTransaction.cs" />
     <Compile Include="clsPaymentMethod.cs" />
