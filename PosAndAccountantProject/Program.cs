@@ -1,4 +1,5 @@
 ﻿using PosAndAccountantProject.Customers;
+using PosAndAccountantProject.Expenses;
 using PosAndAccountantProject.Login;
 using PosAndAccountantProject.Partners;
 using PosAndAccountantProject.People;
@@ -26,7 +27,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmWithdrawDeposite() );
+            Application.Run(new frmAddUpdateExpense() );
         }
     }
 }

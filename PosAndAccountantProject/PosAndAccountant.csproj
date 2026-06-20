@@ -97,6 +97,24 @@
     <Compile Include="Customers\frmListCustomers.Designer.cs">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expenses\frmAddUpdateExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expenses\frmAddUpdateExpense.Designer.cs">
+      <DependentUpon>frmAddUpdateExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses\frmExpenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expenses\frmExpenseInfo.Designer.cs">
+      <DependentUpon>frmExpenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses\frmListExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expenses\frmListExpenses.Designer.cs">
+      <DependentUpon>frmListExpenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expenses\frmAddUpdateExpense.resx">
+      <DependentUpon>frmAddUpdateExpense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
@@ -556,5 +577,6 @@
   <ItemGroup>
     <None Include="Resources\transaction.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
