@@ -12,7 +12,7 @@ namespace PosAndAccountantProject.GlobalClasses
 {
     internal class clsUtil
     {
-        public static clsUser CurrentUser;
+        public static clsUser CurrentUser=clsUser.FindUserByID(1);
 
         public static bool CreateFolderIfNotExist(string FolderPath)
         {
