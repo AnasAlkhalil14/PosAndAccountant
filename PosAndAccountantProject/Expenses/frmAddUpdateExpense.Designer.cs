@@ -143,7 +143,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(223, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(88, 25);
             this.label2.TabIndex = 13;
             this.label2.Text = "اسم النوع";
             // 
@@ -154,6 +154,7 @@
             this.txtTypeName.DefaultText = "";
             this.txtTypeName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTypeName.Location = new System.Drawing.Point(24, 105);
+            this.txtTypeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTypeName.Multiline = true;
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.PlaceholderText = "";
@@ -168,7 +169,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(233, 161);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.Size = new System.Drawing.Size(120, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "شرح عن النوع";
             // 
@@ -179,6 +180,7 @@
             this.txtTypeNote.DefaultText = "";
             this.txtTypeNote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTypeNote.Location = new System.Drawing.Point(24, 190);
+            this.txtTypeNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTypeNote.Multiline = true;
             this.txtTypeNote.Name = "txtTypeNote";
             this.txtTypeNote.PlaceholderText = "";
@@ -205,7 +207,7 @@
             this.lblTitle.Location = new System.Drawing.Point(180, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitle.Size = new System.Drawing.Size(161, 32);
+            this.lblTitle.Size = new System.Drawing.Size(203, 41);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "اضافة مصروف";
             // 
@@ -215,7 +217,7 @@
             this.lblExpenseID.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblExpenseID.Location = new System.Drawing.Point(668, 107);
             this.lblExpenseID.Name = "lblExpenseID";
-            this.lblExpenseID.Size = new System.Drawing.Size(95, 20);
+            this.lblExpenseID.Size = new System.Drawing.Size(118, 25);
             this.lblExpenseID.TabIndex = 1;
             this.lblExpenseID.Text = "رقم المصروف";
             // 
@@ -226,6 +228,7 @@
             this.txtExpenseID.DefaultText = "";
             this.txtExpenseID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtExpenseID.Location = new System.Drawing.Point(622, 132);
+            this.txtExpenseID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtExpenseID.Name = "txtExpenseID";
             this.txtExpenseID.PlaceholderText = "تلقائي";
             this.txtExpenseID.ReadOnly = true;
@@ -239,7 +242,7 @@
             this.lblExpenseType.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblExpenseType.Location = new System.Drawing.Point(677, 189);
             this.lblExpenseType.Name = "lblExpenseType";
-            this.lblExpenseType.Size = new System.Drawing.Size(95, 20);
+            this.lblExpenseType.Size = new System.Drawing.Size(119, 25);
             this.lblExpenseType.TabIndex = 3;
             this.lblExpenseType.Text = "نوع المصروف";
             // 
@@ -265,7 +268,7 @@
             this.lblCreatedDate.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblCreatedDate.Location = new System.Drawing.Point(457, 107);
             this.lblCreatedDate.Name = "lblCreatedDate";
-            this.lblCreatedDate.Size = new System.Drawing.Size(103, 20);
+            this.lblCreatedDate.Size = new System.Drawing.Size(129, 25);
             this.lblCreatedDate.TabIndex = 5;
             this.lblCreatedDate.Text = "تاريخ المصروف";
             // 
@@ -273,6 +276,7 @@
             // 
             this.dtpCreatedDate.BorderRadius = 10;
             this.dtpCreatedDate.Checked = true;
+            this.dtpCreatedDate.Enabled = false;
             this.dtpCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpCreatedDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpCreatedDate.Location = new System.Drawing.Point(393, 132);
@@ -289,7 +293,7 @@
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblAmount.Location = new System.Drawing.Point(501, 189);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(46, 20);
+            this.lblAmount.Size = new System.Drawing.Size(57, 25);
             this.lblAmount.TabIndex = 7;
             this.lblAmount.Text = "المبلغ";
             // 
@@ -300,6 +304,7 @@
             this.txtAmount.DefaultText = "";
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAmount.Location = new System.Drawing.Point(393, 212);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.PlaceholderText = "0.00";
             this.txtAmount.SelectedText = "";
@@ -314,7 +319,7 @@
             this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblNotes.Location = new System.Drawing.Point(705, 276);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(67, 20);
+            this.lblNotes.Size = new System.Drawing.Size(83, 25);
             this.lblNotes.TabIndex = 9;
             this.lblNotes.Text = "ملاحظات";
             // 
@@ -325,6 +330,7 @@
             this.txtNotes.DefaultText = "";
             this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNotes.Location = new System.Drawing.Point(406, 299);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.PlaceholderText = "";
@@ -356,6 +362,7 @@
             this.btnCancel.Size = new System.Drawing.Size(140, 45);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "إلغاء";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // errorProvider1
             // 

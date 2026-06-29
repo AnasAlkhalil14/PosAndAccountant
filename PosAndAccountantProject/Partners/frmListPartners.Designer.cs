@@ -127,49 +127,49 @@
             this.toolStripMenuItem2});
             this.cmsPartners.Name = "cmsUsers";
             this.cmsPartners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsPartners.Size = new System.Drawing.Size(181, 140);
+            this.cmsPartners.Size = new System.Drawing.Size(168, 118);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.showDetailsToolStripMenuItem.Text = "عرض التفاصيل";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(164, 6);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.editToolStripMenuItem.Text = "تعديل";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.deleteToolStripMenuItem.Text = "حذف";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.phoneCallToolStripMenuItem.Text = "اتصال هاتف";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(164, 6);
             // 
             // btnClose
             // 
