@@ -11,13 +11,16 @@ using System.Threading.Tasks;
 
 namespace PosAndAccountant_business
 {
+
     public class clsExpense
     {
+     public   (string ExpenseType,string TypeNote) TypeInfo;
 public enum enMode { eAdd,eUpdate}
         public enMode Mode= enMode.eAdd;
 
         public int ExpenseID { get; set; }
         public int UserID { get; set; }
+        public clsUser UserInfo { get; private set; }
         public int ExpenseTypeID { get; set; }
         public DateTime CreatedDate { get; set; }
         public double Amount { get; set; }
@@ -39,7 +42,9 @@ public enum enMode { eAdd,eUpdate}
         {
             ExpenseID= dto.ExpenseID;
             ExpenseTypeID = dto.ExpenseTypeID;
+            TypeInfo=clsExpneseData.GetTypeInfoByID(dto.ExpenseTypeID);
             UserID= dto.UserID;
+            UserInfo=clsUser.FindUserByID(UserID);
             ExpenseDescription= dto.ExpenseDescription;
             CreatedDate= dto.CreatedDate;   
             Amount= dto.Amount;
@@ -87,7 +92,16 @@ public enum enMode { eAdd,eUpdate}
 
         }
 
-
+        public   static clsExpense Find(int ExpenseID)
+        {
+            clsExpenseDTO dto=clsExpneseData.GetExpenseByID(ExpenseID);
+            if( dto == null )return null;
+            return new clsExpense(dto);
+        }
+        public static DataTable GetAllExpenses()
+        {
+            return clsExpneseData.GetAllExpenses();
+        }
         public static DataTable GetAllExpenseTypes()
         {
             return clsExpneseData.GetAllExpenseTypes();

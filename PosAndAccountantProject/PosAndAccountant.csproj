@@ -340,6 +340,12 @@
     <EmbeddedResource Include="Expenses\frmAddUpdateExpense.resx">
       <DependentUpon>frmAddUpdateExpense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Expenses\frmExpenseInfo.resx">
+      <DependentUpon>frmExpenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expenses\frmListExpenses.resx">
+      <DependentUpon>frmListExpenses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +583,8 @@
   <ItemGroup>
     <None Include="Resources\transaction.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

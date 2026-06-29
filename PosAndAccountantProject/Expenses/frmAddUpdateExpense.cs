@@ -61,6 +61,7 @@ namespace PosAndAccountantProject.Expenses
         private void frmAddUpdateExpense_Load(object sender, EventArgs e)
         {
             _LoadTypesToComboBox();
+            dtpCreatedDate.Value = DateTime.Now;
 
         }
 
@@ -122,6 +123,11 @@ namespace PosAndAccountantProject.Expenses
                 e.Cancel = false;
 
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
