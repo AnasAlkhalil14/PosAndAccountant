@@ -51,6 +51,7 @@
     <Compile Include="clsPersonData.cs" />
     <Compile Include="clsProductCategoryData.cs" />
     <Compile Include="clsProductData.cs" />
+    <Compile Include="clsPurchaseData.cs" />
     <Compile Include="clsReportData.cs" />
     <Compile Include="clsSaleData.cs" />
     <Compile Include="clsSupplierData.cs" />

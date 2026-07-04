@@ -1,7 +1,6 @@
-﻿
-namespace PosAndAccountantProject.Sales
+﻿namespace PosAndAccountantProject.Purchases
 {
-    partial class frmAddNewSale
+    partial class frmAddUpdatePurchase
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +29,17 @@ namespace PosAndAccountantProject.Sales
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddNewSale));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdatePurchase));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -50,30 +49,22 @@ namespace PosAndAccountantProject.Sales
             this.label4 = new System.Windows.Forms.Label();
             this.dgvProductList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsProduct = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiAddToSale = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAddToPurchase = new System.Windows.Forms.ToolStripMenuItem();
             this.عرضToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblSaleID = new System.Windows.Forms.Label();
-            this.lblCustomerPhone = new System.Windows.Forms.Label();
-            this.lblCustomerName = new System.Windows.Forms.Label();
-            this.lblCustomerID = new System.Windows.Forms.Label();
+            this.lblPurchaseID = new System.Windows.Forms.Label();
+            this.lblSupplierPhone = new System.Windows.Forms.Label();
+            this.lblSupplierName = new System.Windows.Forms.Label();
+            this.lblSupplierID = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbPayBy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lnkSelectCustomer = new System.Windows.Forms.LinkLabel();
+            this.lnkSelectSupplier = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.clmCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dgvPurchaseDetails = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cmsPurchaseDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPreview = new Guna.UI2.WinForms.Guna2Panel();
@@ -86,7 +77,7 @@ namespace PosAndAccountantProject.Sales
             this.lblMinQuantity = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblBarcode = new System.Windows.Forms.Label();
-            this.lblSalePrice = new System.Windows.Forms.Label();
+            this.lblPurchasePrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -110,18 +101,18 @@ namespace PosAndAccountantProject.Sales
             this.label15 = new System.Windows.Forms.Label();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
-            this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOpenNewPurchase = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.cmsProduct.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetails)).BeginInit();
-            this.cmsSaleDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseDetails)).BeginInit();
+            this.cmsPurchaseDetails.SuspendLayout();
             this.pnlPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.panel4.SuspendLayout();
@@ -129,13 +120,25 @@ namespace PosAndAccountantProject.Sales
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(521, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 86);
             this.panel1.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::PosAndAccountantProject.Properties.Resources.MakingSale;
+            this.pictureBox3.Location = new System.Drawing.Point(301, 14);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(77, 52);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
@@ -145,19 +148,7 @@ namespace PosAndAccountantProject.Sales
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 58);
             this.label1.TabIndex = 0;
-            this.label1.Text = "فاتورة بيع نقدي";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.MakingSale;
-            this.pictureBox1.Location = new System.Drawing.Point(226, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 52);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label1.Text = "فاتورة شراء";
             // 
             // panel2
             // 
@@ -199,9 +190,9 @@ namespace PosAndAccountantProject.Sales
             this.txtProductName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtProductName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtProductName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtProductName.Location = new System.Drawing.Point(110, 169);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtProductName.Name = "txtProductName";
@@ -210,15 +201,14 @@ namespace PosAndAccountantProject.Sales
             this.txtProductName.Size = new System.Drawing.Size(124, 30);
             this.txtProductName.TabIndex = 4;
             this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
-            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // cbProductCategory
             // 
             this.cbProductCategory.BackColor = System.Drawing.Color.Transparent;
             this.cbProductCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProductCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.cbProductCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.cbProductCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.cbProductCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.cbProductCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbProductCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbProductCategory.ItemHeight = 30;
@@ -255,27 +245,27 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.AllowUserToAddRows = false;
             this.dgvProductList.AllowUserToDeleteRows = false;
             this.dgvProductList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductList.ColumnHeadersHeight = 35;
             this.dgvProductList.ContextMenuStrip = this.cmsProduct;
             this.dgvProductList.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvProductList.Location = new System.Drawing.Point(12, 232);
             this.dgvProductList.Name = "dgvProductList";
@@ -283,8 +273,8 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvProductList.RowHeadersVisible = false;
             this.dgvProductList.RowHeadersWidth = 51;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgvProductList.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgvProductList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProductList.RowTemplate.Height = 30;
             this.dgvProductList.Size = new System.Drawing.Size(493, 397);
             this.dgvProductList.TabIndex = 8;
@@ -310,44 +300,42 @@ namespace PosAndAccountantProject.Sales
             this.dgvProductList.ThemeStyle.RowsStyle.Height = 30;
             this.dgvProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvProductList.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvProductList_RowPrePaint);
+            this.dgvProductList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvProductList_RowPostPaint);
             // 
             // cmsProduct
             // 
             this.cmsProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmsProduct.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsProduct.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAddToSale,
+            this.tsmiAddToPurchase,
             this.عرضToolStripMenuItem});
             this.cmsProduct.Name = "contextMenuStrip1";
             this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmsProduct.Size = new System.Drawing.Size(175, 56);
-            this.cmsProduct.Opening += new System.ComponentModel.CancelEventHandler(this.cmsProduct_Opening);
             // 
-            // tsmiAddToSale
+            // tsmiAddToPurchase
             // 
-            this.tsmiAddToSale.Name = "tsmiAddToSale";
-            this.tsmiAddToSale.Size = new System.Drawing.Size(174, 26);
-            this.tsmiAddToSale.Text = "اضافة للفاتورة";
-            this.tsmiAddToSale.Click += new System.EventHandler(this.اضافةللفاتورةToolStripMenuItem_Click);
+            this.tsmiAddToPurchase.Name = "tsmiAddToPurchase";
+            this.tsmiAddToPurchase.Size = new System.Drawing.Size(174, 26);
+            this.tsmiAddToPurchase.Text = "اضافة للفاتورة";
+            this.tsmiAddToPurchase.Click += new System.EventHandler(this.tsmiAddToPurchase_Click);
             // 
             // عرضToolStripMenuItem
             // 
             this.عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
             this.عرضToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.عرضToolStripMenuItem.Text = "عرض لتفاصيل";
-            this.عرضToolStripMenuItem.Click += new System.EventHandler(this.عرضToolStripMenuItem_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel3.Controls.Add(this.lblSaleID);
-            this.panel3.Controls.Add(this.lblCustomerPhone);
-            this.panel3.Controls.Add(this.lblCustomerName);
-            this.panel3.Controls.Add(this.lblCustomerID);
+            this.panel3.Controls.Add(this.lblPurchaseID);
+            this.panel3.Controls.Add(this.lblSupplierPhone);
+            this.panel3.Controls.Add(this.lblSupplierName);
+            this.panel3.Controls.Add(this.lblSupplierID);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cbPayBy);
-            this.panel3.Controls.Add(this.lnkSelectCustomer);
+            this.panel3.Controls.Add(this.lnkSelectSupplier);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label6);
@@ -357,43 +345,43 @@ namespace PosAndAccountantProject.Sales
             this.panel3.Size = new System.Drawing.Size(928, 99);
             this.panel3.TabIndex = 9;
             // 
-            // lblSaleID
+            // lblPurchaseID
             // 
-            this.lblSaleID.BackColor = System.Drawing.Color.White;
-            this.lblSaleID.Location = new System.Drawing.Point(671, 5);
-            this.lblSaleID.Name = "lblSaleID";
-            this.lblSaleID.Size = new System.Drawing.Size(124, 30);
-            this.lblSaleID.TabIndex = 38;
+            this.lblPurchaseID.BackColor = System.Drawing.Color.White;
+            this.lblPurchaseID.Location = new System.Drawing.Point(671, 5);
+            this.lblPurchaseID.Name = "lblPurchaseID";
+            this.lblPurchaseID.Size = new System.Drawing.Size(124, 30);
+            this.lblPurchaseID.TabIndex = 38;
             // 
-            // lblCustomerPhone
+            // lblSupplierPhone
             // 
-            this.lblCustomerPhone.BackColor = System.Drawing.Color.White;
-            this.lblCustomerPhone.Location = new System.Drawing.Point(42, 45);
-            this.lblCustomerPhone.Name = "lblCustomerPhone";
-            this.lblCustomerPhone.Size = new System.Drawing.Size(140, 36);
-            this.lblCustomerPhone.TabIndex = 37;
+            this.lblSupplierPhone.BackColor = System.Drawing.Color.White;
+            this.lblSupplierPhone.Location = new System.Drawing.Point(42, 45);
+            this.lblSupplierPhone.Name = "lblSupplierPhone";
+            this.lblSupplierPhone.Size = new System.Drawing.Size(140, 36);
+            this.lblSupplierPhone.TabIndex = 37;
             // 
-            // lblCustomerName
+            // lblSupplierName
             // 
-            this.lblCustomerName.BackColor = System.Drawing.Color.White;
-            this.lblCustomerName.Location = new System.Drawing.Point(404, 47);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(124, 30);
-            this.lblCustomerName.TabIndex = 36;
+            this.lblSupplierName.BackColor = System.Drawing.Color.White;
+            this.lblSupplierName.Location = new System.Drawing.Point(404, 47);
+            this.lblSupplierName.Name = "lblSupplierName";
+            this.lblSupplierName.Size = new System.Drawing.Size(124, 30);
+            this.lblSupplierName.TabIndex = 36;
             // 
-            // lblCustomerID
+            // lblSupplierID
             // 
-            this.lblCustomerID.BackColor = System.Drawing.Color.White;
-            this.lblCustomerID.Location = new System.Drawing.Point(671, 45);
-            this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(124, 30);
-            this.lblCustomerID.TabIndex = 35;
+            this.lblSupplierID.BackColor = System.Drawing.Color.White;
+            this.lblSupplierID.Location = new System.Drawing.Point(671, 45);
+            this.lblSupplierID.Name = "lblSupplierID";
+            this.lblSupplierID.Size = new System.Drawing.Size(124, 30);
+            this.lblSupplierID.TabIndex = 35;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.label9.Location = new System.Drawing.Point(188, 8);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 20);
@@ -405,8 +393,8 @@ namespace PosAndAccountantProject.Sales
             this.cbPayBy.BackColor = System.Drawing.Color.Transparent;
             this.cbPayBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbPayBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPayBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.cbPayBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.cbPayBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.cbPayBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.cbPayBy.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbPayBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbPayBy.ItemHeight = 30;
@@ -415,18 +403,18 @@ namespace PosAndAccountantProject.Sales
             this.cbPayBy.Size = new System.Drawing.Size(140, 36);
             this.cbPayBy.TabIndex = 18;
             // 
-            // lnkSelectCustomer
+            // lnkSelectSupplier
             // 
-            this.lnkSelectCustomer.AutoSize = true;
-            this.lnkSelectCustomer.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lnkSelectCustomer.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lnkSelectCustomer.Location = new System.Drawing.Point(577, 11);
-            this.lnkSelectCustomer.Name = "lnkSelectCustomer";
-            this.lnkSelectCustomer.Size = new System.Drawing.Size(70, 19);
-            this.lnkSelectCustomer.TabIndex = 17;
-            this.lnkSelectCustomer.TabStop = true;
-            this.lnkSelectCustomer.Text = "اختار عميل";
-            this.lnkSelectCustomer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSelectCustomer_LinkClicked);
+            this.lnkSelectSupplier.AutoSize = true;
+            this.lnkSelectSupplier.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lnkSelectSupplier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.lnkSelectSupplier.Location = new System.Drawing.Point(577, 11);
+            this.lnkSelectSupplier.Name = "lnkSelectSupplier";
+            this.lnkSelectSupplier.Size = new System.Drawing.Size(67, 19);
+            this.lnkSelectSupplier.TabIndex = 17;
+            this.lnkSelectSupplier.TabStop = true;
+            this.lnkSelectSupplier.Text = "اختار مورد";
+            this.lnkSelectSupplier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSelectSupplier_LinkClicked);
             // 
             // label7
             // 
@@ -448,7 +436,7 @@ namespace PosAndAccountantProject.Sales
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(98, 38);
             this.label8.TabIndex = 14;
-            this.label8.Text = "اسم العميل:";
+            this.label8.Text = "اسم المورد:";
             // 
             // label6
             // 
@@ -459,7 +447,7 @@ namespace PosAndAccountantProject.Sales
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(117, 38);
             this.label6.TabIndex = 10;
-            this.label6.Text = "معرف العميل:";
+            this.label6.Text = "معرف المورد:";
             // 
             // label5
             // 
@@ -472,147 +460,78 @@ namespace PosAndAccountantProject.Sales
             this.label5.TabIndex = 8;
             this.label5.Text = "معرف الفاتورة:";
             // 
-            // dgvSaleDetails
+            // dgvPurchaseDetails
             // 
-            this.dgvSaleDetails.AllowUserToAddRows = false;
-            this.dgvSaleDetails.AllowUserToDeleteRows = false;
-            this.dgvSaleDetails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvSaleDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSaleDetails.ColumnHeadersHeight = 35;
-            this.dgvSaleDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmCounter,
-            this.clmProductName,
-            this.clmSalePrice,
-            this.clmQuantity,
-            this.clmTotalPrice,
-            this.clmReturnQ,
-            this.clmDiscount,
-            this.clmProductID});
-            this.dgvSaleDetails.ContextMenuStrip = this.cmsSaleDetails;
-            this.dgvSaleDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSaleDetails.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSaleDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvSaleDetails.Location = new System.Drawing.Point(710, 183);
-            this.dgvSaleDetails.Name = "dgvSaleDetails";
-            this.dgvSaleDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvSaleDetails.RowHeadersVisible = false;
-            this.dgvSaleDetails.RowHeadersWidth = 51;
-            this.dgvSaleDetails.RowTemplate.Height = 30;
-            this.dgvSaleDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSaleDetails.Size = new System.Drawing.Size(745, 446);
-            this.dgvSaleDetails.TabIndex = 10;
-            this.dgvSaleDetails.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
-            this.dgvSaleDetails.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvSaleDetails.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvSaleDetails.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvSaleDetails.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvSaleDetails.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvSaleDetails.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvSaleDetails.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvSaleDetails.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            this.dgvSaleDetails.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvSaleDetails.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSaleDetails.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvSaleDetails.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvSaleDetails.ThemeStyle.HeaderStyle.Height = 35;
-            this.dgvSaleDetails.ThemeStyle.ReadOnly = false;
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.Height = 30;
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
-            this.dgvSaleDetails.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEnter);
-            this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
-            this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
+            this.dgvPurchaseDetails.AllowUserToAddRows = false;
+            this.dgvPurchaseDetails.AllowUserToDeleteRows = false;
+            this.dgvPurchaseDetails.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvPurchaseDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPurchaseDetails.ColumnHeadersHeight = 35;
+            this.dgvPurchaseDetails.ContextMenuStrip = this.cmsPurchaseDetails;
+            this.dgvPurchaseDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPurchaseDetails.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.dgvPurchaseDetails.Location = new System.Drawing.Point(710, 183);
+            this.dgvPurchaseDetails.Name = "dgvPurchaseDetails";
+            this.dgvPurchaseDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvPurchaseDetails.RowHeadersVisible = false;
+            this.dgvPurchaseDetails.RowHeadersWidth = 51;
+            this.dgvPurchaseDetails.RowTemplate.Height = 30;
+            this.dgvPurchaseDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPurchaseDetails.Size = new System.Drawing.Size(745, 446);
+            this.dgvPurchaseDetails.TabIndex = 10;
+            this.dgvPurchaseDetails.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
+            this.dgvPurchaseDetails.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvPurchaseDetails.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvPurchaseDetails.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvPurchaseDetails.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvPurchaseDetails.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvPurchaseDetails.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPurchaseDetails.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.dgvPurchaseDetails.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            this.dgvPurchaseDetails.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPurchaseDetails.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPurchaseDetails.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPurchaseDetails.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPurchaseDetails.ThemeStyle.HeaderStyle.Height = 35;
+            this.dgvPurchaseDetails.ThemeStyle.ReadOnly = false;
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.Height = 30;
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            this.dgvPurchaseDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPurchaseDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseDetails_CellEndEdit);
+            this.dgvPurchaseDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvPurchaseDetails_EditingControlShowing);
+            this.dgvPurchaseDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseDetails_RowEnter);
             // 
-            // clmCounter
+            // cmsPurchaseDetails
             // 
-            this.clmCounter.FillWeight = 40F;
-            this.clmCounter.HeaderText = "م";
-            this.clmCounter.MinimumWidth = 6;
-            this.clmCounter.Name = "clmCounter";
-            // 
-            // clmProductName
-            // 
-            this.clmProductName.FillWeight = 92.978F;
-            this.clmProductName.HeaderText = "اسم المنتج";
-            this.clmProductName.MinimumWidth = 6;
-            this.clmProductName.Name = "clmProductName";
-            this.clmProductName.ReadOnly = true;
-            // 
-            // clmSalePrice
-            // 
-            this.clmSalePrice.FillWeight = 92.978F;
-            this.clmSalePrice.HeaderText = "سعر البيع";
-            this.clmSalePrice.MinimumWidth = 6;
-            this.clmSalePrice.Name = "clmSalePrice";
-            this.clmSalePrice.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.FillWeight = 92.978F;
-            this.clmQuantity.HeaderText = "الكمية";
-            this.clmQuantity.MinimumWidth = 6;
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmTotalPrice
-            // 
-            this.clmTotalPrice.FillWeight = 92.978F;
-            this.clmTotalPrice.HeaderText = "السعر الكلي";
-            this.clmTotalPrice.MinimumWidth = 6;
-            this.clmTotalPrice.Name = "clmTotalPrice";
-            this.clmTotalPrice.ReadOnly = true;
-            // 
-            // clmReturnQ
-            // 
-            this.clmReturnQ.FillWeight = 92.978F;
-            this.clmReturnQ.HeaderText = "الكمية المعادة";
-            this.clmReturnQ.MinimumWidth = 6;
-            this.clmReturnQ.Name = "clmReturnQ";
-            // 
-            // clmDiscount
-            // 
-            this.clmDiscount.FillWeight = 92.978F;
-            this.clmDiscount.HeaderText = "قيمة الخصم";
-            this.clmDiscount.MinimumWidth = 6;
-            this.clmDiscount.Name = "clmDiscount";
-            // 
-            // clmProductID
-            // 
-            this.clmProductID.HeaderText = "ProductID";
-            this.clmProductID.MinimumWidth = 6;
-            this.clmProductID.Name = "clmProductID";
-            this.clmProductID.Visible = false;
-            // 
-            // cmsSaleDetails
-            // 
-            this.cmsSaleDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmsSaleDetails.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsSaleDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsPurchaseDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsPurchaseDetails.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsPurchaseDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.الغاءمنالفاتورةToolStripMenuItem,
             this.jgToolStripMenuItem});
-            this.cmsSaleDetails.Name = "contextMenuStrip2";
-            this.cmsSaleDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsSaleDetails.Size = new System.Drawing.Size(237, 56);
+            this.cmsPurchaseDetails.Name = "contextMenuStrip2";
+            this.cmsPurchaseDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmsPurchaseDetails.Size = new System.Drawing.Size(237, 78);
             // 
             // الغاءمنالفاتورةToolStripMenuItem
             // 
@@ -625,13 +544,13 @@ namespace PosAndAccountantProject.Sales
             // 
             this.jgToolStripMenuItem.Name = "jgToolStripMenuItem";
             this.jgToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.jgToolStripMenuItem.Text = "تعديل المنتح في الفاتورة";
+            this.jgToolStripMenuItem.Text = "تعديل المنتج في الفاتورة";
             // 
             // pnlPreview
             // 
             this.pnlPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlPreview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.pnlPreview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.pnlPreview.BorderRadius = 8;
             this.pnlPreview.BorderThickness = 2;
             this.pnlPreview.Controls.Add(this.btnEditQuantity);
@@ -643,7 +562,7 @@ namespace PosAndAccountantProject.Sales
             this.pnlPreview.Controls.Add(this.lblMinQuantity);
             this.pnlPreview.Controls.Add(this.lblQuantity);
             this.pnlPreview.Controls.Add(this.lblBarcode);
-            this.pnlPreview.Controls.Add(this.lblSalePrice);
+            this.pnlPreview.Controls.Add(this.lblPurchasePrice);
             this.pnlPreview.Controls.Add(this.lblProductName);
             this.pnlPreview.Controls.Add(this.pbProductImage);
             this.pnlPreview.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
@@ -671,11 +590,10 @@ namespace PosAndAccountantProject.Sales
             this.btnEditQuantity.TabIndex = 16;
             this.btnEditQuantity.Text = "تحديث الكمية";
             this.btnEditQuantity.Click += new System.EventHandler(this.btnEditQuantity_Click);
-            this.btnEditQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // label19
             // 
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(103, 345);
@@ -693,9 +611,9 @@ namespace PosAndAccountantProject.Sales
             this.txtProductQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtProductQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtProductQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProductQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtProductQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtProductQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtProductQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtProductQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtProductQuantity.Location = new System.Drawing.Point(12, 341);
             this.txtProductQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductQuantity.Name = "txtProductQuantity";
@@ -723,7 +641,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
@@ -769,7 +687,7 @@ namespace PosAndAccountantProject.Sales
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(149, 24);
             this.lblQuantity.TabIndex = 4;
-            this.lblQuantity.Text = "المخزون الحالي: 0";
+            this.lblQuantity.Text = " ";
             this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBarcode
@@ -785,17 +703,17 @@ namespace PosAndAccountantProject.Sales
             this.lblBarcode.Text = "Barcode: 000000";
             this.lblBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSalePrice
+            // lblPurchasePrice
             // 
-            this.lblSalePrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lblSalePrice.Location = new System.Drawing.Point(11, 202);
-            this.lblSalePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSalePrice.Name = "lblSalePrice";
-            this.lblSalePrice.Size = new System.Drawing.Size(152, 24);
-            this.lblSalePrice.TabIndex = 2;
-            this.lblSalePrice.Text = "0.00 ل.س";
-            this.lblSalePrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.lblPurchasePrice.Location = new System.Drawing.Point(11, 202);
+            this.lblPurchasePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPurchasePrice.Name = "lblPurchasePrice";
+            this.lblPurchasePrice.Size = new System.Drawing.Size(152, 24);
+            this.lblPurchasePrice.TabIndex = 2;
+            this.lblPurchasePrice.Text = "0.00 ل.س";
+            this.lblPurchasePrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProductName
             // 
@@ -856,9 +774,9 @@ namespace PosAndAccountantProject.Sales
             this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDiscount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtDiscount.Location = new System.Drawing.Point(43, 69);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtDiscount.Name = "txtDiscount";
@@ -867,8 +785,8 @@ namespace PosAndAccountantProject.Sales
             this.txtDiscount.Size = new System.Drawing.Size(124, 30);
             this.txtDiscount.TabIndex = 39;
             this.txtDiscount.Tag = "0";
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
-            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
             // 
             // lblTotalAmountWithOutDebtAndDiscout
             // 
@@ -946,17 +864,18 @@ namespace PosAndAccountantProject.Sales
             this.txtPaidAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPaidAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPaidAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPaidAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtPaidAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtPaidAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaidAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtPaidAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtPaidAmount.Location = new System.Drawing.Point(435, 112);
             this.txtPaidAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPaidAmount.Name = "txtPaidAmount";
-            this.txtPaidAmount.PlaceholderText = "دفعة الزبون";
+            this.txtPaidAmount.PlaceholderText = "دفعة للمورد";
             this.txtPaidAmount.SelectedText = "";
             this.txtPaidAmount.Size = new System.Drawing.Size(124, 30);
             this.txtPaidAmount.TabIndex = 27;
             this.txtPaidAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
+            this.txtPaidAmount.Leave += new System.EventHandler(this.txtPaidAmount_Leave);
             // 
             // label17
             // 
@@ -1015,10 +934,10 @@ namespace PosAndAccountantProject.Sales
             this.txtNotes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNotes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNotes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNotes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtNotes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtNotes.Location = new System.Drawing.Point(826, 58);
+            this.txtNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.txtNotes.Location = new System.Drawing.Point(826, 59);
             this.txtNotes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.PlaceholderText = "";
@@ -1079,7 +998,6 @@ namespace PosAndAccountantProject.Sales
             this.btnSave.Size = new System.Drawing.Size(152, 45);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "حفظ الفاتورة";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrint
             // 
@@ -1089,39 +1007,33 @@ namespace PosAndAccountantProject.Sales
             this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(103)))), ((int)(((byte)(145)))));
+            this.btnPrint.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(60)))), ((int)(((byte)(152)))));
             this.btnPrint.Location = new System.Drawing.Point(532, 802);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(152, 45);
             this.btnPrint.TabIndex = 14;
             this.btnPrint.Text = "طباعة";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // btnOpenNewSale
+            // btnOpenNewPurchase
             // 
-            this.btnOpenNewSale.BorderColor = System.Drawing.Color.Transparent;
-            this.btnOpenNewSale.BorderRadius = 10;
-            this.btnOpenNewSale.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnOpenNewSale.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnOpenNewSale.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOpenNewSale.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOpenNewSale.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnOpenNewSale.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenNewSale.ForeColor = System.Drawing.Color.White;
-            this.btnOpenNewSale.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnOpenNewSale.Location = new System.Drawing.Point(895, 802);
-            this.btnOpenNewSale.Name = "btnOpenNewSale";
-            this.btnOpenNewSale.Size = new System.Drawing.Size(152, 45);
-            this.btnOpenNewSale.TabIndex = 15;
-            this.btnOpenNewSale.Text = "فاتورة جديدة";
-            this.btnOpenNewSale.Click += new System.EventHandler(this.btnOpenNewSale_Click);
-            // 
-            // printDoc
-            // 
-            this.printDoc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc_PrintPage);
+            this.btnOpenNewPurchase.BorderColor = System.Drawing.Color.Transparent;
+            this.btnOpenNewPurchase.BorderRadius = 10;
+            this.btnOpenNewPurchase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpenNewPurchase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpenNewPurchase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOpenNewPurchase.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOpenNewPurchase.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnOpenNewPurchase.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenNewPurchase.ForeColor = System.Drawing.Color.White;
+            this.btnOpenNewPurchase.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnOpenNewPurchase.Location = new System.Drawing.Point(895, 802);
+            this.btnOpenNewPurchase.Name = "btnOpenNewPurchase";
+            this.btnOpenNewPurchase.Size = new System.Drawing.Size(152, 45);
+            this.btnOpenNewPurchase.TabIndex = 15;
+            this.btnOpenNewPurchase.Text = "فاتورة جديدة";
             // 
             // printPreviewDlg
             // 
@@ -1134,18 +1046,18 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
             // 
-            // frmAddNewSale
+            // frmAddUpdatePurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1455, 856);
-            this.Controls.Add(this.btnOpenNewSale);
+            this.Controls.Add(this.btnOpenNewPurchase);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnlPreview);
-            this.Controls.Add(this.dgvSaleDetails);
+            this.Controls.Add(this.dgvPurchaseDetails);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvProductList);
             this.Controls.Add(this.label4);
@@ -1156,21 +1068,21 @@ namespace PosAndAccountantProject.Sales
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "frmAddNewSale";
+            this.Name = "frmAddUpdatePurchase";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "فاتورة بيع نقدي";
-            this.Load += new System.EventHandler(this.frmAddNewSale_Load);
+            this.Text = "فاتورة شراء";
+            this.Load += new System.EventHandler(this.frmAddUpdatePurchase_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.cmsProduct.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetails)).EndInit();
-            this.cmsSaleDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseDetails)).EndInit();
+            this.cmsPurchaseDetails.ResumeLayout(false);
             this.pnlPreview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -1181,8 +1093,6 @@ namespace PosAndAccountantProject.Sales
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -1199,15 +1109,15 @@ namespace PosAndAccountantProject.Sales
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox cbPayBy;
-        private System.Windows.Forms.LinkLabel lnkSelectCustomer;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvSaleDetails;
+        private System.Windows.Forms.LinkLabel lnkSelectSupplier;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvPurchaseDetails;
         private Guna.UI2.WinForms.Guna2Panel pnlPreview;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblMinQuantity;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblBarcode;
-        private System.Windows.Forms.Label lblSalePrice;
+        private System.Windows.Forms.Label lblPurchasePrice;
         private System.Windows.Forms.Label lblProductName;
         private Guna.UI2.WinForms.Guna2PictureBox pbProductImage;
         private System.Windows.Forms.Panel panel4;
@@ -1225,37 +1135,30 @@ namespace PosAndAccountantProject.Sales
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
-        private Guna.UI2.WinForms.Guna2Button btnOpenNewSale;
+        private Guna.UI2.WinForms.Guna2Button btnOpenNewPurchase;
         private System.Windows.Forms.Label label19;
         private Guna.UI2.WinForms.Guna2TextBox txtProductQuantity;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblTotalQuantity;
         private System.Windows.Forms.ContextMenuStrip cmsProduct;
-        private System.Windows.Forms.ContextMenuStrip cmsSaleDetails;
+        private System.Windows.Forms.ContextMenuStrip cmsPurchaseDetails;
         private System.Windows.Forms.Label lblTotalDebt;
         private System.Windows.Forms.Label lblTotalAmountWithDebt;
         private System.Windows.Forms.Label lblTotalAmountWithOutDebtAndDiscout;
         private System.Windows.Forms.Label lblTotalAmountWithDiscoount;
         private Guna.UI2.WinForms.Guna2Button btnEditQuantity;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAddToSale;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddToPurchase;
         private System.Windows.Forms.ToolStripMenuItem عرضToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private System.Windows.Forms.ToolStripMenuItem الغاءمنالفاتورةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jgToolStripMenuItem;
-        private System.Windows.Forms.Label lblCustomerPhone;
-        private System.Windows.Forms.Label lblCustomerName;
-        private System.Windows.Forms.Label lblCustomerID;
+        private System.Windows.Forms.Label lblSupplierPhone;
+        private System.Windows.Forms.Label lblSupplierName;
+        private System.Windows.Forms.Label lblSupplierID;
         private System.Windows.Forms.Label label7;
         private System.Drawing.Printing.PrintDocument printDoc;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDlg;
-        private System.Windows.Forms.Label lblSaleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCounter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSalePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
+        private System.Windows.Forms.Label lblPurchaseID;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -73,7 +73,7 @@
             // 
             // ctrlCustomerCardWithFilter1
             // 
-            this.ctrlCustomerCardWithFilter1.Location = new System.Drawing.Point(2, 2);
+            this.ctrlCustomerCardWithFilter1.Location = new System.Drawing.Point(2, 11);
             this.ctrlCustomerCardWithFilter1.Name = "ctrlCustomerCardWithFilter1";
             this.ctrlCustomerCardWithFilter1.Size = new System.Drawing.Size(647, 645);
             this.ctrlCustomerCardWithFilter1.TabIndex = 0;

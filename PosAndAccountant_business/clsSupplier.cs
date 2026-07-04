@@ -125,7 +125,17 @@ namespace PosAndAccountant_business
         {
             return clsSupplierData.DeleteSupplierByID(SupplierID);
         }
+        
+            public static clsSupplier FindSupplierByPhone(string Phone)
+        {
+            clsSupplierDTO SupplierDTO = clsSupplierData.FindSupplierByPhone(Phone);
+            if (SupplierDTO != null)
+            {
+                return new clsSupplier(SupplierDTO);
+            }
+            return null;
 
+        }
         public static clsSupplier FindSupplierByID(int SupplierID)
         {
             clsSupplierDTO SupplierDTO = clsSupplierData.FindSupplierByID(SupplierID);
@@ -135,9 +145,8 @@ namespace PosAndAccountant_business
             }
             return null;
 
-
         }
-        public static clsSupplier FindUserByPersonID(int PersonID)
+        public static clsSupplier FindSupplierByPersonID(int PersonID)
         {
             clsSupplierDTO SupplierDTO = clsSupplierData.FindSupplierByPersonID(PersonID);
             if (SupplierDTO != null)

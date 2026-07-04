@@ -521,7 +521,7 @@ dgvProductList.DataSource = _AllProducts;
         private void dgvSaleDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             DataRow[] ProductsInf = _AllProducts.Select($"ProductID={dgvSaleDetails.Rows[e.RowIndex].Cells["clmProductID"].Value.ToString()}");
-            if (ProductsInf.Length == 0) MessageBox.Show("Errr");
+            if (ProductsInf.Length == 0) MessageBox.Show("شي خاطء حدث عند عرض معلومات المنتج");
 
 
             if (e.RowIndex < 0 || dgvSaleDetails.Rows[e.RowIndex].IsNewRow) return;
