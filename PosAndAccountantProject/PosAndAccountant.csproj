@@ -250,6 +250,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchases\frmAddUpdatePurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchases\frmAddUpdatePurchase.Designer.cs">
+      <DependentUpon>frmAddUpdatePurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmCustomReportsWithAi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,11 +274,23 @@
     <Compile Include="Suppliers\Controls\ctrlSupplierCard.Designer.cs">
       <DependentUpon>ctrlSupplierCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Suppliers\Controls\ctrlSupplierCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Suppliers\Controls\ctrlSupplierCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlSupplierCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Suppliers\frmAddUpdateSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Suppliers\frmAddUpdateSupplier.Designer.cs">
       <DependentUpon>frmAddUpdateSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suppliers\frmFindSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suppliers\frmFindSupplier.Designer.cs">
+      <DependentUpon>frmFindSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Suppliers\frmListSuppliers.cs">
       <SubType>Form</SubType>
@@ -422,6 +440,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Purchases\frmAddUpdatePurchase.resx">
+      <DependentUpon>frmAddUpdatePurchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmCustomReportsWithAi.resx">
       <DependentUpon>frmCustomReportsWithAi.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,8 +452,14 @@
     <EmbeddedResource Include="Suppliers\Controls\ctrlSupplierCard.resx">
       <DependentUpon>ctrlSupplierCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Suppliers\Controls\ctrlSupplierCardWithFilter.resx">
+      <DependentUpon>ctrlSupplierCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Suppliers\frmAddUpdateSupplier.resx">
       <DependentUpon>frmAddUpdateSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suppliers\frmFindSupplier.resx">
+      <DependentUpon>frmFindSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Suppliers\frmListSuppliers.resx">
       <DependentUpon>frmListSuppliers.cs</DependentUpon>
@@ -479,6 +506,10 @@
     <ProjectReference Include="..\PosAndAccountant_business\PosAndAccountant_business.csproj">
       <Project>{91d92b66-a772-4bd3-b155-35ad33466e58}</Project>
       <Name>PosAndAccountant_business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PosAndAccountant_DataTransfer\PosAndAccountant_DataTransfer.csproj">
+      <Project>{a8ea84c0-9dd8-4430-a8b0-aa99e5c23d24}</Project>
+      <Name>PosAndAccountant_DataTransfer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -586,5 +617,6 @@
   <ItemGroup>
     <None Include="Resources\plus.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

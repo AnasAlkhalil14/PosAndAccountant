@@ -37,14 +37,25 @@ namespace PosAndAccountantProject.Suppliers.Controls
             _Supplier = clsSupplier.FindSupplierByID(SuppplierID);
             if (Supplier != null)
             {
-                return _FillCustomerInfo();
+                return _FillSupplierInfo();
             }
-            ReseteCustomerInfo();
+            ReseteSupplierInfo();
+            return false;
+
+        }
+        public bool LoadDataToControl(string phone)
+        {
+            _Supplier = clsSupplier.FindSupplierByPhone(phone);
+            if (Supplier != null)
+            {
+                return _FillSupplierInfo();
+            }
+            ReseteSupplierInfo();
             return false;
 
         }
 
-        private bool _FillCustomerInfo()
+        private bool _FillSupplierInfo()
         {
             if (ctrlPersonCard1.LoadPersoDataToControl(Supplier.PersonID))
             {
@@ -58,11 +69,11 @@ namespace PosAndAccountantProject.Suppliers.Controls
                 lblNotes.Text = Supplier.Notes;
                 return true;
             }
-            ReseteCustomerInfo();
+            ReseteSupplierInfo();
             return false;
         }
 
-        public void ReseteCustomerInfo()
+        public void ReseteSupplierInfo()
         {
             ctrlPersonCard1.ResetPersonInfo();
             lblCreatedDate.Text = "[???]";

@@ -28,6 +28,7 @@ namespace PosAndAccountantProject.Suppliers
         private clsSupplier _Supplier;
         public bool WasSaved = false;
 
+        public int SupplierID => _SupplierID;
 
         private void _FillSupplierData()
         {

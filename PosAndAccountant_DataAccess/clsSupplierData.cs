@@ -73,7 +73,69 @@ namespace PosAndAccountant_DataAccess
 
             return SupplierDTO;
         }
+        public static clsSupplierDTO FindSupplierByPhone(string Phone)
+        {
 
+            clsSupplierDTO SupplierDTO = null;
+            string query = @"SELECT   Suppliers.*
+FROM         Suppliers INNER JOIN
+                         People ON Suppliers.PersonID = People.PersonID
+						 where Phone=@Phone";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Phone", Phone);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                SupplierDTO = new clsSupplierDTO();
+
+                                SupplierDTO.SupplierID = Convert.ToInt32(reader["SupplierID"]); ;
+                                SupplierDTO.PersonID = Convert.ToInt32(reader["PersonID"]);
+                                SupplierDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
+                                SupplierDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
+                                SupplierDTO.TotalRemainingDebt = Convert.ToDouble(reader["TotalRemainingDebt"]);
+                                SupplierDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
+                                SupplierDTO.ModifiedDate = Convert.ToDateTime(reader["ModifiedDate"]);
+
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+            return SupplierDTO;
+        }
 
         public static clsSupplierDTO FindSupplierByPersonID(int PersonID)
         {
