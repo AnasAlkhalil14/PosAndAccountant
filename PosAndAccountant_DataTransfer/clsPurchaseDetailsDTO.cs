@@ -26,7 +26,7 @@ namespace PosAndAccountant_DataTransfer
 
         public decimal TotalPrice => CostPrice * (Quantity-ReturnQ);
 
-        public int ProductID { get; set; }
+        
 
         public int ReturnQ
         {
@@ -39,6 +39,8 @@ namespace PosAndAccountant_DataTransfer
                 OnPropertyChanged(nameof(ReturnQ));
             }
         }
+
+        public int ProductID { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

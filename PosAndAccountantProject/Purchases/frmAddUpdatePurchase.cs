@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using System.Windows.Forms;
 
 namespace PosAndAccountantProject.Purchases
@@ -25,14 +26,26 @@ namespace PosAndAccountantProject.Purchases
 
         private DataTable _AllProducts = clsProduct.GetAllProducts();
         private clsPurchase _Purchase=new clsPurchase();
+        private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
 
+        private void _LoadPaymentMethodToCompoBox()
+        {
+            cbPayBy.DataSource = clsPaymentMethod.AllPaymentMethos();
+            cbPayBy.DisplayMember = "PaymentMethodName";
+            cbPayBy.ValueMember = "PaymentMethodID";
+           
+            cbPayBy.SelectedIndex = 0;
+            _Purchase.PaymentMethodID = Convert.ToInt32(cbPayBy.SelectedValue);
+
+        }
         private void frmAddUpdatePurchase_Load(object sender, EventArgs e)
         {
             _SettleTheProductSideOnFormLoad();
-           
-        
-        
-        
+            _LoadPaymentMethodToCompoBox();
+
+
+
+
         }
             void _RefreshForm()
             {
@@ -60,10 +73,10 @@ namespace PosAndAccountantProject.Purchases
                     dgvPurchaseDetails.Columns[4].Width = 100;
                     dgvPurchaseDetails.Columns[4].ReadOnly = true;
 
-                    dgvPurchaseDetails.Columns[5].Visible= false;
-                    dgvPurchaseDetails.Columns[6].HeaderText = "الكمية المعادة";
-                    dgvPurchaseDetails.Columns[6].Width = 100;
-                    dgvPurchaseDetails.Columns[6].ReadOnly = false;
+                    dgvPurchaseDetails.Columns[6].Visible= false;
+                     dgvPurchaseDetails.Columns[5].HeaderText = "الكمية المعادة";
+                    dgvPurchaseDetails.Columns[5].Width = 100;
+                    dgvPurchaseDetails.Columns[5].ReadOnly = false;
 
 
                 }
@@ -95,6 +108,7 @@ namespace PosAndAccountantProject.Purchases
         }
         void _SettleTheProductSideOnFormLoad()
         {
+            _AllProducts = clsProduct.GetAllProducts();
             dgvProductList.DataSource = _AllProducts;
 
             if (dgvProductList.Rows.Count > 0)
@@ -210,7 +224,16 @@ namespace PosAndAccountantProject.Purchases
                 _OnActionForPurchaseDetails();
             }
 
+
                     }
+
+        private void _ResetePartnerInfo()
+        {
+            lblSupplierID.Text = "";
+            lblSupplierName.Text = "";
+            lblSupplierPhone.Text = "";
+            _Purchase.SupplierID = -1;
+        }
         private void Frm_SupplierSelected(object sender, frmFindSupplier.SupplierSelectedEventArgs e)
         {
             _LoadSupplierInfo(e.SupplierID);
@@ -241,14 +264,14 @@ namespace PosAndAccountantProject.Purchases
             if (dgvPurchaseDetails.Columns["Quantity"].Index==e.ColumnIndex)
             {
                 int NewQ = (int)dgvPurchaseDetails.Rows[e.RowIndex].Cells["Quantity"].Value;
-                int OldRQ = (int)dgvPurchaseDetails.Rows[e.RowIndex].Cells["ReturnQ"].Value;
-                if(NewQ<OldRQ)
+                if (!_Purchase.EditQuantity(ProductID, NewQ))
                 {
                     MessageBox.Show("لا يمكن ان تكون الكمية المعادة اكبر من الكمية الاصلية سيتم وضعها ال صفر", "خطأ في البيانات", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dgvPurchaseDetails.Rows[e.RowIndex].Cells["ReturnQ"].Value = "0";
                     _Purchase.EditReturnQ(ProductID, 0);
                 }
-                _Purchase.EditQuantity(ProductID, NewQ);
+                
+               
             }
             else
             {
@@ -341,15 +364,14 @@ namespace PosAndAccountantProject.Purchases
             {
                 int quant = Convert.ToInt32(txtProductQuantity.Text);
                 int ProductID = Convert.ToInt32(dgvPurchaseDetails.CurrentRow.Cells["ProductID"].Value);
-             if(   _Purchase.EditQuantity(ProductID, quant))
+             if(  ! _Purchase.EditQuantity(ProductID, quant))
                 {
-                    _OnActionForPurchaseDetails();
+                    MessageBox.Show("لا يمكن ان تكون الكمية المعادة اكبر من الكمية الاصلية سيتم وضعها ال صفر", "خطأ في البيانات", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dgvPurchaseDetails.CurrentRow.Cells["ReturnQ"].Value = "0";
+                    _Purchase.EditReturnQ(ProductID, 0);
                 }
-             else
-                {
-                    MessageBox.Show("لا يمكن ان تكون الكمية المعادة اكبر تاكد من البيانات", "خطأ في البيانات", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
+             
+                _OnActionForPurchaseDetails();
 
             }
             else
@@ -371,6 +393,115 @@ namespace PosAndAccountantProject.Purchases
             {
                 _OnActionForPurchaseDetails();
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // 1. Create the receipt control instance here first
+            _currentReceipt = new PosAndAccountantProject.Printing.ctrlSaleInvoice();
+
+            // 2. Pass your textboxes and DataGridView data to it so it resizes its height dynamically
+            string invId = lblPurchaseID.Text;
+            string custName = lblSupplierName.Text;
+            string totalAmt = lblTotalAmountWithOutDebtAndDiscout.Text;
+            string netAmt = lblTotalAmountWithDiscoount.Text;
+            string totalItemsCount = lblTotalQuantity.Text;
+            string debt = lblTotalDebt.Text;
+            _currentReceipt.PopulateAndResize(invId, custName, dgvPurchaseDetails, totalAmt, netAmt, debt, totalItemsCount, txtPaidAmount.Text);
+
+            // 3. Convert the UserControl's pixel dimensions to hundredths of an inch (Printer standard at 96 DPI)
+            int paperWidth = (int)((_currentReceipt.Width / 96.0) * 100);
+            int paperHeight = (int)((_currentReceipt.Height / 96.0) * 100);
+
+            // 4. Force the PrintDocument to use this exact custom paper size
+            printDoc.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("CustomReceipt", paperWidth, paperHeight);
+
+            // 5. Configure and open the Print Preview window
+            printPreviewDlg.Width = 500;
+            printPreviewDlg.Height = 700;
+            printPreviewDlg.StartPosition = FormStartPosition.CenterScreen;
+
+            printPreviewDlg.ShowDialog();
+
+            // 6. Clean up memory safely after the user closes the preview window
+            if (_currentReceipt != null)
+            {
+                _currentReceipt.Dispose();
+                _currentReceipt = null;
+            }
+        }
+
+        private void printDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            if (_currentReceipt == null) return;
+
+            // 1. Create a blank digital image canvas using the exact size of our receipt
+            Bitmap bmp = new Bitmap(_currentReceipt.Width, _currentReceipt.Height);
+
+            // 2. Take a visual snapshot of the user control layout
+            _currentReceipt.DrawToBitmap(bmp, new Rectangle(0, 0, _currentReceipt.Width, _currentReceipt.Height));
+
+            // 3. Stamp it onto the page. Because the paper size now matches the bitmap perfectly, 
+            // it will fill the page entirely with no blank margins on the right!
+            e.Graphics.DrawImage(bmp, 0, 0);
+
+            // 4. Dispose of the image asset immediately
+            bmp.Dispose();
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(lblSupplierID.Text))
+            {
+                MessageBox.Show("يرجى اختيار المورد اولا", "نقص في البيانات", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            if(_Purchase.Save())
+            {
+                _SettleTheProductSideOnFormLoad();
+                lblPurchaseID.Text=_Purchase.PurchaseID.ToString();
+                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID="+_Purchase.PurchaseID, "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnPrint.PerformClick();
+               
+            }
+            else
+            {
+                MessageBox.Show("حدث خطأ لم يتم حفظ الفاتورة", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+        }
+
+        private void cbPayBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(cbPayBy.SelectedValue.ToString(), out int result))
+            {
+                _Purchase.PaymentMethodID = result;
+            }
+            else
+                _Purchase.PaymentMethodID = 1;
+        }
+
+        private void _ReseteForOpnenNewPurchase()
+        {
+
+            _Purchase = new clsPurchase(); ;
+            _Purchase.PaymentMethodID = 1;
+            dgvPurchaseDetails.DataSource = null;
+            lblPurchaseID.Text = "جديد";
+            txtPaidAmount.Text = "";
+            _ResetePartnerInfo();
+            _OnActionForPurchaseDetails();
+        }
+        private void btnOpenNewPurchase_Click(object sender, EventArgs e)
+        {
+            _ReseteForOpnenNewPurchase();
+
+
         }
     }
 }

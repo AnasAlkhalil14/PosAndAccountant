@@ -902,5 +902,10 @@ dgvProductList.DataSource = _AllProducts;
         {
             _ReseteForNewSale();
         }
+
+        private void cbPayBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
