@@ -13,7 +13,7 @@ namespace PosAndAccountant_business
 {
     public class clsUser
     {
-
+        public static clsUser CurrentUser = clsUser.FindUserByID(1);
         private bool _AddUser()
         {
             clsUserDTO UserDTO = new clsUserDTO();

@@ -1,4 +1,5 @@
-﻿using PosAndAccountant_DataTransfer;
+﻿using PosAndAccountant_DataAccess;
+using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,9 @@ namespace PosAndAccountant_business
 {
     public class clsPurchase
     {
+         public enum enMode { eAdd,eUpdate}
+        public enMode Mode;
+
         private int _SupplierID;
       public int PurchaseID {  get; set; }
         public int UserID {  get; set; }
@@ -34,9 +38,10 @@ namespace PosAndAccountant_business
         public decimal NetTotalWithDebt { get { return NetTotalAmount + RemainingAmountDebt; } }
         public clsPurchase()
         {
-            PurchaseID = -1;UserID = -1;SupplierID = -1;PaymentMethodID = -1;
+            PurchaseID = -1;UserID = clsUser.CurrentUser.UserID;SupplierID = -1;PaymentMethodID = -1;
             PaidAmount = 0;DiscountAmount = 0;Notes = "";
             Details = new BindingList<clsPurchaseDetailsDTO>();
+            Mode = enMode.eAdd;
         }
         public decimal DiscountAmount { get; set; }
         //public decimal RemainingAmountDebt => (decimal)SuplierInfo.TotalRemainingDebt;
@@ -123,8 +128,40 @@ namespace PosAndAccountant_business
             }
         }
 
+        public bool _AddPurchase()
+        {
+            clsPurchaseDTO purchaseDTO = new clsPurchaseDTO(UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+
+            PurchaseID= clsPurchaseData.AddPurchase(purchaseDTO);
+            return PurchaseID != -1;
+        }
+        public bool _UpdatePurchae()
+        {
+            return false;
+        }
          
+               public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.eAdd:
+                    if (_AddPurchase())
+                    {
+                        Mode = enMode.eUpdate;
+                        return true;
+                    }
+                    return false;
+
+                case enMode.eUpdate:
+                    return _UpdatePurchae();
+
+                default:
+                    return false;
+            }
+        }
 
 
     }
-}
+
+    }
+ 
