@@ -1,5 +1,4 @@
 ﻿using PosAndAccountant_business;
-using PosAndAccountantProject.MainForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,9 +58,7 @@ namespace PosAndAccountantProject.Login
                 
 
 
-                frmMainForm frm= new frmMainForm();
-                frm.ShowDialog();
-                
+                 
             }
             else
             {

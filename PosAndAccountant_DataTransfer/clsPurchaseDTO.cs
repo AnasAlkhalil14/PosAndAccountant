@@ -9,8 +9,10 @@ namespace PosAndAccountant_DataTransfer
 { 
     public class clsPurchaseDTO
     {
-        public clsPurchaseDTO(int userID, int supplierID, int paymentMethodID, decimal totalAmount, decimal paidAmount, decimal discountAmount, decimal remainingAmountDebt, string notes, BindingList<clsPurchaseDetailsDTO> purchaseDetails)
+        public int PurchaseID {  get; set; }
+        public clsPurchaseDTO(int purchaseID,int userID, int supplierID, int paymentMethodID, decimal totalAmount, decimal paidAmount, decimal discountAmount, decimal remainingAmountDebt, string notes, BindingList<clsPurchaseDetailsDTO> purchaseDetails)
         {
+            PurchaseID = purchaseID;
             UserID = userID;
             SupplierID = supplierID;
             PaymentMethodID = paymentMethodID;
@@ -20,6 +22,10 @@ namespace PosAndAccountant_DataTransfer
             RemainingAmountDebt = remainingAmountDebt;
             Notes = notes;
             PurchaseDetails = purchaseDetails;
+        }
+
+        public clsPurchaseDTO()
+        {
         }
 
         public int UserID {  get; set; }
