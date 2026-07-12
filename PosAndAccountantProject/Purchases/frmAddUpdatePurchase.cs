@@ -22,10 +22,19 @@ namespace PosAndAccountantProject.Purchases
         public frmAddUpdatePurchase()
         {
             InitializeComponent();
+            _Purchase = new clsPurchase();
+        }
+        public frmAddUpdatePurchase(int PurchaseID)
+        {
+            InitializeComponent();
+            _Purchase = clsPurchase.Find(PurchaseID);
+            
+
         }
 
+        
         private DataTable _AllProducts = clsProduct.GetAllProducts();
-        private clsPurchase _Purchase=new clsPurchase();
+        private clsPurchase _Purchase ;
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
 
         private void _LoadPaymentMethodToCompoBox()
@@ -42,7 +51,16 @@ namespace PosAndAccountantProject.Purchases
         {
             _SettleTheProductSideOnFormLoad();
             _LoadPaymentMethodToCompoBox();
+            if (_Purchase.Mode == clsPurchase.enMode.eUpdate)
+            {
+                _LoadSupplierInfo(_Purchase.SupplierID);
+                lblPurchaseID.Text = _Purchase.PurchaseID.ToString();
+                txtPaidAmount.Text = _Purchase.PaidAmount.ToString();
+                lblTitle.Text = "تعديل فاتورة شراء";
+                _RefreshForm();
 
+                _OnActionForPurchaseDetails();
+            }
 
 
 
@@ -463,7 +481,7 @@ namespace PosAndAccountantProject.Purchases
             {
                 _SettleTheProductSideOnFormLoad();
                 lblPurchaseID.Text=_Purchase.PurchaseID.ToString();
-                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID="+_Purchase.PurchaseID, "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID="+_Purchase.PurchaseID+" ستصبح الان في وضع التعديل انتبه", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPrint.PerformClick();
                
             }

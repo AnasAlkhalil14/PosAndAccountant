@@ -39,7 +39,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdatePurchase));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -122,7 +122,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(521, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 86);
@@ -132,7 +132,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::PosAndAccountantProject.Properties.Resources.MakingSale;
-            this.pictureBox3.Location = new System.Drawing.Point(301, 14);
+            this.pictureBox3.Location = new System.Drawing.Point(293, 13);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(77, 52);
@@ -140,15 +140,15 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(312, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 58);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "فاتورة شراء";
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(379, 7);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(411, 65);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "انشاء فاتورة شراء  ";
             // 
             // panel2
             // 
@@ -236,7 +236,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label4.Location = new System.Drawing.Point(280, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(72, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "الصنف:";
             // 
@@ -311,19 +311,19 @@
             this.عرضToolStripMenuItem});
             this.cmsProduct.Name = "contextMenuStrip1";
             this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsProduct.Size = new System.Drawing.Size(175, 56);
+            this.cmsProduct.Size = new System.Drawing.Size(204, 68);
             // 
             // tsmiAddToPurchase
             // 
             this.tsmiAddToPurchase.Name = "tsmiAddToPurchase";
-            this.tsmiAddToPurchase.Size = new System.Drawing.Size(174, 26);
+            this.tsmiAddToPurchase.Size = new System.Drawing.Size(203, 32);
             this.tsmiAddToPurchase.Text = "اضافة للفاتورة";
             this.tsmiAddToPurchase.Click += new System.EventHandler(this.tsmiAddToPurchase_Click);
             // 
             // عرضToolStripMenuItem
             // 
             this.عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
-            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.عرضToolStripMenuItem.Size = new System.Drawing.Size(203, 32);
             this.عرضToolStripMenuItem.Text = "عرض لتفاصيل";
             // 
             // panel3
@@ -385,7 +385,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.label9.Location = new System.Drawing.Point(188, 8);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 20);
+            this.label9.Size = new System.Drawing.Size(89, 25);
             this.label9.TabIndex = 19;
             this.label9.Text = "الدفع عبر:";
             // 
@@ -412,7 +412,7 @@
             this.lnkSelectSupplier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.lnkSelectSupplier.Location = new System.Drawing.Point(577, 11);
             this.lnkSelectSupplier.Name = "lnkSelectSupplier";
-            this.lnkSelectSupplier.Size = new System.Drawing.Size(67, 19);
+            this.lnkSelectSupplier.Size = new System.Drawing.Size(80, 23);
             this.lnkSelectSupplier.TabIndex = 17;
             this.lnkSelectSupplier.TabStop = true;
             this.lnkSelectSupplier.Text = "اختار مورد";
@@ -533,19 +533,19 @@
             this.jgToolStripMenuItem});
             this.cmsPurchaseDetails.Name = "contextMenuStrip2";
             this.cmsPurchaseDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmsPurchaseDetails.Size = new System.Drawing.Size(237, 56);
+            this.cmsPurchaseDetails.Size = new System.Drawing.Size(286, 68);
             // 
             // الغاءمنالفاتورةToolStripMenuItem
             // 
             this.الغاءمنالفاتورةToolStripMenuItem.Name = "الغاءمنالفاتورةToolStripMenuItem";
-            this.الغاءمنالفاتورةToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.الغاءمنالفاتورةToolStripMenuItem.Size = new System.Drawing.Size(285, 32);
             this.الغاءمنالفاتورةToolStripMenuItem.Text = "الغاء من الفاتورة";
             this.الغاءمنالفاتورةToolStripMenuItem.Click += new System.EventHandler(this.الغاءمنالفاتورةToolStripMenuItem_Click);
             // 
             // jgToolStripMenuItem
             // 
             this.jgToolStripMenuItem.Name = "jgToolStripMenuItem";
-            this.jgToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.jgToolStripMenuItem.Size = new System.Drawing.Size(285, 32);
             this.jgToolStripMenuItem.Text = "تعديل المنتج في الفاتورة";
             // 
             // pnlPreview
@@ -780,7 +780,7 @@
             this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtDiscount.Location = new System.Drawing.Point(43, 69);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(5);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PlaceholderText = "";
             this.txtDiscount.SelectedText = "";
@@ -842,7 +842,7 @@
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label20.Location = new System.Drawing.Point(1218, 14);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(136, 20);
+            this.label20.Size = new System.Drawing.Size(168, 25);
             this.label20.TabIndex = 29;
             this.label20.Text = "عدد المنتجات الكلي:";
             // 
@@ -870,7 +870,7 @@
             this.txtPaidAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaidAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
             this.txtPaidAmount.Location = new System.Drawing.Point(435, 112);
-            this.txtPaidAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPaidAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.PlaceholderText = "دفعة للمورد";
             this.txtPaidAmount.SelectedText = "";
@@ -1057,7 +1057,7 @@
             // 
             // frmAddUpdatePurchase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1455, 856);
@@ -1103,7 +1103,7 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;

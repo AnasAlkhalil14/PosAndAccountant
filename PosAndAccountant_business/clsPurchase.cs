@@ -43,6 +43,21 @@ namespace PosAndAccountant_business
             Details = new BindingList<clsPurchaseDetailsDTO>();
             Mode = enMode.eAdd;
         }
+
+        public clsPurchase(clsPurchaseDTO purchaseDTO)
+        {
+            PurchaseID = purchaseDTO.PurchaseID;
+            UserID = purchaseDTO.UserID;
+            SupplierID = purchaseDTO.SupplierID;
+            PaymentMethodID = purchaseDTO.PaymentMethodID;
+            PaidAmount = purchaseDTO.PaidAmount;
+            DiscountAmount = purchaseDTO.DiscountAmount;
+            
+            Notes = purchaseDTO.Notes;
+            Details = purchaseDTO.PurchaseDetails;
+            Mode = enMode.eUpdate;
+        }
+
         public decimal DiscountAmount { get; set; }
         //public decimal RemainingAmountDebt => (decimal)SuplierInfo.TotalRemainingDebt;
         public decimal RemainingAmountDebt { get {
@@ -130,14 +145,16 @@ namespace PosAndAccountant_business
 
         public bool _AddPurchase()
         {
-            clsPurchaseDTO purchaseDTO = new clsPurchaseDTO(UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+            clsPurchaseDTO purchaseDTO = new clsPurchaseDTO(-1,UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
 
             PurchaseID= clsPurchaseData.AddPurchase(purchaseDTO);
             return PurchaseID != -1;
         }
         public bool _UpdatePurchae()
         {
-            return false;
+            clsPurchaseDTO purchaseDTO = new clsPurchaseDTO(PurchaseID, UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+
+            return clsPurchaseData.UpdatePurchase(purchaseDTO);
         }
          
                public bool Save()
@@ -160,6 +177,15 @@ namespace PosAndAccountant_business
             }
         }
 
+
+        public static clsPurchase Find(int PurchaseID)
+        {
+            clsPurchaseDTO purchaseDTO = clsPurchaseData.GetPurchase(PurchaseID);
+            if (purchaseDTO == null) return null;
+
+            return new clsPurchase(purchaseDTO);
+
+        }
 
     }
 

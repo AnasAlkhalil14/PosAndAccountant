@@ -134,12 +134,6 @@
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm\frmMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm\frmMainForm.Designer.cs">
-      <DependentUpon>frmMainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Partners\Controls\ctrlPartnerCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -378,9 +372,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\frmMainForm.resx">
-      <DependentUpon>frmMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Partners\Controls\ctrlPartnerCard.resx">
       <DependentUpon>ctrlPartnerCard.cs</DependentUpon>

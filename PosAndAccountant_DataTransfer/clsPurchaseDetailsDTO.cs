@@ -7,6 +7,20 @@ namespace PosAndAccountant_DataTransfer
         private int _quantity;
         private int _returnQ;
 
+        public clsPurchaseDetailsDTO()
+        {
+        }
+
+        public clsPurchaseDetailsDTO(int counter, string productName, decimal costPrice, int quantity, int returnQ, int productID)
+        {
+            Counter = counter;
+            ProductName = productName;
+            CostPrice = costPrice;
+            Quantity = quantity;
+            ReturnQ = returnQ;
+            ProductID = productID;
+        }
+
         public int Counter { get; set; }
         public string ProductName { get; set; }
         public decimal CostPrice { get; set; }
