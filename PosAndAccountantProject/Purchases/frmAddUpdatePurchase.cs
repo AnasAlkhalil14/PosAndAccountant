@@ -481,6 +481,8 @@ namespace PosAndAccountantProject.Purchases
             {
                 _SettleTheProductSideOnFormLoad();
                 lblPurchaseID.Text=_Purchase.PurchaseID.ToString();
+                lblTitle.Text = "تعديل فاتورة شراء";
+                _LoadSupplierInfo(_Purchase.SupplierID);
                 MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID="+_Purchase.PurchaseID+" ستصبح الان في وضع التعديل انتبه", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPrint.PerformClick();
                

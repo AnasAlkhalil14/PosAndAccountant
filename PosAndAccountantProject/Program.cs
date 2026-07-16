@@ -28,7 +28,7 @@ namespace PosAndAccountantProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdatePurchase(9) );
+            Application.Run(new frmAddNewSale(64) );
         }
     }
 }
