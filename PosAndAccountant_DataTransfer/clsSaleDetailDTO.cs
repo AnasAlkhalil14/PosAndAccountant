@@ -1,55 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace PosAndAccountant_DataTransfer
 {
-    public class clsSaleDetailDTO
+    public class clsSaleDetailDTO : INotifyPropertyChanged
     {
-        public int SaleDetailID { get; set; }
-        public int SaleID { get; set; }
-        public int ProductID { get; set; }
-        public double CostPrice { get; set; }
-        public double SellingPrice { get; set; }
-        public int Quantity { get; set; }
-        public double TotalPrice { get; set; }
-        public int ReturnedQuantity { get; set; }
-        public string ProductName { get; set; }
-        public double  DiscountAmount { get; set; }
-
-        // Parameterized Constructor
-        public clsSaleDetailDTO(int saleDetailID, int saleID, int productID, double costPrice, double sellingPrice, int quantity, double totalPrice, int returnedQuantity, string productName, double discountAmount)
-        {
-            SaleDetailID = saleDetailID;
-            SaleID = saleID;
-            ProductID = productID;
-            CostPrice = costPrice;
-            SellingPrice = sellingPrice;
-            Quantity = quantity;
-            TotalPrice = totalPrice;
-            ReturnedQuantity = returnedQuantity;
-            ProductName = productName;
-            DiscountAmount = discountAmount;
-        }
-
-        // Parameterless Constructor (Default values)
+        private int _quantity;
+        private int _returnQ;
+        private decimal _discountAmount;
         public clsSaleDetailDTO()
         {
-            SaleDetailID = -1;
-            SaleID = -1;
-            ProductID = -1;
-            CostPrice = 0d;
-            SellingPrice = 0d;
-            Quantity = 0;
-            TotalPrice = 0d;
-            ReturnedQuantity = 0;
-            ProductName = "";
-            DiscountAmount = 0d; 
+        }
+
+        public clsSaleDetailDTO(int counter, string productName, decimal sellingPrice, int quantity, int returnQ, int productID)
+        {
+            Counter = counter;
+            ProductName = productName;
+           SellingPrice = sellingPrice;
+            Quantity = quantity;
+            ReturnQ = returnQ;
+            ProductID = productID;
+        }
+
+        public int Counter { get; set; }
+        public string ProductName { get; set; }
+        public decimal SellingPrice { get; set; }
+
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                if (_quantity == value) return;
+
+                _quantity = value;
+                OnPropertyChanged(nameof(Quantity));
+             }
+        }
+
+        public decimal TotalPrice => SellingPrice * (Quantity - ReturnQ);
+
+
+
+        public int ReturnQ
+        {
+            get => _returnQ;
+            set
+            {
+                if (_returnQ == value) return;
+
+                _returnQ = value;
+                OnPropertyChanged(nameof(ReturnQ));
+            }
+        }
+
+        public int ProductID { get; set; }
+        public decimal DiscountAmount { get => _discountAmount;
+            set
+            {
+                if (_discountAmount == value) return;
+                _discountAmount=value; OnPropertyChanged(nameof(DiscountAmount));
+            
+            } }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
-
-
-
