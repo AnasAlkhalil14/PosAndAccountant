@@ -243,6 +243,8 @@ namespace PosAndAccountant_business
         public string Notes { get; set; }
 
         public BindingList<clsSaleDetailDTO> Details;
+        public BindingList<clsProduct> ProductList;
+
 
         public int TotalQ => Details.Sum(p => p.Quantity - p.ReturnQ);
 
@@ -359,6 +361,32 @@ namespace PosAndAccountant_business
             if (SaleDTO == null) return null;
 
             return new clsSale(SaleDTO);
+
+        }
+
+
+        public bool DecreaseProductQuantity(int ProductID,int NumberProductToTake)
+        {
+            if (!ProductList.Any(p => p.ProductID == ProductID)) return false;
+            if (NumberProductToTake < 0) return false;
+            var product = ProductList.FirstOrDefault(p=>p.ProductID==p.ProductID);
+            if(product == null|| product.QuantityInStock<NumberProductToTake) return false;
+
+            int index=ProductList.IndexOf(product);
+            ProductList[index].QuantityInStock -= NumberProductToTake;
+            return true;
+        }
+        public bool IncreaseProductQuantity(int ProductID,int NumberToAdd)
+        {
+            if (!ProductList.Any(p => p.ProductID == ProductID)) return false;
+            if (NumberToAdd < 0) return false;
+            var product = ProductList.FirstOrDefault(p => p.ProductID == p.ProductID);
+            if (product == null ) return false;
+
+            int index = ProductList.IndexOf(product);
+            ProductList[index].QuantityInStock += NumberToAdd;
+            return true;
+
 
         }
 
