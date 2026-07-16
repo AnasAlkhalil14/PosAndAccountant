@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PosAndAccountant_DataTransfer
 {
-    public class clsProductDTO
+    public class clsProductDTO : INotifyPropertyChanged
     {
+
+        private int _Quantity;
+
         // Primary Key
         public int ProductID { get; set; }
 
@@ -28,7 +32,17 @@ namespace PosAndAccountant_DataTransfer
         public string BarCode { get; set; }
 
         // Inventory
-        public int QuantityInStock { get; set; }
+        public int QuantityInStock { get => _Quantity;
+            set
+            {
+                if (_Quantity == value) return;
+
+                _Quantity = value;
+                OnPropertyChanged(nameof(QuantityInStock));
+                OnPropertyChanged(nameof(QuantityInStock));
+            }
+        
+        }
         public int MinimumQuantityForWarning { get; set; }
 
         // Audit & Status
@@ -64,6 +78,13 @@ namespace PosAndAccountant_DataTransfer
             this.CreateDate = createDate;
             this.ModifyDate = modifyDate;
             this.IsActive = isActive;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
