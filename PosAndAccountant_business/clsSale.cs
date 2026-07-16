@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace PosAndAccountant_business
 {
+    //This class will be refactor soon like we did for clsPurchase 
     public class clsSale
     {
         public enum enMode { eAdd = 0, eUpdate,eUpdate2 }
@@ -58,11 +59,26 @@ namespace PosAndAccountant_business
 
             return clsSaleData.SaveSale(saleDTO,dtSaleDetails);
         }
+        private bool _UpdateSale2()
+        {
+            clsSaleDTO saleDTO = new clsSaleDTO();
+            saleDTO.SaleID = this._SaleID;
+            saleDTO.CustomerID = this.CustomerID;
+            saleDTO.UserID = this.UserID;
+            saleDTO.Notes = this.Notes;
+            saleDTO.Status = this.Status;
+            saleDTO.TotalAmount = this.TotalAmount;
+            saleDTO.DiscountAmount = this.DiscountAmount;
+            saleDTO.PaymentMethodID = this.PaymentMethodID;
+            saleDTO.PaidAmount = this.PaidAmount;
+
+            return clsSaleData.UpdateSale(saleDTO, dtSaleDetails);
+        }
 
         // Constructor 1: From DTO (Used when retrieving an existing sale)
 
-     
-        public clsSale(clsSaleDTO dto,DataTable Details)
+
+        public clsSale(clsSaleDTO dto,DataTable Details,enMode Mode=enMode.eUpdate)
         {
             _SaleID = dto.SaleID;
             UserID = dto.UserID;
@@ -76,8 +92,7 @@ namespace PosAndAccountant_business
             CreateDate = dto.CreateDate;
             Notes = dto.Notes;
             dtSaleDetails= Details;
-            Mode = enMode.eUpdate;
-            
+             
         }
 
         // Constructor 2: Parameterless (Used when creating a new sale)
@@ -108,7 +123,7 @@ namespace PosAndAccountant_business
             if (SaleDTO == null) return null;
 
             DataTable SaleDetails=clsSaleData.GetSaleDetailBySaleID(SaleID);
-            return new clsSale(SaleDTO, SaleDetails);
+            return new clsSale(SaleDTO, SaleDetails,enMode.eUpdate2);
         }
         public bool Save()
         {
@@ -128,13 +143,15 @@ namespace PosAndAccountant_business
                     {
                         if (_UpdateSale())
                         {
+                            Mode = enMode.eUpdate2;
                             return true;
                         }
                         break;
                     }
                 case enMode.eUpdate2:
                     {
-                        break;
+
+                        return _UpdateSale2();
                     }
             }
             return false;
