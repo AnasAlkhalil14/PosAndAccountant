@@ -167,6 +167,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -177,30 +178,30 @@ namespace PosAndAccountant_business
         public enum enMode { eAdd, eUpdate }
         public enMode Mode;
 
-        private int _SupplierID;
+        private int _CustomerID;
         public int SaleID { get; set; }
         public int UserID { get; set; }
-        public int SupplierID
+        public int CustomerID
         {
-            get { return _SupplierID; }
+            get { return _CustomerID; }
             set
             {
-                if (value != _SupplierID)
+                if (value != _CustomerID)
                 {
-                    _SupplierID = value;
+                    _CustomerID = value;
                     if (value != -1)
                     {
-                        SuplierInfo = clsSupplier.FindSupplierByID(value);
-                        if (SuplierInfo == null) _SupplierID = -1;
+                        CustomerInfo = clsCustomer.FindCustomerByID(value);
+                        if (CustomerInfo == null) _CustomerID = -1;
                     }
                 }
             }
         }
-        public clsSupplier SuplierInfo { get; set; }
+        public clsCustomer CustomerInfo { get; set; }
 
         public int PaymentMethodID { get; set; }
 
-        public decimal TotalAmount => Details.Sum(p => p.CostPrice * (p.Quantity - p.ReturnQ));
+        public decimal TotalAmount => Details.Sum(p => p.TotalPrice);
         public decimal PaidAmount { get; set; }
 
         public decimal NetTotalAmount { get { return TotalAmount - DiscountAmount; } }
@@ -208,7 +209,7 @@ namespace PosAndAccountant_business
         public decimal NetTotalWithDebt { get { return NetTotalAmount + RemainingAmountDebt; } }
         public clsSale()
         {
-            SaleID = -1; UserID = clsUser.CurrentUser.UserID; SupplierID = -1; PaymentMethodID = -1;
+            SaleID = -1; UserID = clsUser.CurrentUser.UserID; CustomerID = -1; PaymentMethodID = -1;
             PaidAmount = 0; DiscountAmount = 0; Notes = "";
             Details = new BindingList<clsSaleDetailDTO>();
             Mode = enMode.eAdd;
@@ -218,7 +219,7 @@ namespace PosAndAccountant_business
         {
             SaleID = SaleDTO.SaleID;
             UserID = SaleDTO.UserID;
-            SupplierID = SaleDTO.SupplierID;
+            CustomerID = SaleDTO.CustomerID;
             PaymentMethodID = SaleDTO.PaymentMethodID;
             PaidAmount = SaleDTO.PaidAmount;
             DiscountAmount = SaleDTO.DiscountAmount;
@@ -227,22 +228,21 @@ namespace PosAndAccountant_business
             Details = SaleDTO.SaleDetails;
             Mode = enMode.eUpdate;
         }
-
-        public decimal DiscountAmount { get; set; }
+         public decimal DiscountAmount { get; set; }
         //public decimal RemainingAmountDebt => (decimal)SuplierInfo.TotalRemainingDebt;
         public decimal RemainingAmountDebt
         {
             get
             {
-                if (SuplierInfo == null)
+                if (CustomerInfo == null)
                     return 0;
-                return (decimal)SuplierInfo.TotalRemainingDebt;
+                return (decimal)CustomerInfo.TotalRemainingDebt;
             }
         }
         public DateTime CreateDate { get; set; }
         public string Notes { get; set; }
 
-        public BindingList<clsSaleDetailsDTO> Details;
+        public BindingList<clsSaleDetailDTO> Details;
 
         public int TotalQ => Details.Sum(p => p.Quantity - p.ReturnQ);
 
@@ -284,7 +284,7 @@ namespace PosAndAccountant_business
 
         public bool RemoveDetail(int ProductID)
         {
-            clsSaleDetailsDTO item = Details.FirstOrDefault(p => p.ProductID == ProductID);
+            clsSaleDetailDTO item = Details.FirstOrDefault(p => p.ProductID == ProductID);
             if (item != null)
             {
                 Details.Remove(item);
@@ -296,7 +296,7 @@ namespace PosAndAccountant_business
             }
 
         }
-        public void AddToSale(clsSaleDetailsDTO detail)
+        public void AddToSale(clsSaleDetailDTO detail)
         {
             if (!Details.Any(d => d.ProductID == detail.ProductID))
             {
@@ -320,14 +320,14 @@ namespace PosAndAccountant_business
 
         public bool _AddSale()
         {
-            clsSaleDTO SaleDTO = new clsSaleDTO(-1, UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+            clsSaleDTO SaleDTO = new clsSaleDTO(-1, UserID, CustomerID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount , Notes,Details);
 
             SaleID = clsSaleData.AddSale(SaleDTO);
             return SaleID != -1;
         }
-        public bool _UpdatePurchae()
+        public bool _UpdateSale()
         {
-            clsSaleDTO SaleDTO = new clsSaleDTO(SaleID, UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+            clsSaleDTO SaleDTO = new clsSaleDTO(SaleID, UserID, CustomerID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, Notes, Details);
 
             return clsSaleData.UpdateSale(SaleDTO);
         }
@@ -345,7 +345,7 @@ namespace PosAndAccountant_business
                     return false;
 
                 case enMode.eUpdate:
-                    return _UpdatePurchae();
+                    return _UpdateSale();
 
                 default:
                     return false;

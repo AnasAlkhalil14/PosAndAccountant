@@ -30,7 +30,7 @@ namespace PosAndAccountant_business
 
         public int PaymentMethodID { get; set; }
             
-        public decimal TotalAmount => Details.Sum(p => p.CostPrice * (p.Quantity - p.ReturnQ));
+        public decimal TotalAmount => Details.Sum(p =>p.TotalPrice);
         public decimal PaidAmount {  get; set; }
 
         public decimal NetTotalAmount { get { return TotalAmount - DiscountAmount; } }

@@ -11,7 +11,19 @@ namespace PosAndAccountant_DataAccess
 {
     public class clsSaleData
     {
- 
+ public static int AddSale(clsSaleDTO clsSaleDTO)
+        {
+            return -1;
+        }
+        public static bool UpdateSale(clsSaleDTO saleDTO)
+        {
+            return false;
+        }
+
+        public static clsSaleDTO GetSale(int SaleID)
+        {
+            return null;
+        }
         public static int AddNewSale(int UserID)
         {
             int newSaleID = -1;
@@ -71,8 +83,7 @@ namespace PosAndAccountant_DataAccess
                        cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
                     cmd.Parameters.AddWithValue("@CustomerID", SaleDTO.CustomerID);
                     cmd.Parameters.AddWithValue("@PaymentMethodID", SaleDTO.PaymentMethodID);
-                    cmd.Parameters.AddWithValue("@Status", SaleDTO.Status);
-                    cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                     cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
                     cmd.Parameters.AddWithValue("@DiscountAmount", SaleDTO.DiscountAmount);
                     cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
 
@@ -95,7 +106,7 @@ namespace PosAndAccountant_DataAccess
             return true;
 
         }
-        public static bool UpdateSale(clsSaleDTO SaleDTO, DataTable SaleDetails)
+        public static bool UpdateSale2(clsSaleDTO SaleDTO, DataTable SaleDetails)
         {
 
 
@@ -109,8 +120,7 @@ namespace PosAndAccountant_DataAccess
                     cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
                     cmd.Parameters.AddWithValue("@CustomerID", SaleDTO.CustomerID);
                     cmd.Parameters.AddWithValue("@PaymentMethodID", SaleDTO.PaymentMethodID);
-                    cmd.Parameters.AddWithValue("@Status", SaleDTO.Status);
-                    cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                          cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
                     cmd.Parameters.AddWithValue("@DiscountAmount", SaleDTO.DiscountAmount);
                     cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
 
@@ -182,14 +192,13 @@ namespace PosAndAccountant_DataAccess
                             {
                                 SaleDTO = new clsSaleDTO();
                                 SaleDTO.SaleID = SaleID;
-                                SaleDTO.TotalAmount = Convert.ToDouble(reader["TotalAmount"]);
-                                SaleDTO.Status = Convert.ToByte(reader["Status"]);
-                                SaleDTO.CreateDate = Convert.ToDateTime(reader["CreateDate"]);
+                                SaleDTO.TotalAmount = Convert.ToDecimal(reader["TotalAmount"]);
+                                 SaleDTO.CreateDate = Convert.ToDateTime(reader["CreateDate"]);
                                 SaleDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
                                 SaleDTO.CustomerID = Convert.ToInt32(reader["CustomerID"]);
-                                SaleDTO.DiscountAmount = Convert.ToDouble(reader["DiscountAmount"]);
+                                SaleDTO.DiscountAmount = Convert.ToDecimal(reader["DiscountAmount"]);
                                 SaleDTO.PaymentMethodID = Convert.ToInt16(reader["PaymentMethodID"]);
-                                SaleDTO.PaidAmount = Convert.ToDouble(reader["PaidAmount"]);
+                                SaleDTO.PaidAmount = Convert.ToDecimal(reader["PaidAmount"]);
                                 
                             }
                         }

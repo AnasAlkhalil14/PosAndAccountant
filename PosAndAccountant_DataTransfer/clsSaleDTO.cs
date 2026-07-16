@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,17 @@ namespace PosAndAccountant_DataTransfer
     {
 
 
-        public clsSaleDTO(int saleID, int userID, int  customerID, int paymentMethodID, byte status, double totalAmount, double paidAmount, double discountAmount, DateTime createDate, string notes)
+        public clsSaleDTO(int saleID, int userID, int  customerID, int paymentMethodID , decimal totalAmount, decimal paidAmount, decimal discountAmount ,string notes, BindingList<clsSaleDetailDTO> saleDetails)
         {
             SaleID = saleID;
             UserID = userID;
             CustomerID = customerID;
             PaymentMethodID = paymentMethodID;
-            Status = status;
-            TotalAmount = totalAmount;
+             TotalAmount = totalAmount;
             PaidAmount = paidAmount;
             DiscountAmount = discountAmount;
-            CreateDate = createDate;
-            Notes = notes;
+              Notes = notes;
+            SaleDetails= saleDetails;
         }
 
         // Parameterless Constructor (Default values)
@@ -31,10 +31,9 @@ namespace PosAndAccountant_DataTransfer
             UserID = -1;
             CustomerID = -1; 
             PaymentMethodID = -1;
-            Status = 0;
-            TotalAmount = 0d;
-            PaidAmount = 0d;
-            DiscountAmount = 0d;  
+             TotalAmount = 0;
+            PaidAmount = 0;
+            DiscountAmount = 0;  
             CreateDate = DateTime.Now;
             Notes = "";
         }
@@ -42,11 +41,12 @@ namespace PosAndAccountant_DataTransfer
         public int UserID { get; set; }
         public int   CustomerID { get; set; }   
         public int PaymentMethodID { get; set; }
-        public byte Status { get; set; } 
-        public double TotalAmount { get; set; }
-        public double PaidAmount { get; set; }
-        public double  DiscountAmount { get; set; }
+         public decimal TotalAmount { get; set; }
+        public decimal PaidAmount { get; set; }
+        public decimal  DiscountAmount { get; set; }
         public DateTime CreateDate { get; set; }
         public string Notes { get; set; }
+        public BindingList<clsSaleDetailDTO> SaleDetails { get; set; }
+
     }
 }
