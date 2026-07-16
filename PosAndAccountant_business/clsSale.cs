@@ -1,160 +1,368 @@
-﻿using System;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using PosAndAccountant_DataTransfer;
+//using PosAndAccountant_DataAccess;
+//using System.Data;
+//using System.Runtime.CompilerServices;
+//using System.Runtime.InteropServices;
+
+//namespace PosAndAccountant_business
+//{
+//    //This class will be refactor soon like we did for clsPurchase 
+//    public class clsSale
+//    {
+//        public enum enMode { eAdd = 0, eUpdate,eUpdate2 }
+//        public enMode Mode = enMode.eAdd;
+
+//        private int _SaleID;
+
+//        // Properties
+//        public int SaleID { get { return _SaleID; } }
+//        public int UserID { get; set; }
+//        public int  CustomerID { get; set; }
+//        public clsCustomer CustomerInfo { get;private set;  }
+//        public int PaymentMethodID { get; set; }
+//        public byte Status { get; set; }
+//        public double TotalAmount { get; set; }
+//        public double PaidAmount { get; set; }
+//        public double DiscountAmount { get; set; }
+//        public DateTime CreateDate { get; set; }
+//        public string Notes { get; set; }
+
+//        public DataTable dtSaleDetails {  get; set; }
+//        // Private Add Method using the DTO
+//        private bool _AddSale()
+//        {
+
+//            // Call Data Access Layer
+//            this._SaleID = clsSaleData.AddNewSale(UserID);
+
+//            return this._SaleID != -1;
+//        }
+
+//        // Private Update Method Placeholder
+//        private bool _UpdateSale()
+//        {
+//           clsSaleDTO saleDTO=new clsSaleDTO();
+//            saleDTO.SaleID = this._SaleID;
+//            saleDTO.CustomerID = this.CustomerID;
+//            saleDTO.UserID = this.UserID;
+//            saleDTO.Notes = this.Notes;
+//            saleDTO.Status = this.Status;
+//            saleDTO.TotalAmount = this.TotalAmount;
+//            saleDTO.DiscountAmount = this.DiscountAmount;
+//            saleDTO.PaymentMethodID = this.PaymentMethodID;
+//            saleDTO.PaidAmount = this.PaidAmount;
+
+//            return clsSaleData.SaveSale(saleDTO,dtSaleDetails);
+//        }
+//        private bool _UpdateSale2()
+//        {
+//            clsSaleDTO saleDTO = new clsSaleDTO();
+//            saleDTO.SaleID = this._SaleID;
+//            saleDTO.CustomerID = this.CustomerID;
+//            saleDTO.UserID = this.UserID;
+//            saleDTO.Notes = this.Notes;
+//            saleDTO.Status = this.Status;
+//            saleDTO.TotalAmount = this.TotalAmount;
+//            saleDTO.DiscountAmount = this.DiscountAmount;
+//            saleDTO.PaymentMethodID = this.PaymentMethodID;
+//            saleDTO.PaidAmount = this.PaidAmount;
+
+//            return clsSaleData.UpdateSale(saleDTO, dtSaleDetails);
+//        }
+
+//        // Constructor 1: From DTO (Used when retrieving an existing sale)
+
+
+//        public clsSale(clsSaleDTO dto,DataTable Details,enMode Mode=enMode.eUpdate)
+//        {
+//            _SaleID = dto.SaleID;
+//            UserID = dto.UserID;
+//            CustomerID = dto.CustomerID;
+//            CustomerInfo = clsCustomer.FindCustomerByID(CustomerID);
+//            PaymentMethodID = dto.PaymentMethodID;
+//            Status = dto.Status;
+//            TotalAmount = dto.TotalAmount;
+//            PaidAmount = dto.PaidAmount;
+//            DiscountAmount = dto.DiscountAmount ; 
+//            CreateDate = dto.CreateDate;
+//            Notes = dto.Notes;
+//            dtSaleDetails= Details;
+
+//        }
+
+//        // Constructor 2: Parameterless (Used when creating a new sale)
+//        public clsSale()
+//        {
+//            _SaleID = -1;
+//            UserID = -1;
+//            CustomerID = -1;
+//            PaymentMethodID = -1;
+//            Status = 0;
+//            TotalAmount = 0;
+//            PaidAmount = 0;
+//            DiscountAmount = 0;
+//            CreateDate = DateTime.Now;
+//            Notes = "";
+//            dtSaleDetails = new DataTable();
+//            DataColumn[] dc = new DataColumn[] { new DataColumn(), new DataColumn(), new DataColumn(), new DataColumn(), new DataColumn() };
+
+//            dtSaleDetails.Columns.AddRange(dc);
+
+//            Mode = enMode.eAdd;
+//        }
+
+//        // Public Save Method matching your business state machine pattern
+//        public static clsSale Find(int SaleID)
+//        {
+//          clsSaleDTO SaleDTO=clsSaleData.GetSaleByID(SaleID);
+//            if (SaleDTO == null) return null;
+
+//            DataTable SaleDetails=clsSaleData.GetSaleDetailBySaleID(SaleID);
+//            return new clsSale(SaleDTO, SaleDetails,enMode.eUpdate2);
+//        }
+//        public bool Save()
+//        {
+
+//            switch (Mode)
+//            {
+//                case enMode.eAdd:
+//                    {
+//                        if (_AddSale())
+//                        {
+//                            Mode = enMode.eUpdate;
+//                            return true;
+//                        }
+//                        break;
+//                    }
+//                case enMode.eUpdate:
+//                    {
+//                        if (_UpdateSale())
+//                        {
+//                            Mode = enMode.eUpdate2;
+//                            return true;
+//                        }
+//                        break;
+//                    }
+//                case enMode.eUpdate2:
+//                    {
+
+//                        return _UpdateSale2();
+//                    }
+//            }
+//            return false;
+//        }
+//    }
+//}
+
+
+
+using PosAndAccountant_DataAccess;
+using PosAndAccountant_DataTransfer;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PosAndAccountant_DataTransfer;
-using PosAndAccountant_DataAccess;
-using System.Data;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace PosAndAccountant_business
 {
-    //This class will be refactor soon like we did for clsPurchase 
     public class clsSale
     {
-        public enum enMode { eAdd = 0, eUpdate,eUpdate2 }
-        public enMode Mode = enMode.eAdd;
+        public enum enMode { eAdd, eUpdate }
+        public enMode Mode;
 
-        private int _SaleID;
-
-        // Properties
-        public int SaleID { get { return _SaleID; } }
+        private int _SupplierID;
+        public int SaleID { get; set; }
         public int UserID { get; set; }
-        public int  CustomerID { get; set; }
-        public clsCustomer CustomerInfo { get;private set;  }
+        public int SupplierID
+        {
+            get { return _SupplierID; }
+            set
+            {
+                if (value != _SupplierID)
+                {
+                    _SupplierID = value;
+                    if (value != -1)
+                    {
+                        SuplierInfo = clsSupplier.FindSupplierByID(value);
+                        if (SuplierInfo == null) _SupplierID = -1;
+                    }
+                }
+            }
+        }
+        public clsSupplier SuplierInfo { get; set; }
+
         public int PaymentMethodID { get; set; }
-        public byte Status { get; set; }
-        public double TotalAmount { get; set; }
-        public double PaidAmount { get; set; }
-        public double DiscountAmount { get; set; }
-        public DateTime CreateDate { get; set; }
-        public string Notes { get; set; }
 
-        public DataTable dtSaleDetails {  get; set; }
-        // Private Add Method using the DTO
-        private bool _AddSale()
-        {
-             
-            // Call Data Access Layer
-            this._SaleID = clsSaleData.AddNewSale(UserID);
+        public decimal TotalAmount => Details.Sum(p => p.CostPrice * (p.Quantity - p.ReturnQ));
+        public decimal PaidAmount { get; set; }
 
-            return this._SaleID != -1;
-        }
+        public decimal NetTotalAmount { get { return TotalAmount - DiscountAmount; } }
 
-        // Private Update Method Placeholder
-        private bool _UpdateSale()
-        {
-           clsSaleDTO saleDTO=new clsSaleDTO();
-            saleDTO.SaleID = this._SaleID;
-            saleDTO.CustomerID = this.CustomerID;
-            saleDTO.UserID = this.UserID;
-            saleDTO.Notes = this.Notes;
-            saleDTO.Status = this.Status;
-            saleDTO.TotalAmount = this.TotalAmount;
-            saleDTO.DiscountAmount = this.DiscountAmount;
-            saleDTO.PaymentMethodID = this.PaymentMethodID;
-            saleDTO.PaidAmount = this.PaidAmount;
-
-            return clsSaleData.SaveSale(saleDTO,dtSaleDetails);
-        }
-        private bool _UpdateSale2()
-        {
-            clsSaleDTO saleDTO = new clsSaleDTO();
-            saleDTO.SaleID = this._SaleID;
-            saleDTO.CustomerID = this.CustomerID;
-            saleDTO.UserID = this.UserID;
-            saleDTO.Notes = this.Notes;
-            saleDTO.Status = this.Status;
-            saleDTO.TotalAmount = this.TotalAmount;
-            saleDTO.DiscountAmount = this.DiscountAmount;
-            saleDTO.PaymentMethodID = this.PaymentMethodID;
-            saleDTO.PaidAmount = this.PaidAmount;
-
-            return clsSaleData.UpdateSale(saleDTO, dtSaleDetails);
-        }
-
-        // Constructor 1: From DTO (Used when retrieving an existing sale)
-
-
-        public clsSale(clsSaleDTO dto,DataTable Details,enMode Mode=enMode.eUpdate)
-        {
-            _SaleID = dto.SaleID;
-            UserID = dto.UserID;
-            CustomerID = dto.CustomerID;
-            CustomerInfo = clsCustomer.FindCustomerByID(CustomerID);
-            PaymentMethodID = dto.PaymentMethodID;
-            Status = dto.Status;
-            TotalAmount = dto.TotalAmount;
-            PaidAmount = dto.PaidAmount;
-            DiscountAmount = dto.DiscountAmount ; 
-            CreateDate = dto.CreateDate;
-            Notes = dto.Notes;
-            dtSaleDetails= Details;
-             
-        }
-
-        // Constructor 2: Parameterless (Used when creating a new sale)
+        public decimal NetTotalWithDebt { get { return NetTotalAmount + RemainingAmountDebt; } }
         public clsSale()
         {
-            _SaleID = -1;
-            UserID = -1;
-            CustomerID = -1;
-            PaymentMethodID = -1;
-            Status = 0;
-            TotalAmount = 0;
-            PaidAmount = 0;
-            DiscountAmount = 0;
-            CreateDate = DateTime.Now;
-            Notes = "";
-            dtSaleDetails = new DataTable();
-            DataColumn[] dc = new DataColumn[] { new DataColumn(), new DataColumn(), new DataColumn(), new DataColumn(), new DataColumn() };
-            
-            dtSaleDetails.Columns.AddRange(dc);
-
+            SaleID = -1; UserID = clsUser.CurrentUser.UserID; SupplierID = -1; PaymentMethodID = -1;
+            PaidAmount = 0; DiscountAmount = 0; Notes = "";
+            Details = new BindingList<clsSaleDetailDTO>();
             Mode = enMode.eAdd;
         }
 
-        // Public Save Method matching your business state machine pattern
-        public static clsSale Find(int SaleID)
+        public clsSale(clsSaleDTO SaleDTO)
         {
-          clsSaleDTO SaleDTO=clsSaleData.GetSaleByID(SaleID);
-            if (SaleDTO == null) return null;
+            SaleID = SaleDTO.SaleID;
+            UserID = SaleDTO.UserID;
+            SupplierID = SaleDTO.SupplierID;
+            PaymentMethodID = SaleDTO.PaymentMethodID;
+            PaidAmount = SaleDTO.PaidAmount;
+            DiscountAmount = SaleDTO.DiscountAmount;
 
-            DataTable SaleDetails=clsSaleData.GetSaleDetailBySaleID(SaleID);
-            return new clsSale(SaleDTO, SaleDetails,enMode.eUpdate2);
+            Notes = SaleDTO.Notes;
+            Details = SaleDTO.SaleDetails;
+            Mode = enMode.eUpdate;
         }
+
+        public decimal DiscountAmount { get; set; }
+        //public decimal RemainingAmountDebt => (decimal)SuplierInfo.TotalRemainingDebt;
+        public decimal RemainingAmountDebt
+        {
+            get
+            {
+                if (SuplierInfo == null)
+                    return 0;
+                return (decimal)SuplierInfo.TotalRemainingDebt;
+            }
+        }
+        public DateTime CreateDate { get; set; }
+        public string Notes { get; set; }
+
+        public BindingList<clsSaleDetailsDTO> Details;
+
+        public int TotalQ => Details.Sum(p => p.Quantity - p.ReturnQ);
+
+        public bool EditQuantity(int ProductID, int NewQ)
+        {
+            var item = Details.FirstOrDefault(d => d.ProductID == ProductID);
+            int Index = Details.IndexOf(item);
+            if (Index >= 0)
+            {
+                if (item.ReturnQ > NewQ) return false;
+
+                Details[Index].Quantity = NewQ;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool EditReturnQ(int ProductID, int NewRQ)
+        {
+
+            var item = Details.FirstOrDefault(d => d.ProductID == ProductID);
+            int Index = Details.IndexOf(item);
+            if (Index >= 0)
+            {
+                if (Details[Index].Quantity < NewRQ)
+
+                    return false;
+
+                else
+
+                    Details[Index].ReturnQ = NewRQ;
+                return true;
+            }
+            return false;
+
+        }
+
+        public bool RemoveDetail(int ProductID)
+        {
+            clsSaleDetailsDTO item = Details.FirstOrDefault(p => p.ProductID == ProductID);
+            if (item != null)
+            {
+                Details.Remove(item);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public void AddToSale(clsSaleDetailsDTO detail)
+        {
+            if (!Details.Any(d => d.ProductID == detail.ProductID))
+            {
+                if (Details.Count > 0)
+                {
+                    detail.Counter = Details.Max(p => p.Counter) + 1;
+
+                }
+                else
+                    detail.Counter = 1;
+
+                Details.Add(detail);
+            }
+            else
+            {
+                var item = Details.FirstOrDefault(d => d.ProductID == detail.ProductID);
+                int index = Details.IndexOf(item);
+                Details[index].Quantity += detail.Quantity;
+            }
+        }
+
+        public bool _AddSale()
+        {
+            clsSaleDTO SaleDTO = new clsSaleDTO(-1, UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+
+            SaleID = clsSaleData.AddSale(SaleDTO);
+            return SaleID != -1;
+        }
+        public bool _UpdatePurchae()
+        {
+            clsSaleDTO SaleDTO = new clsSaleDTO(SaleID, UserID, SupplierID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, RemainingAmountDebt, Notes, Details);
+
+            return clsSaleData.UpdateSale(SaleDTO);
+        }
+
         public bool Save()
         {
-            
             switch (Mode)
             {
                 case enMode.eAdd:
+                    if (_AddSale())
                     {
-                        if (_AddSale())
-                        {
-                            Mode = enMode.eUpdate;
-                            return true;
-                        }
-                        break;
+                        Mode = enMode.eUpdate;
+                        return true;
                     }
-                case enMode.eUpdate:
-                    {
-                        if (_UpdateSale())
-                        {
-                            Mode = enMode.eUpdate2;
-                            return true;
-                        }
-                        break;
-                    }
-                case enMode.eUpdate2:
-                    {
+                    return false;
 
-                        return _UpdateSale2();
-                    }
+                case enMode.eUpdate:
+                    return _UpdatePurchae();
+
+                default:
+                    return false;
             }
-            return false;
         }
+
+
+        public static clsSale Find(int SaleID)
+        {
+            clsSaleDTO SaleDTO = clsSaleData.GetSale(SaleID);
+            if (SaleDTO == null) return null;
+
+            return new clsSale(SaleDTO);
+
+        }
+
     }
+
 }
+
