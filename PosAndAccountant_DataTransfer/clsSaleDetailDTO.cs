@@ -37,9 +37,7 @@ namespace PosAndAccountant_DataTransfer
              }
         }
 
-        public decimal TotalPrice => SellingPrice * (Quantity - ReturnQ);
-
-
+      
 
         public int ReturnQ
         {
@@ -61,6 +59,8 @@ namespace PosAndAccountant_DataTransfer
                 _discountAmount=value; OnPropertyChanged(nameof(DiscountAmount));
             
             } }
+
+        public decimal TotalPrice => SellingPrice * (Quantity - ReturnQ)-DiscountAmount;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

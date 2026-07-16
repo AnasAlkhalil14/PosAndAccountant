@@ -28,7 +28,7 @@ namespace PosAndAccountantProject.Sales
         {
             InitializeComponent();
             _Sale=clsSale.Find(saleID);
-            _Sale.Mode = clsSale.enMode.eUpdate2;
+            //_Sale.Mode = clsSale.enMode.eUpdate2;
         }
         private clsSale _Sale;
 
@@ -143,45 +143,45 @@ private void _LoadCustomerData(int CustomerID)
 
        private void _LoadData()
         {
-            if (_Sale.Mode == clsSale.enMode.eUpdate2)
-            {
-                lblCustomerID.Text = _Sale.CustomerID.ToString();
-                lblCustomerName.Text = _Sale.CustomerInfo.PersonInfo.FullName;
-                lblCustomerPhone.Text=_Sale.CustomerInfo.PersonInfo.Phone;
-                cbPayBy.SelectedValue = _Sale.PaymentMethodID;
-               txtNotes.Text= _Sale.Notes;
-                lblTotalDebt.Text=_Sale.CustomerInfo.TotalRemainingDebt.ToString();
-                lblTotalAmountWithOutDebtAndDiscout.Text = _Sale.TotalAmount.ToString();
-               txtDiscount.Text=_Sale.DiscountAmount.ToString();
-                lblTotalAmountWithDiscoount.Text = (_Sale.TotalAmount - _Sale.DiscountAmount).ToString();
-                lblTotalAmountWithDebt.Text = (_Sale.TotalAmount - _Sale.DiscountAmount + _Sale.CustomerInfo.TotalRemainingDebt).ToString();
-            txtPaidAmount.Text=_Sale.PaidAmount.ToString();
+            //if (_Sale.Mode == clsSale.enMode.eUpdate2)
+            //{
+            //    lblCustomerID.Text = _Sale.CustomerID.ToString();
+            //    lblCustomerName.Text = _Sale.CustomerInfo.PersonInfo.FullName;
+            //    lblCustomerPhone.Text=_Sale.CustomerInfo.PersonInfo.Phone;
+            //    cbPayBy.SelectedValue = _Sale.PaymentMethodID;
+            //   txtNotes.Text= _Sale.Notes;
+            //    lblTotalDebt.Text=_Sale.CustomerInfo.TotalRemainingDebt.ToString();
+            //    lblTotalAmountWithOutDebtAndDiscout.Text = _Sale.TotalAmount.ToString();
+            //   txtDiscount.Text=_Sale.DiscountAmount.ToString();
+            //    lblTotalAmountWithDiscoount.Text = (_Sale.TotalAmount - _Sale.DiscountAmount).ToString();
+            //    //lblTotalAmountWithDebt.Text = (_Sale.TotalAmount - _Sale.DiscountAmount + _Sale.CustomerInfo.TotalRemainingDebt).ToString();
+            //txtPaidAmount.Text=_Sale.PaidAmount.ToString();
 
                 int TotalQ = 0;
                 int Counter = 0;
                
-                foreach (DataRow row in _Sale.dtSaleDetails.Rows)
-                {
-                    DataGridViewRow grow = new DataGridViewRow();
-                    grow.CreateCells(dgvSaleDetails);
-                    Counter++;
-                    grow.Cells[0].Value = Counter;
-                    grow.Cells[1].Value = row["ProductName"];
-                    grow.Cells[2].Value = row["SellingPrice"];
-                    grow.Cells[3].Value = row["Quantity"];
-                    grow.Cells[5].Value = row["ReturnedQuantity"];
-                    grow.Cells[4].Value=(Convert.ToDouble(row["SellingPrice"])*(Convert.ToInt32(row["Quantity"])-Convert.ToInt32(row["ReturnedQuantity"])));
-                    grow.Cells[6].Value = row["DiscountAmount"];
-                    grow.Cells[7].Value = row["ProductID"];
-                    dgvSaleDetails.Rows.Add(grow);
-                    TotalQ += (Convert.ToInt32(row["Quantity"]) - Convert.ToInt32(row["ReturnedQuantity"]));
-                }
-                lblTotalQuantity.Text=TotalQ.ToString();
-                _Sale.dtSaleDetails.Columns.Remove("ProductName");
+                //foreach (DataRow row in _Sale.dtSaleDetails.Rows)
+                //{
+                //    DataGridViewRow grow = new DataGridViewRow();
+                //    grow.CreateCells(dgvSaleDetails);
+                //    Counter++;
+                //    grow.Cells[0].Value = Counter;
+                //    grow.Cells[1].Value = row["ProductName"];
+                //    grow.Cells[2].Value = row["SellingPrice"];
+                //    grow.Cells[3].Value = row["Quantity"];
+                //    grow.Cells[5].Value = row["ReturnedQuantity"];
+                //    grow.Cells[4].Value=(Convert.ToDouble(row["SellingPrice"])*(Convert.ToInt32(row["Quantity"])-Convert.ToInt32(row["ReturnedQuantity"])));
+                //    grow.Cells[6].Value = row["DiscountAmount"];
+                //    grow.Cells[7].Value = row["ProductID"];
+                //    dgvSaleDetails.Rows.Add(grow);
+                //    TotalQ += (Convert.ToInt32(row["Quantity"]) - Convert.ToInt32(row["ReturnedQuantity"]));
+                //}
+                //lblTotalQuantity.Text=TotalQ.ToString();
+                //_Sale.dtSaleDetails.Columns.Remove("ProductName");
 
             }
 
-        }
+         
         private void _HandleSaleDataOnLoad()
         {
             if(_Sale.Mode==clsSale.enMode.eAdd)
@@ -189,11 +189,11 @@ private void _LoadCustomerData(int CustomerID)
                 _Sale.UserID = 1;
                 _Sale.Save();
             }
-           else if(_Sale.Mode==clsSale.enMode.eUpdate2)
-            {
-                _LoadData();
+           //else if(_Sale.Mode==clsSale.enMode.eUpdate2)
+           // {
+           //     _LoadData();
 
-            }
+           // }
             lblSaleID.Text = _Sale.SaleID.ToString();
             
 
@@ -802,30 +802,30 @@ dgvProductList.DataSource = _AllProducts;
 
         }
         private bool _SaveSale()
-        {
-            _Sale.CustomerID=Convert.ToInt32(lblCustomerID.Text.Trim());
-            _Sale.Notes=txtNotes.Text.Trim();
-            _Sale.DiscountAmount=Convert.ToDouble(txtDiscount.Text.Trim());
-            _Sale.TotalAmount=Convert.ToDouble (lblTotalAmountWithOutDebtAndDiscout.Text.Trim());
-            _Sale.Status = 2;
-            _Sale.PaidAmount=Convert.ToDouble(txtPaidAmount.Text.Trim());
-            _Sale.PaymentMethodID = Convert.ToInt32(cbPayBy.SelectedValue);
+         {
+        //    _Sale.CustomerID=Convert.ToInt32(lblCustomerID.Text.Trim());
+        //    _Sale.Notes=txtNotes.Text.Trim();
+        //    _Sale.DiscountAmount=Convert.ToDouble(txtDiscount.Text.Trim());
+        //    _Sale.TotalAmount=Convert.ToDouble (lblTotalAmountWithOutDebtAndDiscout.Text.Trim());
+        //    _Sale.Status = 2;
+        //    _Sale.PaidAmount=Convert.ToDouble(txtPaidAmount.Text.Trim());
+        //    _Sale.PaymentMethodID = Convert.ToInt32(cbPayBy.SelectedValue);
 
-            _Sale.dtSaleDetails.Rows.Clear();
-            foreach (DataGridViewRow row in dgvSaleDetails.Rows)
-            {
-                if (row.IsNewRow) continue;
-                _Sale.dtSaleDetails.Rows.Add(                 
-                    row.Cells["clmProductID"].Value,
-                       row.Cells["clmSalePrice"].Value,
-                    row.Cells["clmQuantity"].Value,
-                    row.Cells["clmReturnQ"].Value,
+        //    _Sale.dtSaleDetails.Rows.Clear();
+        //    foreach (DataGridViewRow row in dgvSaleDetails.Rows)
+        //    {
+        //        if (row.IsNewRow) continue;
+        //        _Sale.dtSaleDetails.Rows.Add(                 
+        //            row.Cells["clmProductID"].Value,
+        //               row.Cells["clmSalePrice"].Value,
+        //            row.Cells["clmQuantity"].Value,
+        //            row.Cells["clmReturnQ"].Value,
                 
-                  row.Cells["clmDiscount"].Value
+        //          row.Cells["clmDiscount"].Value
 
 
-                );
-            }
+        //        );
+        //    }
 
           return  _Sale.Save();
         }
