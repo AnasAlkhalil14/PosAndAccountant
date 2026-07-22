@@ -57,9 +57,10 @@ namespace PosAndAccountantProject.Login
                 }
                 
 
-
-                 
-            }
+                frmMain frm=new frmMain();
+                frm.Show();
+                this.Close();
+             }
             else
             {
                 MessageBox.Show("خطأ في كلمة السر او اسم المستخدم", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
