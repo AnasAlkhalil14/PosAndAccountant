@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosAndAccountantProject.Sales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace PosAndAccountantProject
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void btnAddNewSale_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateSale frm = new frmAddUpdateSale();
+            frm.ShowDialog();
         }
     }
 }
