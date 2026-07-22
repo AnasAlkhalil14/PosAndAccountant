@@ -262,11 +262,11 @@
     <Compile Include="Reports\frmCustomReportsWithAi.Designer.cs">
       <DependentUpon>frmCustomReportsWithAi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales\frmAddNewSale.cs">
+    <Compile Include="Sales\frmAddUpdateSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales\frmAddNewSale.Designer.cs">
-      <DependentUpon>frmAddNewSale.cs</DependentUpon>
+    <Compile Include="Sales\frmAddUpdateSale.Designer.cs">
+      <DependentUpon>frmAddUpdateSale.cs</DependentUpon>
     </Compile>
     <Compile Include="Suppliers\Controls\ctrlSupplierCard.cs">
       <SubType>UserControl</SubType>
@@ -446,8 +446,8 @@
     <EmbeddedResource Include="Reports\frmCustomReportsWithAi.resx">
       <DependentUpon>frmCustomReportsWithAi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sales\frmAddNewSale.resx">
-      <DependentUpon>frmAddNewSale.cs</DependentUpon>
+    <EmbeddedResource Include="Sales\frmAddUpdateSale.resx">
+      <DependentUpon>frmAddUpdateSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Suppliers\Controls\ctrlSupplierCard.resx">
       <DependentUpon>ctrlSupplierCard.cs</DependentUpon>

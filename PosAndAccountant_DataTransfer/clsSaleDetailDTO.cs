@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Data;
 
 namespace PosAndAccountant_DataTransfer
 {
@@ -6,9 +8,12 @@ namespace PosAndAccountant_DataTransfer
     {
         private int _quantity;
         private int _returnQ;
-        private decimal _discountAmount;
+        private decimal _discountAmount; 
+      
+       
         public clsSaleDetailDTO()
         {
+
         }
 
         public clsSaleDetailDTO(int counter, string productName, decimal sellingPrice, int quantity, int returnQ, int productID)
@@ -34,7 +39,9 @@ namespace PosAndAccountant_DataTransfer
 
                 _quantity = value;
                 OnPropertyChanged(nameof(Quantity));
-             }
+                OnPropertyChanged(nameof(TotalPrice));
+
+            }
         }
 
       
@@ -48,6 +55,8 @@ namespace PosAndAccountant_DataTransfer
 
                 _returnQ = value;
                 OnPropertyChanged(nameof(ReturnQ));
+                OnPropertyChanged(nameof(TotalPrice));
+
             }
         }
 
@@ -56,11 +65,15 @@ namespace PosAndAccountant_DataTransfer
             set
             {
                 if (_discountAmount == value) return;
-                _discountAmount=value; OnPropertyChanged(nameof(DiscountAmount));
-            
-            } }
+                _discountAmount=value;
+                OnPropertyChanged(nameof(DiscountAmount));
+                OnPropertyChanged(nameof(TotalPrice));
 
-        public decimal TotalPrice => SellingPrice * (Quantity - ReturnQ)-DiscountAmount;
+
+            }
+        }
+
+        public decimal TotalPrice => (SellingPrice - DiscountAmount) * (Quantity - ReturnQ);
 
         public event PropertyChangedEventHandler PropertyChanged;
 

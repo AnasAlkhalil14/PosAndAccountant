@@ -1,7 +1,7 @@
 ﻿
 namespace PosAndAccountantProject.Sales
 {
-    partial class frmAddNewSale
+    partial class frmAddUpdateSale
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace PosAndAccountantProject.Sales
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddNewSale));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdateSale));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,14 +65,6 @@ namespace PosAndAccountantProject.Sales
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSaleDetails = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.clmCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmReturnQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsSaleDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.الغاءمنالفاتورةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,7 +126,7 @@ namespace PosAndAccountantProject.Sales
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(521, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(931, 86);
+            this.panel1.Size = new System.Drawing.Size(977, 86);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -329,7 +321,7 @@ namespace PosAndAccountantProject.Sales
             this.tsmiAddToSale.Name = "tsmiAddToSale";
             this.tsmiAddToSale.Size = new System.Drawing.Size(174, 26);
             this.tsmiAddToSale.Text = "اضافة للفاتورة";
-            this.tsmiAddToSale.Click += new System.EventHandler(this.اضافةللفاتورةToolStripMenuItem_Click);
+            this.tsmiAddToSale.Click += new System.EventHandler(this.tsmiAddToSale_Click);
             // 
             // عرضToolStripMenuItem
             // 
@@ -354,7 +346,7 @@ namespace PosAndAccountantProject.Sales
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(524, 77);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(928, 99);
+            this.panel3.Size = new System.Drawing.Size(974, 99);
             this.panel3.TabIndex = 9;
             // 
             // lblSaleID
@@ -489,15 +481,6 @@ namespace PosAndAccountantProject.Sales
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSaleDetails.ColumnHeadersHeight = 35;
-            this.dgvSaleDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmCounter,
-            this.clmProductName,
-            this.clmSalePrice,
-            this.clmQuantity,
-            this.clmTotalPrice,
-            this.clmReturnQ,
-            this.clmDiscount,
-            this.clmProductID});
             this.dgvSaleDetails.ContextMenuStrip = this.cmsSaleDetails;
             this.dgvSaleDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -516,7 +499,7 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.RowHeadersWidth = 51;
             this.dgvSaleDetails.RowTemplate.Height = 30;
             this.dgvSaleDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSaleDetails.Size = new System.Drawing.Size(745, 446);
+            this.dgvSaleDetails.Size = new System.Drawing.Size(788, 446);
             this.dgvSaleDetails.TabIndex = 10;
             this.dgvSaleDetails.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.dgvSaleDetails.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -541,68 +524,9 @@ namespace PosAndAccountantProject.Sales
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvSaleDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvSaleDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEndEdit);
-            this.dgvSaleDetails.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_CellEnter);
+            this.dgvSaleDetails.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSaleDetails_CellValidating);
             this.dgvSaleDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSaleDetails_EditingControlShowing);
             this.dgvSaleDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleDetails_RowEnter);
-            // 
-            // clmCounter
-            // 
-            this.clmCounter.FillWeight = 40F;
-            this.clmCounter.HeaderText = "م";
-            this.clmCounter.MinimumWidth = 6;
-            this.clmCounter.Name = "clmCounter";
-            // 
-            // clmProductName
-            // 
-            this.clmProductName.FillWeight = 92.978F;
-            this.clmProductName.HeaderText = "اسم المنتج";
-            this.clmProductName.MinimumWidth = 6;
-            this.clmProductName.Name = "clmProductName";
-            this.clmProductName.ReadOnly = true;
-            // 
-            // clmSalePrice
-            // 
-            this.clmSalePrice.FillWeight = 92.978F;
-            this.clmSalePrice.HeaderText = "سعر البيع";
-            this.clmSalePrice.MinimumWidth = 6;
-            this.clmSalePrice.Name = "clmSalePrice";
-            this.clmSalePrice.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.FillWeight = 92.978F;
-            this.clmQuantity.HeaderText = "الكمية";
-            this.clmQuantity.MinimumWidth = 6;
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmTotalPrice
-            // 
-            this.clmTotalPrice.FillWeight = 92.978F;
-            this.clmTotalPrice.HeaderText = "السعر الكلي";
-            this.clmTotalPrice.MinimumWidth = 6;
-            this.clmTotalPrice.Name = "clmTotalPrice";
-            this.clmTotalPrice.ReadOnly = true;
-            // 
-            // clmReturnQ
-            // 
-            this.clmReturnQ.FillWeight = 92.978F;
-            this.clmReturnQ.HeaderText = "الكمية المعادة";
-            this.clmReturnQ.MinimumWidth = 6;
-            this.clmReturnQ.Name = "clmReturnQ";
-            // 
-            // clmDiscount
-            // 
-            this.clmDiscount.FillWeight = 92.978F;
-            this.clmDiscount.HeaderText = "قيمة الخصم";
-            this.clmDiscount.MinimumWidth = 6;
-            this.clmDiscount.Name = "clmDiscount";
-            // 
-            // clmProductID
-            // 
-            this.clmProductID.HeaderText = "ProductID";
-            this.clmProductID.MinimumWidth = 6;
-            this.clmProductID.Name = "clmProductID";
-            this.clmProductID.Visible = false;
             // 
             // cmsSaleDetails
             // 
@@ -704,6 +628,7 @@ namespace PosAndAccountantProject.Sales
             this.txtProductQuantity.SelectedText = "";
             this.txtProductQuantity.Size = new System.Drawing.Size(88, 36);
             this.txtProductQuantity.TabIndex = 11;
+            this.txtProductQuantity.TextChanged += new System.EventHandler(this.txtProductQuantity_TextChanged);
             this.txtProductQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // guna2Button1
@@ -868,8 +793,8 @@ namespace PosAndAccountantProject.Sales
             this.txtDiscount.Size = new System.Drawing.Size(124, 30);
             this.txtDiscount.TabIndex = 39;
             this.txtDiscount.Tag = "0";
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
-            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
             // 
             // lblTotalAmountWithOutDebtAndDiscout
             // 
@@ -1135,12 +1060,12 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
             // 
-            // frmAddNewSale
+            // frmAddUpdateSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1455, 856);
+            this.ClientSize = new System.Drawing.Size(1510, 856);
             this.Controls.Add(this.btnOpenNewSale);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnSave);
@@ -1157,11 +1082,11 @@ namespace PosAndAccountantProject.Sales
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "frmAddNewSale";
+            this.Name = "frmAddUpdateSale";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "فاتورة بيع نقدي";
-            this.Load += new System.EventHandler(this.frmAddNewSale_Load);
+            this.Load += new System.EventHandler(this.frmAddUpdateSale_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1250,13 +1175,5 @@ namespace PosAndAccountantProject.Sales
         private System.Drawing.Printing.PrintDocument printDoc;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDlg;
         private System.Windows.Forms.Label lblSaleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCounter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSalePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmReturnQ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductID;
     }
 }

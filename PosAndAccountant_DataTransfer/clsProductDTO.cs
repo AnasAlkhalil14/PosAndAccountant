@@ -31,6 +31,7 @@ namespace PosAndAccountant_DataTransfer
         public string ImagePath { get; set; }
         public string BarCode { get; set; }
 
+        public string CategoryName {  get; set; }
         // Inventory
         public int QuantityInStock { get => _Quantity;
             set
@@ -62,13 +63,14 @@ namespace PosAndAccountant_DataTransfer
                            decimal sellingPrice, string unitOfSale, string productName,
                            string description, string imagePath, string barCode,
                            int quantityInStock, int minimumQuantityForWarning,
-                           DateTime createDate, DateTime modifyDate, bool isActive)
+                           DateTime createDate, DateTime modifyDate, bool isActive,string CategoryName="")
         {
             this.ProductID = productID;
             this.ProductCategoryID = productCategoryID;
             this.CostPrice = costPrice;
             this.SellingPrice = sellingPrice;
             this.UnitOfSale = unitOfSale;
+            this.CategoryName = CategoryName;
             this.ProductName = productName;
             this.Description = description;
             this.ImagePath = imagePath;
