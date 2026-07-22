@@ -72,8 +72,9 @@ namespace PosAndAccountantProject.Products
                 dgvProducts.Columns[6].Visible = false;
                 dgvProducts.Columns[7].Visible = false;
                 dgvProducts.Columns[9].Visible = false;
+                dgvProducts.Columns[10].Visible = false;
 
-             lblOutOfStockCount.Text= (  (int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
+                lblOutOfStockCount.Text= (  (int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
             }
 
 

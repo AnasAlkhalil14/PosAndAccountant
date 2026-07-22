@@ -523,5 +523,15 @@ namespace PosAndAccountantProject.Purchases
 
 
         }
+
+        private void عرضToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
