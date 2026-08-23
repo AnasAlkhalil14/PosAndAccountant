@@ -275,7 +275,7 @@ namespace PosAndAccountant_business
         public string Notes { get; set; }
 
         public BindingList<clsSaleDetailDTO> Details;
-        public   BindingList<clsProductDTO> ProductList;
+        public BindingList<clsProductDTO> ProductList;
 
         public int TotalQ => Details.Sum(p => p.Quantity - p.ReturnQ);
 
@@ -290,7 +290,7 @@ namespace PosAndAccountant_business
                 bool EditQ = false;
 
                 if (item.Quantity == NewQ) return true;
-               else  if (item.Quantity > NewQ)
+                else if (item.Quantity > NewQ)
                 {
                     EditQ = IncreaseFreeProductQuantity(ProductID, item.Quantity - NewQ);
                 }
@@ -322,7 +322,7 @@ namespace PosAndAccountant_business
                     return false;
 
                 bool EditQ = false;
-                if(item.ReturnQ==NewRQ) return true;
+                if (item.ReturnQ == NewRQ) return true;
 
                 else if (item.ReturnQ > NewRQ)
                 {
@@ -335,8 +335,8 @@ namespace PosAndAccountant_business
                 }
 
 
-                if(EditQ) 
-                Details[Index].ReturnQ = NewRQ;
+                if (EditQ)
+                    Details[Index].ReturnQ = NewRQ;
                 return EditQ;
             }
             return false;
@@ -349,7 +349,7 @@ namespace PosAndAccountant_business
             if (item != null)
             {
                 Details.Remove(item);
-                return IncreaseFreeProductQuantity(item.ProductID,item.Quantity-item.ReturnQ);
+                return IncreaseFreeProductQuantity(item.ProductID, item.Quantity - item.ReturnQ);
             }
             else
             {
@@ -378,12 +378,12 @@ namespace PosAndAccountant_business
                 Details[index].Quantity += detail.Quantity;
             }
 
-            return DecreaseFreeProductQuantity(detail.ProductID, detail.Quantity-detail.ReturnQ);
+            return DecreaseFreeProductQuantity(detail.ProductID, detail.Quantity - detail.ReturnQ);
         }
 
         public bool _AddSale()
         {
-            clsSaleDTO SaleDTO = new clsSaleDTO(-1, UserID, CustomerID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount , Notes,Details);
+            clsSaleDTO SaleDTO = new clsSaleDTO(-1, UserID, CustomerID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, Notes, Details);
 
             SaleID = clsSaleData.AddSale(SaleDTO);
             return SaleID != -1;
@@ -426,23 +426,23 @@ namespace PosAndAccountant_business
         }
 
 
-        public bool DecreaseFreeProductQuantity(int ProductID,int NumberProductToTake)
+        public bool DecreaseFreeProductQuantity(int ProductID, int NumberProductToTake)
         {
             if (!ProductList.Any(p => p.ProductID == ProductID)) return false;
             if (NumberProductToTake < 0) return false;
-            var product = ProductList.FirstOrDefault(p=>p.ProductID== ProductID);
-            if(product == null|| product.QuantityInStock<NumberProductToTake) return false;
+            var product = ProductList.FirstOrDefault(p => p.ProductID == ProductID);
+            if (product == null || product.QuantityInStock < NumberProductToTake) return false;
 
-            int index=ProductList.IndexOf(product);
+            int index = ProductList.IndexOf(product);
             ProductList[index].QuantityInStock -= NumberProductToTake;
             return true;
         }
-        public bool IncreaseFreeProductQuantity(int ProductID,int NumberToAdd)
+        public bool IncreaseFreeProductQuantity(int ProductID, int NumberToAdd)
         {
             if (!ProductList.Any(p => p.ProductID == ProductID)) return false;
             if (NumberToAdd < 0) return false;
             var product = ProductList.FirstOrDefault(p => p.ProductID == ProductID);
-            if (product == null ) return false;
+            if (product == null) return false;
 
             int index = ProductList.IndexOf(product);
             ProductList[index].QuantityInStock += NumberToAdd;
@@ -453,14 +453,37 @@ namespace PosAndAccountant_business
 
         public bool IsNotZeroQuantity(int ProductID)
         {
-            clsProductDTO productDTO=ProductList.FirstOrDefault(p=>p.ProductID== ProductID);
+            clsProductDTO productDTO = ProductList.FirstOrDefault(p => p.ProductID == ProductID);
             return productDTO != null && productDTO.QuantityInStock != 0;
         }
 
         public clsProductDTO GetProductDTObyID(int ProductID)
         {
-            return ProductList.FirstOrDefault(p=>p.ProductID == ProductID);
+            return ProductList.FirstOrDefault(p => p.ProductID == ProductID);
 
+        }
+        public static decimal GetDaySale()
+        { return clsSaleData.GetDaySale(); }
+        public static decimal GetYesterdaySale()
+        {
+            return clsSaleData.GetYesterdaySale();
+        }
+        public static decimal GetDiffPercentDaySale()
+        {
+            return (GetDaySale()/GetYesterdaySale())*100-100;
+        }
+ 
+        public static decimal GetDayPaid()
+        {
+            return clsSaleData.GetDayPaid();
+        }
+        public static decimal GetYesterdayPaid()
+        {
+            return clsSaleData.GetYesterdayPaid();
+        }
+        public static decimal GetDiffPercentDayPaid()
+        {
+            return (GetDayPaid() / GetYesterdayPaid()) * 100 - 100;
         }
     }
 

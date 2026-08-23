@@ -20,6 +20,7 @@ namespace PosAndAccountant_DataAccess
             return false;
         }
 
+        //-------(Has work  to do here)------------
         public static clsSaleDTO GetSale(int SaleID)
         {
             return null;
@@ -207,6 +208,131 @@ namespace PosAndAccountant_DataAccess
                 }
             }
             return SaleDTO;
+        }
+
+        public static decimal GetDaySale()
+        {
+
+            decimal TotalSale = 0;
+            string query = @"SELECT CAST(ISNULL(SUM(TotalAmount), 0) AS DECIMAL(10,2)) AS DaySale
+FROM Sales
+WHERE CreateDate >= CAST(GETDATE() AS DATE)
+  AND CreateDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE));";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                     try
+                    {
+                        connection.Open();
+                        object result= command.ExecuteScalar();
+                        if(result != null&&decimal.TryParse(result.ToString(),out decimal total))
+                            {
+                            TotalSale = total;
+                        }
+                        else
+                        {
+                            TotalSale = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalSale;
+
+        }
+        public static decimal GetYesterdaySale()
+        {
+            decimal TotalSale = 0;
+            string query = @"SELECT CAST(ISNULL(SUM(TotalAmount), 0) AS DECIMAL(10,2)) AS DaySale
+FROM Sales
+WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+  AND CreateDate < CAST(GETDATE() AS DATE);";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalSale = total;
+                        }
+                        else
+                        {
+                            TotalSale = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalSale;
+
+        }
+
+        public static decimal GetDayPaid()
+        {
+
+            decimal TotalPay = 0;
+            string query = @" SELECT CAST(ISNULL(SUM(PaidAmount), 0) AS DECIMAL(10,2)) AS DayPaid
+FROM Sales
+WHERE CreateDate >= CAST(GETDATE() AS DATE)
+  AND CreateDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE));";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalPay = total;
+                        }
+                        else
+                        {
+                            TotalPay     = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalPay;
+
+        }
+
+        public static decimal GetYesterdayPaid()
+        {
+            decimal TotalPaid = 0;
+            string query = @"SELECT CAST(ISNULL(SUM(PaidAmount), 0) AS DECIMAL(10,2)) AS DayPaid
+FROM Sales
+WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+  AND CreateDate < CAST(GETDATE() AS DATE);";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalPaid = total;
+                        }
+                        else
+                        {
+                            TotalPaid = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalPaid;
+
         }
 
     }
