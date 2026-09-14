@@ -31,30 +31,31 @@ namespace PosAndAccountantProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.Charts.WinForms.ChartFont chartFont25 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont26 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont27 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont28 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid10 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick10 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont29 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid11 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick11 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont30 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid12 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel4 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont31 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick12 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont32 = new Guna.Charts.WinForms.ChartFont();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcMain = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.pnlSalesOverview = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.cmbTimeFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.chartSales = new Guna.Charts.WinForms.GunaChart();
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
@@ -63,10 +64,17 @@ namespace PosAndAccountantProject
             this.lblInvoices = new System.Windows.Forms.Label();
             this.lblLowStock = new System.Windows.Forms.Label();
             this.dgvRecentInvoices = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLowStock = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.colLowStockProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLowStockQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLowStockMinQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlUsersCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblActiveUsersTrend = new System.Windows.Forms.Label();
+            this.lblProfitVal = new System.Windows.Forms.Label();
+            this.lblProfitTrend = new System.Windows.Forms.Label();
             this.DDSFSFSF = new System.Windows.Forms.Label();
             this.pnlOrdersCard = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTotalOrdersTrend = new System.Windows.Forms.Label();
@@ -111,14 +119,6 @@ namespace PosAndAccountantProject
             this.btnCurrentUserInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.colLowStockProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLowStockQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLowStockMinQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcMain.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.pnlSalesOverview.SuspendLayout();
@@ -209,10 +209,20 @@ namespace PosAndAccountantProject
             this.pnlSalesOverview.Controls.Add(this.cmbTimeFilter);
             this.pnlSalesOverview.Controls.Add(this.chartSales);
             this.pnlSalesOverview.FillColor = System.Drawing.Color.White;
-            this.pnlSalesOverview.Location = new System.Drawing.Point(254, 502);
+            this.pnlSalesOverview.Location = new System.Drawing.Point(256, 502);
             this.pnlSalesOverview.Name = "pnlSalesOverview";
-            this.pnlSalesOverview.Size = new System.Drawing.Size(566, 282);
+            this.pnlSalesOverview.Size = new System.Drawing.Size(552, 274);
             this.pnlSalesOverview.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(231, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 21);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "مؤشر المبيعات";
             // 
             // cmbTimeFilter
             // 
@@ -240,37 +250,37 @@ namespace PosAndAccountantProject
             this.chartSales.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] {
             this.gunaAreaDataset1});
             this.chartSales.Legend.Display = false;
-            chartFont25.FontName = "Arial";
-            this.chartSales.Legend.LabelFont = chartFont25;
+            chartFont1.FontName = "Arial";
+            this.chartSales.Legend.LabelFont = chartFont1;
             this.chartSales.Location = new System.Drawing.Point(16, 58);
             this.chartSales.Name = "chartSales";
-            this.chartSales.Size = new System.Drawing.Size(512, 221);
+            this.chartSales.Size = new System.Drawing.Size(512, 197);
             this.chartSales.TabIndex = 11;
-            chartFont26.FontName = "Arial";
-            chartFont26.Size = 12;
-            chartFont26.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chartSales.Title.Font = chartFont26;
-            chartFont27.FontName = "Arial";
-            this.chartSales.Tooltips.BodyFont = chartFont27;
-            chartFont28.FontName = "Arial";
-            chartFont28.Size = 9;
-            chartFont28.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chartSales.Tooltips.TitleFont = chartFont28;
-            this.chartSales.XAxes.GridLines = grid10;
-            chartFont29.FontName = "Arial";
-            tick10.Font = chartFont29;
-            this.chartSales.XAxes.Ticks = tick10;
-            this.chartSales.YAxes.GridLines = grid11;
-            chartFont30.FontName = "Arial";
-            tick11.Font = chartFont30;
-            this.chartSales.YAxes.Ticks = tick11;
-            this.chartSales.ZAxes.GridLines = grid12;
-            chartFont31.FontName = "Arial";
-            pointLabel4.Font = chartFont31;
-            this.chartSales.ZAxes.PointLabels = pointLabel4;
-            chartFont32.FontName = "Arial";
-            tick12.Font = chartFont32;
-            this.chartSales.ZAxes.Ticks = tick12;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chartSales.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.chartSales.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chartSales.Tooltips.TitleFont = chartFont4;
+            this.chartSales.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.chartSales.XAxes.Ticks = tick1;
+            this.chartSales.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.chartSales.YAxes.Ticks = tick2;
+            this.chartSales.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.chartSales.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.chartSales.ZAxes.Ticks = tick3;
             // 
             // gunaAreaDataset1
             // 
@@ -293,6 +303,7 @@ namespace PosAndAccountantProject
             this.btnRefreshDashboard.Size = new System.Drawing.Size(120, 40);
             this.btnRefreshDashboard.TabIndex = 10;
             this.btnRefreshDashboard.Text = "⟳  تحديث";
+            this.btnRefreshDashboard.Click += new System.EventHandler(this.btnRefreshDashboard_Click);
             // 
             // lblDashboardTitle
             // 
@@ -329,30 +340,25 @@ namespace PosAndAccountantProject
             // 
             this.dgvRecentInvoices.AllowUserToAddRows = false;
             this.dgvRecentInvoices.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.dgvRecentInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRecentInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecentInvoices.ColumnHeadersHeight = 34;
-            this.dgvRecentInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colInvoiceNo,
-            this.colInvoiceCustomer,
-            this.colInvoiceDate,
-            this.colInvoiceAmount});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecentInvoices.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecentInvoices.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecentInvoices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvRecentInvoices.Location = new System.Drawing.Point(39, 219);
             this.dgvRecentInvoices.Name = "dgvRecentInvoices";
@@ -385,33 +391,65 @@ namespace PosAndAccountantProject
             this.dgvRecentInvoices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvRecentInvoices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // colInvoiceNo
+            // 
+            this.colInvoiceNo.FillWeight = 68F;
+            this.colInvoiceNo.HeaderText = "رقم الفاتورة";
+            this.colInvoiceNo.MinimumWidth = 6;
+            this.colInvoiceNo.Name = "colInvoiceNo";
+            this.colInvoiceNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceNo.Width = 81;
+            // 
+            // colInvoiceCustomer
+            // 
+            this.colInvoiceCustomer.FillWeight = 130F;
+            this.colInvoiceCustomer.HeaderText = "اسم الزبون";
+            this.colInvoiceCustomer.MinimumWidth = 6;
+            this.colInvoiceCustomer.Name = "colInvoiceCustomer";
+            this.colInvoiceCustomer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceCustomer.Width = 155;
+            // 
+            // colInvoiceDate
+            // 
+            this.colInvoiceDate.FillWeight = 90F;
+            this.colInvoiceDate.HeaderText = "التاريخ";
+            this.colInvoiceDate.MinimumWidth = 6;
+            this.colInvoiceDate.Name = "colInvoiceDate";
+            this.colInvoiceDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceDate.Width = 107;
+            // 
+            // colInvoiceAmount
+            // 
+            this.colInvoiceAmount.HeaderText = "المبلغ";
+            this.colInvoiceAmount.MinimumWidth = 6;
+            this.colInvoiceAmount.Name = "colInvoiceAmount";
+            this.colInvoiceAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceAmount.Width = 119;
+            // 
             // dgvLowStock
             // 
             this.dgvLowStock.AllowUserToAddRows = false;
             this.dgvLowStock.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.dgvLowStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLowStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvLowStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLowStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLowStock.ColumnHeadersHeight = 34;
-            this.dgvLowStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colLowStockProduct,
-            this.colLowStockQty,
-            this.colLowStockMinQty});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLowStock.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLowStock.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLowStock.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLowStock.Location = new System.Drawing.Point(529, 219);
             this.dgvLowStock.Name = "dgvLowStock";
@@ -444,12 +482,37 @@ namespace PosAndAccountantProject
             this.dgvLowStock.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLowStock.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // colLowStockProduct
+            // 
+            this.colLowStockProduct.FillWeight = 150F;
+            this.colLowStockProduct.HeaderText = "اسم المنتج";
+            this.colLowStockProduct.MinimumWidth = 6;
+            this.colLowStockProduct.Name = "colLowStockProduct";
+            this.colLowStockProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colLowStockProduct.Width = 193;
+            // 
+            // colLowStockQty
+            // 
+            this.colLowStockQty.HeaderText = "الكمية المتبقية";
+            this.colLowStockQty.MinimumWidth = 6;
+            this.colLowStockQty.Name = "colLowStockQty";
+            this.colLowStockQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colLowStockQty.Width = 128;
+            // 
+            // colLowStockMinQty
+            // 
+            this.colLowStockMinQty.HeaderText = "حد التنبيه";
+            this.colLowStockMinQty.MinimumWidth = 6;
+            this.colLowStockMinQty.Name = "colLowStockMinQty";
+            this.colLowStockMinQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colLowStockMinQty.Width = 129;
+            // 
             // pnlUsersCard
             // 
             this.pnlUsersCard.BackColor = System.Drawing.Color.Transparent;
             this.pnlUsersCard.BorderRadius = 10;
-            this.pnlUsersCard.Controls.Add(this.label1);
-            this.pnlUsersCard.Controls.Add(this.lblActiveUsersTrend);
+            this.pnlUsersCard.Controls.Add(this.lblProfitVal);
+            this.pnlUsersCard.Controls.Add(this.lblProfitTrend);
             this.pnlUsersCard.Controls.Add(this.DDSFSFSF);
             this.pnlUsersCard.FillColor = System.Drawing.Color.White;
             this.pnlUsersCard.Location = new System.Drawing.Point(284, 75);
@@ -459,27 +522,27 @@ namespace PosAndAccountantProject
             this.pnlUsersCard.Size = new System.Drawing.Size(205, 115);
             this.pnlUsersCard.TabIndex = 3;
             // 
-            // label1
+            // lblProfitVal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(18, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 26);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "15,240.50 ل.س";
+            this.lblProfitVal.AutoSize = true;
+            this.lblProfitVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F, System.Drawing.FontStyle.Bold);
+            this.lblProfitVal.ForeColor = System.Drawing.Color.Red;
+            this.lblProfitVal.Location = new System.Drawing.Point(18, 53);
+            this.lblProfitVal.Name = "lblProfitVal";
+            this.lblProfitVal.Size = new System.Drawing.Size(162, 26);
+            this.lblProfitVal.TabIndex = 3;
+            this.lblProfitVal.Text = "15,240.50 ل.س";
             // 
-            // lblActiveUsersTrend
+            // lblProfitTrend
             // 
-            this.lblActiveUsersTrend.AutoSize = true;
-            this.lblActiveUsersTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveUsersTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.lblActiveUsersTrend.Location = new System.Drawing.Point(20, 90);
-            this.lblActiveUsersTrend.Name = "lblActiveUsersTrend";
-            this.lblActiveUsersTrend.Size = new System.Drawing.Size(85, 15);
-            this.lblActiveUsersTrend.TabIndex = 2;
-            this.lblActiveUsersTrend.Text = "بدون تغيير اليوم";
+            this.lblProfitTrend.AutoSize = true;
+            this.lblProfitTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfitTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.lblProfitTrend.Location = new System.Drawing.Point(20, 90);
+            this.lblProfitTrend.Name = "lblProfitTrend";
+            this.lblProfitTrend.Size = new System.Drawing.Size(85, 15);
+            this.lblProfitTrend.TabIndex = 2;
+            this.lblProfitTrend.Text = "بدون تغيير اليوم";
             // 
             // DDSFSFSF
             // 
@@ -562,9 +625,9 @@ namespace PosAndAccountantProject
             this.lblCashBalanceTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
             this.lblCashBalanceTrend.Location = new System.Drawing.Point(20, 90);
             this.lblCashBalanceTrend.Name = "lblCashBalanceTrend";
-            this.lblCashBalanceTrend.Size = new System.Drawing.Size(92, 15);
+            this.lblCashBalanceTrend.Size = new System.Drawing.Size(95, 15);
             this.lblCashBalanceTrend.TabIndex = 2;
-            this.lblCashBalanceTrend.Text = "▲ 5.2% عن أمس";
+            this.lblCashBalanceTrend.Text = "▲ 5.2% عن أمس ";
             // 
             // lblCashBalanceVal
             // 
@@ -611,9 +674,9 @@ namespace PosAndAccountantProject
             this.lblTodaySalesTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
             this.lblTodaySalesTrend.Location = new System.Drawing.Point(20, 90);
             this.lblTodaySalesTrend.Name = "lblTodaySalesTrend";
-            this.lblTodaySalesTrend.Size = new System.Drawing.Size(82, 15);
+            this.lblTodaySalesTrend.Size = new System.Drawing.Size(88, 15);
             this.lblTodaySalesTrend.TabIndex = 2;
-            this.lblTodaySalesTrend.Text = "▼ 3% عن أمس";
+            this.lblTodaySalesTrend.Text = "▼ 3%  عن أمس ";
             // 
             // lblTodaySalesVal
             // 
@@ -993,76 +1056,6 @@ namespace PosAndAccountantProject
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "تسجيل الخروج";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(231, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "أحدث الفواتير";
-            // 
-            // colLowStockProduct
-            // 
-            this.colLowStockProduct.FillWeight = 150F;
-            this.colLowStockProduct.HeaderText = "اسم المنتج";
-            this.colLowStockProduct.MinimumWidth = 6;
-            this.colLowStockProduct.Name = "colLowStockProduct";
-            this.colLowStockProduct.ReadOnly = true;
-            this.colLowStockProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colLowStockQty
-            // 
-            this.colLowStockQty.HeaderText = "الكمية المتبقية";
-            this.colLowStockQty.MinimumWidth = 6;
-            this.colLowStockQty.Name = "colLowStockQty";
-            this.colLowStockQty.ReadOnly = true;
-            this.colLowStockQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colLowStockMinQty
-            // 
-            this.colLowStockMinQty.HeaderText = "حد التنبيه";
-            this.colLowStockMinQty.MinimumWidth = 6;
-            this.colLowStockMinQty.Name = "colLowStockMinQty";
-            this.colLowStockMinQty.ReadOnly = true;
-            this.colLowStockMinQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colInvoiceNo
-            // 
-            this.colInvoiceNo.FillWeight = 68F;
-            this.colInvoiceNo.HeaderText = "رقم الفاتورة";
-            this.colInvoiceNo.MinimumWidth = 6;
-            this.colInvoiceNo.Name = "colInvoiceNo";
-            this.colInvoiceNo.ReadOnly = true;
-            this.colInvoiceNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colInvoiceCustomer
-            // 
-            this.colInvoiceCustomer.FillWeight = 130F;
-            this.colInvoiceCustomer.HeaderText = "اسم الزبون";
-            this.colInvoiceCustomer.MinimumWidth = 6;
-            this.colInvoiceCustomer.Name = "colInvoiceCustomer";
-            this.colInvoiceCustomer.ReadOnly = true;
-            this.colInvoiceCustomer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colInvoiceDate
-            // 
-            this.colInvoiceDate.FillWeight = 90F;
-            this.colInvoiceDate.HeaderText = "التاريخ";
-            this.colInvoiceDate.MinimumWidth = 6;
-            this.colInvoiceDate.Name = "colInvoiceDate";
-            this.colInvoiceDate.ReadOnly = true;
-            this.colInvoiceDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colInvoiceAmount
-            // 
-            this.colInvoiceAmount.HeaderText = "المبلغ";
-            this.colInvoiceAmount.MinimumWidth = 6;
-            this.colInvoiceAmount.Name = "colInvoiceAmount";
-            this.colInvoiceAmount.ReadOnly = true;
-            this.colInvoiceAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1131,7 +1124,7 @@ namespace PosAndAccountantProject
         private System.Windows.Forms.Label lblTotalOrdersTrend;
         private Guna.UI2.WinForms.Guna2Panel pnlUsersCard;
         private System.Windows.Forms.Label DDSFSFSF;
-        private System.Windows.Forms.Label lblActiveUsersTrend;
+        private System.Windows.Forms.Label lblProfitTrend;
         private Guna.UI2.WinForms.Guna2DataGridView dgvLowStock;
         private Guna.UI2.WinForms.Guna2DataGridView dgvRecentInvoices;
         private System.Windows.Forms.Label lblLowStock;
@@ -1167,7 +1160,7 @@ namespace PosAndAccountantProject
         private Guna.UI2.WinForms.Guna2Button btnBackupRestore;
         private Guna.UI2.WinForms.Guna2Button btnCurrentUserInfo;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProfitVal;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.Charts.WinForms.GunaChart chartSales;
         private Guna.UI2.WinForms.Guna2Panel pnlSalesOverview;

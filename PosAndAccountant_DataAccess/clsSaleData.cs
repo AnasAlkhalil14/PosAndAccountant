@@ -276,7 +276,7 @@ WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
         {
 
             decimal TotalPay = 0;
-            string query = @" SELECT CAST(ISNULL(SUM(PaidAmount), 0) AS DECIMAL(10,2)) AS DayPaid
+            string query = @" SELECT CAST(ISNULL(SUM(PaidAmount), 0) AS DECIMAL(16,2)) AS DayPaid
 FROM Sales
 WHERE CreateDate >= CAST(GETDATE() AS DATE)
   AND CreateDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE));";
@@ -335,5 +335,182 @@ WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
 
         }
 
+        public static decimal GetDayProfit()
+        {
+
+            decimal TotalProfit = 0;
+            string query = @"SELECT cast( ISNULL( sum(NetProfit),0) as decimal(16,2) )as DayProfit
+  FROM [AccountantDB].[dbo].[ProfitRuns]
+  where CreatedDate>= cast(GETDATE() as date) and
+  CreatedDate <Dateadd(day,1,cast(getdate() as date))";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalProfit = total;
+                        }
+                        else
+                        {
+                            TotalProfit = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalProfit;
+
+        }
+        public static decimal GetYesterdayProfit()
+        {
+            decimal TotalProfit = 0;
+            string query = @"SELECT cast( ISNULL( sum(NetProfit),0) as decimal(16,2) )as DayProfit
+  FROM [AccountantDB].[dbo].[ProfitRuns]
+WHERE CreatedDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+  AND CreatedDate < CAST(GETDATE() AS DATE);";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalProfit = total;
+                        }
+                        else
+                        {
+                            TotalProfit = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalProfit;
+
+        }
+
+        public static int GetCountDaySale()
+        {
+
+            int count = 0;
+            string query = @"SELECT  Count(1)   as CountDaySale
+  FROM [AccountantDB].[dbo].Sales
+  where CreateDate>= cast(GETDATE() as date) and
+  CreateDate <Dateadd(day,1,cast(getdate() as date))";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            count = total;
+                        }
+                        else
+                        {
+                            count = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return count;
+
+        }
+        public static int GetYesterdayCountDaySale()
+        {
+            int count = 0;
+            string query = @"SELECT  Count(1)   as CountDaySale
+  FROM [AccountantDB].[dbo].Sales
+WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+  AND CreateDate < CAST(GETDATE() AS DATE);";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            count = total;
+                        }
+                        else
+                        {
+                            count = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return count;
+
+        }
+
+        public static DataTable GetLast10SalesToday()
+        {
+            DataTable dt= new DataTable();
+            string query = @" SELECT  top 10      Sales.SaleID, People.FirstName+' '+People.LastName as FullName, CONVERT(VARCHAR(5), CreateDate, 108) AS CreateTime, Sales.TotalAmount
+FROM            Sales INNER JOIN
+                         Customers ON Sales.CustomerID = Customers.CustomerID INNER JOIN
+                         People ON Customers.PersonID = People.PersonID
+
+ where CreatedDate>= cast(GETDATE() as date) and
+ CreatedDate <Dateadd(day,1,cast(getdate() as date))
+";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+
+        }
+        public static DataTable GetLast10TotalSaleByDay()
+        {
+            DataTable dt = new DataTable();
+            string query = @"select top 10 sum(totalAmount) as TotalSale,cast(CreateDate as date) as SaleDate from Sales
+  group by CAST(CreateDate as date)";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+
+        }
     }
+
 }
