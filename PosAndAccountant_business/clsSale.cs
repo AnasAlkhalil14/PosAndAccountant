@@ -474,7 +474,7 @@ namespace PosAndAccountant_business
             decimal today = GetDaySale();
             if (yesterday > 0)
 
-            return (GetDaySale()/GetYesterdaySale())*100-100;
+            return (today/ yesterday)*100-100;
 
             if (today == 0 && yesterday == 0) return 0;
 

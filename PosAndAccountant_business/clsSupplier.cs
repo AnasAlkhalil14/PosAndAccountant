@@ -164,7 +164,10 @@ namespace PosAndAccountant_business
             return clsSupplierData.IsPersonSupplier(PersonID);
         }
 
-
+        public static decimal GetAllSuppliersDebt()
+        {
+            return clsSupplierData.GetAllSuppliersDebt();
+        }
 
 
 

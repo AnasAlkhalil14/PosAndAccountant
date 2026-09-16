@@ -30,23 +30,23 @@ namespace PosAndAccountantProject
         {
             lblTodaySalesVal.Text = clsSale.GetDaySale().ToString();
             decimal diff = clsSale.GetDiffPercentDaySale();
-            if (diff > 0 )
+            if (diff > 0)
             {
-                lblTodaySalesTrend.Text= $"▲ {diff}% عن أمس";
+                lblTodaySalesTrend.Text = $"▲ {diff}% عن أمس";
             }
-            else if( diff < 0 )
+            else if (diff < 0)
             {
                 lblTodaySalesTrend.Text = $"▼ {diff}% عن أمس";
 
             }
             else
             {
-                lblTodaySalesTrend.Text =  "بدون تغيير اليوم";
- 
+                lblTodaySalesTrend.Text = "بدون تغيير اليوم";
+
             }
 
         }
-        private void _CountDaySale() 
+        private void _CountDaySale()
         {
             lblTotalOrdersVal.Text = clsSale.GetCountDaySale().ToString();
             double diff = clsSale.GetDiffPercentCountDaySale();
@@ -112,17 +112,17 @@ namespace PosAndAccountantProject
         private void _LowStockProduct()
         {
             dgvLowStock.DataSource = clsProduct.GetLowStockProducts();
-           
+
 
             if (dgvLowStock.Rows.Count > 0)
             {
                 dgvLowStock.Columns[0].HeaderText = "اسم المنتج";
                 dgvLowStock.Columns[1].HeaderText = "الكمية المتبقية";
                 dgvLowStock.Columns[2].HeaderText = "حد التنبيه";
-       
+
             }
 
-        } 
+        }
         private void _LastNewInvoices()
         {
             dgvRecentInvoices.AutoGenerateColumns = false;
@@ -153,19 +153,39 @@ namespace PosAndAccountantProject
             dataset.PointStyle = PointStyle.Circle;
 
             // 3. Add Data Points (Matching your image: Feb 1 -> Feb 28)
-            DataTable SalesDt=clsSale.GetLast10TotalSaleByDay();
-            foreach(DataRow row in SalesDt.Rows)
+            DataTable SalesDt = clsSale.GetLast10TotalSaleByDay();
+            foreach (DataRow row in SalesDt.Rows)
             {
-                dataset.DataPoints.Add(Convert.ToDateTime( row["SaleDate"]).ToString("MM-dd"), Convert.ToDouble(row["TotalSale"]));
+                dataset.DataPoints.Add(Convert.ToDateTime(row["SaleDate"]).ToString("MM-dd"), Convert.ToDouble(row["TotalSale"]));
             }
 
-             
+
 
 
             // 4. Render to Chart
             chartSales.Datasets.Clear();
             chartSales.Datasets.Add(dataset);
             chartSales.Update();
+        }
+        private void _DayPurchase()
+        {
+            lblTodayPurchasesVal.Text = clsPurchase.GetDayPurchase().ToString();
+            decimal diff = clsPurchase.GetDiffPercentDayPurchase();
+            if (diff > 0)
+            {
+                lblTodayPurchasesTrend.Text = $"▲ {diff}% عن أمس";
+            }
+            else if (diff < 0)
+            {
+                lblTodayPurchasesTrend.Text = $"▼ {diff}% عن أمس";
+
+            }
+            else
+            {
+                lblTodayPurchasesTrend.Text = "بدون تغيير اليوم";
+
+            }
+
         }
         private void _LoadDashboardData()
         {
@@ -177,19 +197,16 @@ namespace PosAndAccountantProject
             _LastNewInvoices();
             _SalesChart();
 
-
-
-
+            lblCustomersDebtVal.Text = clsCustomer.GetAllCustomersDebt().ToString();
+            lblSuppliersDebtVal.Text=clsSupplier.GetAllSuppliersDebt().ToString(); 
+            lblStockValueVal.Text=clsProduct.GetTotalValueOfStock().ToString();
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
             _LoadDashboardData();
-            
-        }
-
-        private void btnRefreshDashboard_Click(object sender, EventArgs e)
-        {
 
         }
+
+         
     }
 }

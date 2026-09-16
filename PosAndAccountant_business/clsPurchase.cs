@@ -187,7 +187,28 @@ namespace PosAndAccountant_business
 
         }
 
-    }
+        public static decimal GetDayPurchase()
+        { return clsPurchaseData.GetDayPurchase(); }
+        public static decimal GetYesterdayPurchase()
+        {
+            return clsPurchaseData.GetYesterdayPurchase();
+        }
+        public static decimal GetDiffPercentDayPurchase()
+        {
+            decimal yesterday = GetYesterdayPurchase();
+            decimal today = GetDayPurchase();
+            if (yesterday > 0)
+
+                return (today / yesterday) * 100 - 100;
+
+            if (today == 0 && yesterday == 0) return 0;
+
+            return 100;
+        }
+
+
 
     }
+
+}
  

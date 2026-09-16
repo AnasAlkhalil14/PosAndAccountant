@@ -238,7 +238,67 @@ namespace PosAndAccountant_DataAccess
 
         }
 
+        public static decimal GetDayPurchase()
+        {
 
+            decimal TotalPurchase = 0;
+            string query = @"SELECT CAST(ISNULL(SUM(TotalAmount), 0) AS DECIMAL(10,2)) AS DayPurchase
+FROM Purchases
+WHERE CreateDate >= CAST(GETDATE() AS DATE)
+  AND CreateDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE));";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalPurchase = total;
+                        }
+                        else
+                        {
+                            TotalPurchase = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalPurchase;
+
+        }
+        public static decimal GetYesterdayPurchase()
+        {
+            decimal TotalPurchase = 0;
+            string query = @"SELECT CAST(ISNULL(SUM(TotalAmount), 0) AS DECIMAL(10,2)) AS DayPurchase
+FROM Purchases
+WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+  AND CreateDate < CAST(GETDATE() AS DATE);";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalPurchase = total;
+                        }
+                        else
+                        {
+                            TotalPurchase = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalPurchase;
+
+        }
 
     }
 }

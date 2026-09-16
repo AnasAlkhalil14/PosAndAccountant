@@ -182,6 +182,12 @@ namespace PosAndAccountant_business
         {
             return clsCustomerData.IsPersonCustomer(PersonID);
         }
+        public static decimal GetAllCustomersDebt()
+        {
+            return clsCustomerData.GetAllCustomersDebt();
+        }
+
+
 
     }
 }
