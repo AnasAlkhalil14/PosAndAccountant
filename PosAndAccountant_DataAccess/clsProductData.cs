@@ -284,6 +284,33 @@ namespace PosAndAccountant_DataAccess
             return isFound;
         }
 
+        public static decimal GetTotalValueOfStock()
+        {
 
+            decimal TotalValue = 0;
+            string query = @"select sum(CostPrice*QuantityInStock) from Products;";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalValue = total;
+                        }
+                        else
+                        {
+                            TotalValue = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalValue;
+
+        }
     }
 }

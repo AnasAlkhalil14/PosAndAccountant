@@ -441,7 +441,34 @@ FROM         Suppliers INNER JOIN
 
 
         }
+        public static decimal GetAllSuppliersDebt()
+        {
 
+            decimal TotalDebt = 0;  
+            string query = @"select sum(TotalRemainingDebt) from Suppliers ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                        {
+                            TotalDebt = total;
+                        }
+                        else
+                        {
+                            TotalDebt = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalDebt;
+
+        }
 
     }
 }

@@ -183,5 +183,11 @@ namespace PosAndAccountant_business
         {
             return clsProductData.DoesProductExistByID(ProductID);
         }
+        public static decimal GetTotalValueOfStock()
+        {
+            return clsProductData.GetTotalValueOfStock();
+        }
+
+
     }
 }
