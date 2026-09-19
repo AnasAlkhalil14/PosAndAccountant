@@ -1,6 +1,13 @@
 ﻿using Guna.Charts.WinForms;
 using PosAndAccountant_business;
+using PosAndAccountantProject.Customers;
+using PosAndAccountantProject.Dashboard;
+using PosAndAccountantProject.Partners;
+using PosAndAccountantProject.Products;
+using PosAndAccountantProject.Reports;
 using PosAndAccountantProject.Sales;
+using PosAndAccountantProject.Suppliers;
+using PosAndAccountantProject.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,193 +27,81 @@ namespace PosAndAccountantProject
             InitializeComponent();
         }
 
-        private void btnAddNewSale_Click(object sender, EventArgs e)
+
+        private Form _ActiveForm = null;
+        private void OpenChildForm(Form ChildForm)
         {
-            frmAddUpdateSale frm = new frmAddUpdateSale();
-            frm.ShowDialog();
+            if (_ActiveForm != null) { _ActiveForm.Close(); }
+
+            _ActiveForm = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(ChildForm);
+            panelContent.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+
         }
 
-        private void _DaySale()
-        {
-            lblTodaySalesVal.Text = clsSale.GetDaySale().ToString();
-            decimal diff = clsSale.GetDiffPercentDaySale();
-            if (diff > 0)
-            {
-                lblTodaySalesTrend.Text = $"▲ {diff}% عن أمس";
-            }
-            else if (diff < 0)
-            {
-                lblTodaySalesTrend.Text = $"▼ {diff}% عن أمس";
-
-            }
-            else
-            {
-                lblTodaySalesTrend.Text = "بدون تغيير اليوم";
-
-            }
-
-        }
-        private void _CountDaySale()
-        {
-            lblTotalOrdersVal.Text = clsSale.GetCountDaySale().ToString();
-            double diff = clsSale.GetDiffPercentCountDaySale();
-            if (diff > 0)
-            {
-                lblTotalOrdersTrend.Text = $"▲ {diff}% عن أمس";
-            }
-            else if (diff < 0)
-            {
-                lblTotalOrdersTrend.Text = $"▼ {diff}% عن أمس";
-
-            }
-            else
-            {
-                lblTotalOrdersTrend.Text = "بدون تغيير اليوم";
-
-            }
-
-        }
-        private void _DayProfit()
-
-        {
-            lblProfitVal.Text = clsSale.GetDayProfit().ToString();
-            decimal diff = clsSale.GetDiffPercentDayProfit();
-            if (diff > 0)
-            {
-                lblProfitTrend.Text = $"▲ {diff}% عن أمس";
-            }
-            else if (diff < 0)
-            {
-                lblProfitTrend.Text = $"▼ {diff}% عن أمس";
-
-            }
-            else
-            {
-                lblProfitTrend.Text = "بدون تغيير اليوم";
-
-            }
-
-        }
-        private void _DayCashPaid()
-
-
-        {
-            lblCashBalanceVal.Text = clsSale.GetDayPaid().ToString();
-            decimal diff = clsSale.GetDiffPercentDayPaid();
-            if (diff > 0)
-            {
-                lblCashBalanceTrend.Text = $"▲ {diff}% عن أمس";
-            }
-            else if (diff < 0)
-            {
-                lblCashBalanceTrend.Text = $"▼ {diff}% عن أمس";
-
-            }
-            else
-            {
-                lblCashBalanceTrend.Text = "بدون تغيير اليوم";
-
-            }
-
-        }
-        private void _LowStockProduct()
-        {
-            dgvLowStock.DataSource = clsProduct.GetLowStockProducts();
-
-
-            if (dgvLowStock.Rows.Count > 0)
-            {
-                dgvLowStock.Columns[0].HeaderText = "اسم المنتج";
-                dgvLowStock.Columns[1].HeaderText = "الكمية المتبقية";
-                dgvLowStock.Columns[2].HeaderText = "حد التنبيه";
-
-            }
-
-        }
-        private void _LastNewInvoices()
-        {
-            dgvRecentInvoices.AutoGenerateColumns = false;
-
-            dgvRecentInvoices.Columns.Clear();
-
-            dgvRecentInvoices.Columns.Add("SaleID", "رقم الفاتورة");
-            dgvRecentInvoices.Columns.Add("FullName", "اسم الزبون");
-            dgvRecentInvoices.Columns.Add("CreateTime", "الوقت");
-            dgvRecentInvoices.Columns.Add("TotalAmount", "المبلغ");
-
-            dgvRecentInvoices.DataSource = clsSale.GetLast10SalesToday();
-        }
-        private void _SalesChart()
-        {
-            chartSales.YAxes.GridLines.Color = Color.FromArgb(30, 255, 255, 255); // faint grid lines
-            chartSales.XAxes.GridLines.Display = false; // hide vertical grid lines
-            chartSales.YAxes.Ticks.ForeColor = Color.Gray;
-            chartSales.XAxes.Ticks.ForeColor = Color.Gray;
-
-            // 2. Create the Spline Area Dataset for smooth curved line with fill
-            GunaSplineAreaDataset dataset = new GunaSplineAreaDataset();
-
-            // Visual Styling (Line color & semi-transparent blue area underneath)
-            dataset.BorderColor = Color.FromArgb(50, 140, 255);      // Glowing blue line
-            dataset.FillColor = Color.FromArgb(35, 50, 140, 255);   // Faded fill color
-            dataset.PointRadius = 4;                                  // Circle points on nodes
-            dataset.PointStyle = PointStyle.Circle;
-
-            // 3. Add Data Points (Matching your image: Feb 1 -> Feb 28)
-            DataTable SalesDt = clsSale.GetLast10TotalSaleByDay();
-            foreach (DataRow row in SalesDt.Rows)
-            {
-                dataset.DataPoints.Add(Convert.ToDateTime(row["SaleDate"]).ToString("MM-dd"), Convert.ToDouble(row["TotalSale"]));
-            }
-
-
-
-
-            // 4. Render to Chart
-            chartSales.Datasets.Clear();
-            chartSales.Datasets.Add(dataset);
-            chartSales.Update();
-        }
-        private void _DayPurchase()
-        {
-            lblTodayPurchasesVal.Text = clsPurchase.GetDayPurchase().ToString();
-            decimal diff = clsPurchase.GetDiffPercentDayPurchase();
-            if (diff > 0)
-            {
-                lblTodayPurchasesTrend.Text = $"▲ {diff}% عن أمس";
-            }
-            else if (diff < 0)
-            {
-                lblTodayPurchasesTrend.Text = $"▼ {diff}% عن أمس";
-
-            }
-            else
-            {
-                lblTodayPurchasesTrend.Text = "بدون تغيير اليوم";
-
-            }
-
-        }
-        private void _LoadDashboardData()
-        {
-            _DaySale();
-            _CountDaySale();
-            _DayProfit();
-            _DayCashPaid();
-            _LowStockProduct();
-            _LastNewInvoices();
-            _SalesChart();
-
-            lblCustomersDebtVal.Text = clsCustomer.GetAllCustomersDebt().ToString();
-            lblSuppliersDebtVal.Text=clsSupplier.GetAllSuppliersDebt().ToString(); 
-            lblStockValueVal.Text=clsProduct.GetTotalValueOfStock().ToString();
-        }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            _LoadDashboardData();
+            btnDashBord.Checked = true;
+        }
+
+        private void btnAddNewSale_Click(object sender, EventArgs e)
+        {
 
         }
 
-         
+        private void btnDashBord_CheckedChanged(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmDashboard( ));
+        }
+
+        private void btnBooking_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmSalesList());
+
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmListProducts());
+
+
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmListCustomers());
+
+        }
+
+        private void btnVehicles_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmListSuppliers());
+
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmListUsers());
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmListPartners());
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCustomReportsWithAi());
+
+        }
     }
 }

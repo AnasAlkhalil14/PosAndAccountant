@@ -40,7 +40,9 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -100,6 +102,12 @@
     </Compile>
     <Compile Include="Customers\frmListCustomers.Designer.cs">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Expenses\frmAddUpdateExpense.cs">
       <SubType>Form</SubType>
@@ -272,6 +280,12 @@
     <Compile Include="Sales\frmAddUpdateSale.Designer.cs">
       <DependentUpon>frmAddUpdateSale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales\frmSalesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmSalesList.Designer.cs">
+      <DependentUpon>frmSalesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Suppliers\Controls\ctrlSupplierCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -358,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expenses\frmAddUpdateExpense.resx">
       <DependentUpon>frmAddUpdateExpense.cs</DependentUpon>
@@ -452,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\frmAddUpdateSale.resx">
       <DependentUpon>frmAddUpdateSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frmSalesList.resx">
+      <DependentUpon>frmSalesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Suppliers\Controls\ctrlSupplierCard.resx">
       <DependentUpon>ctrlSupplierCard.cs</DependentUpon>
@@ -621,6 +641,11 @@
   <ItemGroup>
     <None Include="Resources\plus.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\SalesList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaleList2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

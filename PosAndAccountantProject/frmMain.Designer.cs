@@ -3220,1203 +3220,55 @@ namespace PosAndAccountantProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.Charts.WinForms.ChartFont chartFont17 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont18 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont19 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont20 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid7 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick7 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont21 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid8 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick8 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont22 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid9 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel3 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont23 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick9 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont24 = new Guna.Charts.WinForms.ChartFont();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tcMain = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.pnlStockValueCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblStockValue = new System.Windows.Forms.Label();
-            this.lblStockValueVal = new System.Windows.Forms.Label();
-            this.lblStockValueHint = new System.Windows.Forms.Label();
-            this.pnlPayablesCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblPayables = new System.Windows.Forms.Label();
-            this.lblSuppliersDebtVal = new System.Windows.Forms.Label();
-            this.lblPayablesHint = new System.Windows.Forms.Label();
-            this.pnlReceivablesCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblReceivables = new System.Windows.Forms.Label();
-            this.lblCustomersDebtVal = new System.Windows.Forms.Label();
-            this.lblReceivablesHint = new System.Windows.Forms.Label();
-            this.pnlPurchaseCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTodayPurchases = new System.Windows.Forms.Label();
-            this.lblTodayPurchasesVal = new System.Windows.Forms.Label();
-            this.lblTodayPurchasesTrend = new System.Windows.Forms.Label();
-            this.pnlSalesOverview = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTimeFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.chartSales = new Guna.Charts.WinForms.GunaChart();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
-            this.lblDashboardTitle = new System.Windows.Forms.Label();
-            this.lblInvoices = new System.Windows.Forms.Label();
-            this.lblLowStock = new System.Windows.Forms.Label();
-            this.dgvRecentInvoices = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvLowStock = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.pnlUsersCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblProfitVal = new System.Windows.Forms.Label();
-            this.lblProfitTrend = new System.Windows.Forms.Label();
-            this.DDSFSFSF = new System.Windows.Forms.Label();
-            this.pnlOrdersCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalOrdersTrend = new System.Windows.Forms.Label();
-            this.lblTotalOrdersVal = new System.Windows.Forms.Label();
-            this.ddfsfsf = new System.Windows.Forms.Label();
-            this.pnlCashCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCashBalanceTrend = new System.Windows.Forms.Label();
-            this.lblCashBalanceVal = new System.Windows.Forms.Label();
-            this.DFSSFS = new System.Windows.Forms.Label();
-            this.pnlSalesCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTodaySalesTrend = new System.Windows.Forms.Label();
-            this.lblTodaySalesVal = new System.Windows.Forms.Label();
-            this.lblTodaySales = new System.Windows.Forms.Label();
-            this.tabSales = new System.Windows.Forms.TabPage();
-            this.btnListSales = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddNewSale = new Guna.UI2.WinForms.Guna2Button();
-            this.tabPurchases = new System.Windows.Forms.TabPage();
-            this.btnListPurchases = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddNewPurchase = new Guna.UI2.WinForms.Guna2Button();
-            this.tabProducts = new System.Windows.Forms.TabPage();
-            this.btnListProducts = new Guna.UI2.WinForms.Guna2Button();
-            this.btnListCategories = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddNewProduct = new Guna.UI2.WinForms.Guna2Button();
-            this.tabCustomers = new System.Windows.Forms.TabPage();
-            this.btnAddNewCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.btnListCustomers = new Guna.UI2.WinForms.Guna2Button();
-            this.tabSuppliers = new System.Windows.Forms.TabPage();
-            this.btnAddNewSupplier = new Guna.UI2.WinForms.Guna2Button();
-            this.btnListSuppliers = new Guna.UI2.WinForms.Guna2Button();
-            this.tabReports = new System.Windows.Forms.TabPage();
-            this.btnImportantReports = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCustomUsingAi = new Guna.UI2.WinForms.Guna2Button();
-            this.tabPartners = new System.Windows.Forms.TabPage();
-            this.btnWithdrawDeposit = new Guna.UI2.WinForms.Guna2Button();
-            this.btnListPartners = new Guna.UI2.WinForms.Guna2Button();
-            this.tabUsers = new System.Windows.Forms.TabPage();
-            this.btnAddNewUser = new Guna.UI2.WinForms.Guna2Button();
-            this.btnListUsers = new Guna.UI2.WinForms.Guna2Button();
-            this.tabSettings = new System.Windows.Forms.TabPage();
-            this.btnGeneralSettings = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBackupRestore = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCurrentUserInfo = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLowStockProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLowStockQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLowStockMinQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.tcMain.SuspendLayout();
-            this.tabDashboard.SuspendLayout();
-            this.pnlStockValueCard.SuspendLayout();
-            this.pnlPayablesCard.SuspendLayout();
-            this.pnlReceivablesCard.SuspendLayout();
-            this.pnlPurchaseCard.SuspendLayout();
-            this.pnlSalesOverview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLowStock)).BeginInit();
-            this.pnlUsersCard.SuspendLayout();
-            this.pnlOrdersCard.SuspendLayout();
-            this.pnlCashCard.SuspendLayout();
-            this.pnlSalesCard.SuspendLayout();
-            this.tabSales.SuspendLayout();
-            this.tabPurchases.SuspendLayout();
-            this.tabProducts.SuspendLayout();
-            this.tabCustomers.SuspendLayout();
-            this.tabSuppliers.SuspendLayout();
-            this.tabReports.SuspendLayout();
-            this.tabPartners.SuspendLayout();
-            this.tabUsers.SuspendLayout();
-            this.tabSettings.SuspendLayout();
+            this.colLowStockMinQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLowStockQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLowStockProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUsers = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCustomers = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTransaction = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnٍSales = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVehicles = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDashBord = new Guna.UI2.WinForms.Guna2Button();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tcMain
-            // 
-            this.tcMain.Alignment = System.Windows.Forms.TabAlignment.Right;
-            this.tcMain.Controls.Add(this.tabDashboard);
-            this.tcMain.Controls.Add(this.tabSales);
-            this.tcMain.Controls.Add(this.tabPurchases);
-            this.tcMain.Controls.Add(this.tabProducts);
-            this.tcMain.Controls.Add(this.tabCustomers);
-            this.tcMain.Controls.Add(this.tabSuppliers);
-            this.tcMain.Controls.Add(this.tabReports);
-            this.tcMain.Controls.Add(this.tabPartners);
-            this.tcMain.Controls.Add(this.tabUsers);
-            this.tcMain.Controls.Add(this.tabSettings);
-            this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMain.ItemSize = new System.Drawing.Size(180, 40);
-            this.tcMain.Location = new System.Drawing.Point(0, 0);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tcMain.RightToLeftLayout = true;
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(1184, 850);
-            this.tcMain.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.tcMain.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
-            this.tcMain.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.tcMain.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
-            this.tcMain.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
-            this.tcMain.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.tcMain.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.tcMain.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.tcMain.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-            this.tcMain.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.tcMain.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-            this.tcMain.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.tcMain.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.tcMain.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-            this.tcMain.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.tcMain.TabButtonSize = new System.Drawing.Size(180, 40);
-            this.tcMain.TabIndex = 0;
-            this.tcMain.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.tcMain.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.VerticalRight;
-            // 
-            // tabDashboard
-            // 
-            this.tabDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabDashboard.Controls.Add(this.pnlStockValueCard);
-            this.tabDashboard.Controls.Add(this.pnlPayablesCard);
-            this.tabDashboard.Controls.Add(this.pnlReceivablesCard);
-            this.tabDashboard.Controls.Add(this.pnlPurchaseCard);
-            this.tabDashboard.Controls.Add(this.pnlSalesOverview);
-            this.tabDashboard.Controls.Add(this.lblDashboardTitle);
-            this.tabDashboard.Controls.Add(this.lblInvoices);
-            this.tabDashboard.Controls.Add(this.lblLowStock);
-            this.tabDashboard.Controls.Add(this.dgvRecentInvoices);
-            this.tabDashboard.Controls.Add(this.dgvLowStock);
-            this.tabDashboard.Controls.Add(this.pnlUsersCard);
-            this.tabDashboard.Controls.Add(this.pnlOrdersCard);
-            this.tabDashboard.Controls.Add(this.pnlCashCard);
-            this.tabDashboard.Controls.Add(this.pnlSalesCard);
-            this.tabDashboard.Location = new System.Drawing.Point(4, 4);
-            this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabDashboard.Size = new System.Drawing.Size(996, 842);
-            this.tabDashboard.TabIndex = 0;
-            this.tabDashboard.Text = "Dashboard";
-            // 
-            // pnlStockValueCard
-            // 
-            this.pnlStockValueCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlStockValueCard.BorderRadius = 12;
-            this.pnlStockValueCard.Controls.Add(this.lblStockValue);
-            this.pnlStockValueCard.Controls.Add(this.lblStockValueVal);
-            this.pnlStockValueCard.Controls.Add(this.lblStockValueHint);
-            this.pnlStockValueCard.FillColor = System.Drawing.Color.White;
-            this.pnlStockValueCard.Location = new System.Drawing.Point(50, 184);
-            this.pnlStockValueCard.Name = "pnlStockValueCard";
-            this.pnlStockValueCard.ShadowDecoration.Enabled = true;
-            this.pnlStockValueCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlStockValueCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlStockValueCard.TabIndex = 27;
-            // 
-            // lblStockValue
-            // 
-            this.lblStockValue.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblStockValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblStockValue.Location = new System.Drawing.Point(34, 0);
-            this.lblStockValue.Name = "lblStockValue";
-            this.lblStockValue.Size = new System.Drawing.Size(105, 20);
-            this.lblStockValue.TabIndex = 0;
-            this.lblStockValue.Text = "قيمة المخزون";
-            this.lblStockValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStockValueVal
-            // 
-            this.lblStockValueVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.lblStockValueVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.lblStockValueVal.Location = new System.Drawing.Point(38, 31);
-            this.lblStockValueVal.Name = "lblStockValueVal";
-            this.lblStockValueVal.Size = new System.Drawing.Size(93, 31);
-            this.lblStockValueVal.TabIndex = 1;
-            this.lblStockValueVal.Text = "0.00";
-            this.lblStockValueVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStockValueHint
-            // 
-            this.lblStockValueHint.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblStockValueHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblStockValueHint.Location = new System.Drawing.Point(3, 69);
-            this.lblStockValueHint.Name = "lblStockValueHint";
-            this.lblStockValueHint.Size = new System.Drawing.Size(135, 18);
-            this.lblStockValueHint.TabIndex = 2;
-            this.lblStockValueHint.Text = "القيمة التقديرية";
-            this.lblStockValueHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnlPayablesCard
-            // 
-            this.pnlPayablesCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPayablesCard.BorderRadius = 12;
-            this.pnlPayablesCard.Controls.Add(this.lblPayables);
-            this.pnlPayablesCard.Controls.Add(this.lblSuppliersDebtVal);
-            this.pnlPayablesCard.Controls.Add(this.lblPayablesHint);
-            this.pnlPayablesCard.FillColor = System.Drawing.Color.White;
-            this.pnlPayablesCard.Location = new System.Drawing.Point(284, 184);
-            this.pnlPayablesCard.Name = "pnlPayablesCard";
-            this.pnlPayablesCard.ShadowDecoration.Enabled = true;
-            this.pnlPayablesCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlPayablesCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlPayablesCard.TabIndex = 28;
-            // 
-            // lblPayables
-            // 
-            this.lblPayables.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPayables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblPayables.Location = new System.Drawing.Point(25, 0);
-            this.lblPayables.Name = "lblPayables";
-            this.lblPayables.Size = new System.Drawing.Size(113, 20);
-            this.lblPayables.TabIndex = 0;
-            this.lblPayables.Text = "ديون من الموردين ";
-            this.lblPayables.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSuppliersDebtVal
-            // 
-            this.lblSuppliersDebtVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.lblSuppliersDebtVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.lblSuppliersDebtVal.Location = new System.Drawing.Point(4, 31);
-            this.lblSuppliersDebtVal.Name = "lblSuppliersDebtVal";
-            this.lblSuppliersDebtVal.Size = new System.Drawing.Size(134, 31);
-            this.lblSuppliersDebtVal.TabIndex = 1;
-            this.lblSuppliersDebtVal.Text = "0.00 ل.س";
-            this.lblSuppliersDebtVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblPayablesHint
-            // 
-            this.lblPayablesHint.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblPayablesHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblPayablesHint.Location = new System.Drawing.Point(20, 69);
-            this.lblPayablesHint.Name = "lblPayablesHint";
-            this.lblPayablesHint.Size = new System.Drawing.Size(122, 18);
-            this.lblPayablesHint.TabIndex = 2;
-            this.lblPayablesHint.Text = "المبالغ المستحقة";
-            this.lblPayablesHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnlReceivablesCard
-            // 
-            this.pnlReceivablesCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlReceivablesCard.BorderRadius = 12;
-            this.pnlReceivablesCard.Controls.Add(this.lblReceivables);
-            this.pnlReceivablesCard.Controls.Add(this.lblCustomersDebtVal);
-            this.pnlReceivablesCard.Controls.Add(this.lblReceivablesHint);
-            this.pnlReceivablesCard.FillColor = System.Drawing.Color.White;
-            this.pnlReceivablesCard.Location = new System.Drawing.Point(535, 184);
-            this.pnlReceivablesCard.Name = "pnlReceivablesCard";
-            this.pnlReceivablesCard.ShadowDecoration.Enabled = true;
-            this.pnlReceivablesCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlReceivablesCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlReceivablesCard.TabIndex = 29;
-            // 
-            // lblReceivables
-            // 
-            this.lblReceivables.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblReceivables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblReceivables.Location = new System.Drawing.Point(25, 0);
-            this.lblReceivables.Name = "lblReceivables";
-            this.lblReceivables.Size = new System.Drawing.Size(100, 20);
-            this.lblReceivables.TabIndex = 0;
-            this.lblReceivables.Text = "ديون العملاء";
-            this.lblReceivables.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCustomersDebtVal
-            // 
-            this.lblCustomersDebtVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.lblCustomersDebtVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
-            this.lblCustomersDebtVal.Location = new System.Drawing.Point(23, 31);
-            this.lblCustomersDebtVal.Name = "lblCustomersDebtVal";
-            this.lblCustomersDebtVal.Size = new System.Drawing.Size(124, 31);
-            this.lblCustomersDebtVal.TabIndex = 1;
-            this.lblCustomersDebtVal.Text = "0.00 ل.س";
-            this.lblCustomersDebtVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblReceivablesHint
-            // 
-            this.lblReceivablesHint.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblReceivablesHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblReceivablesHint.Location = new System.Drawing.Point(45, 69);
-            this.lblReceivablesHint.Name = "lblReceivablesHint";
-            this.lblReceivablesHint.Size = new System.Drawing.Size(102, 18);
-            this.lblReceivablesHint.TabIndex = 2;
-            this.lblReceivablesHint.Text = "المبالغ المستحقة";
-            this.lblReceivablesHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnlPurchaseCard
-            // 
-            this.pnlPurchaseCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPurchaseCard.BorderRadius = 12;
-            this.pnlPurchaseCard.Controls.Add(this.lblTodayPurchases);
-            this.pnlPurchaseCard.Controls.Add(this.lblTodayPurchasesVal);
-            this.pnlPurchaseCard.Controls.Add(this.lblTodayPurchasesTrend);
-            this.pnlPurchaseCard.FillColor = System.Drawing.Color.White;
-            this.pnlPurchaseCard.Location = new System.Drawing.Point(774, 184);
-            this.pnlPurchaseCard.Name = "pnlPurchaseCard";
-            this.pnlPurchaseCard.ShadowDecoration.Enabled = true;
-            this.pnlPurchaseCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlPurchaseCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlPurchaseCard.TabIndex = 30;
-            // 
-            // lblTodayPurchases
-            // 
-            this.lblTodayPurchases.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblTodayPurchases.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblTodayPurchases.Location = new System.Drawing.Point(3, 0);
-            this.lblTodayPurchases.Name = "lblTodayPurchases";
-            this.lblTodayPurchases.Size = new System.Drawing.Size(130, 20);
-            this.lblTodayPurchases.TabIndex = 0;
-            this.lblTodayPurchases.Text = "مشتريات اليوم";
-            this.lblTodayPurchases.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTodayPurchasesVal
-            // 
-            this.lblTodayPurchasesVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.lblTodayPurchasesVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(67)))));
-            this.lblTodayPurchasesVal.Location = new System.Drawing.Point(7, 31);
-            this.lblTodayPurchasesVal.Name = "lblTodayPurchasesVal";
-            this.lblTodayPurchasesVal.Size = new System.Drawing.Size(145, 31);
-            this.lblTodayPurchasesVal.TabIndex = 1;
-            this.lblTodayPurchasesVal.Text = "0.00 ل.س";
-            this.lblTodayPurchasesVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTodayPurchasesTrend
-            // 
-            this.lblTodayPurchasesTrend.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblTodayPurchasesTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblTodayPurchasesTrend.Location = new System.Drawing.Point(20, 69);
-            this.lblTodayPurchasesTrend.Name = "lblTodayPurchasesTrend";
-            this.lblTodayPurchasesTrend.Size = new System.Drawing.Size(132, 18);
-            this.lblTodayPurchasesTrend.TabIndex = 2;
-            this.lblTodayPurchasesTrend.Text = "إجمالي المشتريات";
-            this.lblTodayPurchasesTrend.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnlSalesOverview
-            // 
-            this.pnlSalesOverview.BorderRadius = 12;
-            this.pnlSalesOverview.Controls.Add(this.label2);
-            this.pnlSalesOverview.Controls.Add(this.cmbTimeFilter);
-            this.pnlSalesOverview.Controls.Add(this.chartSales);
-            this.pnlSalesOverview.FillColor = System.Drawing.Color.White;
-            this.pnlSalesOverview.Location = new System.Drawing.Point(267, 561);
-            this.pnlSalesOverview.Name = "pnlSalesOverview";
-            this.pnlSalesOverview.Size = new System.Drawing.Size(542, 244);
-            this.pnlSalesOverview.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(231, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 21);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "مؤشر المبيعات";
-            // 
-            // cmbTimeFilter
-            // 
-            this.cmbTimeFilter.BackColor = System.Drawing.Color.Transparent;
-            this.cmbTimeFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.cmbTimeFilter.BorderRadius = 6;
-            this.cmbTimeFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbTimeFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTimeFilter.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbTimeFilter.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbTimeFilter.ForeColor = System.Drawing.Color.Black;
-            this.cmbTimeFilter.ItemHeight = 22;
-            this.cmbTimeFilter.Items.AddRange(new object[] {
-            "اخر عشر ايام",
-            "اخر عشرة اشهر"});
-            this.cmbTimeFilter.Location = new System.Drawing.Point(388, 12);
-            this.cmbTimeFilter.Name = "cmbTimeFilter";
-            this.cmbTimeFilter.Size = new System.Drawing.Size(130, 28);
-            this.cmbTimeFilter.StartIndex = 0;
-            this.cmbTimeFilter.TabIndex = 14;
-            // 
-            // chartSales
-            // 
-            this.chartSales.BackColor = System.Drawing.Color.Transparent;
-            this.chartSales.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] {
-            this.gunaAreaDataset1});
-            this.chartSales.Legend.Display = false;
-            chartFont17.FontName = "Arial";
-            this.chartSales.Legend.LabelFont = chartFont17;
-            this.chartSales.Location = new System.Drawing.Point(16, 58);
-            this.chartSales.Name = "chartSales";
-            this.chartSales.Size = new System.Drawing.Size(512, 177);
-            this.chartSales.TabIndex = 11;
-            chartFont18.FontName = "Arial";
-            chartFont18.Size = 12;
-            chartFont18.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chartSales.Title.Font = chartFont18;
-            chartFont19.FontName = "Arial";
-            this.chartSales.Tooltips.BodyFont = chartFont19;
-            chartFont20.FontName = "Arial";
-            chartFont20.Size = 9;
-            chartFont20.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chartSales.Tooltips.TitleFont = chartFont20;
-            this.chartSales.XAxes.GridLines = grid7;
-            chartFont21.FontName = "Arial";
-            tick7.Font = chartFont21;
-            this.chartSales.XAxes.Ticks = tick7;
-            this.chartSales.YAxes.GridLines = grid8;
-            chartFont22.FontName = "Arial";
-            tick8.Font = chartFont22;
-            this.chartSales.YAxes.Ticks = tick8;
-            this.chartSales.ZAxes.GridLines = grid9;
-            chartFont23.FontName = "Arial";
-            pointLabel3.Font = chartFont23;
-            this.chartSales.ZAxes.PointLabels = pointLabel3;
-            chartFont24.FontName = "Arial";
-            tick9.Font = chartFont24;
-            this.chartSales.ZAxes.Ticks = tick9;
             // 
             // gunaAreaDataset1
             // 
             this.gunaAreaDataset1.BorderColor = System.Drawing.Color.Empty;
             this.gunaAreaDataset1.FillColor = System.Drawing.Color.Empty;
             this.gunaAreaDataset1.Label = "Area1";
-            this.gunaAreaDataset1.TargetChart = this.chartSales;
             // 
-            // lblDashboardTitle
+            // colLowStockMinQty
             // 
-            this.lblDashboardTitle.AutoSize = true;
-            this.lblDashboardTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboardTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.lblDashboardTitle.Location = new System.Drawing.Point(807, 3);
-            this.lblDashboardTitle.Name = "lblDashboardTitle";
-            this.lblDashboardTitle.Size = new System.Drawing.Size(189, 30);
-            this.lblDashboardTitle.TabIndex = 9;
-            this.lblDashboardTitle.Text = "لوحة التحكم الرئيسية";
+            this.colLowStockMinQty.HeaderText = "حد التنبيه";
+            this.colLowStockMinQty.MinimumWidth = 6;
+            this.colLowStockMinQty.Name = "colLowStockMinQty";
+            this.colLowStockMinQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colLowStockMinQty.Width = 129;
             // 
-            // lblInvoices
+            // colLowStockQty
             // 
-            this.lblInvoices.AutoSize = true;
-            this.lblInvoices.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoices.Location = new System.Drawing.Point(362, 299);
-            this.lblInvoices.Name = "lblInvoices";
-            this.lblInvoices.Size = new System.Drawing.Size(139, 21);
-            this.lblInvoices.TabIndex = 7;
-            this.lblInvoices.Text = " أحدث الفواتير  اليوم";
-            // 
-            // lblLowStock
-            // 
-            this.lblLowStock.AutoSize = true;
-            this.lblLowStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowStock.Location = new System.Drawing.Point(754, 299);
-            this.lblLowStock.Name = "lblLowStock";
-            this.lblLowStock.Size = new System.Drawing.Size(172, 21);
-            this.lblLowStock.TabIndex = 6;
-            this.lblLowStock.Text = "منتجات منخفضة المخزون";
-            // 
-            // dgvRecentInvoices
-            // 
-            this.dgvRecentInvoices.AllowUserToAddRows = false;
-            this.dgvRecentInvoices.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgvRecentInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvRecentInvoices.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecentInvoices.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvRecentInvoices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRecentInvoices.Location = new System.Drawing.Point(39, 323);
-            this.dgvRecentInvoices.Name = "dgvRecentInvoices";
-            this.dgvRecentInvoices.ReadOnly = true;
-            this.dgvRecentInvoices.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvRecentInvoices.RowHeadersVisible = false;
-            this.dgvRecentInvoices.RowHeadersWidth = 51;
-            this.dgvRecentInvoices.RowTemplate.Height = 30;
-            this.dgvRecentInvoices.Size = new System.Drawing.Size(462, 232);
-            this.dgvRecentInvoices.TabIndex = 5;
-            this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvRecentInvoices.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRecentInvoices.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRecentInvoices.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            this.dgvRecentInvoices.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvRecentInvoices.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRecentInvoices.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvRecentInvoices.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvRecentInvoices.ThemeStyle.HeaderStyle.Height = 34;
-            this.dgvRecentInvoices.ThemeStyle.ReadOnly = true;
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.Height = 30;
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRecentInvoices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // dgvLowStock
-            // 
-            this.dgvLowStock.AllowUserToAddRows = false;
-            this.dgvLowStock.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvLowStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLowStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvLowStock.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLowStock.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvLowStock.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLowStock.Location = new System.Drawing.Point(529, 323);
-            this.dgvLowStock.Name = "dgvLowStock";
-            this.dgvLowStock.ReadOnly = true;
-            this.dgvLowStock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvLowStock.RowHeadersVisible = false;
-            this.dgvLowStock.RowHeadersWidth = 51;
-            this.dgvLowStock.RowTemplate.Height = 30;
-            this.dgvLowStock.Size = new System.Drawing.Size(450, 232);
-            this.dgvLowStock.TabIndex = 4;
-            this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvLowStock.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvLowStock.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLowStock.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.dgvLowStock.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvLowStock.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvLowStock.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvLowStock.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvLowStock.ThemeStyle.HeaderStyle.Height = 34;
-            this.dgvLowStock.ThemeStyle.ReadOnly = true;
-            this.dgvLowStock.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvLowStock.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvLowStock.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvLowStock.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvLowStock.ThemeStyle.RowsStyle.Height = 30;
-            this.dgvLowStock.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLowStock.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // pnlUsersCard
-            // 
-            this.pnlUsersCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlUsersCard.BorderRadius = 10;
-            this.pnlUsersCard.Controls.Add(this.lblProfitVal);
-            this.pnlUsersCard.Controls.Add(this.lblProfitTrend);
-            this.pnlUsersCard.Controls.Add(this.DDSFSFSF);
-            this.pnlUsersCard.FillColor = System.Drawing.Color.White;
-            this.pnlUsersCard.Location = new System.Drawing.Point(284, 70);
-            this.pnlUsersCard.Name = "pnlUsersCard";
-            this.pnlUsersCard.ShadowDecoration.Enabled = true;
-            this.pnlUsersCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlUsersCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlUsersCard.TabIndex = 3;
-            // 
-            // lblProfitVal
-            // 
-            this.lblProfitVal.AutoSize = true;
-            this.lblProfitVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F, System.Drawing.FontStyle.Bold);
-            this.lblProfitVal.ForeColor = System.Drawing.Color.Red;
-            this.lblProfitVal.Location = new System.Drawing.Point(18, 36);
-            this.lblProfitVal.Name = "lblProfitVal";
-            this.lblProfitVal.Size = new System.Drawing.Size(162, 26);
-            this.lblProfitVal.TabIndex = 3;
-            this.lblProfitVal.Text = "15,240.50 ل.س";
-            // 
-            // lblProfitTrend
-            // 
-            this.lblProfitTrend.AutoSize = true;
-            this.lblProfitTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfitTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.lblProfitTrend.Location = new System.Drawing.Point(46, 69);
-            this.lblProfitTrend.Name = "lblProfitTrend";
-            this.lblProfitTrend.Size = new System.Drawing.Size(85, 15);
-            this.lblProfitTrend.TabIndex = 2;
-            this.lblProfitTrend.Text = "بدون تغيير اليوم";
-            // 
-            // DDSFSFSF
-            // 
-            this.DDSFSFSF.AutoSize = true;
-            this.DDSFSFSF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DDSFSFSF.ForeColor = System.Drawing.Color.Gray;
-            this.DDSFSFSF.Location = new System.Drawing.Point(59, 0);
-            this.DDSFSFSF.Name = "DDSFSFSF";
-            this.DDSFSFSF.Size = new System.Drawing.Size(72, 20);
-            this.DDSFSFSF.TabIndex = 0;
-            this.DDSFSFSF.Text = "ارباح اليوم";
-            // 
-            // pnlOrdersCard
-            // 
-            this.pnlOrdersCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlOrdersCard.BorderRadius = 10;
-            this.pnlOrdersCard.Controls.Add(this.lblTotalOrdersTrend);
-            this.pnlOrdersCard.Controls.Add(this.lblTotalOrdersVal);
-            this.pnlOrdersCard.Controls.Add(this.ddfsfsf);
-            this.pnlOrdersCard.FillColor = System.Drawing.Color.White;
-            this.pnlOrdersCard.Location = new System.Drawing.Point(50, 70);
-            this.pnlOrdersCard.Name = "pnlOrdersCard";
-            this.pnlOrdersCard.ShadowDecoration.Enabled = true;
-            this.pnlOrdersCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlOrdersCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlOrdersCard.TabIndex = 2;
-            // 
-            // lblTotalOrdersTrend
-            // 
-            this.lblTotalOrdersTrend.AutoSize = true;
-            this.lblTotalOrdersTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalOrdersTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.lblTotalOrdersTrend.Location = new System.Drawing.Point(40, 69);
-            this.lblTotalOrdersTrend.Name = "lblTotalOrdersTrend";
-            this.lblTotalOrdersTrend.Size = new System.Drawing.Size(82, 15);
-            this.lblTotalOrdersTrend.TabIndex = 2;
-            this.lblTotalOrdersTrend.Text = "▲ 8% عن أمس";
-            // 
-            // lblTotalOrdersVal
-            // 
-            this.lblTotalOrdersVal.AutoSize = true;
-            this.lblTotalOrdersVal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalOrdersVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.lblTotalOrdersVal.Location = new System.Drawing.Point(58, 30);
-            this.lblTotalOrdersVal.Name = "lblTotalOrdersVal";
-            this.lblTotalOrdersVal.Size = new System.Drawing.Size(65, 37);
-            this.lblTotalOrdersVal.TabIndex = 1;
-            this.lblTotalOrdersVal.Text = "143";
-            // 
-            // ddfsfsf
-            // 
-            this.ddfsfsf.AutoSize = true;
-            this.ddfsfsf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddfsfsf.ForeColor = System.Drawing.Color.Gray;
-            this.ddfsfsf.Location = new System.Drawing.Point(39, 0);
-            this.ddfsfsf.Name = "ddfsfsf";
-            this.ddfsfsf.Size = new System.Drawing.Size(109, 20);
-            this.ddfsfsf.TabIndex = 0;
-            this.ddfsfsf.Text = "عدد فواتير اليوم";
-            // 
-            // pnlCashCard
-            // 
-            this.pnlCashCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlCashCard.BorderRadius = 10;
-            this.pnlCashCard.Controls.Add(this.lblCashBalanceTrend);
-            this.pnlCashCard.Controls.Add(this.lblCashBalanceVal);
-            this.pnlCashCard.Controls.Add(this.DFSSFS);
-            this.pnlCashCard.FillColor = System.Drawing.Color.White;
-            this.pnlCashCard.Location = new System.Drawing.Point(529, 70);
-            this.pnlCashCard.Name = "pnlCashCard";
-            this.pnlCashCard.ShadowDecoration.Enabled = true;
-            this.pnlCashCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlCashCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlCashCard.TabIndex = 1;
-            // 
-            // lblCashBalanceTrend
-            // 
-            this.lblCashBalanceTrend.AutoSize = true;
-            this.lblCashBalanceTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCashBalanceTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.lblCashBalanceTrend.Location = new System.Drawing.Point(22, 69);
-            this.lblCashBalanceTrend.Name = "lblCashBalanceTrend";
-            this.lblCashBalanceTrend.Size = new System.Drawing.Size(95, 15);
-            this.lblCashBalanceTrend.TabIndex = 2;
-            this.lblCashBalanceTrend.Text = "▲ 5.2% عن أمس ";
-            // 
-            // lblCashBalanceVal
-            // 
-            this.lblCashBalanceVal.AutoSize = true;
-            this.lblCashBalanceVal.Font = new System.Drawing.Font("Segoe UI", 16.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCashBalanceVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.lblCashBalanceVal.Location = new System.Drawing.Point(20, 36);
-            this.lblCashBalanceVal.Name = "lblCashBalanceVal";
-            this.lblCashBalanceVal.Size = new System.Drawing.Size(169, 30);
-            this.lblCashBalanceVal.TabIndex = 1;
-            this.lblCashBalanceVal.Text = "15,240.50 ل.س";
-            // 
-            // DFSSFS
-            // 
-            this.DFSSFS.AutoSize = true;
-            this.DFSSFS.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DFSSFS.ForeColor = System.Drawing.Color.Gray;
-            this.DFSSFS.Location = new System.Drawing.Point(21, 0);
-            this.DFSSFS.Name = "DFSSFS";
-            this.DFSSFS.Size = new System.Drawing.Size(145, 20);
-            this.DFSSFS.TabIndex = 0;
-            this.DFSSFS.Tag = " ";
-            this.DFSSFS.Text = "رصيد الصندوق الكاش";
-            // 
-            // pnlSalesCard
-            // 
-            this.pnlSalesCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlSalesCard.BorderRadius = 10;
-            this.pnlSalesCard.Controls.Add(this.lblTodaySalesTrend);
-            this.pnlSalesCard.Controls.Add(this.lblTodaySalesVal);
-            this.pnlSalesCard.Controls.Add(this.lblTodaySales);
-            this.pnlSalesCard.FillColor = System.Drawing.Color.White;
-            this.pnlSalesCard.Location = new System.Drawing.Point(774, 70);
-            this.pnlSalesCard.Name = "pnlSalesCard";
-            this.pnlSalesCard.ShadowDecoration.Enabled = true;
-            this.pnlSalesCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlSalesCard.Size = new System.Drawing.Size(183, 98);
-            this.pnlSalesCard.TabIndex = 0;
-            // 
-            // lblTodaySalesTrend
-            // 
-            this.lblTodaySalesTrend.AutoSize = true;
-            this.lblTodaySalesTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodaySalesTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
-            this.lblTodaySalesTrend.Location = new System.Drawing.Point(22, 69);
-            this.lblTodaySalesTrend.Name = "lblTodaySalesTrend";
-            this.lblTodaySalesTrend.Size = new System.Drawing.Size(88, 15);
-            this.lblTodaySalesTrend.TabIndex = 2;
-            this.lblTodaySalesTrend.Text = "▼ 3%  عن أمس ";
-            // 
-            // lblTodaySalesVal
-            // 
-            this.lblTodaySalesVal.AutoSize = true;
-            this.lblTodaySalesVal.Font = new System.Drawing.Font("Segoe UI", 16.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodaySalesVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.lblTodaySalesVal.Location = new System.Drawing.Point(20, 30);
-            this.lblTodaySalesVal.Name = "lblTodaySalesVal";
-            this.lblTodaySalesVal.Size = new System.Drawing.Size(156, 30);
-            this.lblTodaySalesVal.TabIndex = 1;
-            this.lblTodaySalesVal.Text = "4,250.00 ل.س";
-            // 
-            // lblTodaySales
-            // 
-            this.lblTodaySales.AutoSize = true;
-            this.lblTodaySales.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodaySales.ForeColor = System.Drawing.Color.Gray;
-            this.lblTodaySales.Location = new System.Drawing.Point(21, 0);
-            this.lblTodaySales.Name = "lblTodaySales";
-            this.lblTodaySales.Size = new System.Drawing.Size(90, 20);
-            this.lblTodaySales.TabIndex = 0;
-            this.lblTodaySales.Text = "مبيعات اليوم";
-            // 
-            // tabSales
-            // 
-            this.tabSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabSales.Controls.Add(this.btnListSales);
-            this.tabSales.Controls.Add(this.btnAddNewSale);
-            this.tabSales.Location = new System.Drawing.Point(4, 4);
-            this.tabSales.Name = "tabSales";
-            this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(996, 842);
-            this.tabSales.TabIndex = 1;
-            this.tabSales.Text = "المبيعات";
-            // 
-            // btnListSales
-            // 
-            this.btnListSales.BorderRadius = 15;
-            this.btnListSales.FillColor = System.Drawing.Color.White;
-            this.btnListSales.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListSales.Location = new System.Drawing.Point(427, 59);
-            this.btnListSales.Name = "btnListSales";
-            this.btnListSales.Size = new System.Drawing.Size(239, 172);
-            this.btnListSales.TabIndex = 1;
-            this.btnListSales.Text = "قائمة المبيعات";
-            // 
-            // btnAddNewSale
-            // 
-            this.btnAddNewSale.BorderRadius = 15;
-            this.btnAddNewSale.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.btnAddNewSale.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewSale.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewSale.Location = new System.Drawing.Point(700, 59);
-            this.btnAddNewSale.Name = "btnAddNewSale";
-            this.btnAddNewSale.Size = new System.Drawing.Size(239, 172);
-            this.btnAddNewSale.TabIndex = 0;
-            this.btnAddNewSale.Text = "+ إضافة بيع جديد";
-            this.btnAddNewSale.Click += new System.EventHandler(this.btnAddNewSale_Click);
-            // 
-            // tabPurchases
-            // 
-            this.tabPurchases.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabPurchases.Controls.Add(this.btnListPurchases);
-            this.tabPurchases.Controls.Add(this.btnAddNewPurchase);
-            this.tabPurchases.Location = new System.Drawing.Point(4, 4);
-            this.tabPurchases.Name = "tabPurchases";
-            this.tabPurchases.Size = new System.Drawing.Size(996, 842);
-            this.tabPurchases.TabIndex = 2;
-            this.tabPurchases.Text = "المشتريات";
-            // 
-            // btnListPurchases
-            // 
-            this.btnListPurchases.BorderRadius = 15;
-            this.btnListPurchases.FillColor = System.Drawing.Color.White;
-            this.btnListPurchases.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListPurchases.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListPurchases.Location = new System.Drawing.Point(427, 59);
-            this.btnListPurchases.Name = "btnListPurchases";
-            this.btnListPurchases.Size = new System.Drawing.Size(239, 172);
-            this.btnListPurchases.TabIndex = 3;
-            this.btnListPurchases.Text = "قائمة المشتريات";
-            // 
-            // btnAddNewPurchase
-            // 
-            this.btnAddNewPurchase.BorderRadius = 15;
-            this.btnAddNewPurchase.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.btnAddNewPurchase.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewPurchase.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewPurchase.Location = new System.Drawing.Point(700, 59);
-            this.btnAddNewPurchase.Name = "btnAddNewPurchase";
-            this.btnAddNewPurchase.Size = new System.Drawing.Size(239, 172);
-            this.btnAddNewPurchase.TabIndex = 2;
-            this.btnAddNewPurchase.Text = "+ إضافة شراء جديد";
-            // 
-            // tabProducts
-            // 
-            this.tabProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabProducts.Controls.Add(this.btnListProducts);
-            this.tabProducts.Controls.Add(this.btnListCategories);
-            this.tabProducts.Controls.Add(this.btnAddNewProduct);
-            this.tabProducts.Location = new System.Drawing.Point(4, 4);
-            this.tabProducts.Name = "tabProducts";
-            this.tabProducts.Size = new System.Drawing.Size(996, 842);
-            this.tabProducts.TabIndex = 3;
-            this.tabProducts.Text = "المنتجات";
-            // 
-            // btnListProducts
-            // 
-            this.btnListProducts.BorderRadius = 15;
-            this.btnListProducts.FillColor = System.Drawing.Color.White;
-            this.btnListProducts.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListProducts.Location = new System.Drawing.Point(154, 59);
-            this.btnListProducts.Name = "btnListProducts";
-            this.btnListProducts.Size = new System.Drawing.Size(239, 172);
-            this.btnListProducts.TabIndex = 2;
-            this.btnListProducts.Text = "قائمة المنتجات";
-            // 
-            // btnListCategories
-            // 
-            this.btnListCategories.BorderRadius = 15;
-            this.btnListCategories.FillColor = System.Drawing.Color.White;
-            this.btnListCategories.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListCategories.Location = new System.Drawing.Point(427, 59);
-            this.btnListCategories.Name = "btnListCategories";
-            this.btnListCategories.Size = new System.Drawing.Size(239, 172);
-            this.btnListCategories.TabIndex = 3;
-            this.btnListCategories.Text = "قائمة الأقسام";
-            // 
-            // btnAddNewProduct
-            // 
-            this.btnAddNewProduct.BorderRadius = 15;
-            this.btnAddNewProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(67)))));
-            this.btnAddNewProduct.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewProduct.Location = new System.Drawing.Point(700, 59);
-            this.btnAddNewProduct.Name = "btnAddNewProduct";
-            this.btnAddNewProduct.Size = new System.Drawing.Size(239, 172);
-            this.btnAddNewProduct.TabIndex = 4;
-            this.btnAddNewProduct.Text = "+ إضافة منتج جديد";
-            // 
-            // tabCustomers
-            // 
-            this.tabCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabCustomers.Controls.Add(this.btnAddNewCustomer);
-            this.tabCustomers.Controls.Add(this.btnListCustomers);
-            this.tabCustomers.Location = new System.Drawing.Point(4, 4);
-            this.tabCustomers.Name = "tabCustomers";
-            this.tabCustomers.Size = new System.Drawing.Size(996, 842);
-            this.tabCustomers.TabIndex = 4;
-            this.tabCustomers.Text = "العملاء";
-            // 
-            // btnAddNewCustomer
-            // 
-            this.btnAddNewCustomer.BorderRadius = 15;
-            this.btnAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
-            this.btnAddNewCustomer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewCustomer.Location = new System.Drawing.Point(700, 59);
-            this.btnAddNewCustomer.Name = "btnAddNewCustomer";
-            this.btnAddNewCustomer.Size = new System.Drawing.Size(239, 172);
-            this.btnAddNewCustomer.TabIndex = 5;
-            this.btnAddNewCustomer.Text = "+ إضافة عميل جديد";
-            // 
-            // btnListCustomers
-            // 
-            this.btnListCustomers.BorderRadius = 15;
-            this.btnListCustomers.FillColor = System.Drawing.Color.White;
-            this.btnListCustomers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListCustomers.Location = new System.Drawing.Point(427, 59);
-            this.btnListCustomers.Name = "btnListCustomers";
-            this.btnListCustomers.Size = new System.Drawing.Size(239, 172);
-            this.btnListCustomers.TabIndex = 4;
-            this.btnListCustomers.Text = "قائمة العملاء";
-            // 
-            // tabSuppliers
-            // 
-            this.tabSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabSuppliers.Controls.Add(this.btnAddNewSupplier);
-            this.tabSuppliers.Controls.Add(this.btnListSuppliers);
-            this.tabSuppliers.Location = new System.Drawing.Point(4, 4);
-            this.tabSuppliers.Name = "tabSuppliers";
-            this.tabSuppliers.Size = new System.Drawing.Size(996, 842);
-            this.tabSuppliers.TabIndex = 5;
-            this.tabSuppliers.Text = "الموردين";
-            // 
-            // btnAddNewSupplier
-            // 
-            this.btnAddNewSupplier.BorderRadius = 15;
-            this.btnAddNewSupplier.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(232)))));
-            this.btnAddNewSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewSupplier.Location = new System.Drawing.Point(700, 59);
-            this.btnAddNewSupplier.Name = "btnAddNewSupplier";
-            this.btnAddNewSupplier.Size = new System.Drawing.Size(239, 172);
-            this.btnAddNewSupplier.TabIndex = 7;
-            this.btnAddNewSupplier.Text = "+ إضافة مورد جديد";
-            // 
-            // btnListSuppliers
-            // 
-            this.btnListSuppliers.BorderRadius = 15;
-            this.btnListSuppliers.FillColor = System.Drawing.Color.White;
-            this.btnListSuppliers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListSuppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListSuppliers.Location = new System.Drawing.Point(427, 59);
-            this.btnListSuppliers.Name = "btnListSuppliers";
-            this.btnListSuppliers.Size = new System.Drawing.Size(239, 172);
-            this.btnListSuppliers.TabIndex = 6;
-            this.btnListSuppliers.Text = "قائمة الموردين";
-            // 
-            // tabReports
-            // 
-            this.tabReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabReports.Controls.Add(this.btnImportantReports);
-            this.tabReports.Controls.Add(this.btnCustomUsingAi);
-            this.tabReports.Location = new System.Drawing.Point(4, 4);
-            this.tabReports.Name = "tabReports";
-            this.tabReports.Size = new System.Drawing.Size(996, 842);
-            this.tabReports.TabIndex = 6;
-            this.tabReports.Text = "التقارير";
-            // 
-            // btnImportantReports
-            // 
-            this.btnImportantReports.BorderRadius = 15;
-            this.btnImportantReports.FillColor = System.Drawing.Color.White;
-            this.btnImportantReports.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnImportantReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnImportantReports.Location = new System.Drawing.Point(700, 59);
-            this.btnImportantReports.Name = "btnImportantReports";
-            this.btnImportantReports.Size = new System.Drawing.Size(239, 172);
-            this.btnImportantReports.TabIndex = 9;
-            this.btnImportantReports.Text = "التقارير الهامة";
-            // 
-            // btnCustomUsingAi
-            // 
-            this.btnCustomUsingAi.BorderRadius = 15;
-            this.btnCustomUsingAi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnCustomUsingAi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnCustomUsingAi.ForeColor = System.Drawing.Color.White;
-            this.btnCustomUsingAi.Location = new System.Drawing.Point(427, 59);
-            this.btnCustomUsingAi.Name = "btnCustomUsingAi";
-            this.btnCustomUsingAi.Size = new System.Drawing.Size(239, 172);
-            this.btnCustomUsingAi.TabIndex = 8;
-            this.btnCustomUsingAi.Text = "تقارير مخصصة بالذكاء الاصطناعي";
-            // 
-            // tabPartners
-            // 
-            this.tabPartners.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabPartners.Controls.Add(this.btnWithdrawDeposit);
-            this.tabPartners.Controls.Add(this.btnListPartners);
-            this.tabPartners.Location = new System.Drawing.Point(4, 4);
-            this.tabPartners.Name = "tabPartners";
-            this.tabPartners.Size = new System.Drawing.Size(996, 842);
-            this.tabPartners.TabIndex = 7;
-            this.tabPartners.Text = "الشركاء";
-            // 
-            // btnWithdrawDeposit
-            // 
-            this.btnWithdrawDeposit.BorderRadius = 15;
-            this.btnWithdrawDeposit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.btnWithdrawDeposit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnWithdrawDeposit.ForeColor = System.Drawing.Color.White;
-            this.btnWithdrawDeposit.Location = new System.Drawing.Point(427, 59);
-            this.btnWithdrawDeposit.Name = "btnWithdrawDeposit";
-            this.btnWithdrawDeposit.Size = new System.Drawing.Size(239, 172);
-            this.btnWithdrawDeposit.TabIndex = 9;
-            this.btnWithdrawDeposit.Text = "سحب / إيداع";
-            // 
-            // btnListPartners
-            // 
-            this.btnListPartners.BorderRadius = 15;
-            this.btnListPartners.FillColor = System.Drawing.Color.White;
-            this.btnListPartners.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListPartners.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListPartners.Location = new System.Drawing.Point(700, 59);
-            this.btnListPartners.Name = "btnListPartners";
-            this.btnListPartners.Size = new System.Drawing.Size(239, 172);
-            this.btnListPartners.TabIndex = 8;
-            this.btnListPartners.Text = "قائمة الشركاء";
-            // 
-            // tabUsers
-            // 
-            this.tabUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabUsers.Controls.Add(this.btnAddNewUser);
-            this.tabUsers.Controls.Add(this.btnListUsers);
-            this.tabUsers.Location = new System.Drawing.Point(4, 4);
-            this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Size = new System.Drawing.Size(996, 842);
-            this.tabUsers.TabIndex = 8;
-            this.tabUsers.Text = "المستخدمين";
-            // 
-            // btnAddNewUser
-            // 
-            this.btnAddNewUser.BorderRadius = 15;
-            this.btnAddNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.btnAddNewUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddNewUser.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewUser.Location = new System.Drawing.Point(700, 59);
-            this.btnAddNewUser.Name = "btnAddNewUser";
-            this.btnAddNewUser.Size = new System.Drawing.Size(239, 172);
-            this.btnAddNewUser.TabIndex = 9;
-            this.btnAddNewUser.Text = "+ إضافة مستخدم جديد";
-            // 
-            // btnListUsers
-            // 
-            this.btnListUsers.BorderRadius = 15;
-            this.btnListUsers.FillColor = System.Drawing.Color.White;
-            this.btnListUsers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnListUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListUsers.Location = new System.Drawing.Point(427, 59);
-            this.btnListUsers.Name = "btnListUsers";
-            this.btnListUsers.Size = new System.Drawing.Size(239, 172);
-            this.btnListUsers.TabIndex = 8;
-            this.btnListUsers.Text = "قائمة المستخدمين";
-            // 
-            // tabSettings
-            // 
-            this.tabSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.tabSettings.Controls.Add(this.btnGeneralSettings);
-            this.tabSettings.Controls.Add(this.btnBackupRestore);
-            this.tabSettings.Controls.Add(this.btnCurrentUserInfo);
-            this.tabSettings.Controls.Add(this.btnLogout);
-            this.tabSettings.Location = new System.Drawing.Point(4, 4);
-            this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(996, 842);
-            this.tabSettings.TabIndex = 9;
-            this.tabSettings.Text = "الإعدادات";
-            // 
-            // btnGeneralSettings
-            // 
-            this.btnGeneralSettings.BorderRadius = 15;
-            this.btnGeneralSettings.FillColor = System.Drawing.Color.White;
-            this.btnGeneralSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnGeneralSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGeneralSettings.Location = new System.Drawing.Point(700, 266);
-            this.btnGeneralSettings.Name = "btnGeneralSettings";
-            this.btnGeneralSettings.Size = new System.Drawing.Size(239, 172);
-            this.btnGeneralSettings.TabIndex = 11;
-            this.btnGeneralSettings.Text = "الإعدادات العامة";
-            // 
-            // btnBackupRestore
-            // 
-            this.btnBackupRestore.BorderRadius = 15;
-            this.btnBackupRestore.FillColor = System.Drawing.Color.White;
-            this.btnBackupRestore.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnBackupRestore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBackupRestore.Location = new System.Drawing.Point(427, 266);
-            this.btnBackupRestore.Name = "btnBackupRestore";
-            this.btnBackupRestore.Size = new System.Drawing.Size(239, 172);
-            this.btnBackupRestore.TabIndex = 10;
-            this.btnBackupRestore.Text = "النسخ الاحتياطي والاستعادة";
-            // 
-            // btnCurrentUserInfo
-            // 
-            this.btnCurrentUserInfo.BorderRadius = 15;
-            this.btnCurrentUserInfo.FillColor = System.Drawing.Color.White;
-            this.btnCurrentUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnCurrentUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCurrentUserInfo.Location = new System.Drawing.Point(700, 59);
-            this.btnCurrentUserInfo.Name = "btnCurrentUserInfo";
-            this.btnCurrentUserInfo.Size = new System.Drawing.Size(239, 172);
-            this.btnCurrentUserInfo.TabIndex = 9;
-            this.btnCurrentUserInfo.Text = "معلومات المستخدم الحالي";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BorderRadius = 15;
-            this.btnLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(427, 59);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(239, 172);
-            this.btnLogout.TabIndex = 8;
-            this.btnLogout.Text = "تسجيل الخروج";
-            // 
-            // colInvoiceNo
-            // 
-            this.colInvoiceNo.FillWeight = 68F;
-            this.colInvoiceNo.HeaderText = "رقم الفاتورة";
-            this.colInvoiceNo.MinimumWidth = 6;
-            this.colInvoiceNo.Name = "colInvoiceNo";
-            this.colInvoiceNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colInvoiceNo.Width = 81;
-            // 
-            // colInvoiceCustomer
-            // 
-            this.colInvoiceCustomer.FillWeight = 130F;
-            this.colInvoiceCustomer.HeaderText = "اسم الزبون";
-            this.colInvoiceCustomer.MinimumWidth = 6;
-            this.colInvoiceCustomer.Name = "colInvoiceCustomer";
-            this.colInvoiceCustomer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colInvoiceCustomer.Width = 155;
-            // 
-            // colInvoiceDate
-            // 
-            this.colInvoiceDate.FillWeight = 90F;
-            this.colInvoiceDate.HeaderText = "التاريخ";
-            this.colInvoiceDate.MinimumWidth = 6;
-            this.colInvoiceDate.Name = "colInvoiceDate";
-            this.colInvoiceDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colInvoiceDate.Width = 107;
-            // 
-            // colInvoiceAmount
-            // 
-            this.colInvoiceAmount.HeaderText = "المبلغ";
-            this.colInvoiceAmount.MinimumWidth = 6;
-            this.colInvoiceAmount.Name = "colInvoiceAmount";
-            this.colInvoiceAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colInvoiceAmount.Width = 119;
+            this.colLowStockQty.HeaderText = "الكمية المتبقية";
+            this.colLowStockQty.MinimumWidth = 6;
+            this.colLowStockQty.Name = "colLowStockQty";
+            this.colLowStockQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colLowStockQty.Width = 128;
             // 
             // colLowStockProduct
             // 
@@ -4427,21 +3279,421 @@ namespace PosAndAccountantProject
             this.colLowStockProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colLowStockProduct.Width = 193;
             // 
-            // colLowStockQty
+            // colInvoiceAmount
             // 
-            this.colLowStockQty.HeaderText = "الكمية المتبقية";
-            this.colLowStockQty.MinimumWidth = 6;
-            this.colLowStockQty.Name = "colLowStockQty";
-            this.colLowStockQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colLowStockQty.Width = 128;
+            this.colInvoiceAmount.HeaderText = "المبلغ";
+            this.colInvoiceAmount.MinimumWidth = 6;
+            this.colInvoiceAmount.Name = "colInvoiceAmount";
+            this.colInvoiceAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceAmount.Width = 119;
             // 
-            // colLowStockMinQty
+            // colInvoiceDate
             // 
-            this.colLowStockMinQty.HeaderText = "حد التنبيه";
-            this.colLowStockMinQty.MinimumWidth = 6;
-            this.colLowStockMinQty.Name = "colLowStockMinQty";
-            this.colLowStockMinQty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colLowStockMinQty.Width = 129;
+            this.colInvoiceDate.FillWeight = 90F;
+            this.colInvoiceDate.HeaderText = "التاريخ";
+            this.colInvoiceDate.MinimumWidth = 6;
+            this.colInvoiceDate.Name = "colInvoiceDate";
+            this.colInvoiceDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceDate.Width = 107;
+            // 
+            // colInvoiceCustomer
+            // 
+            this.colInvoiceCustomer.FillWeight = 130F;
+            this.colInvoiceCustomer.HeaderText = "اسم الزبون";
+            this.colInvoiceCustomer.MinimumWidth = 6;
+            this.colInvoiceCustomer.Name = "colInvoiceCustomer";
+            this.colInvoiceCustomer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceCustomer.Width = 155;
+            // 
+            // colInvoiceNo
+            // 
+            this.colInvoiceNo.FillWeight = 68F;
+            this.colInvoiceNo.HeaderText = "رقم الفاتورة";
+            this.colInvoiceNo.MinimumWidth = 6;
+            this.colInvoiceNo.Name = "colInvoiceNo";
+            this.colInvoiceNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colInvoiceNo.Width = 81;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.guna2Button3);
+            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Controls.Add(this.btnVehicles);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.btnLogOut);
+            this.panel1.Controls.Add(this.btnUsers);
+            this.panel1.Controls.Add(this.btnCustomers);
+            this.panel1.Controls.Add(this.btnTransaction);
+            this.panel1.Controls.Add(this.btnReturn);
+            this.panel1.Controls.Add(this.btnٍSales);
+            this.panel1.Controls.Add(this.btnDashBord);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(215, 850);
+            this.panel1.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PosAndAccountantProject.Properties.Resources.MaherLogo1;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(215, 126);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BorderRadius = 20;
+            this.btnLogOut.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLogOut.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnLogOut.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnLogOut.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.FocusedColor = System.Drawing.Color.White;
+            this.btnLogOut.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogOut.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnLogOut.Location = new System.Drawing.Point(7, 791);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.PressedColor = System.Drawing.Color.White;
+            this.btnLogOut.Size = new System.Drawing.Size(208, 57);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnLogOut.UseTransparentBackground = true;
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.Transparent;
+            this.btnUsers.BorderRadius = 20;
+            this.btnUsers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnUsers.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnUsers.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnUsers.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUsers.FillColor = System.Drawing.Color.Transparent;
+            this.btnUsers.FocusedColor = System.Drawing.Color.White;
+            this.btnUsers.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnUsers.ForeColor = System.Drawing.Color.White;
+            this.btnUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.Image")));
+            this.btnUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUsers.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnUsers.Location = new System.Drawing.Point(7, 545);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.PressedColor = System.Drawing.Color.White;
+            this.btnUsers.Size = new System.Drawing.Size(208, 69);
+            this.btnUsers.TabIndex = 6;
+            this.btnUsers.Text = "المستخدمين";
+            this.btnUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnUsers.UseTransparentBackground = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomers.BorderRadius = 20;
+            this.btnCustomers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCustomers.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnCustomers.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCustomers.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCustomers.FillColor = System.Drawing.Color.Transparent;
+            this.btnCustomers.FocusedColor = System.Drawing.Color.White;
+            this.btnCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnCustomers.ForeColor = System.Drawing.Color.White;
+            this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
+            this.btnCustomers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomers.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnCustomers.Location = new System.Drawing.Point(7, 411);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.PressedColor = System.Drawing.Color.White;
+            this.btnCustomers.Size = new System.Drawing.Size(208, 69);
+            this.btnCustomers.TabIndex = 5;
+            this.btnCustomers.Text = "الزبائن";
+            this.btnCustomers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnCustomers.UseTransparentBackground = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            // 
+            // btnTransaction
+            // 
+            this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.btnTransaction.BorderRadius = 20;
+            this.btnTransaction.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTransaction.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnTransaction.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransaction.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnTransaction.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTransaction.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTransaction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTransaction.FillColor = System.Drawing.Color.Transparent;
+            this.btnTransaction.FocusedColor = System.Drawing.Color.White;
+            this.btnTransaction.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnTransaction.ForeColor = System.Drawing.Color.White;
+            this.btnTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnTransaction.Image")));
+            this.btnTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTransaction.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnTransaction.Location = new System.Drawing.Point(7, 338);
+            this.btnTransaction.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTransaction.Name = "btnTransaction";
+            this.btnTransaction.PressedColor = System.Drawing.Color.White;
+            this.btnTransaction.Size = new System.Drawing.Size(208, 69);
+            this.btnTransaction.TabIndex = 4;
+            this.btnTransaction.Text = "المنتجات";
+            this.btnTransaction.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnTransaction.UseTransparentBackground = true;
+            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BorderRadius = 20;
+            this.btnReturn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnReturn.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnReturn.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnReturn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.btnReturn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReturn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReturn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReturn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReturn.FillColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FocusedColor = System.Drawing.Color.White;
+            this.btnReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReturn.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnReturn.Location = new System.Drawing.Point(7, 269);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.PressedColor = System.Drawing.Color.White;
+            this.btnReturn.Size = new System.Drawing.Size(208, 69);
+            this.btnReturn.TabIndex = 3;
+            this.btnReturn.Text = "المشتريات";
+            this.btnReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnReturn.UseTransparentBackground = true;
+            // 
+            // btnٍSales
+            // 
+            this.btnٍSales.BackColor = System.Drawing.Color.Transparent;
+            this.btnٍSales.BorderRadius = 20;
+            this.btnٍSales.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnٍSales.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnٍSales.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnٍSales.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnٍSales.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnٍSales.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnٍSales.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnٍSales.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnٍSales.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnٍSales.FillColor = System.Drawing.Color.Transparent;
+            this.btnٍSales.FocusedColor = System.Drawing.Color.White;
+            this.btnٍSales.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnٍSales.ForeColor = System.Drawing.Color.White;
+            this.btnٍSales.Image = ((System.Drawing.Image)(resources.GetObject("btnٍSales.Image")));
+            this.btnٍSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnٍSales.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnٍSales.Location = new System.Drawing.Point(7, 200);
+            this.btnٍSales.Margin = new System.Windows.Forms.Padding(2);
+            this.btnٍSales.Name = "btnٍSales";
+            this.btnٍSales.PressedColor = System.Drawing.Color.White;
+            this.btnٍSales.Size = new System.Drawing.Size(208, 69);
+            this.btnٍSales.TabIndex = 2;
+            this.btnٍSales.Text = "المبيعات";
+            this.btnٍSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnٍSales.UseTransparentBackground = true;
+            this.btnٍSales.Click += new System.EventHandler(this.btnBooking_Click);
+            // 
+            // btnVehicles
+            // 
+            this.btnVehicles.BackColor = System.Drawing.Color.Transparent;
+            this.btnVehicles.BorderRadius = 20;
+            this.btnVehicles.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnVehicles.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnVehicles.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicles.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnVehicles.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnVehicles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVehicles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVehicles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVehicles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVehicles.FillColor = System.Drawing.Color.Transparent;
+            this.btnVehicles.FocusedColor = System.Drawing.Color.White;
+            this.btnVehicles.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnVehicles.ForeColor = System.Drawing.Color.White;
+            this.btnVehicles.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicles.Image")));
+            this.btnVehicles.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnVehicles.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnVehicles.Location = new System.Drawing.Point(7, 484);
+            this.btnVehicles.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVehicles.Name = "btnVehicles";
+            this.btnVehicles.PressedColor = System.Drawing.Color.White;
+            this.btnVehicles.Size = new System.Drawing.Size(208, 69);
+            this.btnVehicles.TabIndex = 1;
+            this.btnVehicles.Tag = " ";
+            this.btnVehicles.Text = "الموردين";
+            this.btnVehicles.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnVehicles.UseTransparentBackground = true;
+            this.btnVehicles.Click += new System.EventHandler(this.btnVehicles_Click);
+            // 
+            // btnDashBord
+            // 
+            this.btnDashBord.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashBord.BorderRadius = 20;
+            this.btnDashBord.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDashBord.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDashBord.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBord.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnDashBord.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnDashBord.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDashBord.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDashBord.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDashBord.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDashBord.FillColor = System.Drawing.Color.Transparent;
+            this.btnDashBord.FocusedColor = System.Drawing.Color.White;
+            this.btnDashBord.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBord.ForeColor = System.Drawing.Color.White;
+            this.btnDashBord.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBord.Image")));
+            this.btnDashBord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashBord.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnDashBord.Location = new System.Drawing.Point(7, 131);
+            this.btnDashBord.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashBord.Name = "btnDashBord";
+            this.btnDashBord.PressedColor = System.Drawing.Color.White;
+            this.btnDashBord.Size = new System.Drawing.Size(208, 69);
+            this.btnDashBord.TabIndex = 0;
+            this.btnDashBord.Text = "Dash Bord";
+            this.btnDashBord.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDashBord.UseTransparentBackground = true;
+            this.btnDashBord.CheckedChanged += new System.EventHandler(this.btnDashBord_CheckedChanged);
+            // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(215, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(969, 850);
+            this.panelContent.TabIndex = 2;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.FocusedColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button1.Location = new System.Drawing.Point(7, 618);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.PressedColor = System.Drawing.Color.White;
+            this.guna2Button1.Size = new System.Drawing.Size(208, 69);
+            this.guna2Button1.TabIndex = 9;
+            this.guna2Button1.Text = "الشركاء";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 20;
+            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.FocusedColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button2.Location = new System.Drawing.Point(2, 676);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.PressedColor = System.Drawing.Color.White;
+            this.guna2Button2.Size = new System.Drawing.Size(208, 69);
+            this.guna2Button2.TabIndex = 10;
+            this.guna2Button2.Text = "التقارير";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button2.UseTransparentBackground = true;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.BorderRadius = 20;
+            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2Button3.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.FocusedColor = System.Drawing.Color.White;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
+            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button3.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button3.Location = new System.Drawing.Point(5, 749);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.PressedColor = System.Drawing.Color.White;
+            this.guna2Button3.Size = new System.Drawing.Size(208, 38);
+            this.guna2Button3.TabIndex = 11;
+            this.guna2Button3.Text = "الاعدادات";
+            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button3.UseTransparentBackground = true;
             // 
             // frmMain
             // 
@@ -4449,137 +3701,45 @@ namespace PosAndAccountantProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1184, 850);
-            this.Controls.Add(this.tcMain);
+            this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panel1);
             this.Name = "frmMain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "لوحة تحكم نظام الماهر لنقاط البيع والمحاسبة";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.tcMain.ResumeLayout(false);
-            this.tabDashboard.ResumeLayout(false);
-            this.tabDashboard.PerformLayout();
-            this.pnlStockValueCard.ResumeLayout(false);
-            this.pnlPayablesCard.ResumeLayout(false);
-            this.pnlReceivablesCard.ResumeLayout(false);
-            this.pnlPurchaseCard.ResumeLayout(false);
-            this.pnlSalesOverview.ResumeLayout(false);
-            this.pnlSalesOverview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLowStock)).EndInit();
-            this.pnlUsersCard.ResumeLayout(false);
-            this.pnlUsersCard.PerformLayout();
-            this.pnlOrdersCard.ResumeLayout(false);
-            this.pnlOrdersCard.PerformLayout();
-            this.pnlCashCard.ResumeLayout(false);
-            this.pnlCashCard.PerformLayout();
-            this.pnlSalesCard.ResumeLayout(false);
-            this.pnlSalesCard.PerformLayout();
-            this.tabSales.ResumeLayout(false);
-            this.tabPurchases.ResumeLayout(false);
-            this.tabProducts.ResumeLayout(false);
-            this.tabCustomers.ResumeLayout(false);
-            this.tabSuppliers.ResumeLayout(false);
-            this.tabReports.ResumeLayout(false);
-            this.tabPartners.ResumeLayout(false);
-            this.tabUsers.ResumeLayout(false);
-            this.tabSettings.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TabControl tcMain;
-        private System.Windows.Forms.TabPage tabDashboard;
-        private System.Windows.Forms.TabPage tabSales;
-        private System.Windows.Forms.TabPage tabPurchases;
-        private System.Windows.Forms.TabPage tabProducts;
-        private System.Windows.Forms.TabPage tabCustomers;
-        private System.Windows.Forms.TabPage tabSuppliers;
-        private System.Windows.Forms.TabPage tabReports;
-        private System.Windows.Forms.TabPage tabPartners;
-        private System.Windows.Forms.TabPage tabUsers;
-        private System.Windows.Forms.TabPage tabSettings;
-        private Guna.UI2.WinForms.Guna2Panel pnlSalesCard;
-        private System.Windows.Forms.Label lblTodaySalesVal;
-        private System.Windows.Forms.Label lblTodaySales;
-        private System.Windows.Forms.Label lblTodaySalesTrend;
-        private Guna.UI2.WinForms.Guna2Panel pnlCashCard;
-        private System.Windows.Forms.Label lblCashBalanceVal;
-        private System.Windows.Forms.Label DFSSFS;
-        private System.Windows.Forms.Label lblCashBalanceTrend;
-        private Guna.UI2.WinForms.Guna2Panel pnlOrdersCard;
-        private System.Windows.Forms.Label lblTotalOrdersVal;
-        private System.Windows.Forms.Label ddfsfsf;
-        private System.Windows.Forms.Label lblTotalOrdersTrend;
-        private Guna.UI2.WinForms.Guna2Panel pnlUsersCard;
-        private System.Windows.Forms.Label DDSFSFSF;
-        private System.Windows.Forms.Label lblProfitTrend;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvLowStock;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvRecentInvoices;
-        private System.Windows.Forms.Label lblLowStock;
-        private System.Windows.Forms.Label lblInvoices;
-        private System.Windows.Forms.Label lblDashboardTitle;
-
-        private Guna.UI2.WinForms.Guna2Button btnAddNewSale;
-        private Guna.UI2.WinForms.Guna2Button btnListSales;
-        private Guna.UI2.WinForms.Guna2Button btnListPurchases;
-        private Guna.UI2.WinForms.Guna2Button btnAddNewPurchase;
-
-        private Guna.UI2.WinForms.Guna2Button btnAddNewProduct;
-        private Guna.UI2.WinForms.Guna2Button btnListCategories;
-        private Guna.UI2.WinForms.Guna2Button btnListProducts;
-
-        private Guna.UI2.WinForms.Guna2Button btnAddNewCustomer;
-        private Guna.UI2.WinForms.Guna2Button btnListCustomers;
-
-        private Guna.UI2.WinForms.Guna2Button btnAddNewSupplier;
-        private Guna.UI2.WinForms.Guna2Button btnListSuppliers;
-
-        private Guna.UI2.WinForms.Guna2Button btnImportantReports;
-        private Guna.UI2.WinForms.Guna2Button btnCustomUsingAi;
-
-        private Guna.UI2.WinForms.Guna2Button btnWithdrawDeposit;
-        private Guna.UI2.WinForms.Guna2Button btnListPartners;
-
-        private Guna.UI2.WinForms.Guna2Button btnAddNewUser;
-        private Guna.UI2.WinForms.Guna2Button btnListUsers;
-
-        private Guna.UI2.WinForms.Guna2Button btnGeneralSettings;
-        private Guna.UI2.WinForms.Guna2Button btnBackupRestore;
-        private Guna.UI2.WinForms.Guna2Button btnCurrentUserInfo;
-        private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private System.Windows.Forms.Label lblProfitVal;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.Charts.WinForms.GunaChart chartSales;
-        private Guna.UI2.WinForms.Guna2Panel pnlSalesOverview;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbTimeFilter;
         private Guna.Charts.WinForms.GunaAreaDataset gunaAreaDataset1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLowStockProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLowStockQty;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLowStockMinQty;
-        private Guna.UI2.WinForms.Guna2Panel pnlStockValueCard;
-        private System.Windows.Forms.Label lblStockValue;
-        private System.Windows.Forms.Label lblStockValueVal;
-        private System.Windows.Forms.Label lblStockValueHint;
-        private Guna.UI2.WinForms.Guna2Panel pnlPayablesCard;
-        private System.Windows.Forms.Label lblPayables;
-        private System.Windows.Forms.Label lblSuppliersDebtVal;
-        private System.Windows.Forms.Label lblPayablesHint;
-        private Guna.UI2.WinForms.Guna2Panel pnlReceivablesCard;
-        private System.Windows.Forms.Label lblReceivables;
-        private System.Windows.Forms.Label lblCustomersDebtVal;
-        private System.Windows.Forms.Label lblReceivablesHint;
-        private Guna.UI2.WinForms.Guna2Panel pnlPurchaseCard;
-        private System.Windows.Forms.Label lblTodayPurchases;
-        private System.Windows.Forms.Label lblTodayPurchasesVal;
-        private System.Windows.Forms.Label lblTodayPurchasesTrend;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLowStockQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLowStockProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceNo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
+        private Guna.UI2.WinForms.Guna2Button btnUsers;
+        private Guna.UI2.WinForms.Guna2Button btnCustomers;
+        private Guna.UI2.WinForms.Guna2Button btnTransaction;
+        private Guna.UI2.WinForms.Guna2Button btnReturn;
+        private Guna.UI2.WinForms.Guna2Button btnٍSales;
+        private Guna.UI2.WinForms.Guna2Button btnVehicles;
+        private Guna.UI2.WinForms.Guna2Button btnDashBord;
+        private System.Windows.Forms.Panel panelContent;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
 

@@ -80,7 +80,6 @@ namespace PosAndAccountantProject.Products
             this.viewPriceHistoryToolStripMenuItem,
             this.printBarcodeToolStripMenuItem});
             this.cmsProducts.Name = "cmsProducts";
-            this.cmsProducts.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmsProducts.Size = new System.Drawing.Size(182, 160);
             // 
             // showDetailsToolStripMenuItem
