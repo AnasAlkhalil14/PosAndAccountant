@@ -24,6 +24,7 @@ namespace PosAndAccountantProject.Users
             this.lblTitle = new System.Windows.Forms.Label();
             this.tcUserInfo = new Guna.UI2.WinForms.Guna2TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             this.btnPersonInfoNext = new Guna.UI2.WinForms.Guna2Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,7 +50,6 @@ namespace PosAndAccountantProject.Users
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tcUserInfo.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
@@ -64,10 +64,11 @@ namespace PosAndAccountantProject.Users
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
-            this.lblTitle.Location = new System.Drawing.Point(142, 9);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.lblTitle.Location = new System.Drawing.Point(106, 7);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(863, 50);
+            this.lblTitle.Size = new System.Drawing.Size(647, 41);
             this.lblTitle.TabIndex = 122;
             this.lblTitle.Text = "تعديل بيانات المستخدم";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,28 +79,29 @@ namespace PosAndAccountantProject.Users
             this.tcUserInfo.Controls.Add(this.tpPersonalInfo);
             this.tcUserInfo.Controls.Add(this.tpLoginInfo);
             this.tcUserInfo.ItemSize = new System.Drawing.Size(180, 40);
-            this.tcUserInfo.Location = new System.Drawing.Point(5, 95);
+            this.tcUserInfo.Location = new System.Drawing.Point(4, 77);
+            this.tcUserInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcUserInfo.Name = "tcUserInfo";
             this.tcUserInfo.SelectedIndex = 0;
-            this.tcUserInfo.Size = new System.Drawing.Size(1143, 540);
+            this.tcUserInfo.Size = new System.Drawing.Size(857, 439);
             this.tcUserInfo.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tcUserInfo.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tcUserInfo.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.tcUserInfo.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
             this.tcUserInfo.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tcUserInfo.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.tcUserInfo.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tcUserInfo.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.tcUserInfo.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.tcUserInfo.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-            this.tcUserInfo.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tcUserInfo.TabButtonIdleState.ForeColor = System.Drawing.Color.White;
+            this.tcUserInfo.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.tcUserInfo.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-            this.tcUserInfo.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.tcUserInfo.TabButtonSelectedState.FillColor = System.Drawing.SystemColors.WindowFrame;
             this.tcUserInfo.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.tcUserInfo.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
             this.tcUserInfo.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.tcUserInfo.TabButtonSize = new System.Drawing.Size(180, 40);
             this.tcUserInfo.TabIndex = 121;
-            this.tcUserInfo.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tcUserInfo.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             // 
             // tpPersonalInfo
             // 
@@ -107,11 +109,23 @@ namespace PosAndAccountantProject.Users
             this.tpPersonalInfo.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.tpPersonalInfo.Controls.Add(this.btnPersonInfoNext);
             this.tpPersonalInfo.Location = new System.Drawing.Point(184, 4);
+            this.tpPersonalInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpPersonalInfo.Name = "tpPersonalInfo";
-            this.tpPersonalInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPersonalInfo.Size = new System.Drawing.Size(955, 532);
+            this.tpPersonalInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPersonalInfo.Size = new System.Drawing.Size(669, 431);
             this.tpPersonalInfo.TabIndex = 0;
             this.tpPersonalInfo.Text = "المعلومات الشخصية";
+            // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(11, 12);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(634, 325);
+            this.ctrlPersonCardWithFilter1.TabIndex = 120;
+            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
+            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
             // 
             // btnPersonInfoNext
             // 
@@ -119,9 +133,10 @@ namespace PosAndAccountantProject.Users
             this.btnPersonInfoNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
             this.btnPersonInfoNext.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnPersonInfoNext.ForeColor = System.Drawing.Color.White;
-            this.btnPersonInfoNext.Location = new System.Drawing.Point(20, 470);
+            this.btnPersonInfoNext.Location = new System.Drawing.Point(15, 382);
+            this.btnPersonInfoNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPersonInfoNext.Name = "btnPersonInfoNext";
-            this.btnPersonInfoNext.Size = new System.Drawing.Size(130, 45);
+            this.btnPersonInfoNext.Size = new System.Drawing.Size(98, 37);
             this.btnPersonInfoNext.TabIndex = 119;
             this.btnPersonInfoNext.Text = "التالي";
             this.btnPersonInfoNext.Click += new System.EventHandler(this.btnPersonInfoNext_Click);
@@ -143,9 +158,10 @@ namespace PosAndAccountantProject.Users
             this.tpLoginInfo.Controls.Add(this.label2);
             this.tpLoginInfo.Controls.Add(this.txtPassword);
             this.tpLoginInfo.Location = new System.Drawing.Point(184, 4);
+            this.tpLoginInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpLoginInfo.Name = "tpLoginInfo";
-            this.tpLoginInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLoginInfo.Size = new System.Drawing.Size(955, 532);
+            this.tpLoginInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoginInfo.Size = new System.Drawing.Size(669, 431);
             this.tpLoginInfo.TabIndex = 1;
             this.tpLoginInfo.Text = "بيانات الحساب";
             // 
@@ -155,13 +171,13 @@ namespace PosAndAccountantProject.Users
             this.txtNotes.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNotes.DefaultText = "";
             this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNotes.Location = new System.Drawing.Point(470, 306);
-            this.txtNotes.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtNotes.Location = new System.Drawing.Point(352, 249);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.PasswordChar = '●';
             this.txtNotes.PlaceholderText = "";
             this.txtNotes.SelectedText = "";
-            this.txtNotes.Size = new System.Drawing.Size(200, 36);
+            this.txtNotes.Size = new System.Drawing.Size(150, 29);
             this.txtNotes.TabIndex = 132;
             this.txtNotes.UseSystemPasswordChar = true;
             // 
@@ -169,21 +185,23 @@ namespace PosAndAccountantProject.Users
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
-            this.label6.Location = new System.Drawing.Point(690, 313);
+            this.label6.Location = new System.Drawing.Point(518, 254);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 25);
+            this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 133;
             this.label6.Text = " الملاحظات:";
             // 
             // btnPrevious
             // 
             this.btnPrevious.BorderRadius = 5;
-            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
+            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrevious.ForeColor = System.Drawing.Color.White;
-            this.btnPrevious.Location = new System.Drawing.Point(26, 471);
+            this.btnPrevious.Location = new System.Drawing.Point(20, 383);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(130, 45);
+            this.btnPrevious.Size = new System.Drawing.Size(98, 37);
             this.btnPrevious.TabIndex = 131;
             this.btnPrevious.Text = "السابق";
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
@@ -201,12 +219,13 @@ namespace PosAndAccountantProject.Users
             this.gbForPermissions.Controls.Add(this.label5);
             this.gbForPermissions.Controls.Add(this.chbManageCustomer);
             this.gbForPermissions.Controls.Add(this.chbAllPermission);
-            this.gbForPermissions.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(14)))), ((int)(((byte)(150)))));
+            this.gbForPermissions.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gbForPermissions.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gbForPermissions.ForeColor = System.Drawing.Color.Black;
-            this.gbForPermissions.Location = new System.Drawing.Point(158, 91);
+            this.gbForPermissions.Location = new System.Drawing.Point(118, 74);
+            this.gbForPermissions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbForPermissions.Name = "gbForPermissions";
-            this.gbForPermissions.Size = new System.Drawing.Size(262, 311);
+            this.gbForPermissions.Size = new System.Drawing.Size(196, 253);
             this.gbForPermissions.TabIndex = 130;
             // 
             // chbManageTransaction
@@ -220,9 +239,10 @@ namespace PosAndAccountantProject.Users
             this.chbManageTransaction.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbManageTransaction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageTransaction.ForeColor = System.Drawing.Color.Black;
-            this.chbManageTransaction.Location = new System.Drawing.Point(17, 275);
+            this.chbManageTransaction.Location = new System.Drawing.Point(13, 223);
+            this.chbManageTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbManageTransaction.Name = "chbManageTransaction";
-            this.chbManageTransaction.Size = new System.Drawing.Size(208, 32);
+            this.chbManageTransaction.Size = new System.Drawing.Size(168, 25);
             this.chbManageTransaction.TabIndex = 12;
             this.chbManageTransaction.Text = "Manage Transaction";
             this.chbManageTransaction.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -241,9 +261,10 @@ namespace PosAndAccountantProject.Users
             this.chbManageReturn.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbManageReturn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageReturn.ForeColor = System.Drawing.Color.Black;
-            this.chbManageReturn.Location = new System.Drawing.Point(17, 237);
+            this.chbManageReturn.Location = new System.Drawing.Point(13, 193);
+            this.chbManageReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbManageReturn.Name = "chbManageReturn";
-            this.chbManageReturn.Size = new System.Drawing.Size(167, 32);
+            this.chbManageReturn.Size = new System.Drawing.Size(136, 25);
             this.chbManageReturn.TabIndex = 11;
             this.chbManageReturn.Text = "Manage Return";
             this.chbManageReturn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -262,9 +283,10 @@ namespace PosAndAccountantProject.Users
             this.chbManageBooking.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbManageBooking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageBooking.ForeColor = System.Drawing.Color.Black;
-            this.chbManageBooking.Location = new System.Drawing.Point(17, 199);
+            this.chbManageBooking.Location = new System.Drawing.Point(13, 162);
+            this.chbManageBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbManageBooking.Name = "chbManageBooking";
-            this.chbManageBooking.Size = new System.Drawing.Size(183, 32);
+            this.chbManageBooking.Size = new System.Drawing.Size(146, 25);
             this.chbManageBooking.TabIndex = 10;
             this.chbManageBooking.Text = "Manage Booking";
             this.chbManageBooking.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -283,9 +305,10 @@ namespace PosAndAccountantProject.Users
             this.chbManageVehicles.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbManageVehicles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageVehicles.ForeColor = System.Drawing.Color.Black;
-            this.chbManageVehicles.Location = new System.Drawing.Point(17, 161);
+            this.chbManageVehicles.Location = new System.Drawing.Point(13, 131);
+            this.chbManageVehicles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbManageVehicles.Name = "chbManageVehicles";
-            this.chbManageVehicles.Size = new System.Drawing.Size(179, 32);
+            this.chbManageVehicles.Size = new System.Drawing.Size(145, 25);
             this.chbManageVehicles.TabIndex = 9;
             this.chbManageVehicles.Text = "Manage Vehicles";
             this.chbManageVehicles.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -304,9 +327,10 @@ namespace PosAndAccountantProject.Users
             this.chbManageUsers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbManageUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageUsers.ForeColor = System.Drawing.Color.Black;
-            this.chbManageUsers.Location = new System.Drawing.Point(17, 123);
+            this.chbManageUsers.Location = new System.Drawing.Point(13, 100);
+            this.chbManageUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbManageUsers.Name = "chbManageUsers";
-            this.chbManageUsers.Size = new System.Drawing.Size(157, 32);
+            this.chbManageUsers.Size = new System.Drawing.Size(128, 25);
             this.chbManageUsers.TabIndex = 8;
             this.chbManageUsers.Text = "Manage Users";
             this.chbManageUsers.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -320,9 +344,10 @@ namespace PosAndAccountantProject.Users
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(49, 0);
+            this.label5.Location = new System.Drawing.Point(37, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 31);
+            this.label5.Size = new System.Drawing.Size(116, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Permissions";
             // 
@@ -337,9 +362,10 @@ namespace PosAndAccountantProject.Users
             this.chbManageCustomer.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbManageCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageCustomer.ForeColor = System.Drawing.Color.Black;
-            this.chbManageCustomer.Location = new System.Drawing.Point(17, 85);
+            this.chbManageCustomer.Location = new System.Drawing.Point(13, 69);
+            this.chbManageCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbManageCustomer.Name = "chbManageCustomer";
-            this.chbManageCustomer.Size = new System.Drawing.Size(202, 32);
+            this.chbManageCustomer.Size = new System.Drawing.Size(164, 25);
             this.chbManageCustomer.TabIndex = 7;
             this.chbManageCustomer.Text = "Manage Customers";
             this.chbManageCustomer.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -358,9 +384,10 @@ namespace PosAndAccountantProject.Users
             this.chbAllPermission.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbAllPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbAllPermission.ForeColor = System.Drawing.Color.Red;
-            this.chbAllPermission.Location = new System.Drawing.Point(17, 48);
+            this.chbAllPermission.Location = new System.Drawing.Point(13, 39);
+            this.chbAllPermission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chbAllPermission.Name = "chbAllPermission";
-            this.chbAllPermission.Size = new System.Drawing.Size(158, 32);
+            this.chbAllPermission.Size = new System.Drawing.Size(130, 25);
             this.chbAllPermission.TabIndex = 6;
             this.chbAllPermission.Text = "All Permissons";
             this.chbAllPermission.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -372,9 +399,10 @@ namespace PosAndAccountantProject.Users
             // 
             this.lblUserID.AutoSize = true;
             this.lblUserID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUserID.Location = new System.Drawing.Point(587, 110);
+            this.lblUserID.Location = new System.Drawing.Point(440, 89);
+            this.lblUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(42, 28);
+            this.lblUserID.Size = new System.Drawing.Size(34, 21);
             this.lblUserID.TabIndex = 129;
             this.lblUserID.Text = "???";
             // 
@@ -382,9 +410,10 @@ namespace PosAndAccountantProject.Users
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(690, 110);
+            this.label4.Location = new System.Drawing.Point(518, 89);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 28);
+            this.label4.Size = new System.Drawing.Size(103, 21);
             this.label4.TabIndex = 128;
             this.label4.Text = "رقم المستخدم:";
             // 
@@ -397,9 +426,10 @@ namespace PosAndAccountantProject.Users
             this.chkIsActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
             this.chkIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.chkIsActive.Location = new System.Drawing.Point(587, 378);
+            this.chkIsActive.Location = new System.Drawing.Point(440, 307);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(100, 24);
+            this.chkIsActive.Size = new System.Drawing.Size(75, 20);
             this.chkIsActive.TabIndex = 127;
             this.chkIsActive.Text = "نشط";
             this.chkIsActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -413,12 +443,12 @@ namespace PosAndAccountantProject.Users
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.DefaultText = "";
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtUserName.Location = new System.Drawing.Point(470, 162);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtUserName.Location = new System.Drawing.Point(352, 132);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PlaceholderText = "";
             this.txtUserName.SelectedText = "";
-            this.txtUserName.Size = new System.Drawing.Size(200, 36);
+            this.txtUserName.Size = new System.Drawing.Size(150, 29);
             this.txtUserName.TabIndex = 118;
             this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
@@ -430,13 +460,13 @@ namespace PosAndAccountantProject.Users
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.Enabled = false;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(470, 258);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(352, 210);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '●';
             this.txtConfirmPassword.PlaceholderText = "";
             this.txtConfirmPassword.SelectedText = "";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(200, 36);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(150, 29);
             this.txtConfirmPassword.TabIndex = 124;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
@@ -445,9 +475,10 @@ namespace PosAndAccountantProject.Users
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
-            this.label1.Location = new System.Drawing.Point(690, 167);
+            this.label1.Location = new System.Drawing.Point(518, 136);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 25);
+            this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 120;
             this.label1.Text = "اسم المستخدم:";
             // 
@@ -455,9 +486,10 @@ namespace PosAndAccountantProject.Users
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
-            this.label3.Location = new System.Drawing.Point(690, 267);
+            this.label3.Location = new System.Drawing.Point(518, 217);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 25);
+            this.label3.Size = new System.Drawing.Size(118, 20);
             this.label3.TabIndex = 125;
             this.label3.Text = "تأكيد كلمة المرور:";
             // 
@@ -465,9 +497,10 @@ namespace PosAndAccountantProject.Users
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
-            this.label2.Location = new System.Drawing.Point(690, 217);
+            this.label2.Location = new System.Drawing.Point(518, 176);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 25);
+            this.label2.Size = new System.Drawing.Size(135, 20);
             this.label2.TabIndex = 121;
             this.label2.Text = "كلمة المرور الجديدة:";
             // 
@@ -477,13 +510,13 @@ namespace PosAndAccountantProject.Users
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(470, 210);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPassword.Location = new System.Drawing.Point(352, 171);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(200, 36);
+            this.txtPassword.Size = new System.Drawing.Size(150, 29);
             this.txtPassword.TabIndex = 119;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
@@ -495,9 +528,10 @@ namespace PosAndAccountantProject.Users
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(206)))), ((int)(((byte)(137)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(51, 645);
+            this.btnSave.Location = new System.Drawing.Point(38, 524);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 40);
+            this.btnSave.Size = new System.Drawing.Size(90, 32);
             this.btnSave.TabIndex = 119;
             this.btnSave.Text = "حفظ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -508,34 +542,26 @@ namespace PosAndAccountantProject.Users
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(54)))), ((int)(((byte)(92)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(207, 645);
+            this.btnClose.Location = new System.Drawing.Point(155, 524);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(120, 40);
+            this.btnClose.Size = new System.Drawing.Size(90, 32);
             this.btnClose.TabIndex = 120;
             this.btnClose.Text = "إغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(15, 15);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(846, 400);
-            this.ctrlPersonCardWithFilter1.TabIndex = 120;
-            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
-            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
-            // 
             // frmAddUpdatUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1165, 706);
+            this.ClientSize = new System.Drawing.Size(874, 574);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tcUserInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAddUpdatUser";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

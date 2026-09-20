@@ -511,6 +511,40 @@ FROM            Sales INNER JOIN
             return dt;
 
         }
+        public static DataTable GetAllSales(int PageNumber,int PageSize)
+        {
+            DataTable dt = new DataTable();
+            string query = @" SELECT       Sales.SaleID, Sales.TotalAmount, Sales.PaidAmount, People.FirstName+' '+ People.LastName as CustomerName ,Sales.CreateDate
+FROM            Sales INNER JOIN
+                         Customers ON Sales.CustomerID = Customers.CustomerID INNER JOIN
+                         People ON Customers.PersonID = People.PersonID
+						 order by Sales.CreateDate desc
+						 offset(@PageNumber - 1) * @PageSize rows
+						 fetch next @PageSize rows only";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+
+        }
+
+
+
     }
 
 }

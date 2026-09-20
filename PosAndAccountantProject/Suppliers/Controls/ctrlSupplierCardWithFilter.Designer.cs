@@ -97,7 +97,7 @@
             this.btnFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFind.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnFind.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.btnFind.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Image = global::PosAndAccountantProject.Properties.Resources.SearchPerson;

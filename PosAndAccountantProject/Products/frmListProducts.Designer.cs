@@ -35,7 +35,6 @@ namespace PosAndAccountantProject.Products
             this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.pnlPreview = new Guna.UI2.WinForms.Guna2Panel();
             this.lblCategory = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@ namespace PosAndAccountantProject.Products
             this.lblBarcode = new System.Windows.Forms.Label();
             this.lblSalePrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cardTotal = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTotalCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,12 +56,13 @@ namespace PosAndAccountantProject.Products
             this.lnkLowStock = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProducts = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cmsProducts.SuspendLayout();
             this.pnlPreview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.cardTotal.SuspendLayout();
             this.cardOutOfStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsProducts
@@ -137,7 +136,7 @@ namespace PosAndAccountantProject.Products
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(408, 17);
+            this.lblTitle.Location = new System.Drawing.Point(376, 17);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(222, 47);
@@ -197,29 +196,14 @@ namespace PosAndAccountantProject.Products
             this.label1.TabIndex = 4;
             this.label1.Text = "البحث عبر:";
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BorderRadius = 8;
-            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(911, 662);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(90, 37);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "إغلاق";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // btnAddProduct
             // 
             this.btnAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddProduct.BorderRadius = 8;
-            this.btnAddProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnAddProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(9)))), ((int)(((byte)(35)))));
             this.btnAddProduct.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnAddProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddProduct.Location = new System.Drawing.Point(889, 183);
+            this.btnAddProduct.Location = new System.Drawing.Point(826, 183);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(112, 29);
@@ -245,7 +229,7 @@ namespace PosAndAccountantProject.Products
             this.pnlPreview.Location = new System.Drawing.Point(19, 228);
             this.pnlPreview.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPreview.Name = "pnlPreview";
-            this.pnlPreview.Size = new System.Drawing.Size(165, 422);
+            this.pnlPreview.Size = new System.Drawing.Size(165, 518);
             this.pnlPreview.TabIndex = 7;
             // 
             // lblCategory
@@ -320,24 +304,12 @@ namespace PosAndAccountantProject.Products
             this.lblProductName.Text = "اسم المنتج";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbProductImage
-            // 
-            this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
-            this.pbProductImage.ImageRotate = 0F;
-            this.pbProductImage.Location = new System.Drawing.Point(15, 16);
-            this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
-            this.pbProductImage.Name = "pbProductImage";
-            this.pbProductImage.Size = new System.Drawing.Size(135, 138);
-            this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProductImage.TabIndex = 0;
-            this.pbProductImage.TabStop = false;
-            // 
             // cardTotal
             // 
             this.cardTotal.BorderRadius = 12;
             this.cardTotal.Controls.Add(this.lblTotalCount);
             this.cardTotal.Controls.Add(this.label3);
-            this.cardTotal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.cardTotal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.cardTotal.Location = new System.Drawing.Point(19, 81);
             this.cardTotal.Margin = new System.Windows.Forms.Padding(2);
             this.cardTotal.Name = "cardTotal";
@@ -375,7 +347,7 @@ namespace PosAndAccountantProject.Products
             this.cardOutOfStock.BorderRadius = 12;
             this.cardOutOfStock.Controls.Add(this.lblOutOfStockCount);
             this.cardOutOfStock.Controls.Add(this.label5);
-            this.cardOutOfStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.cardOutOfStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardOutOfStock.Location = new System.Drawing.Point(165, 81);
             this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2);
             this.cardOutOfStock.Name = "cardOutOfStock";
@@ -415,7 +387,7 @@ namespace PosAndAccountantProject.Products
             this.guna2Separator1.Location = new System.Drawing.Point(19, 162);
             this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(976, 8);
+            this.guna2Separator1.Size = new System.Drawing.Size(913, 8);
             this.guna2Separator1.TabIndex = 10;
             // 
             // lnkMostSold
@@ -494,10 +466,10 @@ namespace PosAndAccountantProject.Products
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -513,7 +485,7 @@ namespace PosAndAccountantProject.Products
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvProducts.Location = new System.Drawing.Point(194, 228);
+            this.dgvProducts.Location = new System.Drawing.Point(193, 223);
             this.dgvProducts.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
@@ -522,7 +494,7 @@ namespace PosAndAccountantProject.Products
             this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 35;
-            this.dgvProducts.Size = new System.Drawing.Size(811, 422);
+            this.dgvProducts.Size = new System.Drawing.Size(749, 511);
             this.dgvProducts.TabIndex = 105;
             this.dgvProducts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvProducts.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -547,12 +519,24 @@ namespace PosAndAccountantProject.Products
             this.dgvProducts.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvProducts.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_RowEnter);
             // 
+            // pbProductImage
+            // 
+            this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
+            this.pbProductImage.ImageRotate = 0F;
+            this.pbProductImage.Location = new System.Drawing.Point(15, 16);
+            this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pbProductImage.Name = "pbProductImage";
+            this.pbProductImage.Size = new System.Drawing.Size(135, 138);
+            this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProductImage.TabIndex = 0;
+            this.pbProductImage.TabStop = false;
+            // 
             // frmListProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1016, 715);
+            this.ClientSize = new System.Drawing.Size(953, 811);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lnkLowStock);
@@ -564,7 +548,6 @@ namespace PosAndAccountantProject.Products
             this.Controls.Add(this.cardTotal);
             this.Controls.Add(this.pnlPreview);
             this.Controls.Add(this.btnAddProduct);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.cbFilterBy);
@@ -578,12 +561,12 @@ namespace PosAndAccountantProject.Products
             this.Load += new System.EventHandler(this.frmListProducts_Load);
             this.cmsProducts.ResumeLayout(false);
             this.pnlPreview.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.cardTotal.ResumeLayout(false);
             this.cardTotal.PerformLayout();
             this.cardOutOfStock.ResumeLayout(false);
             this.cardOutOfStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,7 +586,6 @@ namespace PosAndAccountantProject.Products
         private Guna.UI2.WinForms.Guna2ComboBox cbFilterBy;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnAddProduct;
         private Guna.UI2.WinForms.Guna2Panel pnlPreview;
         private Guna.UI2.WinForms.Guna2PictureBox pbProductImage;

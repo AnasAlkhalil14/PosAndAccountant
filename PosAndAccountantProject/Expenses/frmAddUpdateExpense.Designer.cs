@@ -113,7 +113,7 @@
             this.guna2GroupBox1.Controls.Add(this.txtTypeName);
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.Controls.Add(this.txtTypeNote);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Blue;
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
@@ -126,7 +126,7 @@
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 12;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(128)))), ((int)(((byte)(125)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(169, 298);
@@ -143,7 +143,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(223, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "اسم النوع";
             // 
@@ -169,7 +169,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(233, 161);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 25);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "شرح عن النوع";
             // 
@@ -192,7 +192,7 @@
             // 
             this.pnlHeader.BorderRadius = 15;
             this.pnlHeader.Controls.Add(this.lblTitle);
-            this.pnlHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.pnlHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.pnlHeader.Location = new System.Drawing.Point(353, 12);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(468, 70);
@@ -207,7 +207,7 @@
             this.lblTitle.Location = new System.Drawing.Point(180, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitle.Size = new System.Drawing.Size(203, 41);
+            this.lblTitle.Size = new System.Drawing.Size(161, 32);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "اضافة مصروف";
             // 
@@ -217,7 +217,7 @@
             this.lblExpenseID.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblExpenseID.Location = new System.Drawing.Point(668, 107);
             this.lblExpenseID.Name = "lblExpenseID";
-            this.lblExpenseID.Size = new System.Drawing.Size(118, 25);
+            this.lblExpenseID.Size = new System.Drawing.Size(95, 20);
             this.lblExpenseID.TabIndex = 1;
             this.lblExpenseID.Text = "رقم المصروف";
             // 
@@ -242,7 +242,7 @@
             this.lblExpenseType.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblExpenseType.Location = new System.Drawing.Point(677, 189);
             this.lblExpenseType.Name = "lblExpenseType";
-            this.lblExpenseType.Size = new System.Drawing.Size(119, 25);
+            this.lblExpenseType.Size = new System.Drawing.Size(95, 20);
             this.lblExpenseType.TabIndex = 3;
             this.lblExpenseType.Text = "نوع المصروف";
             // 
@@ -268,7 +268,7 @@
             this.lblCreatedDate.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblCreatedDate.Location = new System.Drawing.Point(457, 107);
             this.lblCreatedDate.Name = "lblCreatedDate";
-            this.lblCreatedDate.Size = new System.Drawing.Size(129, 25);
+            this.lblCreatedDate.Size = new System.Drawing.Size(103, 20);
             this.lblCreatedDate.TabIndex = 5;
             this.lblCreatedDate.Text = "تاريخ المصروف";
             // 
@@ -293,7 +293,7 @@
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblAmount.Location = new System.Drawing.Point(501, 189);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(57, 25);
+            this.lblAmount.Size = new System.Drawing.Size(46, 20);
             this.lblAmount.TabIndex = 7;
             this.lblAmount.Text = "المبلغ";
             // 
@@ -319,7 +319,7 @@
             this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblNotes.Location = new System.Drawing.Point(705, 276);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(83, 25);
+            this.lblNotes.Size = new System.Drawing.Size(67, 20);
             this.lblNotes.TabIndex = 9;
             this.lblNotes.Text = "ملاحظات";
             // 

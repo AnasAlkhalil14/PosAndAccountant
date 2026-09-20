@@ -8,19 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PosAndAccountantProject.Sales
+namespace PosAndAccountantProject.Purchases
 {
-    public partial class frmSalesList : Form
+    public partial class frmPurchasesList : Form
     {
-        public frmSalesList()
+        public frmPurchasesList()
         {
             InitializeComponent();
         }
 
         private void btnAddNewSale_Click(object sender, EventArgs e)
         {
-            frmAddUpdateSale frm=new frmAddUpdateSale();
-            frm .ShowDialog();
+            frmAddUpdatePurchase frm=new frmAddUpdatePurchase();        
+            frm.ShowDialog();
         }
     }
 }
