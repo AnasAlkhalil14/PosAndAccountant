@@ -115,7 +115,7 @@
             // 
             this.pnlHeader.BorderRadius = 15;
             this.pnlHeader.Controls.Add(this.lblTitle);
-            this.pnlHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.pnlHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.pnlHeader.Location = new System.Drawing.Point(20, 20);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(660, 70);

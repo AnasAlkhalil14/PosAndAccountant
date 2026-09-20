@@ -299,6 +299,37 @@ WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
             return TotalPurchase;
 
         }
+        public static DataTable GetAllPurchases(int PageNumber, int PageSize)
+        {
+            DataTable dt = new DataTable();
+            string query = @" SELECT       Purchases.PurchaseID, Purchases.TotalAmount, Purchases.PaidAmount, People.FirstName+' '+ People.LastName as SupplierName ,Purchases.CreateDate
+FROM            Purchases INNER JOIN
+                         Suppliers ON Purchases.SupplierID = Suppliers.SupplierID INNER JOIN
+                         People ON Suppliers.PersonID = People.PersonID
+						 order by Purchases.CreateDate desc
+						 offset(@PageNumber - 1) * @PageSize rows
+						 fetch next @PageSize rows only";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+
+        }
 
     }
 }

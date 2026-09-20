@@ -4,6 +4,7 @@ using PosAndAccountantProject.Customers;
 using PosAndAccountantProject.Dashboard;
 using PosAndAccountantProject.Partners;
 using PosAndAccountantProject.Products;
+using PosAndAccountantProject.Purchases;
 using PosAndAccountantProject.Reports;
 using PosAndAccountantProject.Sales;
 using PosAndAccountantProject.Suppliers;
@@ -101,6 +102,12 @@ namespace PosAndAccountantProject
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmCustomReportsWithAi());
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmPurchasesList());
 
         }
     }

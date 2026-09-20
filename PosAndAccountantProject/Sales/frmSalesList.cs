@@ -16,5 +16,11 @@ namespace PosAndAccountantProject.Sales
         {
             InitializeComponent();
         }
+
+        private void btnAddNewSale_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateSale frm=new frmAddUpdateSale();
+            frm .ShowDialog();
+        }
     }
 }

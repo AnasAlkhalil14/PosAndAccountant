@@ -268,6 +268,12 @@
     <Compile Include="Purchases\frmAddUpdatePurchase.Designer.cs">
       <DependentUpon>frmAddUpdatePurchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchases\frmPurchasesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchases\frmPurchasesList.Designer.cs">
+      <DependentUpon>frmPurchasesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmCustomReportsWithAi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -464,6 +470,9 @@
     <EmbeddedResource Include="Purchases\frmAddUpdatePurchase.resx">
       <DependentUpon>frmAddUpdatePurchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Purchases\frmPurchasesList.resx">
+      <DependentUpon>frmPurchasesList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmCustomReportsWithAi.resx">
       <DependentUpon>frmCustomReportsWithAi.cs</DependentUpon>
     </EmbeddedResource>
@@ -646,6 +655,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SaleList2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PurchaseList.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

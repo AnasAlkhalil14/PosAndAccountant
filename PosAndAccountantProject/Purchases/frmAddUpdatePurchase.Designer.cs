@@ -120,7 +120,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(521, 2);
@@ -152,7 +152,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(-8, 2);
@@ -310,7 +310,6 @@
             this.tsmiAddToPurchase,
             this.عرضToolStripMenuItem});
             this.cmsProduct.Name = "contextMenuStrip1";
-            this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmsProduct.Size = new System.Drawing.Size(175, 56);
             // 
             // tsmiAddToPurchase
@@ -533,7 +532,6 @@
             this.الغاءمنالفاتورةToolStripMenuItem,
             this.jgToolStripMenuItem});
             this.cmsPurchaseDetails.Name = "contextMenuStrip2";
-            this.cmsPurchaseDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmsPurchaseDetails.Size = new System.Drawing.Size(237, 56);
             // 
             // الغاءمنالفاتورةToolStripMenuItem

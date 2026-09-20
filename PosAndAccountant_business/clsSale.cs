@@ -549,7 +549,10 @@ namespace PosAndAccountant_business
             return clsSaleData.GetLast10TotalSaleByDay();
         }
 
-
+        public static DataTable GetAllSales(int PageNumber, int PageSize)
+        {
+            return clsSaleData.GetAllSales(PageNumber, PageSize);
+        }
     }
 
 }

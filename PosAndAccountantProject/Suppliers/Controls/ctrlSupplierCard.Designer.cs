@@ -50,10 +50,11 @@
             // ctrlPersonCard1
             // 
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(6, 3);
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(4, 2);
+            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
             this.ctrlPersonCard1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(841, 301);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(631, 245);
             this.ctrlPersonCard1.TabIndex = 2;
             this.ctrlPersonCard1.WasUpdated = false;
             // 
@@ -62,9 +63,10 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.White;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(27, 614);
+            this.linkLabel1.Location = new System.Drawing.Point(20, 499);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(175, 29);
+            this.linkLabel1.Size = new System.Drawing.Size(143, 24);
             this.linkLabel1.TabIndex = 145;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "عرض الفواتير السابقة";
@@ -74,9 +76,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(621, 233);
+            this.label9.Location = new System.Drawing.Point(466, 189);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 25);
+            this.label9.Size = new System.Drawing.Size(71, 20);
             this.label9.TabIndex = 144;
             this.label9.Text = "ملاحظات:";
             // 
@@ -84,9 +87,10 @@
             // 
             this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblNotes.Location = new System.Drawing.Point(30, 233);
+            this.lblNotes.Location = new System.Drawing.Point(22, 189);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(517, 50);
+            this.lblNotes.Size = new System.Drawing.Size(388, 41);
             this.lblNotes.TabIndex = 143;
             this.lblNotes.Text = " [???]";
             // 
@@ -95,9 +99,10 @@
             this.lblIsActive.AutoSize = true;
             this.lblIsActive.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblIsActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.lblIsActive.Location = new System.Drawing.Point(492, 169);
+            this.lblIsActive.Location = new System.Drawing.Point(369, 137);
+            this.lblIsActive.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIsActive.Name = "lblIsActive";
-            this.lblIsActive.Size = new System.Drawing.Size(61, 25);
+            this.lblIsActive.Size = new System.Drawing.Size(49, 20);
             this.lblIsActive.TabIndex = 142;
             this.lblIsActive.Text = " [???]";
             // 
@@ -106,9 +111,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(612, 169);
+            this.label8.Location = new System.Drawing.Point(459, 137);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 25);
+            this.label8.Size = new System.Drawing.Size(52, 20);
             this.label8.TabIndex = 141;
             this.label8.Text = "نشط : ";
             // 
@@ -116,9 +122,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(229, 124);
+            this.label7.Location = new System.Drawing.Point(172, 101);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 25);
+            this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "آخر تعديل:";
             // 
@@ -126,9 +133,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(229, 79);
+            this.label6.Location = new System.Drawing.Point(172, 64);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 25);
+            this.label6.Size = new System.Drawing.Size(88, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "تاريخ الإنشاء:";
             // 
@@ -136,9 +144,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(612, 124);
+            this.label2.Location = new System.Drawing.Point(459, 101);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 25);
+            this.label2.Size = new System.Drawing.Size(106, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "الديون المتبقية:";
             // 
@@ -146,9 +155,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(612, 79);
+            this.label1.Location = new System.Drawing.Point(459, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 25);
+            this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "رقم المورد:";
             // 
@@ -157,9 +167,10 @@
             this.lblModifiedDate.AutoSize = true;
             this.lblModifiedDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblModifiedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblModifiedDate.Location = new System.Drawing.Point(109, 124);
+            this.lblModifiedDate.Location = new System.Drawing.Point(82, 101);
+            this.lblModifiedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModifiedDate.Name = "lblModifiedDate";
-            this.lblModifiedDate.Size = new System.Drawing.Size(52, 23);
+            this.lblModifiedDate.Size = new System.Drawing.Size(42, 19);
             this.lblModifiedDate.TabIndex = 6;
             this.lblModifiedDate.Text = " [???]";
             // 
@@ -168,9 +179,10 @@
             this.lblCreatedDate.AutoSize = true;
             this.lblCreatedDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblCreatedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCreatedDate.Location = new System.Drawing.Point(109, 79);
+            this.lblCreatedDate.Location = new System.Drawing.Point(82, 64);
+            this.lblCreatedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCreatedDate.Name = "lblCreatedDate";
-            this.lblCreatedDate.Size = new System.Drawing.Size(52, 23);
+            this.lblCreatedDate.Size = new System.Drawing.Size(42, 19);
             this.lblCreatedDate.TabIndex = 5;
             this.lblCreatedDate.Text = " [???]";
             // 
@@ -179,9 +191,10 @@
             this.lblTotalRemainingDebt.AutoSize = true;
             this.lblTotalRemainingDebt.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalRemainingDebt.ForeColor = System.Drawing.Color.Crimson;
-            this.lblTotalRemainingDebt.Location = new System.Drawing.Point(492, 124);
+            this.lblTotalRemainingDebt.Location = new System.Drawing.Point(369, 101);
+            this.lblTotalRemainingDebt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalRemainingDebt.Name = "lblTotalRemainingDebt";
-            this.lblTotalRemainingDebt.Size = new System.Drawing.Size(54, 23);
+            this.lblTotalRemainingDebt.Size = new System.Drawing.Size(44, 19);
             this.lblTotalRemainingDebt.TabIndex = 1;
             this.lblTotalRemainingDebt.Text = " [???]";
             // 
@@ -190,9 +203,10 @@
             this.lblSupplierID.AutoSize = true;
             this.lblSupplierID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblSupplierID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSupplierID.Location = new System.Drawing.Point(492, 79);
+            this.lblSupplierID.Location = new System.Drawing.Point(369, 64);
+            this.lblSupplierID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplierID.Name = "lblSupplierID";
-            this.lblSupplierID.Size = new System.Drawing.Size(52, 23);
+            this.lblSupplierID.Size = new System.Drawing.Size(42, 19);
             this.lblSupplierID.TabIndex = 0;
             this.lblSupplierID.Text = " [???]";
             // 
@@ -211,12 +225,13 @@
             this.gbSupplierInfo.Controls.Add(this.lblCreatedDate);
             this.gbSupplierInfo.Controls.Add(this.lblTotalRemainingDebt);
             this.gbSupplierInfo.Controls.Add(this.lblSupplierID);
-            this.gbSupplierInfo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
+            this.gbSupplierInfo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gbSupplierInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gbSupplierInfo.ForeColor = System.Drawing.Color.White;
-            this.gbSupplierInfo.Location = new System.Drawing.Point(17, 299);
+            this.gbSupplierInfo.Location = new System.Drawing.Point(13, 243);
+            this.gbSupplierInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbSupplierInfo.Name = "gbSupplierInfo";
-            this.gbSupplierInfo.Size = new System.Drawing.Size(830, 312);
+            this.gbSupplierInfo.Size = new System.Drawing.Size(622, 254);
             this.gbSupplierInfo.TabIndex = 3;
             this.gbSupplierInfo.Text = "بيانات المورد ";
             this.gbSupplierInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -225,9 +240,10 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(246, 614);
+            this.linkLabel2.Location = new System.Drawing.Point(184, 499);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(143, 29);
+            this.linkLabel2.Size = new System.Drawing.Size(118, 24);
             this.linkLabel2.TabIndex = 147;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "انشاء فاتورة شراء";
@@ -235,16 +251,17 @@
             // 
             // ctrlSupplierCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.gbSupplierInfo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ctrlSupplierCard";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(853, 654);
+            this.Size = new System.Drawing.Size(640, 531);
             this.gbSupplierInfo.ResumeLayout(false);
             this.gbSupplierInfo.PerformLayout();
             this.ResumeLayout(false);

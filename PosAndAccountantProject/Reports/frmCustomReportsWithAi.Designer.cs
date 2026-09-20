@@ -41,8 +41,8 @@
             this.pnlGridContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvResult = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlStatus = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblStatusText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblStatusText = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTopInput.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             // pnlHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.pnlHeader.Controls.Add(this.pictureBox1);
             this.pnlHeader.Controls.Add(this.lblSubTitle);
             this.pnlHeader.Controls.Add(this.lblTitle);
@@ -113,7 +113,7 @@
             // 
             this.btnGenerateReport.Animated = true;
             this.btnGenerateReport.BorderRadius = 8;
-            this.btnGenerateReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.btnGenerateReport.FillColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnGenerateReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerateReport.ForeColor = System.Drawing.Color.White;
             this.btnGenerateReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
@@ -230,6 +230,17 @@
             this.pnlStatus.Size = new System.Drawing.Size(1053, 35);
             this.pnlStatus.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ملاحظة: تأكد من اتصالك ب VPN  ا ذا  كنت بسوريا";
+            // 
             // lblStatusText
             // 
             this.lblStatusText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -242,17 +253,6 @@
             this.lblStatusText.Size = new System.Drawing.Size(113, 15);
             this.lblStatusText.TabIndex = 0;
             this.lblStatusText.Text = "جاهز لاستقبال الطلب.";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ملاحظة: تأكد من اتصالك ب VPN  ا ذا  كنت بسوريا";
             // 
             // frmCustomReportsWithAi
             // 

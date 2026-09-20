@@ -3,6 +3,7 @@ using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -205,8 +206,10 @@ namespace PosAndAccountant_business
 
             return 100;
         }
-
-
+        public static DataTable GetAllPurchases(int PageNumber, int PageSize)
+        {
+            return clsPurchaseData.GetAllPurchases(PageNumber, PageSize);   
+        }
 
     }
 

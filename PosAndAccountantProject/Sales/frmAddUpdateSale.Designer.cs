@@ -121,7 +121,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(521, 2);
@@ -153,7 +153,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(-8, 2);
@@ -312,7 +312,6 @@ namespace PosAndAccountantProject.Sales
             this.tsmiAddToSale,
             this.عرضToolStripMenuItem});
             this.cmsProduct.Name = "contextMenuStrip1";
-            this.cmsProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmsProduct.Size = new System.Drawing.Size(175, 56);
             this.cmsProduct.Opening += new System.ComponentModel.CancelEventHandler(this.cmsProduct_Opening);
             // 
@@ -536,7 +535,6 @@ namespace PosAndAccountantProject.Sales
             this.الغاءمنالفاتورةToolStripMenuItem,
             this.jgToolStripMenuItem});
             this.cmsSaleDetails.Name = "contextMenuStrip2";
-            this.cmsSaleDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmsSaleDetails.Size = new System.Drawing.Size(237, 56);
             // 
             // الغاءمنالفاتورةToolStripMenuItem
@@ -600,7 +598,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // label19
             // 
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label19.BackColor = System.Drawing.Color.Maroon;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(103, 345);
@@ -649,7 +647,7 @@ namespace PosAndAccountantProject.Sales
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label10.BackColor = System.Drawing.Color.Silver;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
