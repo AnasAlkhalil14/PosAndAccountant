@@ -43,6 +43,7 @@ namespace PosAndAccountantProject.Products
             this.lblBarcode = new System.Windows.Forms.Label();
             this.lblSalePrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
+            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cardTotal = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTotalCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,13 +57,12 @@ namespace PosAndAccountantProject.Products
             this.lnkLowStock = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProducts = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.pbProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cmsProducts.SuspendLayout();
             this.pnlPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.cardTotal.SuspendLayout();
             this.cardOutOfStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsProducts
@@ -304,6 +304,18 @@ namespace PosAndAccountantProject.Products
             this.lblProductName.Text = "اسم المنتج";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pbProductImage
+            // 
+            this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
+            this.pbProductImage.ImageRotate = 0F;
+            this.pbProductImage.Location = new System.Drawing.Point(15, 16);
+            this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pbProductImage.Name = "pbProductImage";
+            this.pbProductImage.Size = new System.Drawing.Size(135, 138);
+            this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProductImage.TabIndex = 0;
+            this.pbProductImage.TabStop = false;
+            // 
             // cardTotal
             // 
             this.cardTotal.BorderRadius = 12;
@@ -519,18 +531,6 @@ namespace PosAndAccountantProject.Products
             this.dgvProducts.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvProducts.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_RowEnter);
             // 
-            // pbProductImage
-            // 
-            this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
-            this.pbProductImage.ImageRotate = 0F;
-            this.pbProductImage.Location = new System.Drawing.Point(15, 16);
-            this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
-            this.pbProductImage.Name = "pbProductImage";
-            this.pbProductImage.Size = new System.Drawing.Size(135, 138);
-            this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProductImage.TabIndex = 0;
-            this.pbProductImage.TabStop = false;
-            // 
             // frmListProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,12 +561,12 @@ namespace PosAndAccountantProject.Products
             this.Load += new System.EventHandler(this.frmListProducts_Load);
             this.cmsProducts.ResumeLayout(false);
             this.pnlPreview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.cardTotal.ResumeLayout(false);
             this.cardTotal.PerformLayout();
             this.cardOutOfStock.ResumeLayout(false);
             this.cardOutOfStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

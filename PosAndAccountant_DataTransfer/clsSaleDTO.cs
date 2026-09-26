@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace PosAndAccountant_DataTransfer
 {
-    public class clsSaleDTO
+    public class 
+        clsSaleDTO
     {
 
 
