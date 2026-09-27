@@ -105,6 +105,7 @@ namespace PosAndAccountantProject.Sales
             this.btnOpenNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
+            this.lblSaleType = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -122,6 +123,7 @@ namespace PosAndAccountantProject.Sales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.lblSaleType);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(521, 2);
@@ -880,6 +882,7 @@ namespace PosAndAccountantProject.Sales
             this.txtPaidAmount.SelectedText = "";
             this.txtPaidAmount.Size = new System.Drawing.Size(124, 30);
             this.txtPaidAmount.TabIndex = 27;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
             this.txtPaidAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbes_KeyPress);
             // 
             // label17
@@ -1058,6 +1061,18 @@ namespace PosAndAccountantProject.Sales
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
             // 
+            // lblSaleType
+            // 
+            this.lblSaleType.AutoSize = true;
+            this.lblSaleType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSaleType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaleType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblSaleType.Location = new System.Drawing.Point(906, 7);
+            this.lblSaleType.Name = "lblSaleType";
+            this.lblSaleType.Size = new System.Drawing.Size(61, 27);
+            this.lblSaleType.TabIndex = 1;
+            this.lblSaleType.Text = "جديدة";
+            // 
             // frmAddUpdateSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1086,6 +1101,7 @@ namespace PosAndAccountantProject.Sales
             this.Text = "فاتورة بيع نقدي";
             this.Load += new System.EventHandler(this.frmAddUpdateSale_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1173,5 +1189,6 @@ namespace PosAndAccountantProject.Sales
         private System.Drawing.Printing.PrintDocument printDoc;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDlg;
         private System.Windows.Forms.Label lblSaleID;
+        private System.Windows.Forms.Label lblSaleType;
     }
 }

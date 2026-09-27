@@ -872,17 +872,19 @@ namespace PosAndAccountantProject.Sales
         {
             InitializeComponent();
             _Sale = new clsSale();
+            lblSaleType.Text = "جديدة"; 
         }
         public frmAddUpdateSale(int SaleID)
         {
             InitializeComponent();
             _Sale = clsSale.Find(SaleID);
+            lblSaleType.Text = "تعديل";
 
 
         }
 
 
-         private clsSale _Sale;
+        private clsSale _Sale;
         private BindingList<clsProductDTO> _FilterProductList;
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
 
@@ -961,6 +963,8 @@ namespace PosAndAccountantProject.Sales
             lblTotalAmountWithDiscoount.Text = _Sale.NetTotalAmount.ToString();
             lblTotalAmountWithOutDebtAndDiscout.Text = _Sale.TotalAmount.ToString();
             lblTotalQuantity.Text = _Sale.TotalQ.ToString();
+            txtDiscount.Text = _Sale.DiscountAmount.ToString();
+            
         }
         void LoadCategoriesToCobmoBox()
         {
@@ -1411,9 +1415,11 @@ namespace PosAndAccountantProject.Sales
             {
                 _SettleTheProductSideOnFormLoad();
                 lblSaleID.Text = _Sale.SaleID.ToString();
-                //lblTitle.Text = "تعديل فاتورة شراء";
+                lblSaleType.Text = "تعديل";
+
+                
                 _LoadCustomerInfo(_Sale.CustomerID);
-                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID=" + _Sale.SaleID + " ستصبح الان في وضع التعديل انتبه", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID=" + _Sale.SaleID  , "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPrint.PerformClick();
 
             }
@@ -1605,6 +1611,11 @@ namespace PosAndAccountantProject.Sales
 
             }
             _OnActionForSaleDetails();
+        }
+
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            _Sale.PaidAmount=Convert.ToDecimal(txtPaidAmount.Text);
         }
     }
 }
