@@ -1,6 +1,7 @@
 ﻿using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,104 +12,98 @@ namespace PosAndAccountant_DataAccess
 {
     public class clsSaleData
     {
- public static int AddSale(clsSaleDTO clsSaleDTO)
+ public static int AddSale(clsSaleDTO SaleDTO)
         {
-            return -1;
-        }
-        public static bool UpdateSale(clsSaleDTO saleDTO)
-        {
-            return false;
-        }
 
-        //-------(Has work  to do here)------------
-        public static clsSaleDTO GetSale(int SaleID)
-        {
-            return null;
-        }
-        public static int AddNewSale(int UserID)
-        {
-            int newSaleID = -1;
+            int SaleID = -1;
 
-             
+            DataTable SaleDetails = new DataTable();
+            SaleDetails.Columns.Add("ProductID", typeof(int));
+            SaleDetails.Columns.Add("SellingPrice", typeof(decimal));
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            SaleDetails.Columns.Add("Quantity", typeof(int));
+             SaleDetails.Columns.Add("ReturnQuantity", typeof(int));
+            SaleDetails.Columns.Add("DiscountAmount", typeof(decimal));
+
+
+            foreach (var item in SaleDTO.SaleDetails)
             {
-                using (SqlCommand command = new SqlCommand("Sales.SP_AddNewSale", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
+                SaleDetails.Rows.Add(item.ProductID, item.SellingPrice, item.Quantity , item.ReturnQ,item.DiscountAmount);
 
-                    // Pass Input Parameters directly from the DTO properties
-                    command.Parameters.AddWithValue("@UserID", UserID);
-
-           
-                    // Setup the OUTPUT Parameter to capture the new identity
-                    SqlParameter outputIdParameter = new SqlParameter();
-                    outputIdParameter.ParameterName = "@NewSaleID";
-                    outputIdParameter.SqlDbType = SqlDbType.Int;
-                    outputIdParameter.Direction = ParameterDirection.Output;
-                    command.Parameters.Add(outputIdParameter);
-
-                    try
-                    {
-                        connection.Open();
-                        command.ExecuteNonQuery();
-
-                        // Retrieve the value returned from the stored procedure
-                        if (outputIdParameter.Value != DBNull.Value)
-                        {
-                            newSaleID = (int)outputIdParameter.Value;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Log your exception here
-                        newSaleID = -1;
-                    }
-                }
             }
 
-            return newSaleID;
-        }
-    
-       public static bool SaveSale(clsSaleDTO SaleDTO,DataTable SaleDetails)
-        {
 
 
             try
-            {  // Send everything in ONE call
+            {  // Send everything in ONE call q
                 using (var conn = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                using (var cmd = new SqlCommand("Sales.SP_SaveSale", conn))
+                using (var cmd = new SqlCommand("[Sales].[SP_SaveSale]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@SaleID", SaleDTO.SaleID);  
-                       cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
+                    cmd.Parameters.AddWithValue("@UserID", SaleDTO.UserID);
                     cmd.Parameters.AddWithValue("@CustomerID", SaleDTO.CustomerID);
+                    if (string.IsNullOrEmpty(SaleDTO.Notes.Trim()))
+                        cmd.Parameters.AddWithValue("@Notes", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
                     cmd.Parameters.AddWithValue("@PaymentMethodID", SaleDTO.PaymentMethodID);
-                     cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                    cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                    cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
                     cmd.Parameters.AddWithValue("@DiscountAmount", SaleDTO.DiscountAmount);
-                    cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
-
+ 
 
                     var p = cmd.Parameters.AddWithValue("@Details", SaleDetails); // ✅ DataTable directly
                     p.SqlDbType = SqlDbType.Structured;
                     p.TypeName = "SaleDetailType";
 
+
+                    // Setup the OUTPUT Parameter to capture the new identity
+                    SqlParameter outputIdParameter = new SqlParameter();
+                    outputIdParameter.ParameterName = "@SaleID";
+                    outputIdParameter.SqlDbType = SqlDbType.Int;
+                    outputIdParameter.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(outputIdParameter);
+
+
                     conn.Open();
                     cmd.ExecuteNonQuery();
+                    // Retrieve the value returned from the stored procedure
+                    if (outputIdParameter.Value != DBNull.Value)
+                    {
+                        SaleID = (int)outputIdParameter.Value;
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //loging erro
-            return false;
+                return -1;
             }
 
 
-            return true;
+            return SaleID;
+
 
         }
-        public static bool UpdateSale2(clsSaleDTO SaleDTO, DataTable SaleDetails)
+        public static bool UpdateSale(clsSaleDTO SaleDTO)
         {
+
+ 
+            DataTable SaleDetails = new DataTable();
+            SaleDetails.Columns.Add("ProductID", typeof(int));
+            SaleDetails.Columns.Add("SellingPrice", typeof(decimal));
+
+            SaleDetails.Columns.Add("Quantity", typeof(int));
+            SaleDetails.Columns.Add("ReturnQuantity", typeof(int));
+            SaleDetails.Columns.Add("DiscountAmount", typeof(decimal));
+
+
+            foreach (var item in SaleDTO.SaleDetails)
+            {
+                SaleDetails.Rows.Add(item.ProductID, item.SellingPrice, item.Quantity, item.ReturnQ, item.DiscountAmount);
+
+            }
+
 
 
             try
@@ -117,21 +112,29 @@ namespace PosAndAccountant_DataAccess
                 using (var cmd = new SqlCommand("[Sales].[SP_UpdateSale]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@SaleID", SaleDTO.SaleID);
-                    cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
+                    cmd.Parameters.AddWithValue("@UserID", SaleDTO.UserID);
                     cmd.Parameters.AddWithValue("@CustomerID", SaleDTO.CustomerID);
+                    if (string.IsNullOrEmpty(SaleDTO.Notes.Trim()))
+                        cmd.Parameters.AddWithValue("@Notes", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
                     cmd.Parameters.AddWithValue("@PaymentMethodID", SaleDTO.PaymentMethodID);
-                          cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                    cmd.Parameters.AddWithValue("@TotalAmount", SaleDTO.TotalAmount);
+                    cmd.Parameters.AddWithValue("@PaidAmount", SaleDTO.PaidAmount);
                     cmd.Parameters.AddWithValue("@DiscountAmount", SaleDTO.DiscountAmount);
-                    cmd.Parameters.AddWithValue("@Notes", SaleDTO.Notes);
 
 
                     var p = cmd.Parameters.AddWithValue("@Details", SaleDetails); // ✅ DataTable directly
                     p.SqlDbType = SqlDbType.Structured;
                     p.TypeName = "SaleDetailType";
 
+
+                    cmd.Parameters.AddWithValue("@SaleID", SaleDTO.SaleID);
+
+
                     conn.Open();
                     cmd.ExecuteNonQuery();
+
                 }
             }
             catch (Exception ex)
@@ -144,11 +147,27 @@ namespace PosAndAccountant_DataAccess
             return true;
 
         }
-        public static DataTable GetSaleDetailBySaleID(int SaleID)
+
+       
+    
+       
+        public static BindingList<clsSaleDetailDTO> GetSaleDetailBySaleID(int SaleID)
         {
 
-            DataTable dt = new DataTable();
-            string query = "SELECT   ProductID, ProductName, SellingPrice, Quantity, ReturnedQuantity, DiscountAmount FROM  SaleDetails where SaleID=@SaleID";
+            BindingList<clsSaleDetailDTO> SaleDetails = new BindingList<clsSaleDetailDTO>();
+            string query = @"SELECT ROW_NUMBER() over(order by SaleDetailID)as Counter,
+ProductName      
+      ,[SellingPrice]
+      ,[Quantity]
+      ,[ReturnedQuantity]
+      ,ProductID
+      
+  FROM [AccountantDB].[dbo].[SaleDetails]
+  where SaleID=@SaleID
+
+
+
+";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -159,13 +178,29 @@ namespace PosAndAccountant_DataAccess
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (reader.HasRows) dt.Load(reader);
+                            while (reader.Read())
+                            {
+
+                                SaleDetails.Add(new clsSaleDetailDTO(
+    Convert.ToInt32(reader["Counter"]),
+    reader["ProductName"].ToString(),
+    Convert.ToDecimal(reader["SellingPrice"]),
+    Convert.ToInt32(reader["Quantity"]),
+    Convert.ToInt32(reader["ReturnedQuantity"]),
+    Convert.ToInt32(reader["ProductID"])));
+
+
+
+                            }
+
+
+
                         }
                     }
                     catch { return null; }
                 }
             }
-            return dt;
+            return SaleDetails;
 
 
 
@@ -173,10 +208,13 @@ namespace PosAndAccountant_DataAccess
 
         }
 
-        public static clsSaleDTO GetSaleByID(int SaleID)
+        public static clsSaleDTO GetSale(int SaleID)
         {
+
             clsSaleDTO SaleDTO = null;
-            string query = @"Select * from Sales where SaleID=@SaleID";
+            string query = @"SELECT   SaleID, UserID, CustomerID, PaymentMethodID, TotalAmount, PaidAmount, DiscountAmount, Notes
+FROM    Sales
+where SaleID=@SaleID";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -193,14 +231,14 @@ namespace PosAndAccountant_DataAccess
                             {
                                 SaleDTO = new clsSaleDTO();
                                 SaleDTO.SaleID = SaleID;
+                                SaleDTO.UserID = Convert.ToInt32(reader["UserID"]);
                                 SaleDTO.TotalAmount = Convert.ToDecimal(reader["TotalAmount"]);
-                                 SaleDTO.CreateDate = Convert.ToDateTime(reader["CreateDate"]);
                                 SaleDTO.Notes = reader["Notes"] != DBNull.Value ? reader["Notes"].ToString() : "";
                                 SaleDTO.CustomerID = Convert.ToInt32(reader["CustomerID"]);
                                 SaleDTO.DiscountAmount = Convert.ToDecimal(reader["DiscountAmount"]);
                                 SaleDTO.PaymentMethodID = Convert.ToInt16(reader["PaymentMethodID"]);
                                 SaleDTO.PaidAmount = Convert.ToDecimal(reader["PaidAmount"]);
-                                
+                                SaleDTO.SaleDetails = GetSaleDetailBySaleID(SaleID);
                             }
                         }
                     }

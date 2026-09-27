@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSalesList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cmsSales = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.تعديلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddNewSale = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPageNumber = new System.Windows.Forms.Label();
@@ -50,15 +52,13 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cmsSales = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.تعديلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesList)).BeginInit();
+            this.cmsSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cardOutOfStock.SuspendLayout();
             this.cardTotal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.cmsSales.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -130,6 +130,29 @@
             this.dgvSalesList.ThemeStyle.RowsStyle.Height = 30;
             this.dgvSalesList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvSalesList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // cmsSales
+            // 
+            this.cmsSales.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.تعديلToolStripMenuItem});
+            this.cmsSales.Name = "cmsSales";
+            this.cmsSales.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.cmsSales.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cmsSales.RenderStyle.ColorTable = null;
+            this.cmsSales.RenderStyle.RoundedEdges = true;
+            this.cmsSales.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.cmsSales.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmsSales.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.cmsSales.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.cmsSales.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.cmsSales.Size = new System.Drawing.Size(104, 26);
+            // 
+            // تعديلToolStripMenuItem
+            // 
+            this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
+            this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
             // 
             // btnAddNewSale
             // 
@@ -345,29 +368,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "حسومات اللزبائن اليوم";
             // 
-            // cmsSales
-            // 
-            this.cmsSales.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.تعديلToolStripMenuItem});
-            this.cmsSales.Name = "cmsSales";
-            this.cmsSales.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.cmsSales.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cmsSales.RenderStyle.ColorTable = null;
-            this.cmsSales.RenderStyle.RoundedEdges = true;
-            this.cmsSales.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.cmsSales.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmsSales.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.cmsSales.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.cmsSales.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsSales.Size = new System.Drawing.Size(104, 26);
-            // 
-            // تعديلToolStripMenuItem
-            // 
-            this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
-            this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.تعديلToolStripMenuItem.Text = "تعديل";
-            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
-            // 
             // frmSalesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +389,7 @@
             this.Text = "frmSalesList";
             this.Load += new System.EventHandler(this.frmSalesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesList)).EndInit();
+            this.cmsSales.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cardOutOfStock.ResumeLayout(false);
             this.cardOutOfStock.PerformLayout();
@@ -398,7 +399,6 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.cmsSales.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
