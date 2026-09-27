@@ -22,6 +22,7 @@ namespace PosAndAccountantProject.Sales
         {
             frmAddUpdateSale frm=new frmAddUpdateSale();
             frm .ShowDialog();
+            if(frm.WasSaved)
             dgvSalesList.DataSource = clsSale.GetAllSales(Convert.ToInt32(lblPageNumber.Text), 10);
 
         }
@@ -88,6 +89,7 @@ namespace PosAndAccountantProject.Sales
             int SaleID = Convert.ToInt32(dgvSalesList.CurrentRow.Cells[0].Value);
             frmAddUpdateSale frm= new frmAddUpdateSale(SaleID);
             frm.ShowDialog();
+            if(frm.WasSaved)
             dgvSalesList.DataSource = clsSale.GetAllSales(Convert.ToInt32(lblPageNumber.Text), 10);
 
 
