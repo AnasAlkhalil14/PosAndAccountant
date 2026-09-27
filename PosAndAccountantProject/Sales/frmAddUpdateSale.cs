@@ -883,8 +883,8 @@ namespace PosAndAccountantProject.Sales
 
         }
 
-
-        private clsSale _Sale;
+        public bool WasSaved=false;
+            private clsSale _Sale;
         private BindingList<clsProductDTO> _FilterProductList;
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
 
@@ -1421,7 +1421,7 @@ namespace PosAndAccountantProject.Sales
                 _LoadCustomerInfo(_Sale.CustomerID);
                 MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID=" + _Sale.SaleID  , "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPrint.PerformClick();
-
+                WasSaved = true;
             }
             else
             {
