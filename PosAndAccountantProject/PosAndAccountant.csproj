@@ -659,5 +659,65 @@
   <ItemGroup>
     <None Include="Resources\PurchaseList.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\growth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaleBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PurchaseBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package-box %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package-box %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooperation %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooperation %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-chart %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboards %289%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

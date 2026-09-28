@@ -3231,6 +3231,7 @@ namespace PosAndAccountantProject
             this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -3243,7 +3244,6 @@ namespace PosAndAccountantProject
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
             this.btnٍSales = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashBord = new Guna.UI2.WinForms.Guna2Button();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -3336,6 +3336,15 @@ namespace PosAndAccountantProject
             this.panel1.Size = new System.Drawing.Size(215, 850);
             this.panel1.TabIndex = 1;
             // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(215, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(969, 850);
+            this.panelContent.TabIndex = 2;
+            // 
             // guna2Button3
             // 
             this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
@@ -3344,7 +3353,7 @@ namespace PosAndAccountantProject
             this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.White;
             this.guna2Button3.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2Button3.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.settings__1_;
             this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3353,7 +3362,7 @@ namespace PosAndAccountantProject
             this.guna2Button3.FocusedColor = System.Drawing.Color.White;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
+            this.guna2Button3.Image = global::PosAndAccountantProject.Properties.Resources.settings;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button3.Location = new System.Drawing.Point(5, 749);
@@ -3374,7 +3383,7 @@ namespace PosAndAccountantProject
             this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.White;
             this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2Button2.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.business_chart__1_;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3383,7 +3392,7 @@ namespace PosAndAccountantProject
             this.guna2Button2.FocusedColor = System.Drawing.Color.White;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.Image = global::PosAndAccountantProject.Properties.Resources.business_chart;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button2.Location = new System.Drawing.Point(2, 676);
@@ -3405,7 +3414,7 @@ namespace PosAndAccountantProject
             this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.White;
             this.guna2Button1.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2Button1.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.cooperation__1_;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3414,7 +3423,7 @@ namespace PosAndAccountantProject
             this.guna2Button1.FocusedColor = System.Drawing.Color.White;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Image = global::PosAndAccountantProject.Properties.Resources.cooperation__2_;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button1.Location = new System.Drawing.Point(7, 618);
@@ -3436,7 +3445,7 @@ namespace PosAndAccountantProject
             this.btnVehicles.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnVehicles.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicles.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnVehicles.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnVehicles.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.supplier__1_;
             this.btnVehicles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnVehicles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVehicles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3445,7 +3454,7 @@ namespace PosAndAccountantProject
             this.btnVehicles.FocusedColor = System.Drawing.Color.White;
             this.btnVehicles.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.btnVehicles.ForeColor = System.Drawing.Color.White;
-            this.btnVehicles.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicles.Image")));
+            this.btnVehicles.Image = global::PosAndAccountantProject.Properties.Resources.supplier;
             this.btnVehicles.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnVehicles.ImageSize = new System.Drawing.Size(40, 40);
             this.btnVehicles.Location = new System.Drawing.Point(7, 484);
@@ -3479,7 +3488,7 @@ namespace PosAndAccountantProject
             this.btnLogOut.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnLogOut.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnLogOut.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnLogOut.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3509,7 +3518,7 @@ namespace PosAndAccountantProject
             this.btnUsers.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnUsers.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnUsers.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnUsers.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.user__1_;
             this.btnUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3518,7 +3527,7 @@ namespace PosAndAccountantProject
             this.btnUsers.FocusedColor = System.Drawing.Color.White;
             this.btnUsers.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.Image")));
+            this.btnUsers.Image = global::PosAndAccountantProject.Properties.Resources.user;
             this.btnUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUsers.ImageSize = new System.Drawing.Size(40, 40);
             this.btnUsers.Location = new System.Drawing.Point(7, 545);
@@ -3540,7 +3549,7 @@ namespace PosAndAccountantProject
             this.btnCustomers.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnCustomers.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCustomers.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnCustomers.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.customer;
             this.btnCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3549,7 +3558,7 @@ namespace PosAndAccountantProject
             this.btnCustomers.FocusedColor = System.Drawing.Color.White;
             this.btnCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
+            this.btnCustomers.Image = global::PosAndAccountantProject.Properties.Resources.People_512;
             this.btnCustomers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomers.ImageSize = new System.Drawing.Size(40, 40);
             this.btnCustomers.Location = new System.Drawing.Point(7, 411);
@@ -3571,7 +3580,7 @@ namespace PosAndAccountantProject
             this.btnTransaction.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnTransaction.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaction.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnTransaction.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnTransaction.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.package_box__4_;
             this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3580,7 +3589,7 @@ namespace PosAndAccountantProject
             this.btnTransaction.FocusedColor = System.Drawing.Color.White;
             this.btnTransaction.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.btnTransaction.ForeColor = System.Drawing.Color.White;
-            this.btnTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnTransaction.Image")));
+            this.btnTransaction.Image = global::PosAndAccountantProject.Properties.Resources.package_box__2_;
             this.btnTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTransaction.ImageSize = new System.Drawing.Size(40, 40);
             this.btnTransaction.Location = new System.Drawing.Point(7, 338);
@@ -3602,7 +3611,7 @@ namespace PosAndAccountantProject
             this.btnReturn.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnReturn.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnReturn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnReturn.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.buying;
             this.btnReturn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReturn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReturn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3611,7 +3620,7 @@ namespace PosAndAccountantProject
             this.btnReturn.FocusedColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Image = global::PosAndAccountantProject.Properties.Resources.PurchaseBlue;
             this.btnReturn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReturn.ImageSize = new System.Drawing.Size(40, 40);
             this.btnReturn.Location = new System.Drawing.Point(7, 269);
@@ -3633,7 +3642,7 @@ namespace PosAndAccountantProject
             this.btnٍSales.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnٍSales.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnٍSales.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnٍSales.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnٍSales.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.SaleBlue;
             this.btnٍSales.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnٍSales.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnٍSales.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3642,7 +3651,7 @@ namespace PosAndAccountantProject
             this.btnٍSales.FocusedColor = System.Drawing.Color.White;
             this.btnٍSales.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.btnٍSales.ForeColor = System.Drawing.Color.White;
-            this.btnٍSales.Image = ((System.Drawing.Image)(resources.GetObject("btnٍSales.Image")));
+            this.btnٍSales.Image = global::PosAndAccountantProject.Properties.Resources.growth;
             this.btnٍSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnٍSales.ImageSize = new System.Drawing.Size(40, 40);
             this.btnٍSales.Location = new System.Drawing.Point(7, 200);
@@ -3664,7 +3673,7 @@ namespace PosAndAccountantProject
             this.btnDashBord.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnDashBord.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashBord.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.btnDashBord.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnDashBord.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.dashboards__9_;
             this.btnDashBord.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDashBord.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDashBord.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3673,7 +3682,7 @@ namespace PosAndAccountantProject
             this.btnDashBord.FocusedColor = System.Drawing.Color.White;
             this.btnDashBord.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashBord.ForeColor = System.Drawing.Color.White;
-            this.btnDashBord.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBord.Image")));
+            this.btnDashBord.Image = global::PosAndAccountantProject.Properties.Resources.dashboards;
             this.btnDashBord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashBord.ImageSize = new System.Drawing.Size(40, 40);
             this.btnDashBord.Location = new System.Drawing.Point(7, 131);
@@ -3686,15 +3695,6 @@ namespace PosAndAccountantProject
             this.btnDashBord.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDashBord.UseTransparentBackground = true;
             this.btnDashBord.CheckedChanged += new System.EventHandler(this.btnDashBord_CheckedChanged);
-            // 
-            // panelContent
-            // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(215, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(969, 850);
-            this.panelContent.TabIndex = 2;
             // 
             // frmMain
             // 
