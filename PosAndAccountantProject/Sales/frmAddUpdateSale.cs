@@ -1615,7 +1615,12 @@ namespace PosAndAccountantProject.Sales
 
         private void txtPaidAmount_TextChanged(object sender, EventArgs e)
         {
-            _Sale.PaidAmount=Convert.ToDecimal(txtPaidAmount.Text);
+            if(!string.IsNullOrEmpty(txtPaidAmount.Text.Trim())&&decimal.TryParse(txtPaidAmount.Text.Trim(),out decimal resutl))
+            _Sale.PaidAmount=resutl;
+            else
+            {
+                _Sale.PaidAmount = 0;
+            }
         }
     }
 }

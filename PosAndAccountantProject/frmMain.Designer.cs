@@ -3231,7 +3231,6 @@ namespace PosAndAccountantProject
             this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -3244,6 +3243,7 @@ namespace PosAndAccountantProject
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
             this.btnٍSales = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashBord = new Guna.UI2.WinForms.Guna2Button();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -3336,15 +3336,6 @@ namespace PosAndAccountantProject
             this.panel1.Size = new System.Drawing.Size(215, 850);
             this.panel1.TabIndex = 1;
             // 
-            // panelContent
-            // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(215, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(969, 850);
-            this.panelContent.TabIndex = 2;
-            // 
             // guna2Button3
             // 
             this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
@@ -3395,11 +3386,11 @@ namespace PosAndAccountantProject
             this.guna2Button2.Image = global::PosAndAccountantProject.Properties.Resources.business_chart;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(2, 676);
+            this.guna2Button2.Location = new System.Drawing.Point(2, 691);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedColor = System.Drawing.Color.White;
-            this.guna2Button2.Size = new System.Drawing.Size(208, 69);
+            this.guna2Button2.Size = new System.Drawing.Size(208, 54);
             this.guna2Button2.TabIndex = 10;
             this.guna2Button2.Text = "التقارير";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -3695,6 +3686,15 @@ namespace PosAndAccountantProject
             this.btnDashBord.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDashBord.UseTransparentBackground = true;
             this.btnDashBord.CheckedChanged += new System.EventHandler(this.btnDashBord_CheckedChanged);
+            // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(215, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(969, 850);
+            this.panelContent.TabIndex = 2;
             // 
             // frmMain
             // 

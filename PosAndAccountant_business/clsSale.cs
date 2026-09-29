@@ -474,13 +474,13 @@ namespace PosAndAccountant_business
             decimal today = GetDaySale();
             if (yesterday > 0)
 
-            return (today/ yesterday)*100-100;
+                return (today / yesterday) * 100 - 100;
 
             if (today == 0 && yesterday == 0) return 0;
 
-             return 100;
+            return 100;
         }
- 
+
         public static decimal GetDayPaid()
         {
             return clsSaleData.GetDayPaid();
@@ -493,12 +493,12 @@ namespace PosAndAccountant_business
         {
             decimal yesterday = GetYesterdayPaid();
             decimal today = GetDayPaid();
-            if(yesterday > 0)
+            if (yesterday > 0)
 
-            return (GetDayPaid() / GetYesterdayPaid()) * 100 - 100;
+                return (GetDayPaid() / GetYesterdayPaid()) * 100 - 100;
             if (today == 0 && yesterday == 0) return 0;
             return 100;
-        
+
         }
 
 
@@ -512,12 +512,12 @@ namespace PosAndAccountant_business
         }
         public static decimal GetDiffPercentDayProfit()
         {
-            decimal yesterday= GetYesterdayProfit();
+            decimal yesterday = GetYesterdayProfit();
             decimal today = GetDayProfit();
-            if(yesterday>0)
-            return (GetDayProfit() / GetYesterdayProfit()) * 100 - 100;
-        
-        if(today == 0 &&yesterday==0) return 0;
+            if (yesterday > 0)
+                return (GetDayProfit() / GetYesterdayProfit()) * 100 - 100;
+
+            if (today == 0 && yesterday == 0) return 0;
             return 100;
         }
 
@@ -531,14 +531,14 @@ namespace PosAndAccountant_business
         }
         public static double GetDiffPercentCountDaySale()
         {
-            int yesterday= GetYesterdayCountDaySale();
-            int today=GetCountDaySale();
-            if(yesterday>0)
+            int yesterday = GetYesterdayCountDaySale();
+            int today = GetCountDaySale();
+            if (yesterday > 0)
 
-            return (GetCountDaySale() / GetYesterdayCountDaySale()) * 100.00 - 100;
+                return (GetCountDaySale() / GetYesterdayCountDaySale()) * 100.00 - 100;
             if (today == 0 && yesterday == 0) return 0;
             return 100;
-        
+
         }
         public static DataTable GetLast10SalesToday()
         {
@@ -552,6 +552,23 @@ namespace PosAndAccountant_business
         public static DataTable GetAllSales(int PageNumber, int PageSize)
         {
             return clsSaleData.GetAllSales(PageNumber, PageSize);
+        }
+
+        public static decimal MaxSaleToday()
+        {
+            return clsSaleData.MaxSaleToday();
+        }
+        public static decimal TotalDebtToday()
+            {
+            return clsSaleData.TotalDebtToday();
+            }
+        public static decimal TotalDiscountToday()
+        {
+            return clsSaleData.TotalDiscountToday();
+        }
+        public static DataTable GetLast10TotalProfitByDay()
+        {
+            return clsSaleData.GetLast10TotalProfitByDay();
         }
     }
 
