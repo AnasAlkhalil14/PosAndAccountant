@@ -148,8 +148,7 @@ namespace PosAndAccountant_DataAccess
 
         }
 
-       
-    
+
        
         public static BindingList<clsSaleDetailDTO> GetSaleDetailBySaleID(int SaleID)
         {
@@ -581,6 +580,128 @@ FROM            Sales INNER JOIN
 
         }
 
+        public static decimal MaxSaleToday()
+        {
+            {
+                decimal TotalAmount = 0;
+                string query = @"select Cast (ISNULL( max(TotalAmount),0) as decimal(16,2)) AS TotalAmount  from Sales
+where day(getdate())=day(CreateDate);";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                TotalAmount = total;
+                            }
+                            else
+                            {
+                                TotalAmount = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return TotalAmount;
+            }
+
+
+            }
+        public static decimal TotalDebtToday()
+        {
+            {
+                decimal TotalDebt = 0;
+                string query = @"select Cast (ISNULL( Sum(TotalAmount-PaidAmount-DiscountAmount),0) as decimal(16,2)) AS TotalDebt  from Sales
+where day(getdate())=day(CreateDate	);";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                TotalDebt = total;
+                            }
+                            else
+                            {
+                                TotalDebt = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return TotalDebt;
+            }
+
+
+        }
+        public static decimal TotalDiscountToday()
+        {
+            {
+                decimal Total = 0;
+                string query = @" 
+select Cast( ISNULL( Sum(s.DiscountAmount),0) +ISNULL(sum(sd.[DiscountAmount]),0) as decimal(16,2)) as TotalDiscount  from SaleDetails  sd join Sales s on sd.SaleID=s.SaleID
+where day(getdate())=day(CreateDate	)
+
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
+
+
+        }
+        public static DataTable GetLast10TotalProfitByDay()
+        {
+            DataTable dt = new DataTable();
+            string query = @"
+select top 10 Cast( ISNULL( Sum(NetProfit),0)   as decimal(16,2)) as Profit,cast(CreatedDate  as date) Date from ProfitRuns 
+ group by cast(CreatedDate as date)
+ order by Date desc
+";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+
+        }
 
 
     }
