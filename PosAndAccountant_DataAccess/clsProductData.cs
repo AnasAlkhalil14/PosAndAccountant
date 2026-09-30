@@ -312,5 +312,38 @@ namespace PosAndAccountant_DataAccess
             return TotalValue;
 
         }
+
+        public static int CountOfLowStockProducts()
+        {
+            {
+                int Count = 0;
+                string query = @"select count(1) as CountLow from Products
+where QuantityInStock<=MinimumQuantityForWarning;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && int.TryParse(result.ToString(), out int total))
+                            {
+                                Count = total;
+                            }
+                            else
+                            {
+                                Count = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Count;
+            }
+
+
+        }
+      
     }
 }

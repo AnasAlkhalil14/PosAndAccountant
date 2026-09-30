@@ -680,9 +680,9 @@ where day(getdate())=day(CreateDate	)
         {
             DataTable dt = new DataTable();
             string query = @"
-select top 10 Cast( ISNULL( Sum(NetProfit),0)   as decimal(16,2)) as Profit,cast(CreatedDate  as date) Date from ProfitRuns 
- group by cast(CreatedDate as date)
- order by Date desc
+    select top 10 Cast( ISNULL( Sum(NetProfit),0)   as decimal(16,2)) as Profit,cast(CreatedDate  as date) Date from ProfitRuns 
+     group by cast(CreatedDate as date)
+     order by Date desc
 ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {

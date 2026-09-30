@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -188,6 +189,9 @@ namespace PosAndAccountant_business
             return clsProductData.GetTotalValueOfStock();
         }
 
-
+        public static int CountOfLowStockProducts()
+        {
+            return clsProductData.CountOfLowStockProducts();
+        }
     }
 }

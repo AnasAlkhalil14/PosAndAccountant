@@ -210,8 +210,22 @@ namespace PosAndAccountant_business
         {
             return clsPurchaseData.GetAllPurchases(PageNumber, PageSize);   
         }
+        public static decimal MaxPurchaseToday()
+        {
+            return clsPurchaseData.MaxPurchaseToday();
+        }
+        public static decimal TotalDebtToday()
 
-    }
+        {
+            return clsPurchaseData.TotalDebtToday();
+        }
+        public static DataTable GetLast10TotalSaleAndPurchase()
+        {
+            return clsPurchaseData.GetLast10TotalSaleAndPurchase();
+        }
+
+
+            }
 
 }
  
