@@ -330,6 +330,110 @@ FROM            Purchases INNER JOIN
             return dt;
 
         }
+        public static decimal MaxPurchaseToday()
+        {
+            {
+                decimal TotalAmount = 0;
+                string query = @"select Cast (ISNULL( max(TotalAmount),0) as decimal(16,2)) AS TotalAmount  from Purchases
+where day(getdate())=day(CreateDate);";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                TotalAmount = total;
+                            }
+                            else
+                            {
+                                TotalAmount = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return TotalAmount;
+            }
+
+
+        }
+        public static decimal TotalDebtToday()
+        {
+            {
+                decimal TotalDebt = 0;
+                string query = @"select Cast (ISNULL( Sum(TotalAmount-PaidAmount-DiscountAmount),0) as decimal(16,2)) AS TotalDebt  from Purchases
+where day(getdate())=day(CreateDate	);";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                TotalDebt = total;
+                            }
+                            else
+                            {
+                                TotalDebt = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return TotalDebt;
+            }
+
+
+        }
+        public static DataTable GetLast10TotalSaleAndPurchase()
+
+        {
+            DataTable dt = new DataTable();
+            string query = @" 
+  select top 10 TotalSale= IsnUll(s.TotalSale,0),TotalPurchase=IsNUll(p.TotalPurchase,0),Date=coalesce(s.Date,p.Date) from (
+ select Cast(  Sum(TotalAmount)   as decimal(16,2)) as TotalSale,
+ cast(CreateDate  as date) Date 
+ from Sales
+ 
+ group by cast(CreateDate as date)
+ ) S 
+
+ Full join (
+
+ select Cast(   Sum(TotalAmount)    as decimal(16,2)) as TotalPurchase,
+ cast(CreateDate  as date) Date 
+ from Purchases
+ 
+ group by cast(CreateDate as date)
+  ) P on S.Date=P.Date
+order by coalesce(s.Date, p.Date) desc
+
+";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+
+        }
 
     }
 }
