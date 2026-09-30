@@ -104,6 +104,7 @@
             this.btnOpenNewPurchase = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
+            this.lblPurchaseType = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -121,6 +122,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.lblPurchaseType);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(521, 2);
@@ -132,7 +134,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::PosAndAccountantProject.Properties.Resources.MakingSale;
-            this.pictureBox3.Location = new System.Drawing.Point(293, 13);
+            this.pictureBox3.Location = new System.Drawing.Point(169, 7);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(77, 52);
@@ -144,7 +146,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(379, 7);
+            this.lblTitle.Location = new System.Drawing.Point(255, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(411, 65);
             this.lblTitle.TabIndex = 0;
@@ -734,7 +736,7 @@
             this.pbProductImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
             this.pbProductImage.ImageRotate = 0F;
-            this.pbProductImage.Location = new System.Drawing.Point(2, 45);
+            this.pbProductImage.Location = new System.Drawing.Point(2, 50);
             this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
             this.pbProductImage.Name = "pbProductImage";
             this.pbProductImage.Size = new System.Drawing.Size(163, 115);
@@ -1055,6 +1057,18 @@
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
             // 
+            // lblPurchaseType
+            // 
+            this.lblPurchaseType.AutoSize = true;
+            this.lblPurchaseType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPurchaseType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchaseType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblPurchaseType.Location = new System.Drawing.Point(846, 7);
+            this.lblPurchaseType.Name = "lblPurchaseType";
+            this.lblPurchaseType.Size = new System.Drawing.Size(61, 27);
+            this.lblPurchaseType.TabIndex = 2;
+            this.lblPurchaseType.Text = "جديدة";
+            // 
             // frmAddUpdatePurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1083,6 +1097,7 @@
             this.Text = "فاتورة شراء";
             this.Load += new System.EventHandler(this.frmAddUpdatePurchase_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1169,5 +1184,6 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDlg;
         private System.Windows.Forms.Label lblPurchaseID;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblPurchaseType;
     }
 }
