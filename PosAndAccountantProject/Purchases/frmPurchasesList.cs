@@ -26,7 +26,7 @@ namespace PosAndAccountantProject.Purchases
         {
             frmAddUpdatePurchase frm=new frmAddUpdatePurchase();
             frm.ShowDialog();
-            if(true)
+            if(frm.WasSaved)
             {
                 _RefreshForm();
             }
@@ -158,7 +158,7 @@ namespace PosAndAccountantProject.Purchases
             int ID = Convert.ToInt32(dgvPurchaseList.CurrentRow.Cells[0].Value);
             frmAddUpdatePurchase frm = new frmAddUpdatePurchase(ID);
             frm.ShowDialog();
-            if(true)
+            if(frm.WasSaved)
             {
                 _RefreshForm();
             }

@@ -23,16 +23,19 @@ namespace PosAndAccountantProject.Purchases
         {
             InitializeComponent();
             _Purchase = new clsPurchase();
+
+            lblPurchaseType.Text = "جديدة";
         }
         public frmAddUpdatePurchase(int PurchaseID)
         {
             InitializeComponent();
             _Purchase = clsPurchase.Find(PurchaseID);
+            lblPurchaseType.Text = "تعديل";
             
 
         }
 
-        
+        public bool WasSaved = false;
         private DataTable _AllProducts = clsProduct.GetAllProducts();
         private clsPurchase _Purchase ;
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
@@ -479,11 +482,13 @@ namespace PosAndAccountantProject.Purchases
 
             if(_Purchase.Save())
             {
+                lblPurchaseType.Text = "تعديل";
+                WasSaved = true;
                 _SettleTheProductSideOnFormLoad();
                 lblPurchaseID.Text=_Purchase.PurchaseID.ToString();
                 lblTitle.Text = "تعديل فاتورة شراء";
                 _LoadSupplierInfo(_Purchase.SupplierID);
-                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID="+_Purchase.PurchaseID+" ستصبح الان في وضع التعديل انتبه", "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم حفظ الفاتورة بنجاح بمعرف ID="+_Purchase.PurchaseID, "نتيجة الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPrint.PerformClick();
                
             }
