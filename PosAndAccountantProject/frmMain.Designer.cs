@@ -3500,6 +3500,7 @@ namespace PosAndAccountantProject
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLogOut.UseTransparentBackground = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnUsers
             // 
@@ -3712,6 +3713,7 @@ namespace PosAndAccountantProject
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "لوحة تحكم نظام الماهر لنقاط البيع والمحاسبة";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
