@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdatePurchase));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPurchaseType = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -104,7 +105,6 @@
             this.btnOpenNewPurchase = new Guna.UI2.WinForms.Guna2Button();
             this.printDoc = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDlg = new System.Windows.Forms.PrintPreviewDialog();
-            this.lblPurchaseType = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -129,6 +129,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 86);
             this.panel1.TabIndex = 1;
+            // 
+            // lblPurchaseType
+            // 
+            this.lblPurchaseType.AutoSize = true;
+            this.lblPurchaseType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPurchaseType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchaseType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblPurchaseType.Location = new System.Drawing.Point(846, 7);
+            this.lblPurchaseType.Name = "lblPurchaseType";
+            this.lblPurchaseType.Size = new System.Drawing.Size(61, 27);
+            this.lblPurchaseType.TabIndex = 2;
+            this.lblPurchaseType.Text = "جديدة";
             // 
             // pictureBox3
             // 
@@ -1056,18 +1068,6 @@
             this.printPreviewDlg.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDlg.Icon")));
             this.printPreviewDlg.Name = "printPreviewDialog1";
             this.printPreviewDlg.Visible = false;
-            // 
-            // lblPurchaseType
-            // 
-            this.lblPurchaseType.AutoSize = true;
-            this.lblPurchaseType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPurchaseType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchaseType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblPurchaseType.Location = new System.Drawing.Point(846, 7);
-            this.lblPurchaseType.Name = "lblPurchaseType";
-            this.lblPurchaseType.Size = new System.Drawing.Size(61, 27);
-            this.lblPurchaseType.TabIndex = 2;
-            this.lblPurchaseType.Text = "جديدة";
             // 
             // frmAddUpdatePurchase
             // 

@@ -133,5 +133,7 @@ namespace PosAndAccountantProject.Login
                 MessageBox.Show("Unable to open the link. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }

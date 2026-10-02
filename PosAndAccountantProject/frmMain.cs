@@ -110,5 +110,15 @@ namespace PosAndAccountantProject
             OpenChildForm(new frmPurchasesList());
 
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

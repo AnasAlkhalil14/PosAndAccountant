@@ -286,7 +286,7 @@ namespace PosAndAccountantProject.Login
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسجيل الدخول - نظام المحاسبة";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
+              this.Load += new System.EventHandler(this.frmLogin_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
