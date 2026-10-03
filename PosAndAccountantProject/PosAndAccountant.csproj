@@ -719,5 +719,8 @@
   <ItemGroup>
     <None Include="Resources\dashboards %289%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sugar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

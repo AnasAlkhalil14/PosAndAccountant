@@ -86,7 +86,7 @@ namespace PosAndAccountant_DataAccess
             return ProductDTO;
         }
 
-        public static DataTable GetAllProducts()
+        public static DataTable GetAllProducts(int PageNumber, int PageSize)
         {
             DataTable dt = new DataTable();
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -94,6 +94,8 @@ namespace PosAndAccountant_DataAccess
                 using (SqlCommand command = new SqlCommand("Products.SP_GetAllProducts", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
                     try
                     {
                         connection.Open();

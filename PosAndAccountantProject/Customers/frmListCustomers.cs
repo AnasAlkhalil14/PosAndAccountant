@@ -27,6 +27,7 @@ namespace PosAndAccountantProject.Customers
 
         private void frmListCustomers_Load(object sender, EventArgs e)
         {
+            
             _AllCustomers=clsCustomer.GetAllCustombersList();
             dgvCustomers.DataSource = _AllCustomers;
             lblRecordsCount.Text=dgvCustomers.Rows.Count.ToString();

@@ -235,7 +235,7 @@ namespace PosAndAccountant_business
         public void SetAllProducts()
         {
             ProductList = new BindingList<clsProductDTO>();
-            DataTable AllProducts = clsProduct.GetAllProducts();
+            DataTable AllProducts = clsProduct.GetAllProducts(-1,-1);
 
             foreach (DataRow item in AllProducts.Rows)
             {

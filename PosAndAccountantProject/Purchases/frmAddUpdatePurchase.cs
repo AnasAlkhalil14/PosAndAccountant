@@ -36,7 +36,7 @@ namespace PosAndAccountantProject.Purchases
         }
 
         public bool WasSaved = false;
-        private DataTable _AllProducts = clsProduct.GetAllProducts();
+        private DataTable _AllProducts = clsProduct.GetAllProducts(-1, -1);
         private clsPurchase _Purchase ;
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
 
@@ -129,7 +129,7 @@ namespace PosAndAccountantProject.Purchases
         }
         void _SettleTheProductSideOnFormLoad()
         {
-            _AllProducts = clsProduct.GetAllProducts();
+            _AllProducts = clsProduct.GetAllProducts(-1,-1);
             dgvProductList.DataSource = _AllProducts;
 
             if (dgvProductList.Rows.Count > 0)

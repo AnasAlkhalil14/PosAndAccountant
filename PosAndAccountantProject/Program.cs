@@ -25,7 +25,7 @@ namespace PosAndAccountantProject
         /// </summary>
         [STAThread]
         static void Main()
-        {
+       {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmLogin frm = new frmLogin();
