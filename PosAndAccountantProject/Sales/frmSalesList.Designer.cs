@@ -39,7 +39,6 @@
             this.cmsSales = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.تعديلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddNewSale = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPageNumber = new System.Windows.Forms.Label();
             this.lnkNext = new System.Windows.Forms.LinkLabel();
             this.lnkPrivios = new System.Windows.Forms.LinkLabel();
@@ -57,15 +56,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.chartProfit = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesList)).BeginInit();
             this.cmsSales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cardOutOfStock.SuspendLayout();
             this.cardTotal.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProfit)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -174,16 +174,6 @@
             this.btnAddNewSale.TabIndex = 16;
             this.btnAddNewSale.Text = "+ إضافة بيع جديد";
             this.btnAddNewSale.Click += new System.EventHandler(this.btnAddNewSale_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.SaleList2;
-            this.pictureBox1.Location = new System.Drawing.Point(362, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 122);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
             // 
             // lblPageNumber
             // 
@@ -403,6 +393,16 @@
             this.guna2Panel3.Size = new System.Drawing.Size(980, 128);
             this.guna2Panel3.TabIndex = 31;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.SaleList2;
+            this.pictureBox1.Location = new System.Drawing.Point(362, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(265, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmSalesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,7 +426,6 @@
             this.Load += new System.EventHandler(this.frmSalesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesList)).EndInit();
             this.cmsSales.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cardOutOfStock.ResumeLayout(false);
             this.cardOutOfStock.PerformLayout();
             this.cardTotal.ResumeLayout(false);
@@ -437,6 +436,7 @@
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProfit)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,7 +447,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvSalesList;
         private Guna.UI2.WinForms.Guna2Button btnAddNewSale;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPageNumber;
         private System.Windows.Forms.LinkLabel lnkNext;
         private System.Windows.Forms.LinkLabel lnkPrivios;
@@ -467,5 +466,6 @@
         private System.Windows.Forms.ToolStripMenuItem تعديلToolStripMenuItem;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProfit;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

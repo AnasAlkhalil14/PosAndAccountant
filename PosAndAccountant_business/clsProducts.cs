@@ -137,9 +137,9 @@ namespace PosAndAccountant_business
 
         // --- Static Methods for Bulk/Search Operations ---
 
-        public static DataTable GetAllProducts()
+        public static DataTable GetAllProducts(int PageNumber,int PageSize )
         {
-            return clsProductData.GetAllProducts();
+            return clsProductData.GetAllProducts(PageNumber,PageSize);
         }
         
         public static DataTable GetLowStockProducts()

@@ -1,13 +1,8 @@
 ﻿using PosAndAccountant_business;
 using PosAndAccountantProject.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PosAndAccountantProject.Products
@@ -19,7 +14,7 @@ namespace PosAndAccountantProject.Products
             InitializeComponent();
         }
 
-        private DataTable _AllProducts=clsProduct.GetAllProducts();
+        private DataTable _AllProducts = clsProduct.GetAllProducts(1, 10);
 
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -28,9 +23,9 @@ namespace PosAndAccountantProject.Products
         }
         void _RefreshForm()
         {
-            _AllProducts = clsProduct.GetAllProducts();
+            _AllProducts = clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text), 10);
             dgvProducts.DataSource = _AllProducts;
-            lblTotalCount.Text=dgvProducts.Rows.Count.ToString();
+            lblTotalCount.Text = dgvProducts.Rows.Count.ToString();
             lblOutOfStockCount.Text = ((int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
 
         }
@@ -38,13 +33,13 @@ namespace PosAndAccountantProject.Products
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
 
-            frmAddUpdateProduct frm=new frmAddUpdateProduct();
+            frmAddUpdateProduct frm = new frmAddUpdateProduct();
             frm.ShowDialog();
-            if(frm.WasSaved)
+            if (frm.WasSaved)
             {
                 _RefreshForm();
             }
-            
+
 
         }
 
@@ -55,27 +50,115 @@ namespace PosAndAccountantProject.Products
 
         private void frmListProducts_Load(object sender, EventArgs e)
         {
-            dgvProducts.DataSource = _AllProducts;  
-            lblTotalCount.Text=dgvProducts.Rows.Count.ToString();
             
-            if(dgvProducts.Rows.Count > 0 )
+
+
+            lblPageNumber.Text = "1";
+            dgvProducts.AutoGenerateColumns = false;
+            dgvProducts.Columns.Clear();
+
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
             {
-                dgvProducts.Columns[0].HeaderText = "معرف المنتج";
-                dgvProducts.Columns[1].HeaderText = "اسم المنتج";
-                dgvProducts.Columns[2].HeaderText = "واحدة البيع";
-                dgvProducts.Columns[3].HeaderText = "الصنف";
-                dgvProducts.Columns[4].HeaderText = "سعر البيع";
-                dgvProducts.Columns[8].HeaderText = "تاريخ الانشاء";
-                dgvProducts.Columns[8].DefaultCellStyle.Format="dd-MM-yyyy";
+                Name = "ProductID",
+                HeaderText = "معرف المنتج",
+                DataPropertyName = "ProductID",
+                ReadOnly = true
 
-                dgvProducts.Columns[5].Visible = false;
-                dgvProducts.Columns[6].Visible = false;
-                dgvProducts.Columns[7].Visible = false;
-                dgvProducts.Columns[9].Visible = false;
-                dgvProducts.Columns[10].Visible = false;
+            });
+           
 
-                lblOutOfStockCount.Text= (  (int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
-            }
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ProductName",
+                HeaderText = "المبلغ المدفوع",
+                DataPropertyName = "ProductName",
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitOfSale",
+                HeaderText = "اسم العميل",
+                DataPropertyName = "UnitOfSale",
+                ReadOnly = true
+            }); dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CategoryName",
+                HeaderText = "المبلع الكلي",
+                DataPropertyName = "CategoryName",
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "SellingPrice",
+                HeaderText = "تاريخ الانشاء",
+                DataPropertyName = "SellingPrice",
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateDate",
+                HeaderText = "تاريخ الانشاء",
+                DataPropertyName = "CreateDate",
+                ReadOnly = true
+            }); dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ImagePath",
+                Visible = false,
+                DataPropertyName = "ImagePath",
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CostPrice",
+                Visible = false,
+                DataPropertyName = "CostPrice",
+
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "QuantityInStock",
+                Visible = false,
+                DataPropertyName = "QuantityInStock",
+
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "MinimumQuantityForWarning",
+                Visible = false,
+                DataPropertyName = "MinimumQuantityForWarning",
+
+                ReadOnly = true
+            });
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "BarCode",
+                Visible = false,
+                DataPropertyName = "BarCode",
+
+                ReadOnly = true
+            });
+
+            dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ProductCategoryID",
+                Visible = false,
+                DataPropertyName = "ProductCategoryID",
+
+                ReadOnly = true
+            });
+            dgvProducts.DataSource = clsProduct.GetAllProducts(1, 10);
+
+
+             lblTotalCount.Text = dgvProducts.Rows.Count.ToString();
+
+
+ 
+
+
+                lblOutOfStockCount.Text = ((int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
+           
 
 
 
@@ -84,7 +167,7 @@ namespace PosAndAccountantProject.Products
 
         }
 
-       
+
         private void dgvProducts_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || dgvProducts.Rows[e.RowIndex].IsNewRow) return;
@@ -99,12 +182,12 @@ namespace PosAndAccountantProject.Products
             lblMinQuantity.Text = $"حد الطلب: {dgvProducts.Rows[e.RowIndex].Cells["MinimumQuantityForWarning"].Value.ToString()}";
             lblSalePrice.Text = $"سعر البيع: {Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["SellingPrice"].Value).ToString()}ل.س";
             lblCategory.Text = $"الصنف: {dgvProducts.Rows[e.RowIndex].Cells["CategoryName"].Value.ToString()}";
-            if (Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["QuantityInStock"].Value) <= Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["MinimumQuantityForWarning"].Value)) 
+            if (Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["QuantityInStock"].Value) <= Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["MinimumQuantityForWarning"].Value))
             {
                 lblQuantity.BackColor = Color.FromArgb(255, 128, 128);
                 lblQuantity.ForeColor = Color.White;
             }
-        else
+            else
             {
 
                 lblQuantity.BackColor = Color.White;
@@ -117,12 +200,12 @@ namespace PosAndAccountantProject.Products
         {
             frmProductInfo frm = new frmProductInfo(Convert.ToInt32(dgvProducts.CurrentRow.Cells["ProductID"].Value));
             frm.ShowDialog();
-            if(frm.WasUpated)
+            if (frm.WasUpated)
             {
                 _RefreshForm();
             }
 
-           
+
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -160,20 +243,20 @@ namespace PosAndAccountantProject.Products
             _AllProducts.DefaultView.RowFilter = "";
             lblTotalCount.Text = dgvProducts.Rows.Count.ToString();
             txtFilterValue.Clear();
-           
-            if (cbFilterBy.SelectedIndex==0)
+
+            if (cbFilterBy.SelectedIndex == 0)
             {
                 txtFilterValue.Visible = false;
             }
             else
             {
                 txtFilterValue.Visible = true;
-            }    
+            }
         }
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtFilterValue.Text.Trim())|| cbFilterBy.SelectedIndex==0)
+            if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()) || cbFilterBy.SelectedIndex == 0)
             {
                 _AllProducts.DefaultView.RowFilter = "";
                 lblTotalCount.Text = dgvProducts.Rows.Count.ToString();
@@ -189,7 +272,7 @@ namespace PosAndAccountantProject.Products
                         ColumnName = "ProductName";
                         break;
                     }
-                    case 2:
+                case 2:
                     {
 
                         ColumnName = "BarCode";
@@ -203,8 +286,30 @@ namespace PosAndAccountantProject.Products
 
             }
 
-            _AllProducts.DefaultView.RowFilter=string.Format("[{0}] like '%{1}%'",ColumnName,txtFilterValue.Text.Trim());
+            _AllProducts.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", ColumnName, txtFilterValue.Text.Trim());
 
         }
-    }
+
+        private void lnkPrivios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) - 1).ToString();
+
+        }
+
+        private void lnkNext_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) + 1).ToString();
+
+        }
+
+        private void lblPageNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPageNumber_TextChanged(object sender, EventArgs e)
+        {
+            dgvProducts.DataSource=clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text),10);        }
+         }
 }
