@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PosAndAccountantProject.Products
 {
@@ -13,7 +14,8 @@ namespace PosAndAccountantProject.Products
         {
             InitializeComponent();
         }
-
+        enum enGridSource { eAll,eMostSale,eMostProfit,eSlowMove,eLowStock}
+        enGridSource GridSource=enGridSource.eAll;
         private DataTable _AllProducts = clsProduct.GetAllProducts(1, 10);
 
 
@@ -23,11 +25,12 @@ namespace PosAndAccountantProject.Products
         }
         void _RefreshForm()
         {
-            _AllProducts = clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text), 10);
-            dgvProducts.DataSource = _AllProducts;
-            lblTotalCount.Text = dgvProducts.Rows.Count.ToString();
-            lblOutOfStockCount.Text = ((int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
-
+           dgvProducts.DataSource = clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+             lblTotalCount.Text = clsProduct.CountStockProducts().ToString();
+            lblOutOfStockCount.Text =clsProduct.CountOfLowStockProducts() .ToString();
+            lblValueOfStock.Text = clsProduct.GetTotalValueOfStock().ToString();
+lblCountLoseProduct.Text=clsProduct.CountLoseProduct().ToString();
+            _LoadDataTochart();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -47,13 +50,78 @@ namespace PosAndAccountantProject.Products
         {
             Close();
         }
+        private void _LoadDataTochart()
+        {
+            DataTable dt = clsProduct.GetMostProfitProductsInMonth();
 
+            chart.Series.Clear();
+            chart.ChartAreas.Clear();
+            chart.Titles.Clear();
+            chart.Legends.Clear();
+
+            chart.RightToLeft = RightToLeft.Yes;
+            chart.BackColor = Color.White;
+            chart.AntiAliasing = AntiAliasingStyles.All;
+            chart.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
+
+            // العنوان
+            chart.Titles.Add(new Title("الربح حسب المنتج لهذا الشهر", Docking.Top,
+                new Font("Segoe UI", 14, FontStyle.Bold), Color.FromArgb(40, 40, 40)));
+
+            // منطقة الرسم
+            var area = new ChartArea("Main") { BackColor = Color.White };
+
+            area.AxisX.Interval = 1;
+            area.AxisX.IsReversed = true;                  // first product on the right (RTL)
+            area.AxisX.MajorGrid.Enabled = false;
+            area.AxisX.LabelStyle.Angle = -45;
+            area.AxisX.LabelStyle.Font = new Font("Segoe UI", 9);
+            area.AxisX.Title = "المنتج";
+            area.AxisX.TitleFont = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            area.AxisY.Title = "الربح";
+            area.AxisY.TitleFont = new Font("Segoe UI", 10, FontStyle.Bold);
+            area.AxisY.LabelStyle.Format = "N0";
+            area.AxisY.LabelStyle.Font = new Font("Segoe UI", 9);
+            area.AxisY.MajorGrid.LineColor = Color.Gainsboro;
+            area.AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+
+            chart.ChartAreas.Add(area);
+
+            // السلسلة
+            var series = new Series("الربح")
+            {
+                ChartType = SeriesChartType.Column,
+                Color = Color.FromArgb(52, 152, 219),
+                IsValueShownAsLabel = true,
+                LabelFormat = "N0",
+                Font = new Font("Segoe UI", 8, FontStyle.Bold),
+                ["PointWidth"] = "0.6"
+            };
+            chart.Series.Add(series);
+
+            // ترتيب حسب الربح (الأعلى أولاً)
+            DataView view = dt.DefaultView;
+            view.Sort = "Profit DESC";
+
+            foreach (DataRowView row in view)
+            {
+                string name = row["ProductName"].ToString();
+                decimal profit = row["Profit"] == DBNull.Value ? 0 : Convert.ToDecimal(row["Profit"]);
+
+                int i = series.Points.AddXY(name, profit);
+                DataPoint p = series.Points[i];
+
+                p.ToolTip = $"{name}: {profit:N0}";
+                if (profit < 0) p.Color = Color.FromArgb(231, 76, 60);   // أحمر للخسارة
+            }
+        }
         private void frmListProducts_Load(object sender, EventArgs e)
         {
             
 
 
-            lblPageNumber.Text = "1";
+           
             dgvProducts.AutoGenerateColumns = false;
             dgvProducts.Columns.Clear();
 
@@ -70,27 +138,27 @@ namespace PosAndAccountantProject.Products
             dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "ProductName",
-                HeaderText = "المبلغ المدفوع",
+                HeaderText = "اسم المنتج",
                 DataPropertyName = "ProductName",
                 ReadOnly = true
             });
             dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "UnitOfSale",
-                HeaderText = "اسم العميل",
+                HeaderText = "وحدة البيع",
                 DataPropertyName = "UnitOfSale",
                 ReadOnly = true
             }); dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "CategoryName",
-                HeaderText = "المبلع الكلي",
+                HeaderText = "الصنف",
                 DataPropertyName = "CategoryName",
                 ReadOnly = true
             });
             dgvProducts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "SellingPrice",
-                HeaderText = "تاريخ الانشاء",
+                HeaderText = "سعر البيع",
                 DataPropertyName = "SellingPrice",
                 ReadOnly = true
             });
@@ -148,22 +216,11 @@ namespace PosAndAccountantProject.Products
 
                 ReadOnly = true
             });
-            dgvProducts.DataSource = clsProduct.GetAllProducts(1, 10);
+
+            _RefreshForm();
 
 
-             lblTotalCount.Text = dgvProducts.Rows.Count.ToString();
-
-
- 
-
-
-                lblOutOfStockCount.Text = ((int)_AllProducts.Compute("Count(QuantityInStock)", "MinimumQuantityForWarning >= QuantityInStock")).ToString();
-           
-
-
-
-
-
+            lblPageNumber.Text = "1";
 
         }
 
@@ -310,6 +367,107 @@ namespace PosAndAccountantProject.Products
 
         private void lblPageNumber_TextChanged(object sender, EventArgs e)
         {
-            dgvProducts.DataSource=clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text),10);        }
-         }
+            switch (GridSource)
+            {
+                case enGridSource.eMostSale:
+                    {
+                        dgvProducts.DataSource = clsProduct.GetMostSaledProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eSlowMove:
+                    {
+                        dgvProducts.DataSource = clsProduct.GetLowSaledProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eLowStock:
+                    {
+                        dgvProducts.DataSource=clsProduct.GetLowStockProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eMostProfit:
+                    {
+                        dgvProducts.DataSource = clsProduct.GetMostProfitProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                default:
+                    {
+                        dgvProducts.DataSource = clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+
+
+            }
+         
+        }
+
+        private void lnkSlowMoving_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eSlowMove;
+            if(lblPageNumber.Text!="1")
+            lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null,null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkLowStock.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.Silver;
+            lnkMostSold.BackColor = Color.White;
+        }
+
+        private void lnkEveryProduct_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eAll;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor= Color.Silver;
+            lnkLowStock.BackColor= Color.White;
+            lnkMostProfit.BackColor= Color.White;
+            lnkSlowMoving.BackColor= Color.White;
+            lnkMostSold.BackColor= Color.White;
+        }
+
+        private void lnkLowStock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eLowStock;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkLowStock.BackColor = Color.Silver;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.White;
+        }
+
+        private void lnkMostProfit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eMostProfit;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkLowStock.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.Silver;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.White;
+        }
+
+        private void lnkMostSold_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eMostSale;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkLowStock.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.Silver;
+        }
+    }
 }

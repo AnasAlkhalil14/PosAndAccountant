@@ -290,7 +290,7 @@ namespace PosAndAccountant_DataAccess
         {
 
             decimal TotalValue = 0;
-            string query = @"select sum(CostPrice*QuantityInStock) from Products;";
+            string query = @"select FORMAT(sum(CostPrice*QuantityInStock) , '0.##')from Products;";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -346,6 +346,251 @@ where QuantityInStock<=MinimumQuantityForWarning;";
 
 
         }
-      
+        public static int CountStockProducts()
+         
+            {
+                int Count = 0;
+                string query = @"
+
+select count(1) as CountStock  from Products 
+ 
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && int.TryParse(result.ToString(), out int total))
+                            {
+                                Count = total;
+                            }
+                            else
+                            {
+                                Count = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Count;
+            }
+
+        public static int  CountLoseProduct()
+        {
+            int Count = 0;
+            string query = @"
+select count(1) as CountStockLose  from Products 
+where CostPrice>=SellingPrice
+;";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            Count = total;
+                        }
+                        else
+                        {
+                            Count = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return Count;
+
+        }
+
+        public static DataTable GetMostSaledProducts(int PageNumber, int PageSize)
+        {
+            string Query = @"  
+
+
+ select  P.ProductID, P.ProductName, P.UnitOfSale, pc.CategoryName,FORMAT(P.SellingPrice, '0.##') as SellingPrice ,
+FORMAT(p.CostPrice, '0.##') as CostPrice,P.ImagePath, 
+                         P.QuantityInStock, P.MinimumQuantityForWarning, P.CreateDate,P.BarCode,P.ProductCategoryID
+ from(select  p.ProductID, IsNull(sum(Quantity),0) as SumSale from 
+ SaleDetails sd full join Products p on sd.ProductID=p.ProductID
+ group by p.ProductID )S join Products P on S.ProductID=P.ProductID
+ join ProductCategories pc on P.ProductCategoryID=pc.CategoryID
+ order by S.SumSale desc
+ 
+offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only;";
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+        }
+        public static DataTable GetLowSaledProducts(int PageNumber, int PageSize)
+        {
+            string Query = @"  
+
+
+ select  P.ProductID, P.ProductName, P.UnitOfSale, pc.CategoryName,FORMAT(P.SellingPrice, '0.##') as SellingPrice ,
+FORMAT(p.CostPrice, '0.##') as CostPrice,P.ImagePath, 
+                         P.QuantityInStock, P.MinimumQuantityForWarning, P.CreateDate,P.BarCode,P.ProductCategoryID
+ from(select  p.ProductID, IsNull(sum(Quantity),0) as SumSale from 
+ SaleDetails sd full join Products p on sd.ProductID=p.ProductID
+ group by p.ProductID )S join Products P on S.ProductID=P.ProductID
+ join ProductCategories pc on P.ProductCategoryID=pc.CategoryID
+ order by S.SumSale Asc
+ 
+offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only;";
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+        }
+        public static DataTable GetLowStockProducts(int PageNumber, int PageSize)
+        {
+            string Query = @"  
+ select  P.ProductID, P.ProductName, P.UnitOfSale, pc.CategoryName,FORMAT(P.SellingPrice, '0.##') as SellingPrice ,
+FORMAT(p.CostPrice, '0.##') as CostPrice,P.ImagePath, 
+                         P.QuantityInStock, P.MinimumQuantityForWarning, P.CreateDate,P.BarCode,P.ProductCategoryID
+ from Products P
+ join ProductCategories pc on P.ProductCategoryID=pc.CategoryID
+ where QuantityInStock<=MinimumQuantityForWarning
+ order by ProductID Asc
+ 
+offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only;";
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+        }
+        public static DataTable GetMostProfitProducts(int PageNumber, int PageSize)
+        {
+            string Query = @"  
+
+select  P.ProductID, P.ProductName, P.UnitOfSale, pc.CategoryName,FORMAT(P.SellingPrice, '0.##') as SellingPrice ,
+FORMAT(p.CostPrice, '0.##') as CostPrice,P.ImagePath, 
+                         P.QuantityInStock, P.MinimumQuantityForWarning, P.CreateDate,P.BarCode,P.ProductCategoryID
+ from  ( 
+  select p.ProductID,IsNull(sum((sd.SellingPrice-sd.CostPrice-sd.DiscountAmount)*(sd.Quantity-sd.ReturnedQuantity)),0)as profit from SaleDetails sd
+  full join Products p on sd.ProductID=p.ProductID
+  group by p.ProductID
+  ) sd join Products p on sd.ProductI   D=p.ProductID join ProductCategories pc on P.ProductCategoryID=pc.CategoryID
+  order by sd.profit desc
+
+  
+offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only;
+";
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+        }
+        public static DataTable GetMostProfitProductsInMonth(  )
+        {
+            string Query = @"  
+  select top 7 p.ProductName,sd.profit from( 
+  select p.ProductID,IsNull(sum((sd.SellingPrice-sd.CostPrice-sd.DiscountAmount)*(sd.Quantity-sd.ReturnedQuantity)),0)as profit from SaleDetails sd
+
+  full join Products p on sd.ProductID=p.ProductID
+  join Sales s on s.SaleID=sd.SaleID
+  where s.CreateDate>=DATEADD(day,-30,GETDATE())
+  
+  group by p.ProductID
+  ) sd join Products p on sd.ProductID=p.ProductID
+
+  order by sd.profit desc
+  
+";
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+                   
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                    }
+                    catch { return null; }
+                }
+            }
+            return dt;
+        }
+
     }
 }

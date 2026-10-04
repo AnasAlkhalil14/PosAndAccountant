@@ -193,5 +193,33 @@ namespace PosAndAccountant_business
         {
             return clsProductData.CountOfLowStockProducts();
         }
+        public static int CountStockProducts()
+        {
+            return clsProductData.CountStockProducts(); 
+        }
+        public static int CountLoseProduct()
+        {
+            return clsProductData.CountLoseProduct();
+        }
+        public static DataTable GetMostSaledProducts(int PageNumber, int PageSize)
+        {
+            return clsProductData.GetMostSaledProducts(PageNumber, PageSize);
+        }
+        public static DataTable GetLowSaledProducts(int PageNumber, int PageSize)
+        {
+            return clsProductData.GetLowSaledProducts(PageNumber, PageSize);
+        }
+        public static DataTable GetLowStockProducts(int PageNumber, int PageSize)
+        {
+            return clsProductData.GetLowStockProducts(PageNumber, PageSize);
+        }
+        public static DataTable GetMostProfitProducts(int PageNumber, int PageSize)
+        {
+            return clsProductData.GetMostProfitProducts(PageNumber, PageSize);
+        }
+        public static DataTable GetMostProfitProductsInMonth()
+        {
+            return clsProductData.GetMostProfitProductsInMonth();
+        }
     }
 }
