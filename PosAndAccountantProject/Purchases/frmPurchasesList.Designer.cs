@@ -74,16 +74,18 @@
             this.guna2Panel3.Controls.Add(this.pictureBox1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(953, 128);
+            this.guna2Panel3.Size = new System.Drawing.Size(1271, 158);
             this.guna2Panel3.TabIndex = 43;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.PurchaseList;
-            this.pictureBox1.Location = new System.Drawing.Point(328, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(437, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(353, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -94,8 +96,7 @@
             this.lblPurchaseToday.BackColor = System.Drawing.Color.Transparent;
             this.lblPurchaseToday.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblPurchaseToday.ForeColor = System.Drawing.Color.White;
-            this.lblPurchaseToday.Location = new System.Drawing.Point(11, 24);
-            this.lblPurchaseToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPurchaseToday.Location = new System.Drawing.Point(15, 30);
             this.lblPurchaseToday.Name = "lblPurchaseToday";
             this.lblPurchaseToday.Size = new System.Drawing.Size(26, 30);
             this.lblPurchaseToday.TabIndex = 1;
@@ -107,10 +108,10 @@
             this.guna2Panel2.Controls.Add(this.lblPurchaseToday);
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(818, 177);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel2.Location = new System.Drawing.Point(1091, 218);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(135, 65);
+            this.guna2Panel2.Size = new System.Drawing.Size(180, 80);
             this.guna2Panel2.TabIndex = 40;
             // 
             // label8
@@ -119,8 +120,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(11, 8);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(15, 10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 15);
             this.label8.TabIndex = 0;
@@ -132,8 +132,7 @@
             this.lblLowStockProducts.BackColor = System.Drawing.Color.Transparent;
             this.lblLowStockProducts.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblLowStockProducts.ForeColor = System.Drawing.Color.White;
-            this.lblLowStockProducts.Location = new System.Drawing.Point(11, 24);
-            this.lblLowStockProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLowStockProducts.Location = new System.Drawing.Point(15, 30);
             this.lblLowStockProducts.Name = "lblLowStockProducts";
             this.lblLowStockProducts.Size = new System.Drawing.Size(26, 30);
             this.lblLowStockProducts.TabIndex = 1;
@@ -145,8 +144,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 8);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(4, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 15);
             this.label6.TabIndex = 0;
@@ -158,10 +156,10 @@
             this.guna2Panel1.Controls.Add(this.lblLowStockProducts);
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(818, 261);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel1.Location = new System.Drawing.Point(1091, 321);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(135, 65);
+            this.guna2Panel1.Size = new System.Drawing.Size(180, 80);
             this.guna2Panel1.TabIndex = 41;
             // 
             // lblDebtToday
@@ -170,8 +168,7 @@
             this.lblDebtToday.BackColor = System.Drawing.Color.Transparent;
             this.lblDebtToday.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblDebtToday.ForeColor = System.Drawing.Color.White;
-            this.lblDebtToday.Location = new System.Drawing.Point(11, 24);
-            this.lblDebtToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDebtToday.Location = new System.Drawing.Point(15, 30);
             this.lblDebtToday.Name = "lblDebtToday";
             this.lblDebtToday.Size = new System.Drawing.Size(26, 30);
             this.lblDebtToday.TabIndex = 1;
@@ -183,8 +180,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(15, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 15);
             this.label3.TabIndex = 0;
@@ -196,10 +192,10 @@
             this.cardTotal.Controls.Add(this.lblDebtToday);
             this.cardTotal.Controls.Add(this.label3);
             this.cardTotal.FillColor = System.Drawing.Color.Red;
-            this.cardTotal.Location = new System.Drawing.Point(652, 177);
-            this.cardTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.cardTotal.Location = new System.Drawing.Point(869, 218);
+            this.cardTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cardTotal.Name = "cardTotal";
-            this.cardTotal.Size = new System.Drawing.Size(135, 65);
+            this.cardTotal.Size = new System.Drawing.Size(180, 80);
             this.cardTotal.TabIndex = 38;
             // 
             // lblMaxPurchaseToday
@@ -208,8 +204,7 @@
             this.lblMaxPurchaseToday.BackColor = System.Drawing.Color.Transparent;
             this.lblMaxPurchaseToday.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblMaxPurchaseToday.ForeColor = System.Drawing.Color.White;
-            this.lblMaxPurchaseToday.Location = new System.Drawing.Point(11, 24);
-            this.lblMaxPurchaseToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMaxPurchaseToday.Location = new System.Drawing.Point(15, 30);
             this.lblMaxPurchaseToday.Name = "lblMaxPurchaseToday";
             this.lblMaxPurchaseToday.Size = new System.Drawing.Size(26, 30);
             this.lblMaxPurchaseToday.TabIndex = 1;
@@ -220,10 +215,11 @@
             this.lnkPrivios.AutoSize = true;
             this.lnkPrivios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lnkPrivios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lnkPrivios.Location = new System.Drawing.Point(652, 426);
+            this.lnkPrivios.Location = new System.Drawing.Point(869, 524);
+            this.lnkPrivios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkPrivios.Name = "lnkPrivios";
-            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4);
-            this.lnkPrivios.Size = new System.Drawing.Size(61, 30);
+            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lnkPrivios.Size = new System.Drawing.Size(63, 32);
             this.lnkPrivios.TabIndex = 37;
             this.lnkPrivios.TabStop = true;
             this.lnkPrivios.Text = "السابق";
@@ -235,8 +231,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(11, 8);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(15, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 15);
             this.label5.TabIndex = 0;
@@ -247,10 +242,11 @@
             this.lnkNext.AutoSize = true;
             this.lnkNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lnkNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lnkNext.Location = new System.Drawing.Point(726, 426);
+            this.lnkNext.Location = new System.Drawing.Point(968, 524);
+            this.lnkNext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkNext.Name = "lnkNext";
-            this.lnkNext.Padding = new System.Windows.Forms.Padding(4);
-            this.lnkNext.Size = new System.Drawing.Size(55, 30);
+            this.lnkNext.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lnkNext.Size = new System.Drawing.Size(57, 32);
             this.lnkNext.TabIndex = 36;
             this.lnkNext.TabStop = true;
             this.lnkNext.Text = "التالي";
@@ -260,7 +256,8 @@
             // 
             this.lblPageNumber.AutoSize = true;
             this.lblPageNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNumber.Location = new System.Drawing.Point(797, 426);
+            this.lblPageNumber.Location = new System.Drawing.Point(1063, 524);
+            this.lblPageNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPageNumber.Name = "lblPageNumber";
             this.lblPageNumber.Size = new System.Drawing.Size(49, 30);
             this.lblPageNumber.TabIndex = 35;
@@ -273,9 +270,10 @@
             this.btnAddNewPurchase.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.btnAddNewPurchase.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAddNewPurchase.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewPurchase.Location = new System.Drawing.Point(13, 407);
+            this.btnAddNewPurchase.Location = new System.Drawing.Point(17, 501);
+            this.btnAddNewPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddNewPurchase.Name = "btnAddNewPurchase";
-            this.btnAddNewPurchase.Size = new System.Drawing.Size(179, 49);
+            this.btnAddNewPurchase.Size = new System.Drawing.Size(239, 60);
             this.btnAddNewPurchase.TabIndex = 32;
             this.btnAddNewPurchase.Text = "+ إضافة شراء جديد";
             this.btnAddNewPurchase.Click += new System.EventHandler(this.btnAddNewPurchase_Click);
@@ -309,13 +307,14 @@
             this.chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart.Legends.Add(legend1);
-            this.chart.Location = new System.Drawing.Point(69, 148);
+            this.chart.Location = new System.Drawing.Point(92, 182);
+            this.chart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart.Name = "chart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(476, 229);
+            this.chart.Size = new System.Drawing.Size(635, 282);
             this.chart.TabIndex = 42;
             this.chart.Text = " ";
             // 
@@ -325,18 +324,17 @@
             this.cardOutOfStock.Controls.Add(this.lblMaxPurchaseToday);
             this.cardOutOfStock.Controls.Add(this.label5);
             this.cardOutOfStock.FillColor = System.Drawing.Color.Maroon;
-            this.cardOutOfStock.Location = new System.Drawing.Point(652, 261);
-            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2);
+            this.cardOutOfStock.Location = new System.Drawing.Point(869, 321);
+            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cardOutOfStock.Name = "cardOutOfStock";
-            this.cardOutOfStock.Size = new System.Drawing.Size(135, 65);
+            this.cardOutOfStock.Size = new System.Drawing.Size(180, 80);
             this.cardOutOfStock.TabIndex = 39;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(851, 426);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1135, 524);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(115, 25);
@@ -371,14 +369,15 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPurchaseList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPurchaseList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvPurchaseList.Location = new System.Drawing.Point(13, 479);
+            this.dgvPurchaseList.Location = new System.Drawing.Point(17, 590);
+            this.dgvPurchaseList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPurchaseList.Name = "dgvPurchaseList";
             this.dgvPurchaseList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvPurchaseList.RowHeadersVisible = false;
             this.dgvPurchaseList.RowHeadersWidth = 51;
             this.dgvPurchaseList.RowTemplate.Height = 30;
             this.dgvPurchaseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPurchaseList.Size = new System.Drawing.Size(931, 322);
+            this.dgvPurchaseList.Size = new System.Drawing.Size(1241, 396);
             this.dgvPurchaseList.TabIndex = 33;
             this.dgvPurchaseList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.dgvPurchaseList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -405,10 +404,10 @@
             // 
             // frmPurchasesList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(953, 811);
+            this.ClientSize = new System.Drawing.Size(1271, 998);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
@@ -421,6 +420,7 @@
             this.Controls.Add(this.cardOutOfStock);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPurchaseList);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPurchasesList";
             this.Text = "frmPurchasesList";
             this.Load += new System.EventHandler(this.frmPurchasesList_Load);

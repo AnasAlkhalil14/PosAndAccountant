@@ -59,7 +59,7 @@ namespace PosAndAccountantProject.Login
 
                 frmMain frm=new frmMain();
                 frm.Show();
-                this.Close();
+                this.Hide();
              }
             else
             {
@@ -134,6 +134,9 @@ namespace PosAndAccountantProject.Login
             }
         }
 
-        
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+             Application.Exit();
+        }
     }
 }
