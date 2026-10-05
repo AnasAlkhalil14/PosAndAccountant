@@ -200,7 +200,7 @@ namespace PosAndAccountant_DataAccess
         }
 
 
-        public static DataTable GetAllCustomers()
+        public static DataTable GetAllCustomers(int PageNumber,int PageSize)
         {
 
             DataTable dataTable = new DataTable();
@@ -211,7 +211,8 @@ namespace PosAndAccountant_DataAccess
                 using (SqlCommand command = new SqlCommand("[Customers].[SP_GetAllCustomers]", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
 
                     try
                     {
@@ -464,7 +465,7 @@ namespace PosAndAccountant_DataAccess
         {
 
             decimal TotalDebt = 0;
-            string query = @"select sum(TotalRemainingDebt) from Customers ";
+            string query = @"select  FORMAT(sum(TotalRemainingDebt)  , '0.##')from Customers ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -486,6 +487,103 @@ namespace PosAndAccountant_DataAccess
                 }
             }
             return TotalDebt;
+
+        }
+        public static int CountDebtCustomers()
+        {
+
+            int TotalDebt = 0;
+            string query = @"
+select count(1) as CountDebt from Customers where
+TotalRemainingDebt>0
+ ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            TotalDebt = total;
+                        }
+                        else
+                        {
+                            TotalDebt = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalDebt;
+
+        }
+        public static int CountCustomers()
+        {
+
+            int TotalCustomers = 0;
+            string query = @"select count(1) as CountCustomers	 from Customers  
+
+ ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            TotalCustomers = total;
+                        }
+                        else
+                        {
+                            TotalCustomers = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalCustomers;
+
+        }
+        public static int CountCustomersToday()
+        {
+
+            int TotalCustomers = 0;
+            string query = @"
+select count(1) as CountCustomerToday from
+(
+ select  distinct   s.CustomerID  from SaleDetails sd join 
+Sales s on sd.SaleID=s.SaleID
+where CreateDate>= cast(GETDATE() as date) and
+  CreateDate <Dateadd(day,1,cast(getdate() as date))
+ )r
+ ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            TotalCustomers = total;
+                        }
+                        else
+                        {
+                            TotalCustomers = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalCustomers;
 
         }
 

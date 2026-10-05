@@ -132,9 +132,9 @@ namespace PosAndAccountant_business
 
         }
 
-        public static DataTable GetAllCustombersList()
+        public static DataTable GetAllCustombersList(int PageNumber, int PageSize)
         {
-            return clsCustomerData.GetAllCustomers();
+            return clsCustomerData.GetAllCustomers(PageNumber,PageSize);
         }
         public static bool DeleteCustomerByID(int CustomerID)
         {
@@ -187,7 +187,17 @@ namespace PosAndAccountant_business
             return clsCustomerData.GetAllCustomersDebt();
         }
 
-
-
+        public static int CountDebtCustomers()
+        {
+            return clsCustomerData.CountDebtCustomers ();
+        }
+        public static int CountCustomers()
+        {
+            return clsCustomerData.CountCustomers ();
+        }
+        public static int CountCustomersToday()
+        {
+            return clsCustomerData.CountCustomersToday ();
+        }
     }
 }

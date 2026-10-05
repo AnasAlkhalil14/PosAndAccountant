@@ -528,7 +528,7 @@ FORMAT(p.CostPrice, '0.##') as CostPrice,P.ImagePath,
   select p.ProductID,IsNull(sum((sd.SellingPrice-sd.CostPrice-sd.DiscountAmount)*(sd.Quantity-sd.ReturnedQuantity)),0)as profit from SaleDetails sd
   full join Products p on sd.ProductID=p.ProductID
   group by p.ProductID
-  ) sd join Products p on sd.ProductI   D=p.ProductID join ProductCategories pc on P.ProductCategoryID=pc.CategoryID
+  ) sd join Products p on sd.ProductID=p.ProductID join ProductCategories pc on P.ProductCategoryID=pc.CategoryID
   order by sd.profit desc
 
   

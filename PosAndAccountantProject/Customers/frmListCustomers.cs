@@ -19,7 +19,8 @@ namespace PosAndAccountantProject.Customers
         }
 
         private DataTable _AllCustomers;
-
+        enum enGridSource { eAll, eMostSale, eMostProfit, eSlowMove, eDebt }
+        enGridSource GridSource = enGridSource.eAll;
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,48 +28,78 @@ namespace PosAndAccountantProject.Customers
 
         private void frmListCustomers_Load(object sender, EventArgs e)
         {
+
+            dgvCustomers.AutoGenerateColumns = false;
+            dgvCustomers.Columns.Clear();
+
+            dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CustomerID",
+                HeaderText = "معرف العميل",
+                DataPropertyName = "CustomerID",
+                ReadOnly = true
+
+            });
+
+
+            dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "FullName",
+                HeaderText = "الاسم الكامل",
+                DataPropertyName = "FullName",
+                ReadOnly = true
+            });
+            dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Phone",
+                HeaderText = "رقم الهاتف",
+                DataPropertyName = "Phone",
+                ReadOnly = true
+            }); dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Address",
+                HeaderText = "العنوان",
+                DataPropertyName = "Address",
+                ReadOnly = true
+            });
+            dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IsActive",
+                HeaderText = "هل نشط",
+                DataPropertyName = "IsActive",
+                ReadOnly = true
+            });
+            dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TotalRemainingDebt",
+                HeaderText = "الدين الكلي",
+                DataPropertyName = "TotalRemainingDebt",
+                ReadOnly = true
+            }); dgvCustomers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CustomerType",
+                HeaderText = "نوع العميل",
+
+                DataPropertyName = "CustomerType",
+                ReadOnly = true
+            });
+         
+             RefreshForm();
+
+
+
+              
             
-            _AllCustomers=clsCustomer.GetAllCustombersList();
-            dgvCustomers.DataSource = _AllCustomers;
-            lblRecordsCount.Text=dgvCustomers.Rows.Count.ToString();
-            if(dgvCustomers.Rows.Count>0)
-            {   
-                dgvCustomers.Columns[0].HeaderText = "معرف العميل";
-                dgvCustomers.Columns[0].Width = 100;
-
-                dgvCustomers.Columns[1].HeaderText = "الاسم الكامل";
-                dgvCustomers.Columns[1].Width = 200;
-
-                dgvCustomers.Columns[2].HeaderText = "رقم الهاتف";
-                dgvCustomers.Columns[2].Width = 200;
-
-
-                dgvCustomers.Columns[3].HeaderText = "العنوان";
-                dgvCustomers.Columns[3].Width = 200;
-
-
-                dgvCustomers.Columns[4].HeaderText = "هل نشط";
-                dgvCustomers.Columns[4].Width = 100;
-
-
-
-                dgvCustomers.Columns[5].HeaderText = "الدين الكلي";
-                dgvCustomers.Columns[5].Width = 100;
-
-
-                dgvCustomers.Columns[6].HeaderText = "نوع العميل";
-                dgvCustomers.Columns[6].Width = 100;
-
-            }
-
         }
         private void RefreshForm()
         {
-
-            _AllCustomers=clsCustomer.GetAllCustombersList();
-            dgvCustomers.DataSource= _AllCustomers;
+            _AllCustomers= clsCustomer.GetAllCustombersList(Convert.ToInt32(lblPageNumber.Text), 10); 
+            dgvCustomers.DataSource = _AllCustomers;
             lblRecordsCount.Text=dgvCustomers.Rows.Count.ToString();
-
+            lblDebt.Text = clsCustomer.GetAllCustomersDebt().ToString();
+      lblCustomersToday.Text=clsCustomer.CountCustomersToday().ToString();
+            lblCountDebtCustomers.Text=clsCustomer.CountDebtCustomers().ToString();
+        lblDiscountToday.Text=clsSale.TotalDiscountToday().ToString();      
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -148,6 +179,7 @@ namespace PosAndAccountantProject.Customers
         {
             txtFilterValue.Visible = false;
 
+            if (_AllCustomers == null) return;
             
             if(cbFilterBy.SelectedIndex == 3)
             {
@@ -197,6 +229,97 @@ namespace PosAndAccountantProject.Customers
         {
             MessageBox.Show("This feture will be implemented soon");
 
+        }
+
+        private void lnkNext_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) + 1).ToString();
+
+        }
+
+        private void lnkPrivios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) - 1).ToString();
+
+        }
+
+        private void lnkSlowMoving_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eSlowMove;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkDebt.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.Silver;
+            lnkMostSold.BackColor = Color.White;
+        }
+
+        private void lblPageNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkEveryProduct_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GridSource = enGridSource.eAll;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.Silver;
+            lnkDebt.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.White;
+        }
+
+        private void lnkMostSold_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eMostSale;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkDebt.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.Silver;
+        }
+
+        private void lnkMostProfit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eMostProfit;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkDebt.BackColor = Color.White;
+            lnkMostProfit.BackColor = Color.Silver;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.White;
+        }
+
+        private void lnkLowStock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eDebt;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEveryProduct.BackColor = Color.White;
+            lnkDebt.BackColor = Color.Silver;
+            lnkMostProfit.BackColor = Color.White;
+            lnkSlowMoving.BackColor = Color.White;
+            lnkMostSold.BackColor = Color.White;
         }
     }
 }
