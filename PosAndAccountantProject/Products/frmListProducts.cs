@@ -220,7 +220,7 @@ lblCountLoseProduct.Text=clsProduct.CountLoseProduct().ToString();
             _RefreshForm();
 
 
-            lblPageNumber.Text = "1";
+           
 
         }
 
@@ -371,33 +371,34 @@ lblCountLoseProduct.Text=clsProduct.CountLoseProduct().ToString();
             {
                 case enGridSource.eMostSale:
                     {
-                        dgvProducts.DataSource = clsProduct.GetMostSaledProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        _AllProducts = clsProduct.GetMostSaledProducts(Convert.ToInt32(lblPageNumber.Text), 10);
                         break;
                     }
                 case enGridSource.eSlowMove:
                     {
-                        dgvProducts.DataSource = clsProduct.GetLowSaledProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        _AllProducts = clsProduct.GetLowSaledProducts(Convert.ToInt32(lblPageNumber.Text), 10);
                         break;
                     }
                 case enGridSource.eLowStock:
                     {
-                        dgvProducts.DataSource=clsProduct.GetLowStockProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        _AllProducts = clsProduct.GetLowStockProducts(Convert.ToInt32(lblPageNumber.Text), 10);
                         break;
                     }
                 case enGridSource.eMostProfit:
                     {
-                        dgvProducts.DataSource = clsProduct.GetMostProfitProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        _AllProducts = clsProduct.GetMostProfitProducts(Convert.ToInt32(lblPageNumber.Text), 10);
                         break;
                     }
                 default:
                     {
-                        dgvProducts.DataSource = clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text), 10);
+                        _AllProducts = clsProduct.GetAllProducts(Convert.ToInt32(lblPageNumber.Text), 10);
                         break;
                     }
 
 
             }
-         
+            dgvProducts.DataSource = _AllProducts;
+
         }
 
         private void lnkSlowMoving_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
