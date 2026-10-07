@@ -586,6 +586,279 @@ where CreateDate>= cast(GETDATE() as date) and
             return TotalCustomers;
 
         }
+        public static DataTable GetCustomersMostSaled(int PageNumber,int PageSize)
+        {
+            string query = @"
+
+SELECT Customers.CustomerID, Concat_ws(' ', People.FirstName, People.SecondName, People.LastName) AS FullName,case when People.Phone is null then 'لا يوجد' else People.Phone end as Phone,  case when People.Address is null then 'لا يوجد' else People.Address end as Address, Customers.IsActive,
+
+Customers.TotalRemainingDebt, 
+                  Customers.CustomerType
+FROM     Customers INNER JOIN
+                  People ON Customers.PersonID = People.PersonID
+			join (
+select CustomerID,sum(TotalAmount-DiscountAmount) as Total from Sales	
+group by CustomerID) s on Customers.CustomerID=s.CustomerID
+order by s.Total desc  
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                     command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+         public static DataTable GetCustomersLowSaled(int PageNumber,int PageSize)
+        {
+            string query = @"
+
+SELECT Customers.CustomerID, Concat_ws(' ', People.FirstName, People.SecondName, People.LastName) AS FullName,case when People.Phone is null then 'لا يوجد' else People.Phone end as Phone,  case when People.Address is null then 'لا يوجد' else People.Address end as Address, Customers.IsActive,
+
+Customers.TotalRemainingDebt, 
+                  Customers.CustomerType
+FROM     Customers INNER JOIN
+                  People ON Customers.PersonID = People.PersonID
+			join (
+select CustomerID,sum(TotalAmount-DiscountAmount) as Total from Sales	
+group by CustomerID) s on Customers.CustomerID=s.CustomerID
+order by s.Total asc
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                     command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+        public static DataTable GetCustomersMostProfit(int PageNumber, int PageSize)
+        {
+            string query = @" 
+
+SELECT Customers.CustomerID, Concat_ws(' ', People.FirstName, People.SecondName, People.LastName) AS FullName,case when People.Phone is null then 'لا يوجد' else People.Phone end as Phone,  case when People.Address is null then 'لا يوجد' else People.Address end as Address, Customers.IsActive,
+
+Customers.TotalRemainingDebt, 
+                  Customers.CustomerType
+FROM     Customers INNER JOIN
+                  People ON Customers.PersonID = People.PersonID
+			join (
+
+select s.CustomerID,sum(p.NetProfit) as Profit from ProfitRuns p
+join Sales s on p.SaleID=s.SaleID
+group  by s.CustomerID ) pr on pr.CustomerID =Customers.CustomerID
+order by pr.Profit desc
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+        public static DataTable GetCustomersWithDebt(int PageNumber, int PageSize)
+        {
+            string query = @" 
+
+SELECT Customers.CustomerID, Concat_ws(' ', People.FirstName, People.SecondName, People.LastName) AS FullName,case when People.Phone is null then 'لا يوجد' else People.Phone end as Phone,  case when People.Address is null then 'لا يوجد' else People.Address end as Address, Customers.IsActive,
+
+Customers.TotalRemainingDebt, 
+                  Customers.CustomerType
+FROM     Customers INNER JOIN
+                  People ON Customers.PersonID = People.PersonID
+			  
+order by TotalRemainingDebt desc
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+
 
     }
 }
