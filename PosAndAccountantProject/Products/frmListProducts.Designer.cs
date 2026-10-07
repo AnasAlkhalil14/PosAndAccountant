@@ -542,7 +542,7 @@ namespace PosAndAccountantProject.Products
             this.guna2Panel3.Controls.Add(this.pictureBox1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1271, 158);
             this.guna2Panel3.TabIndex = 107;
@@ -551,7 +551,7 @@ namespace PosAndAccountantProject.Products
             // 
             this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.sugar;
             this.pictureBox1.Location = new System.Drawing.Point(483, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(353, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -638,7 +638,7 @@ namespace PosAndAccountantProject.Products
             legend1.Name = "Legend1";
             this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(649, 172);
-            this.chart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart.Margin = new System.Windows.Forms.Padding(4);
             this.chart.Name = "chart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -656,7 +656,7 @@ namespace PosAndAccountantProject.Products
             this.lnkPrivios.Location = new System.Drawing.Point(316, 432);
             this.lnkPrivios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkPrivios.Name = "lnkPrivios";
-            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(5);
             this.lnkPrivios.Size = new System.Drawing.Size(63, 32);
             this.lnkPrivios.TabIndex = 113;
             this.lnkPrivios.TabStop = true;
@@ -671,7 +671,7 @@ namespace PosAndAccountantProject.Products
             this.lnkNext.Location = new System.Drawing.Point(235, 432);
             this.lnkNext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkNext.Name = "lnkNext";
-            this.lnkNext.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lnkNext.Padding = new System.Windows.Forms.Padding(5);
             this.lnkNext.Size = new System.Drawing.Size(57, 32);
             this.lnkNext.TabIndex = 112;
             this.lnkNext.TabStop = true;
