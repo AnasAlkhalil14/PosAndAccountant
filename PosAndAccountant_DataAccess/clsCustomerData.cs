@@ -859,6 +859,67 @@ order by TotalRemainingDebt desc
 
 
         }
+        public static DataTable GetCustomersCountWithDate( )
+        {
+            string query = @" 
+ 
+   select top 10  date1,count(1) as CountDayCustomers from(
+  select distinct CustomerID,cast(  CreateDate as date) as date1 from Sales
+   ) r
+   group by r.date1  
+   order by r.date1 asc
+";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                   
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+
 
 
     }

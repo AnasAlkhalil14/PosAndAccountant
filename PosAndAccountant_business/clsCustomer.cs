@@ -216,5 +216,9 @@ namespace PosAndAccountant_business
         {
             return clsCustomerData.GetCustomersWithDebt (PageNumber, PageSize);
         }
+        public static DataTable GetCustomersCountWithDate()
+        {
+            return clsCustomerData.GetCustomersCountWithDate ();
+        }
     }
 }
