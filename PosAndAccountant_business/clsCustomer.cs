@@ -199,5 +199,22 @@ namespace PosAndAccountant_business
         {
             return clsCustomerData.CountCustomersToday ();
         }
+        public static DataTable GetCustomersMostSaled(int PageNumber, int PageSize)
+        {
+            return clsCustomerData.GetCustomersMostSaled (PageNumber, PageSize);
+        }
+        public static DataTable GetCustomersLowSaled(int PageNumber, int PageSize)
+        {
+            return clsCustomerData.GetCustomersLowSaled(PageNumber, PageSize);
+        }
+
+        public static DataTable GetCustomersMostProfit(int PageNumber, int PageSize)
+        {
+            return clsCustomerData.GetCustomersMostProfit (PageNumber, PageSize);
+        }
+        public static DataTable GetCustomersWithDebt(int PageNumber, int PageSize)
+        {
+            return clsCustomerData.GetCustomersWithDebt (PageNumber, PageSize);
+        }
     }
 }
