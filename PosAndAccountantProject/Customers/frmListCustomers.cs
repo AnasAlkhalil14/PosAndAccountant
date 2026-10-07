@@ -260,6 +260,37 @@ namespace PosAndAccountantProject.Customers
 
         private void lblPageNumber_TextChanged(object sender, EventArgs e)
         {
+            switch (GridSource)
+            {
+                case enGridSource.eMostSale:
+                    {
+                        _AllCustomers= clsCustomer.GetCustomersMostSaled(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eSlowMove:
+                    {
+                        _AllCustomers = clsCustomer.GetCustomersLowSaled(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eDebt:
+                    {
+                        _AllCustomers = clsCustomer.GetCustomersWithDebt(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eMostProfit:
+                    {
+                        _AllCustomers = clsCustomer.GetCustomersMostProfit(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                default:
+                    {
+                        _AllCustomers = clsCustomer.GetAllCustombersList(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+
+
+            }
+            dgvCustomers.DataSource = _AllCustomers;
 
         }
 

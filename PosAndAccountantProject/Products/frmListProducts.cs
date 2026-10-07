@@ -367,7 +367,7 @@ lblCountLoseProduct.Text=clsProduct.CountLoseProduct().ToString();
 
         private void lblPageNumber_TextChanged(object sender, EventArgs e)
         {
-            switch (GridSource)
+             switch (GridSource)
             {
                 case enGridSource.eMostSale:
                     {

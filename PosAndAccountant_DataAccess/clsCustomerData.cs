@@ -802,7 +802,8 @@ Customers.TotalRemainingDebt,
                   Customers.CustomerType
 FROM     Customers INNER JOIN
                   People ON Customers.PersonID = People.PersonID
-			  
+			  			 where TotalRemainingDebt>0 
+
 order by TotalRemainingDebt desc
  offset(@PageNumber - 1) * @PageSize rows
  fetch next @PageSize rows only";
