@@ -1,4 +1,5 @@
-﻿using PosAndAccountant_business;
+﻿using Guna.Charts.WinForms;
+using PosAndAccountant_business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,8 +89,39 @@ namespace PosAndAccountantProject.Customers
 
 
 
-              
-            
+
+
+        }
+        private void _CustomersChart()
+        {
+            chartSales.YAxes.GridLines.Color = Color.FromArgb(30, 255, 255, 255); // faint grid lines
+            chartSales.XAxes.GridLines.Display = false; // hide vertical grid lines
+            chartSales.YAxes.Ticks.ForeColor = Color.Gray;
+            chartSales.XAxes.Ticks.ForeColor = Color.Gray;
+
+            // 2. Create the Spline Area Dataset for smooth curved line with fill
+            GunaSplineAreaDataset dataset = new GunaSplineAreaDataset();
+
+            // Visual Styling (Line color & semi-transparent blue area underneath)
+            dataset.BorderColor = Color.FromArgb(50, 140, 255);      // Glowing blue line
+            dataset.FillColor = Color.FromArgb(35, 50, 140, 255);   // Faded fill color
+            dataset.PointRadius = 4;                                  // Circle points on nodes
+            dataset.PointStyle = PointStyle.Circle;
+
+            // 3. Add Data Points (Matching your image: Feb 1 -> Feb 28)
+            DataTable CustomersDt = clsCustomer.GetCustomersCountWithDate();
+            foreach (DataRow row in CustomersDt.Rows)
+            {
+                dataset.DataPoints.Add(Convert.ToDateTime(row["date1"]).ToString("MM-dd"), Convert.ToDouble(row["CountDayCustomers"]));
+            }
+
+
+
+
+            // 4. Render to Chart
+            chartSales.Datasets.Clear();
+            chartSales.Datasets.Add(dataset);
+            chartSales.Update();
         }
         private void RefreshForm()
         {
@@ -99,7 +131,8 @@ namespace PosAndAccountantProject.Customers
             lblDebt.Text = clsCustomer.GetAllCustomersDebt().ToString();
       lblCustomersToday.Text=clsCustomer.CountCustomersToday().ToString();
             lblCountDebtCustomers.Text=clsCustomer.CountDebtCustomers().ToString();
-        lblDiscountToday.Text=clsSale.TotalDiscountToday().ToString();      
+        lblDiscountToday.Text=clsSale.TotalDiscountToday().ToString();
+            _CustomersChart();
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)

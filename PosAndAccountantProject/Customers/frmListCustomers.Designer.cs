@@ -19,9 +19,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -56,7 +68,6 @@
             this.cardTotal = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDebt = new System.Windows.Forms.Label();
             this.lblTotalDebt = new System.Windows.Forms.Label();
-            this.chartProfit = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lnkEveryProduct = new System.Windows.Forms.LinkLabel();
@@ -65,6 +76,9 @@
             this.lnkSlowMoving = new System.Windows.Forms.LinkLabel();
             this.lnkDebt = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlSalesOverview = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chartSales = new Guna.Charts.WinForms.GunaChart();
             this.cmsCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
@@ -73,7 +87,7 @@
             this.guna2Panel2.SuspendLayout();
             this.cardOutOfStock.SuspendLayout();
             this.cardTotal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProfit)).BeginInit();
+            this.pnlSalesOverview.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRecordsCount
@@ -81,9 +95,9 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblRecordsCount.Location = new System.Drawing.Point(167, 756);
+            this.lblRecordsCount.Location = new System.Drawing.Point(167, 794);
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(24, 21);
+            this.lblRecordsCount.Size = new System.Drawing.Size(26, 21);
             this.lblRecordsCount.TabIndex = 121;
             this.lblRecordsCount.Text = "??";
             // 
@@ -91,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(20, 756);
+            this.label2.Location = new System.Drawing.Point(20, 794);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 21);
             this.label2.TabIndex = 120;
@@ -113,7 +127,7 @@
             "معرف العميل",
             "اسم لعمبل",
             "المديونين"});
-            this.cbFilterBy.Location = new System.Drawing.Point(406, 375);
+            this.cbFilterBy.Location = new System.Drawing.Point(407, 404);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(160, 36);
             this.cbFilterBy.StartIndex = 0;
@@ -128,7 +142,7 @@
             this.txtFilterValue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(572, 375);
+            this.txtFilterValue.Location = new System.Drawing.Point(573, 404);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "ابحث هنا...";
@@ -240,7 +254,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomers.Location = new System.Drawing.Point(9, 419);
+            this.dgvCustomers.Location = new System.Drawing.Point(12, 446);
             this.dgvCustomers.MultiSelect = false;
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
@@ -284,7 +298,7 @@
             this.btnAddCustomer.ForeColor = System.Drawing.Color.YellowGreen;
             this.btnAddCustomer.Image = global::PosAndAccountantProject.Properties.Resources.addCustomer;
             this.btnAddCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddCustomer.Location = new System.Drawing.Point(838, 379);
+            this.btnAddCustomer.Location = new System.Drawing.Point(839, 408);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(87, 32);
             this.btnAddCustomer.TabIndex = 127;
@@ -296,7 +310,7 @@
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.Customers;
             this.pbPersonImage.Location = new System.Drawing.Point(315, 0);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(272, 122);
+            this.pbPersonImage.Size = new System.Drawing.Size(272, 115);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 122;
             this.pbPersonImage.TabStop = false;
@@ -316,7 +330,7 @@
             this.lnkPrivios.AutoSize = true;
             this.lnkPrivios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lnkPrivios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lnkPrivios.Location = new System.Drawing.Point(207, 369);
+            this.lnkPrivios.Location = new System.Drawing.Point(208, 398);
             this.lnkPrivios.Name = "lnkPrivios";
             this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4);
             this.lnkPrivios.Size = new System.Drawing.Size(61, 30);
@@ -330,7 +344,7 @@
             this.lnkNext.AutoSize = true;
             this.lnkNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lnkNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lnkNext.Location = new System.Drawing.Point(146, 369);
+            this.lnkNext.Location = new System.Drawing.Point(147, 398);
             this.lnkNext.Name = "lnkNext";
             this.lnkNext.Padding = new System.Windows.Forms.Padding(4);
             this.lnkNext.Size = new System.Drawing.Size(55, 30);
@@ -343,9 +357,9 @@
             // 
             this.lblPageNumber.AutoSize = true;
             this.lblPageNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNumber.Location = new System.Drawing.Point(98, 371);
+            this.lblPageNumber.Location = new System.Drawing.Point(99, 400);
             this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(25, 30);
+            this.lblPageNumber.Size = new System.Drawing.Size(18, 30);
             this.lblPageNumber.TabIndex = 131;
             this.lblPageNumber.Text = "1";
             this.lblPageNumber.TextChanged += new System.EventHandler(this.lblPageNumber_TextChanged);
@@ -354,7 +368,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1, 379);
+            this.label3.Location = new System.Drawing.Point(2, 408);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
@@ -367,7 +381,7 @@
             this.guna2Panel1.Controls.Add(this.lblCustomersToday);
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 253);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 285);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(135, 65);
@@ -405,7 +419,7 @@
             this.guna2Panel2.Controls.Add(this.lblDiscountToday);
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(163, 253);
+            this.guna2Panel2.Location = new System.Drawing.Point(163, 285);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(135, 65);
@@ -444,7 +458,7 @@
             this.cardOutOfStock.Controls.Add(this.label5);
             this.cardOutOfStock.FillColor = System.Drawing.Color.Gray;
             this.cardOutOfStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cardOutOfStock.Location = new System.Drawing.Point(163, 169);
+            this.cardOutOfStock.Location = new System.Drawing.Point(163, 201);
             this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2);
             this.cardOutOfStock.Name = "cardOutOfStock";
             this.cardOutOfStock.Size = new System.Drawing.Size(135, 65);
@@ -482,7 +496,7 @@
             this.cardTotal.Controls.Add(this.lblDebt);
             this.cardTotal.Controls.Add(this.lblTotalDebt);
             this.cardTotal.FillColor = System.Drawing.Color.Red;
-            this.cardTotal.Location = new System.Drawing.Point(0, 169);
+            this.cardTotal.Location = new System.Drawing.Point(0, 201);
             this.cardTotal.Margin = new System.Windows.Forms.Padding(2);
             this.cardTotal.Name = "cardTotal";
             this.cardTotal.Size = new System.Drawing.Size(135, 65);
@@ -514,27 +528,11 @@
             this.lblTotalDebt.TabIndex = 0;
             this.lblTotalDebt.Text = "اجمالي ديون الزبائن";
             // 
-            // chartProfit
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartProfit.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartProfit.Legends.Add(legend1);
-            this.chartProfit.Location = new System.Drawing.Point(509, 155);
-            this.chartProfit.Name = "chartProfit";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartProfit.Series.Add(series1);
-            this.chartProfit.Size = new System.Drawing.Size(416, 199);
-            this.chartProfit.TabIndex = 138;
-            this.chartProfit.Text = "chart1";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(327, 379);
+            this.label7.Location = new System.Drawing.Point(328, 408);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 20);
@@ -545,7 +543,7 @@
             // 
             this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator1.Location = new System.Drawing.Point(24, 359);
+            this.guna2Separator1.Location = new System.Drawing.Point(25, 388);
             this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(913, 8);
@@ -558,7 +556,7 @@
             this.lnkEveryProduct.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lnkEveryProduct.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkEveryProduct.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lnkEveryProduct.Location = new System.Drawing.Point(395, 232);
+            this.lnkEveryProduct.Location = new System.Drawing.Point(395, 264);
             this.lnkEveryProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkEveryProduct.Name = "lnkEveryProduct";
             this.lnkEveryProduct.Size = new System.Drawing.Size(71, 19);
@@ -573,7 +571,7 @@
             this.lnkMostSold.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lnkMostSold.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkMostSold.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lnkMostSold.Location = new System.Drawing.Point(318, 290);
+            this.lnkMostSold.Location = new System.Drawing.Point(318, 322);
             this.lnkMostSold.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkMostSold.Name = "lnkMostSold";
             this.lnkMostSold.Size = new System.Drawing.Size(86, 19);
@@ -588,7 +586,7 @@
             this.lnkMostProfit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lnkMostProfit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkMostProfit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lnkMostProfit.Location = new System.Drawing.Point(402, 290);
+            this.lnkMostProfit.Location = new System.Drawing.Point(402, 322);
             this.lnkMostProfit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkMostProfit.Name = "lnkMostProfit";
             this.lnkMostProfit.Size = new System.Drawing.Size(80, 19);
@@ -603,7 +601,7 @@
             this.lnkSlowMoving.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lnkSlowMoving.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSlowMoving.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lnkSlowMoving.Location = new System.Drawing.Point(318, 232);
+            this.lnkSlowMoving.Location = new System.Drawing.Point(318, 264);
             this.lnkSlowMoving.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkSlowMoving.Name = "lnkSlowMoving";
             this.lnkSlowMoving.Size = new System.Drawing.Size(83, 19);
@@ -618,7 +616,7 @@
             this.lnkDebt.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lnkDebt.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkDebt.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.lnkDebt.Location = new System.Drawing.Point(395, 259);
+            this.lnkDebt.Location = new System.Drawing.Point(395, 291);
             this.lnkDebt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkDebt.Name = "lnkDebt";
             this.lnkDebt.Size = new System.Drawing.Size(74, 19);
@@ -632,17 +630,78 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(315, 263);
+            this.label1.Location = new System.Drawing.Point(315, 295);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 146;
             this.label1.Text = "تقارير سريعة :";
             // 
+            // pnlSalesOverview
+            // 
+            this.pnlSalesOverview.BorderRadius = 12;
+            this.pnlSalesOverview.Controls.Add(this.label4);
+            this.pnlSalesOverview.Controls.Add(this.chartSales);
+            this.pnlSalesOverview.FillColor = System.Drawing.Color.White;
+            this.pnlSalesOverview.Location = new System.Drawing.Point(488, 163);
+            this.pnlSalesOverview.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlSalesOverview.Name = "pnlSalesOverview";
+            this.pnlSalesOverview.Size = new System.Drawing.Size(465, 219);
+            this.pnlSalesOverview.TabIndex = 149;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(202, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 21);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "مؤشر الزبائن";
+            // 
+            // chartSales
+            // 
+            this.chartSales.BackColor = System.Drawing.Color.Transparent;
+            this.chartSales.Legend.Display = false;
+            chartFont1.FontName = "Arial";
+            this.chartSales.Legend.LabelFont = chartFont1;
+            this.chartSales.Location = new System.Drawing.Point(13, 34);
+            this.chartSales.Margin = new System.Windows.Forms.Padding(4);
+            this.chartSales.Name = "chartSales";
+            this.chartSales.Size = new System.Drawing.Size(424, 181);
+            this.chartSales.TabIndex = 11;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chartSales.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.chartSales.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chartSales.Tooltips.TitleFont = chartFont4;
+            this.chartSales.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.chartSales.XAxes.Ticks = tick1;
+            this.chartSales.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.chartSales.YAxes.Ticks = tick2;
+            this.chartSales.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.chartSales.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.chartSales.ZAxes.Ticks = tick3;
+            // 
             // frmListCustomers
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(953, 786);
+            this.ClientSize = new System.Drawing.Size(953, 824);
+            this.Controls.Add(this.pnlSalesOverview);
             this.Controls.Add(this.lnkEveryProduct);
             this.Controls.Add(this.lnkMostSold);
             this.Controls.Add(this.lnkMostProfit);
@@ -651,7 +710,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.chartProfit);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.cardOutOfStock);
@@ -685,7 +743,8 @@
             this.cardOutOfStock.PerformLayout();
             this.cardTotal.ResumeLayout(false);
             this.cardTotal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProfit)).EndInit();
+            this.pnlSalesOverview.ResumeLayout(false);
+            this.pnlSalesOverview.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,7 +783,6 @@
         private Guna.UI2.WinForms.Guna2Panel cardTotal;
         private System.Windows.Forms.Label lblDebt;
         private System.Windows.Forms.Label lblTotalDebt;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartProfit;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.LinkLabel lnkEveryProduct;
@@ -733,6 +791,9 @@
         private System.Windows.Forms.LinkLabel lnkSlowMoving;
         private System.Windows.Forms.LinkLabel lnkDebt;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Panel pnlSalesOverview;
+        private System.Windows.Forms.Label label4;
+        private Guna.Charts.WinForms.GunaChart chartSales;
     }
         #endregion
 }
