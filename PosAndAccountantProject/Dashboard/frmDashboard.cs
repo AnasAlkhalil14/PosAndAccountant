@@ -121,11 +121,36 @@ namespace PosAndAccountantProject.Dashboard
 
             dgvRecentInvoices.Columns.Clear();
 
-            dgvRecentInvoices.Columns.Add("SaleID", "رقم الفاتورة");
-            dgvRecentInvoices.Columns.Add("FullName", "اسم الزبون");
-            dgvRecentInvoices.Columns.Add("CreateTime", "الوقت");
-            dgvRecentInvoices.Columns.Add("TotalAmount", "المبلغ");
+            dgvRecentInvoices.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "SaleID",
+                HeaderText = "رقم الفاتورة",
+                DataPropertyName = "SaleID",
+                ReadOnly = true
 
+            }); dgvRecentInvoices.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "FullName",
+                HeaderText = "رقم الفاتورة",
+                DataPropertyName = "FullName",
+                ReadOnly = true
+
+            }); dgvRecentInvoices.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateTime",
+                HeaderText = "الوقت",
+                DataPropertyName = "CreateTime",
+                ReadOnly = true
+
+            }); dgvRecentInvoices.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TotalAmount",
+                HeaderText = "المبلغ",
+                DataPropertyName = "TotalAmount",
+                ReadOnly = true
+
+            });
+            
             dgvRecentInvoices.DataSource = clsSale.GetLast10SalesToday();
         }
         private void _SalesChart()

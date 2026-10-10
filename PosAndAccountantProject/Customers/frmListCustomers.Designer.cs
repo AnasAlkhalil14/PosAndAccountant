@@ -97,7 +97,7 @@
             this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.lblRecordsCount.Location = new System.Drawing.Point(167, 794);
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(26, 21);
+            this.lblRecordsCount.Size = new System.Drawing.Size(24, 21);
             this.lblRecordsCount.TabIndex = 121;
             this.lblRecordsCount.Text = "??";
             // 
@@ -359,7 +359,7 @@
             this.lblPageNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageNumber.Location = new System.Drawing.Point(99, 400);
             this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(18, 30);
+            this.lblPageNumber.Size = new System.Drawing.Size(25, 30);
             this.lblPageNumber.TabIndex = 131;
             this.lblPageNumber.Text = "1";
             this.lblPageNumber.TextChanged += new System.EventHandler(this.lblPageNumber_TextChanged);
@@ -473,9 +473,9 @@
             this.lblCountDebtCustomers.Location = new System.Drawing.Point(11, 24);
             this.lblCountDebtCustomers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCountDebtCustomers.Name = "lblCountDebtCustomers";
-            this.lblCountDebtCustomers.Size = new System.Drawing.Size(19, 30);
+            this.lblCountDebtCustomers.Size = new System.Drawing.Size(26, 30);
             this.lblCountDebtCustomers.TabIndex = 1;
-            this.lblCountDebtCustomers.Text = " ";
+            this.lblCountDebtCustomers.Text = "0";
             // 
             // label5
             // 
@@ -730,6 +730,7 @@
             this.Name = "frmListCustomers";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmListCustomers_Load);
             this.cmsCustomers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();

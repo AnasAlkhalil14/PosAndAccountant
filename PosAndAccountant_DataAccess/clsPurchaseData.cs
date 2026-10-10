@@ -413,7 +413,7 @@ where day(getdate())=day(CreateDate	);";
  
  group by cast(CreateDate as date)
   ) P on S.Date=P.Date
-order by coalesce(s.Date, p.Date) desc
+order by coalesce(s.Date, p.Date) asc
 
 ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -434,6 +434,40 @@ order by coalesce(s.Date, p.Date) desc
             return dt;
 
         }
+        public static decimal TotalDiscountToday()
+        {
+            {
+                decimal Total = 0;
+                string query = @"
+ select format( isnull(sum (DiscountAmount) ,0),'0.##') as DiscountToday
+ from Purchases
+where CreateDate>= cast(GETDATE() as date) and
+  CreateDate <Dateadd(day,1,cast(getdate() as date))
+	;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
 
+
+        }
     }
 }

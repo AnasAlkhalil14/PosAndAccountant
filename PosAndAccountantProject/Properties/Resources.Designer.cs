@@ -533,6 +533,16 @@ namespace PosAndAccountantProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PurchaseWhite {
+            get {
+                object obj = ResourceManager.GetObject("PurchaseWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SaleBlue {
             get {
                 object obj = ResourceManager.GetObject("SaleBlue", resourceCulture);

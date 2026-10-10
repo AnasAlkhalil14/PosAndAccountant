@@ -196,7 +196,7 @@ FROM         Suppliers INNER JOIN
         }
 
 
-        public static DataTable GetAllSuppliers()
+        public static DataTable GetAllSuppliers(int PageNumber,int PageSize)
         {
 
             DataTable dataTable = new DataTable();
@@ -207,7 +207,9 @@ FROM         Suppliers INNER JOIN
                 using (SqlCommand command = new SqlCommand("[Suppliers].[SP_GetAllSuppliers]", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-
+                    command.Parameters
+                        .AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
 
                     try
                     {
@@ -445,7 +447,7 @@ FROM         Suppliers INNER JOIN
         {
 
             decimal TotalDebt = 0;  
-            string query = @"select sum(TotalRemainingDebt) from Suppliers ";
+            string query = @"select FORMAT(SUM(TotalRemainingDebt),'0.##') SuppliersDebt from Suppliers";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -469,6 +471,72 @@ FROM         Suppliers INNER JOIN
             return TotalDebt;
 
         }
+        public static int CountSuppliersToday()
+        {
 
+            int Count = 0;
+            string query = @"
+select count(1) as CountSupplierToday from
+(
+ select  distinct   p.PurchaseID from PurchaseDetails pd join 
+Purchases p on pd.PurchaseID=p.PurchaseID
+where CreateDate>= cast(GETDATE() as date) and
+  CreateDate <Dateadd(day,1,cast(getdate() as date))
+ )r
+ ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            Count = total;
+                        }
+                        else
+                        {
+                            Count = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return Count;
+
+        }
+        public static int CountDebtSuppliers()
+        {
+
+            int TotalDebt = 0;
+            string query = @"
+select count(1) as	 CountDebt from Suppliers
+where TotalRemainingDebt>0
+ ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int total))
+                        {
+                            TotalDebt = total;
+                        }
+                        else
+                        {
+                            TotalDebt = 0;
+                        }
+                    }
+                    catch { return -1; }
+                }
+            }
+            return TotalDebt;
+
+        }
     }
 }

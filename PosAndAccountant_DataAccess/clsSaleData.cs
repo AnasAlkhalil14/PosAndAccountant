@@ -499,13 +499,14 @@ WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
         public static DataTable GetLast10SalesToday()
         {
             DataTable dt= new DataTable();
-            string query = @" SELECT  top 10      Sales.SaleID, People.FirstName+' '+People.LastName as FullName, CONVERT(VARCHAR(5), CreateDate, 108) AS CreateTime,FORMAT( Sales.TotalAmount, '0.##') as TotalAmount
+            string query = @"  SELECT  top 10      Sales.SaleID, People.FirstName+' '+People.LastName as FullName, CONVERT(VARCHAR(5), Sales.CreateDate, 108) AS CreateTime,FORMAT( Sales.TotalAmount, '0.##') as TotalAmount
 FROM            Sales INNER JOIN
                          Customers ON Sales.CustomerID = Customers.CustomerID INNER JOIN
                          People ON Customers.PersonID = People.PersonID
 
- where CreatedDate>= cast(GETDATE() as date) and
- CreatedDate <Dateadd(day,1,cast(getdate() as date))
+ where Sales.CreateDate>= cast(GETDATE() as date) and
+ Sales.CreateDate <Dateadd(day,1,cast(getdate() as date))
+
 ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -683,7 +684,7 @@ where day(getdate())=day(CreateDate	)
             string query = @"
     select top 10 FORMAT(ISNULL( Sum(NetProfit),0), '0.##') as Profit,cast(CreatedDate  as date) Date from ProfitRuns 
      group by cast(CreatedDate as date)
-     order by Date desc
+     order by Date asc
 ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
