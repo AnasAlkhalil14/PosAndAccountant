@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.Charts.WinForms.ChartFont chartFont17 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont18 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont19 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont20 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid7 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick7 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont21 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid8 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick8 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont22 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid9 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel3 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont23 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick9 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont24 = new Guna.Charts.WinForms.ChartFont();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlStockValueCard = new Guna.UI2.WinForms.Guna2Panel();
             this.lblStockValue = new System.Windows.Forms.Label();
             this.lblStockValueVal = new System.Windows.Forms.Label();
@@ -111,20 +112,22 @@
             this.pnlStockValueCard.Controls.Add(this.lblStockValueVal);
             this.pnlStockValueCard.Controls.Add(this.lblStockValueHint);
             this.pnlStockValueCard.FillColor = System.Drawing.Color.White;
-            this.pnlStockValueCard.Location = new System.Drawing.Point(23, 181);
+            this.pnlStockValueCard.Location = new System.Drawing.Point(31, 223);
+            this.pnlStockValueCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlStockValueCard.Name = "pnlStockValueCard";
             this.pnlStockValueCard.ShadowDecoration.Enabled = true;
             this.pnlStockValueCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlStockValueCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlStockValueCard.Size = new System.Drawing.Size(244, 121);
             this.pnlStockValueCard.TabIndex = 41;
             // 
             // lblStockValue
             // 
             this.lblStockValue.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblStockValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblStockValue.Location = new System.Drawing.Point(34, 0);
+            this.lblStockValue.Location = new System.Drawing.Point(45, 0);
+            this.lblStockValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStockValue.Name = "lblStockValue";
-            this.lblStockValue.Size = new System.Drawing.Size(105, 20);
+            this.lblStockValue.Size = new System.Drawing.Size(140, 25);
             this.lblStockValue.TabIndex = 0;
             this.lblStockValue.Text = "قيمة المخزون";
             this.lblStockValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,9 +136,10 @@
             // 
             this.lblStockValueVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblStockValueVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.lblStockValueVal.Location = new System.Drawing.Point(38, 31);
+            this.lblStockValueVal.Location = new System.Drawing.Point(51, 38);
+            this.lblStockValueVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStockValueVal.Name = "lblStockValueVal";
-            this.lblStockValueVal.Size = new System.Drawing.Size(93, 31);
+            this.lblStockValueVal.Size = new System.Drawing.Size(124, 38);
             this.lblStockValueVal.TabIndex = 1;
             this.lblStockValueVal.Text = "0.00";
             this.lblStockValueVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,9 +148,10 @@
             // 
             this.lblStockValueHint.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lblStockValueHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblStockValueHint.Location = new System.Drawing.Point(3, 69);
+            this.lblStockValueHint.Location = new System.Drawing.Point(4, 85);
+            this.lblStockValueHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStockValueHint.Name = "lblStockValueHint";
-            this.lblStockValueHint.Size = new System.Drawing.Size(135, 18);
+            this.lblStockValueHint.Size = new System.Drawing.Size(180, 22);
             this.lblStockValueHint.TabIndex = 2;
             this.lblStockValueHint.Text = "القيمة التقديرية";
             this.lblStockValueHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -159,20 +164,22 @@
             this.pnlPayablesCard.Controls.Add(this.lblSuppliersDebtVal);
             this.pnlPayablesCard.Controls.Add(this.lblPayablesHint);
             this.pnlPayablesCard.FillColor = System.Drawing.Color.White;
-            this.pnlPayablesCard.Location = new System.Drawing.Point(257, 181);
+            this.pnlPayablesCard.Location = new System.Drawing.Point(343, 223);
+            this.pnlPayablesCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPayablesCard.Name = "pnlPayablesCard";
             this.pnlPayablesCard.ShadowDecoration.Enabled = true;
             this.pnlPayablesCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlPayablesCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlPayablesCard.Size = new System.Drawing.Size(244, 121);
             this.pnlPayablesCard.TabIndex = 42;
             // 
             // lblPayables
             // 
             this.lblPayables.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblPayables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblPayables.Location = new System.Drawing.Point(25, 0);
+            this.lblPayables.Location = new System.Drawing.Point(33, 0);
+            this.lblPayables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPayables.Name = "lblPayables";
-            this.lblPayables.Size = new System.Drawing.Size(113, 20);
+            this.lblPayables.Size = new System.Drawing.Size(151, 25);
             this.lblPayables.TabIndex = 0;
             this.lblPayables.Text = "ديون من الموردين ";
             this.lblPayables.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -181,9 +188,10 @@
             // 
             this.lblSuppliersDebtVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblSuppliersDebtVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.lblSuppliersDebtVal.Location = new System.Drawing.Point(4, 31);
+            this.lblSuppliersDebtVal.Location = new System.Drawing.Point(5, 38);
+            this.lblSuppliersDebtVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSuppliersDebtVal.Name = "lblSuppliersDebtVal";
-            this.lblSuppliersDebtVal.Size = new System.Drawing.Size(134, 31);
+            this.lblSuppliersDebtVal.Size = new System.Drawing.Size(179, 38);
             this.lblSuppliersDebtVal.TabIndex = 1;
             this.lblSuppliersDebtVal.Text = "0.00 ل.س";
             this.lblSuppliersDebtVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -192,9 +200,10 @@
             // 
             this.lblPayablesHint.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lblPayablesHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblPayablesHint.Location = new System.Drawing.Point(20, 69);
+            this.lblPayablesHint.Location = new System.Drawing.Point(27, 85);
+            this.lblPayablesHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPayablesHint.Name = "lblPayablesHint";
-            this.lblPayablesHint.Size = new System.Drawing.Size(122, 18);
+            this.lblPayablesHint.Size = new System.Drawing.Size(163, 22);
             this.lblPayablesHint.TabIndex = 2;
             this.lblPayablesHint.Text = "المبالغ المستحقة";
             this.lblPayablesHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -207,20 +216,22 @@
             this.pnlReceivablesCard.Controls.Add(this.lblCustomersDebtVal);
             this.pnlReceivablesCard.Controls.Add(this.lblReceivablesHint);
             this.pnlReceivablesCard.FillColor = System.Drawing.Color.White;
-            this.pnlReceivablesCard.Location = new System.Drawing.Point(508, 181);
+            this.pnlReceivablesCard.Location = new System.Drawing.Point(677, 223);
+            this.pnlReceivablesCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlReceivablesCard.Name = "pnlReceivablesCard";
             this.pnlReceivablesCard.ShadowDecoration.Enabled = true;
             this.pnlReceivablesCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlReceivablesCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlReceivablesCard.Size = new System.Drawing.Size(244, 121);
             this.pnlReceivablesCard.TabIndex = 43;
             // 
             // lblReceivables
             // 
             this.lblReceivables.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblReceivables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblReceivables.Location = new System.Drawing.Point(25, 0);
+            this.lblReceivables.Location = new System.Drawing.Point(33, 0);
+            this.lblReceivables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReceivables.Name = "lblReceivables";
-            this.lblReceivables.Size = new System.Drawing.Size(100, 20);
+            this.lblReceivables.Size = new System.Drawing.Size(133, 25);
             this.lblReceivables.TabIndex = 0;
             this.lblReceivables.Text = "ديون العملاء";
             this.lblReceivables.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -229,9 +240,10 @@
             // 
             this.lblCustomersDebtVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblCustomersDebtVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
-            this.lblCustomersDebtVal.Location = new System.Drawing.Point(23, 31);
+            this.lblCustomersDebtVal.Location = new System.Drawing.Point(31, 38);
+            this.lblCustomersDebtVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomersDebtVal.Name = "lblCustomersDebtVal";
-            this.lblCustomersDebtVal.Size = new System.Drawing.Size(124, 31);
+            this.lblCustomersDebtVal.Size = new System.Drawing.Size(165, 38);
             this.lblCustomersDebtVal.TabIndex = 1;
             this.lblCustomersDebtVal.Text = "0.00 ل.س";
             this.lblCustomersDebtVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -240,9 +252,10 @@
             // 
             this.lblReceivablesHint.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lblReceivablesHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblReceivablesHint.Location = new System.Drawing.Point(45, 69);
+            this.lblReceivablesHint.Location = new System.Drawing.Point(60, 85);
+            this.lblReceivablesHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReceivablesHint.Name = "lblReceivablesHint";
-            this.lblReceivablesHint.Size = new System.Drawing.Size(102, 18);
+            this.lblReceivablesHint.Size = new System.Drawing.Size(136, 22);
             this.lblReceivablesHint.TabIndex = 2;
             this.lblReceivablesHint.Text = "المبالغ المستحقة";
             this.lblReceivablesHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -255,20 +268,22 @@
             this.pnlPurchaseCard.Controls.Add(this.lblTodayPurchasesVal);
             this.pnlPurchaseCard.Controls.Add(this.lblTodayPurchasesTrend);
             this.pnlPurchaseCard.FillColor = System.Drawing.Color.White;
-            this.pnlPurchaseCard.Location = new System.Drawing.Point(747, 181);
+            this.pnlPurchaseCard.Location = new System.Drawing.Point(996, 223);
+            this.pnlPurchaseCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPurchaseCard.Name = "pnlPurchaseCard";
             this.pnlPurchaseCard.ShadowDecoration.Enabled = true;
             this.pnlPurchaseCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 4, 4);
-            this.pnlPurchaseCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlPurchaseCard.Size = new System.Drawing.Size(244, 121);
             this.pnlPurchaseCard.TabIndex = 44;
             // 
             // lblTodayPurchases
             // 
             this.lblTodayPurchases.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblTodayPurchases.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(138)))));
-            this.lblTodayPurchases.Location = new System.Drawing.Point(3, 0);
+            this.lblTodayPurchases.Location = new System.Drawing.Point(4, 0);
+            this.lblTodayPurchases.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodayPurchases.Name = "lblTodayPurchases";
-            this.lblTodayPurchases.Size = new System.Drawing.Size(130, 20);
+            this.lblTodayPurchases.Size = new System.Drawing.Size(173, 25);
             this.lblTodayPurchases.TabIndex = 0;
             this.lblTodayPurchases.Text = "مشتريات اليوم";
             this.lblTodayPurchases.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -277,9 +292,10 @@
             // 
             this.lblTodayPurchasesVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblTodayPurchasesVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(67)))));
-            this.lblTodayPurchasesVal.Location = new System.Drawing.Point(7, 31);
+            this.lblTodayPurchasesVal.Location = new System.Drawing.Point(9, 38);
+            this.lblTodayPurchasesVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodayPurchasesVal.Name = "lblTodayPurchasesVal";
-            this.lblTodayPurchasesVal.Size = new System.Drawing.Size(145, 31);
+            this.lblTodayPurchasesVal.Size = new System.Drawing.Size(193, 38);
             this.lblTodayPurchasesVal.TabIndex = 1;
             this.lblTodayPurchasesVal.Text = "0.00 ل.س";
             this.lblTodayPurchasesVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -288,9 +304,10 @@
             // 
             this.lblTodayPurchasesTrend.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lblTodayPurchasesTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(158)))), ((int)(((byte)(165)))));
-            this.lblTodayPurchasesTrend.Location = new System.Drawing.Point(20, 69);
+            this.lblTodayPurchasesTrend.Location = new System.Drawing.Point(27, 85);
+            this.lblTodayPurchasesTrend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodayPurchasesTrend.Name = "lblTodayPurchasesTrend";
-            this.lblTodayPurchasesTrend.Size = new System.Drawing.Size(132, 18);
+            this.lblTodayPurchasesTrend.Size = new System.Drawing.Size(176, 22);
             this.lblTodayPurchasesTrend.TabIndex = 2;
             this.lblTodayPurchasesTrend.Text = "إجمالي المشتريات";
             this.lblTodayPurchasesTrend.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -302,16 +319,18 @@
             this.pnlSalesOverview.Controls.Add(this.cmbTimeFilter);
             this.pnlSalesOverview.Controls.Add(this.chartSales);
             this.pnlSalesOverview.FillColor = System.Drawing.Color.White;
-            this.pnlSalesOverview.Location = new System.Drawing.Point(240, 558);
+            this.pnlSalesOverview.Location = new System.Drawing.Point(320, 687);
+            this.pnlSalesOverview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSalesOverview.Name = "pnlSalesOverview";
-            this.pnlSalesOverview.Size = new System.Drawing.Size(542, 244);
+            this.pnlSalesOverview.Size = new System.Drawing.Size(723, 300);
             this.pnlSalesOverview.TabIndex = 40;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(231, 12);
+            this.label2.Location = new System.Drawing.Point(308, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 21);
             this.label2.TabIndex = 15;
@@ -331,9 +350,10 @@
             this.cmbTimeFilter.Items.AddRange(new object[] {
             "اخر عشر ايام",
             "اخر عشرة اشهر"});
-            this.cmbTimeFilter.Location = new System.Drawing.Point(388, 12);
+            this.cmbTimeFilter.Location = new System.Drawing.Point(517, 15);
+            this.cmbTimeFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTimeFilter.Name = "cmbTimeFilter";
-            this.cmbTimeFilter.Size = new System.Drawing.Size(130, 28);
+            this.cmbTimeFilter.Size = new System.Drawing.Size(172, 28);
             this.cmbTimeFilter.StartIndex = 0;
             this.cmbTimeFilter.TabIndex = 14;
             // 
@@ -341,44 +361,46 @@
             // 
             this.chartSales.BackColor = System.Drawing.Color.Transparent;
             this.chartSales.Legend.Display = false;
-            chartFont17.FontName = "Arial";
-            this.chartSales.Legend.LabelFont = chartFont17;
-            this.chartSales.Location = new System.Drawing.Point(16, 58);
+            chartFont1.FontName = "Arial";
+            this.chartSales.Legend.LabelFont = chartFont1;
+            this.chartSales.Location = new System.Drawing.Point(21, 71);
+            this.chartSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartSales.Name = "chartSales";
-            this.chartSales.Size = new System.Drawing.Size(512, 177);
+            this.chartSales.Size = new System.Drawing.Size(683, 218);
             this.chartSales.TabIndex = 11;
-            chartFont18.FontName = "Arial";
-            chartFont18.Size = 12;
-            chartFont18.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chartSales.Title.Font = chartFont18;
-            chartFont19.FontName = "Arial";
-            this.chartSales.Tooltips.BodyFont = chartFont19;
-            chartFont20.FontName = "Arial";
-            chartFont20.Size = 9;
-            chartFont20.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chartSales.Tooltips.TitleFont = chartFont20;
-            this.chartSales.XAxes.GridLines = grid7;
-            chartFont21.FontName = "Arial";
-            tick7.Font = chartFont21;
-            this.chartSales.XAxes.Ticks = tick7;
-            this.chartSales.YAxes.GridLines = grid8;
-            chartFont22.FontName = "Arial";
-            tick8.Font = chartFont22;
-            this.chartSales.YAxes.Ticks = tick8;
-            this.chartSales.ZAxes.GridLines = grid9;
-            chartFont23.FontName = "Arial";
-            pointLabel3.Font = chartFont23;
-            this.chartSales.ZAxes.PointLabels = pointLabel3;
-            chartFont24.FontName = "Arial";
-            tick9.Font = chartFont24;
-            this.chartSales.ZAxes.Ticks = tick9;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chartSales.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.chartSales.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chartSales.Tooltips.TitleFont = chartFont4;
+            this.chartSales.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.chartSales.XAxes.Ticks = tick1;
+            this.chartSales.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.chartSales.YAxes.Ticks = tick2;
+            this.chartSales.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.chartSales.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.chartSales.ZAxes.Ticks = tick3;
             // 
             // lblDashboardTitle
             // 
             this.lblDashboardTitle.AutoSize = true;
             this.lblDashboardTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboardTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.lblDashboardTitle.Location = new System.Drawing.Point(780, 0);
+            this.lblDashboardTitle.Location = new System.Drawing.Point(1040, 0);
+            this.lblDashboardTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDashboardTitle.Name = "lblDashboardTitle";
             this.lblDashboardTitle.Size = new System.Drawing.Size(189, 30);
             this.lblDashboardTitle.TabIndex = 39;
@@ -388,7 +410,8 @@
             // 
             this.lblInvoices.AutoSize = true;
             this.lblInvoices.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoices.Location = new System.Drawing.Point(335, 296);
+            this.lblInvoices.Location = new System.Drawing.Point(447, 364);
+            this.lblInvoices.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvoices.Name = "lblInvoices";
             this.lblInvoices.Size = new System.Drawing.Size(139, 21);
             this.lblInvoices.TabIndex = 38;
@@ -398,7 +421,8 @@
             // 
             this.lblLowStock.AutoSize = true;
             this.lblLowStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowStock.Location = new System.Drawing.Point(727, 296);
+            this.lblLowStock.Location = new System.Drawing.Point(969, 364);
+            this.lblLowStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLowStock.Name = "lblLowStock";
             this.lblLowStock.Size = new System.Drawing.Size(172, 21);
             this.lblLowStock.TabIndex = 37;
@@ -408,34 +432,38 @@
             // 
             this.dgvRecentInvoices.AllowUserToAddRows = false;
             this.dgvRecentInvoices.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgvRecentInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRecentInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecentInvoices.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecentInvoices.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecentInvoices.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecentInvoices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRecentInvoices.Location = new System.Drawing.Point(12, 320);
+            this.dgvRecentInvoices.Location = new System.Drawing.Point(16, 394);
+            this.dgvRecentInvoices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvRecentInvoices.Name = "dgvRecentInvoices";
             this.dgvRecentInvoices.ReadOnly = true;
             this.dgvRecentInvoices.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvRecentInvoices.RowHeadersVisible = false;
             this.dgvRecentInvoices.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvRecentInvoices.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecentInvoices.RowTemplate.Height = 30;
-            this.dgvRecentInvoices.Size = new System.Drawing.Size(462, 232);
+            this.dgvRecentInvoices.Size = new System.Drawing.Size(616, 286);
             this.dgvRecentInvoices.TabIndex = 36;
             this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRecentInvoices.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -463,35 +491,36 @@
             // 
             this.dgvLowStock.AllowUserToAddRows = false;
             this.dgvLowStock.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvLowStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLowStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvLowStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLowStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLowStock.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLowStock.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLowStock.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLowStock.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLowStock.Location = new System.Drawing.Point(502, 320);
+            this.dgvLowStock.Location = new System.Drawing.Point(669, 394);
+            this.dgvLowStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvLowStock.Name = "dgvLowStock";
             this.dgvLowStock.ReadOnly = true;
             this.dgvLowStock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvLowStock.RowHeadersVisible = false;
             this.dgvLowStock.RowHeadersWidth = 51;
             this.dgvLowStock.RowTemplate.Height = 30;
-            this.dgvLowStock.Size = new System.Drawing.Size(450, 232);
+            this.dgvLowStock.Size = new System.Drawing.Size(600, 286);
             this.dgvLowStock.TabIndex = 35;
             this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLowStock.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -523,11 +552,12 @@
             this.pnlUsersCard.Controls.Add(this.lblProfitTrend);
             this.pnlUsersCard.Controls.Add(this.DDSFSFSF);
             this.pnlUsersCard.FillColor = System.Drawing.Color.White;
-            this.pnlUsersCard.Location = new System.Drawing.Point(257, 67);
+            this.pnlUsersCard.Location = new System.Drawing.Point(343, 82);
+            this.pnlUsersCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlUsersCard.Name = "pnlUsersCard";
             this.pnlUsersCard.ShadowDecoration.Enabled = true;
             this.pnlUsersCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlUsersCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlUsersCard.Size = new System.Drawing.Size(244, 121);
             this.pnlUsersCard.TabIndex = 34;
             // 
             // lblProfitVal
@@ -535,7 +565,8 @@
             this.lblProfitVal.AutoSize = true;
             this.lblProfitVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F, System.Drawing.FontStyle.Bold);
             this.lblProfitVal.ForeColor = System.Drawing.Color.Red;
-            this.lblProfitVal.Location = new System.Drawing.Point(18, 36);
+            this.lblProfitVal.Location = new System.Drawing.Point(24, 44);
+            this.lblProfitVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProfitVal.Name = "lblProfitVal";
             this.lblProfitVal.Size = new System.Drawing.Size(162, 26);
             this.lblProfitVal.TabIndex = 3;
@@ -546,7 +577,8 @@
             this.lblProfitTrend.AutoSize = true;
             this.lblProfitTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfitTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.lblProfitTrend.Location = new System.Drawing.Point(46, 69);
+            this.lblProfitTrend.Location = new System.Drawing.Point(61, 85);
+            this.lblProfitTrend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProfitTrend.Name = "lblProfitTrend";
             this.lblProfitTrend.Size = new System.Drawing.Size(85, 15);
             this.lblProfitTrend.TabIndex = 2;
@@ -557,7 +589,8 @@
             this.DDSFSFSF.AutoSize = true;
             this.DDSFSFSF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DDSFSFSF.ForeColor = System.Drawing.Color.Gray;
-            this.DDSFSFSF.Location = new System.Drawing.Point(59, 0);
+            this.DDSFSFSF.Location = new System.Drawing.Point(79, 0);
+            this.DDSFSFSF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DDSFSFSF.Name = "DDSFSFSF";
             this.DDSFSFSF.Size = new System.Drawing.Size(72, 20);
             this.DDSFSFSF.TabIndex = 0;
@@ -571,11 +604,12 @@
             this.pnlOrdersCard.Controls.Add(this.lblTotalOrdersVal);
             this.pnlOrdersCard.Controls.Add(this.ddfsfsf);
             this.pnlOrdersCard.FillColor = System.Drawing.Color.White;
-            this.pnlOrdersCard.Location = new System.Drawing.Point(23, 67);
+            this.pnlOrdersCard.Location = new System.Drawing.Point(31, 82);
+            this.pnlOrdersCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlOrdersCard.Name = "pnlOrdersCard";
             this.pnlOrdersCard.ShadowDecoration.Enabled = true;
             this.pnlOrdersCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlOrdersCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlOrdersCard.Size = new System.Drawing.Size(244, 121);
             this.pnlOrdersCard.TabIndex = 33;
             // 
             // lblTotalOrdersTrend
@@ -583,9 +617,10 @@
             this.lblTotalOrdersTrend.AutoSize = true;
             this.lblTotalOrdersTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalOrdersTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.lblTotalOrdersTrend.Location = new System.Drawing.Point(40, 69);
+            this.lblTotalOrdersTrend.Location = new System.Drawing.Point(53, 85);
+            this.lblTotalOrdersTrend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalOrdersTrend.Name = "lblTotalOrdersTrend";
-            this.lblTotalOrdersTrend.Size = new System.Drawing.Size(82, 15);
+            this.lblTotalOrdersTrend.Size = new System.Drawing.Size(79, 15);
             this.lblTotalOrdersTrend.TabIndex = 2;
             this.lblTotalOrdersTrend.Text = "▲ 8% عن أمس";
             // 
@@ -594,9 +629,10 @@
             this.lblTotalOrdersVal.AutoSize = true;
             this.lblTotalOrdersVal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalOrdersVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.lblTotalOrdersVal.Location = new System.Drawing.Point(58, 30);
+            this.lblTotalOrdersVal.Location = new System.Drawing.Point(77, 37);
+            this.lblTotalOrdersVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalOrdersVal.Name = "lblTotalOrdersVal";
-            this.lblTotalOrdersVal.Size = new System.Drawing.Size(65, 37);
+            this.lblTotalOrdersVal.Size = new System.Drawing.Size(51, 37);
             this.lblTotalOrdersVal.TabIndex = 1;
             this.lblTotalOrdersVal.Text = "143";
             // 
@@ -605,7 +641,8 @@
             this.ddfsfsf.AutoSize = true;
             this.ddfsfsf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddfsfsf.ForeColor = System.Drawing.Color.Gray;
-            this.ddfsfsf.Location = new System.Drawing.Point(39, 0);
+            this.ddfsfsf.Location = new System.Drawing.Point(52, 0);
+            this.ddfsfsf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ddfsfsf.Name = "ddfsfsf";
             this.ddfsfsf.Size = new System.Drawing.Size(109, 20);
             this.ddfsfsf.TabIndex = 0;
@@ -619,11 +656,12 @@
             this.pnlCashCard.Controls.Add(this.lblCashBalanceVal);
             this.pnlCashCard.Controls.Add(this.DFSSFS);
             this.pnlCashCard.FillColor = System.Drawing.Color.White;
-            this.pnlCashCard.Location = new System.Drawing.Point(502, 67);
+            this.pnlCashCard.Location = new System.Drawing.Point(669, 82);
+            this.pnlCashCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCashCard.Name = "pnlCashCard";
             this.pnlCashCard.ShadowDecoration.Enabled = true;
             this.pnlCashCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlCashCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlCashCard.Size = new System.Drawing.Size(244, 121);
             this.pnlCashCard.TabIndex = 32;
             // 
             // lblCashBalanceTrend
@@ -631,9 +669,10 @@
             this.lblCashBalanceTrend.AutoSize = true;
             this.lblCashBalanceTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCashBalanceTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.lblCashBalanceTrend.Location = new System.Drawing.Point(22, 69);
+            this.lblCashBalanceTrend.Location = new System.Drawing.Point(29, 85);
+            this.lblCashBalanceTrend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCashBalanceTrend.Name = "lblCashBalanceTrend";
-            this.lblCashBalanceTrend.Size = new System.Drawing.Size(95, 15);
+            this.lblCashBalanceTrend.Size = new System.Drawing.Size(90, 15);
             this.lblCashBalanceTrend.TabIndex = 2;
             this.lblCashBalanceTrend.Text = "▲ 5.2% عن أمس ";
             // 
@@ -642,9 +681,10 @@
             this.lblCashBalanceVal.AutoSize = true;
             this.lblCashBalanceVal.Font = new System.Drawing.Font("Segoe UI", 16.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCashBalanceVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            this.lblCashBalanceVal.Location = new System.Drawing.Point(20, 36);
+            this.lblCashBalanceVal.Location = new System.Drawing.Point(27, 44);
+            this.lblCashBalanceVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCashBalanceVal.Name = "lblCashBalanceVal";
-            this.lblCashBalanceVal.Size = new System.Drawing.Size(169, 30);
+            this.lblCashBalanceVal.Size = new System.Drawing.Size(142, 30);
             this.lblCashBalanceVal.TabIndex = 1;
             this.lblCashBalanceVal.Text = "15,240.50 ل.س";
             // 
@@ -653,7 +693,8 @@
             this.DFSSFS.AutoSize = true;
             this.DFSSFS.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DFSSFS.ForeColor = System.Drawing.Color.Gray;
-            this.DFSSFS.Location = new System.Drawing.Point(21, 0);
+            this.DFSSFS.Location = new System.Drawing.Point(28, 0);
+            this.DFSSFS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DFSSFS.Name = "DFSSFS";
             this.DFSSFS.Size = new System.Drawing.Size(145, 20);
             this.DFSSFS.TabIndex = 0;
@@ -668,11 +709,12 @@
             this.pnlSalesCard.Controls.Add(this.lblTodaySalesVal);
             this.pnlSalesCard.Controls.Add(this.lblTodaySales);
             this.pnlSalesCard.FillColor = System.Drawing.Color.White;
-            this.pnlSalesCard.Location = new System.Drawing.Point(747, 67);
+            this.pnlSalesCard.Location = new System.Drawing.Point(996, 82);
+            this.pnlSalesCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSalesCard.Name = "pnlSalesCard";
             this.pnlSalesCard.ShadowDecoration.Enabled = true;
             this.pnlSalesCard.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 5, 5);
-            this.pnlSalesCard.Size = new System.Drawing.Size(183, 98);
+            this.pnlSalesCard.Size = new System.Drawing.Size(244, 121);
             this.pnlSalesCard.TabIndex = 31;
             // 
             // lblTodaySalesTrend
@@ -680,9 +722,10 @@
             this.lblTodaySalesTrend.AutoSize = true;
             this.lblTodaySalesTrend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodaySalesTrend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(84)))), ((int)(((byte)(85)))));
-            this.lblTodaySalesTrend.Location = new System.Drawing.Point(22, 69);
+            this.lblTodaySalesTrend.Location = new System.Drawing.Point(29, 85);
+            this.lblTodaySalesTrend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodaySalesTrend.Name = "lblTodaySalesTrend";
-            this.lblTodaySalesTrend.Size = new System.Drawing.Size(88, 15);
+            this.lblTodaySalesTrend.Size = new System.Drawing.Size(85, 15);
             this.lblTodaySalesTrend.TabIndex = 2;
             this.lblTodaySalesTrend.Text = "▼ 3%  عن أمس ";
             // 
@@ -691,9 +734,10 @@
             this.lblTodaySalesVal.AutoSize = true;
             this.lblTodaySalesVal.Font = new System.Drawing.Font("Segoe UI", 16.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodaySalesVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.lblTodaySalesVal.Location = new System.Drawing.Point(20, 30);
+            this.lblTodaySalesVal.Location = new System.Drawing.Point(27, 37);
+            this.lblTodaySalesVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodaySalesVal.Name = "lblTodaySalesVal";
-            this.lblTodaySalesVal.Size = new System.Drawing.Size(156, 30);
+            this.lblTodaySalesVal.Size = new System.Drawing.Size(134, 30);
             this.lblTodaySalesVal.TabIndex = 1;
             this.lblTodaySalesVal.Text = "4,250.00 ل.س";
             // 
@@ -702,7 +746,8 @@
             this.lblTodaySales.AutoSize = true;
             this.lblTodaySales.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodaySales.ForeColor = System.Drawing.Color.Gray;
-            this.lblTodaySales.Location = new System.Drawing.Point(21, 0);
+            this.lblTodaySales.Location = new System.Drawing.Point(28, 0);
+            this.lblTodaySales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodaySales.Name = "lblTodaySales";
             this.lblTodaySales.Size = new System.Drawing.Size(90, 20);
             this.lblTodaySales.TabIndex = 0;
@@ -710,10 +755,10 @@
             // 
             // frmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(980, 803);
+            this.ClientSize = new System.Drawing.Size(1307, 988);
             this.Controls.Add(this.pnlStockValueCard);
             this.Controls.Add(this.pnlPayablesCard);
             this.Controls.Add(this.pnlReceivablesCard);
@@ -728,6 +773,7 @@
             this.Controls.Add(this.pnlOrdersCard);
             this.Controls.Add(this.pnlCashCard);
             this.Controls.Add(this.pnlSalesCard);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDashboard";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "frmDashboard";

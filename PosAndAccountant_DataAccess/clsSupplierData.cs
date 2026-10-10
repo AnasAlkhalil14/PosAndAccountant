@@ -668,6 +668,64 @@ order by sp.Total asc
 
 
         }
+        public static DataTable GetSupplierNameAndDebt( )
+        {
+            string query = @"
+select toP 5 p.FirstName+' '+ p.LastName as FullName,s.TotalRemainingDebt from Suppliers s join People p on
+s.PersonID=p.PersonID
+where S.TotalRemainingDebt>0
+order by s.TotalRemainingDebt desc
+";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
 
     }
 }
