@@ -284,7 +284,7 @@ namespace PosAndAccountantProject.Customers
                 lblPageNumber.Text = "1";
             else
                 lblPageNumber_TextChanged(null, null);
-            lnkEveryProduct.BackColor = Color.White;
+            lnkEveryCustomer.BackColor = Color.White;
             lnkDebt.BackColor = Color.White;
             lnkMostProfit.BackColor = Color.White;
             lnkSlowMoving.BackColor = Color.Silver;
@@ -334,7 +334,7 @@ namespace PosAndAccountantProject.Customers
                 lblPageNumber.Text = "1";
             else
                 lblPageNumber_TextChanged(null, null);
-            lnkEveryProduct.BackColor = Color.Silver;
+            lnkEveryCustomer.BackColor = Color.Silver;
             lnkDebt.BackColor = Color.White;
             lnkMostProfit.BackColor = Color.White;
             lnkSlowMoving.BackColor = Color.White;
@@ -349,7 +349,7 @@ namespace PosAndAccountantProject.Customers
                 lblPageNumber.Text = "1";
             else
                 lblPageNumber_TextChanged(null, null);
-            lnkEveryProduct.BackColor = Color.White;
+            lnkEveryCustomer.BackColor = Color.White;
             lnkDebt.BackColor = Color.White;
             lnkMostProfit.BackColor = Color.White;
             lnkSlowMoving.BackColor = Color.White;
@@ -364,7 +364,7 @@ namespace PosAndAccountantProject.Customers
                 lblPageNumber.Text = "1";
             else
                 lblPageNumber_TextChanged(null, null);
-            lnkEveryProduct.BackColor = Color.White;
+            lnkEveryCustomer.BackColor = Color.White;
             lnkDebt.BackColor = Color.White;
             lnkMostProfit.BackColor = Color.Silver;
             lnkSlowMoving.BackColor = Color.White;
@@ -379,7 +379,7 @@ namespace PosAndAccountantProject.Customers
                 lblPageNumber.Text = "1";
             else
                 lblPageNumber_TextChanged(null, null);
-            lnkEveryProduct.BackColor = Color.White;
+            lnkEveryCustomer.BackColor = Color.White;
             lnkDebt.BackColor = Color.Silver;
             lnkMostProfit.BackColor = Color.White;
             lnkSlowMoving.BackColor = Color.White;

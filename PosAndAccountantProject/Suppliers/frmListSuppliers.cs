@@ -20,7 +20,8 @@ namespace PosAndAccountantProject.Suppliers
         }
 
         private DataTable _AllSuppliers ;
-
+        enum enGridSource { eAll, eMostSale , eSlowMove, eDebt }
+        enGridSource GridSource = enGridSource.eAll;
         private void btnClose_Click(object sender, EventArgs e)
         {
            this.Close();
@@ -239,6 +240,97 @@ namespace PosAndAccountantProject.Suppliers
             if (lblPageNumber.Text != "1")
                 lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) - 1).ToString();
 
+        }
+
+        private void lnkSlowMoving_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eSlowMove;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEverySupplier.BackColor = Color.White;
+            lnkDebt.BackColor = Color.White;
+             lnkSlowMoving.BackColor = Color.Silver;
+            lnkMostPurchase.BackColor = Color.White;
+
+        }
+
+        private void lblPageNumber_TextChanged(object sender, EventArgs e)
+        {
+
+            switch (GridSource)
+            {
+                case enGridSource.eMostSale:
+                    {
+                        _AllSuppliers = clsSupplier.GetSuppliersMostSaled(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eSlowMove:
+                    {
+                        _AllSuppliers = clsSupplier.GetSuppliersLowSaled (Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+                case enGridSource.eDebt:
+                    {
+                        _AllSuppliers.DefaultView.RowFilter = string.Format("[{0}]>0", "TotalRemainingDebt");
+                        break;
+                    }
+               
+                    
+                default:
+                    {
+                        _AllSuppliers = clsSupplier.GetAllSuppliersList(Convert.ToInt32(lblPageNumber.Text), 10);
+                        break;
+                    }
+
+
+            }
+            dgvSuppliers.DataSource = _AllSuppliers;
+
+        }
+
+        private void lnkMostSold_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eMostSale;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEverySupplier.BackColor = Color.White;
+            lnkDebt.BackColor = Color.White;
+             lnkSlowMoving.BackColor = Color.White;
+            lnkMostPurchase.BackColor = Color.Silver;
+        }
+
+        private void lnkEveryProduct_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eAll;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEverySupplier.BackColor = Color.Silver;
+            lnkDebt.BackColor = Color.White;
+             lnkSlowMoving.BackColor = Color.White;
+            lnkMostPurchase.BackColor = Color.White;
+        }
+
+        private void lnkDebt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            GridSource = enGridSource.eDebt;
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = "1";
+            else
+                lblPageNumber_TextChanged(null, null);
+            lnkEverySupplier.BackColor = Color.White;
+            lnkDebt.BackColor = Color.Silver;
+             lnkSlowMoving.BackColor = Color.White;
+            lnkMostPurchase.BackColor = Color.White;
         }
     }
 }
