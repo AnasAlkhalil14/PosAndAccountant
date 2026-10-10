@@ -213,7 +213,7 @@ namespace PosAndAccountantProject.Dashboard
             _LowStockProduct();
             _LastNewInvoices();
             _SalesChart();
-
+            _DayPurchase();
             lblCustomersDebtVal.Text = clsCustomer.GetAllCustomersDebt().ToString();
             lblSuppliersDebtVal.Text = clsSupplier.GetAllSuppliersDebt().ToString();
             lblStockValueVal.Text = clsProduct.GetTotalValueOfStock().ToString();

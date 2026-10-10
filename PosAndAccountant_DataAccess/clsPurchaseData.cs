@@ -242,7 +242,7 @@ namespace PosAndAccountant_DataAccess
         {
 
             decimal TotalPurchase = 0;
-            string query = @"SELECT CAST(ISNULL(SUM(TotalAmount), 0) AS DECIMAL(10,2)) AS DayPurchase
+            string query = @"SELECT format( ISNULL(SUM(TotalAmount), 0),'0.##')   AS DayPurchase
 FROM Purchases
 WHERE CreateDate >= CAST(GETDATE() AS DATE)
   AND CreateDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE));";
@@ -272,7 +272,7 @@ WHERE CreateDate >= CAST(GETDATE() AS DATE)
         public static decimal GetYesterdayPurchase()
         {
             decimal TotalPurchase = 0;
-            string query = @"SELECT CAST(ISNULL(SUM(TotalAmount), 0) AS DECIMAL(10,2)) AS DayPurchase
+            string query = @"SELECT format( ISNULL(SUM(TotalAmount), 0),'0.##')   AS DayPurchase
 FROM Purchases
 WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
   AND CreateDate < CAST(GETDATE() AS DATE);";
@@ -302,7 +302,7 @@ WHERE CreateDate >= DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
         public static DataTable GetAllPurchases(int PageNumber, int PageSize)
         {
             DataTable dt = new DataTable();
-            string query = @" SELECT       Purchases.PurchaseID, Purchases.TotalAmount, Purchases.PaidAmount, People.FirstName+' '+ People.LastName as SupplierName ,Purchases.CreateDate
+            string query = @" SELECT       Purchases.PurchaseID,format( Purchases.TotalAmount,'0.##')as TotalAmount,format( Purchases.PaidAmount,'0.##') as PaidAmount, People.FirstName+' '+ People.LastName as SupplierName ,Purchases.CreateDate
 FROM            Purchases INNER JOIN
                          Suppliers ON Purchases.SupplierID = Suppliers.SupplierID INNER JOIN
                          People ON Suppliers.PersonID = People.PersonID
@@ -334,7 +334,7 @@ FROM            Purchases INNER JOIN
         {
             {
                 decimal TotalAmount = 0;
-                string query = @"select Cast (ISNULL( max(TotalAmount),0) as decimal(16,2)) AS TotalAmount  from Purchases
+                string query = @"select format( ISNULL( max(TotalAmount),0),'0.##')   AS TotalAmount  from Purchases
 where day(getdate())=day(CreateDate);";
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
@@ -365,7 +365,7 @@ where day(getdate())=day(CreateDate);";
         {
             {
                 decimal TotalDebt = 0;
-                string query = @"select Cast (ISNULL( Sum(TotalAmount-PaidAmount-DiscountAmount),0) as decimal(16,2)) AS TotalDebt  from Purchases
+                string query = @"select format( ISNULL( Sum(TotalAmount-PaidAmount-DiscountAmount),0),'0.##')   AS TotalDebt  from Purchases
 where day(getdate())=day(CreateDate	);";
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
@@ -397,7 +397,8 @@ where day(getdate())=day(CreateDate	);";
         {
             DataTable dt = new DataTable();
             string query = @" 
-  select top 10 TotalSale= IsnUll(s.TotalSale,0),TotalPurchase=IsNUll(p.TotalPurchase,0),Date=coalesce(s.Date,p.Date) from (
+   select top 10 TotalSale=FORmat( IsnUll(s.TotalSale,0),'0.##'), 
+  TotalPurchase=Format( IsNUll(p.TotalPurchase,0),'0.##'),Date=coalesce(s.Date,p.Date) from (
  select Cast(  Sum(TotalAmount)   as decimal(16,2)) as TotalSale,
  cast(CreateDate  as date) Date 
  from Sales
