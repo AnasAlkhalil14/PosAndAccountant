@@ -223,7 +223,10 @@ namespace PosAndAccountant_business
         {
             return clsPurchaseData.GetLast10TotalSaleAndPurchase();
         }
-
+        public static decimal TotalDiscountToday()
+        {
+            return clsPurchaseData.TotalDiscountToday();
+        }
 
             }
 

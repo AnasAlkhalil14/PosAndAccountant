@@ -117,9 +117,9 @@ namespace PosAndAccountant_business
 
         }
 
-        public static DataTable GetAllSuppliersList()
+        public static DataTable GetAllSuppliersList(int PageNumber,int PageSize)
         {
-            return clsSupplierData.GetAllSuppliers();
+            return clsSupplierData.GetAllSuppliers(PageNumber,PageSize);
         }
         public static bool DeleteSupplierByID(int SupplierID)
         {
@@ -169,7 +169,14 @@ namespace PosAndAccountant_business
             return clsSupplierData.GetAllSuppliersDebt();
         }
 
-
+        public static int CountSuppliersToday()
+        {
+            return clsSupplierData.CountSuppliersToday();
+        }
+        public static int CountDebtSuppliers()
+        {
+            return clsSupplierData.CountDebtSuppliers();
+        }
 
     }
 }

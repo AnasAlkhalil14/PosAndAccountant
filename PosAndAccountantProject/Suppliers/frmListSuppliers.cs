@@ -19,7 +19,7 @@ namespace PosAndAccountantProject.Suppliers
             InitializeComponent();
         }
 
-        private DataTable _AllSuppliers = clsSupplier.GetAllSuppliersList();
+        private DataTable _AllSuppliers ;
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -28,44 +28,71 @@ namespace PosAndAccountantProject.Suppliers
 
         private void frmListSuppliers_Load(object sender, EventArgs e)
         {
-            dgvSuppliers.DataSource = _AllSuppliers;
-            lblRecordsCount.Text=dgvSuppliers.Rows.Count.ToString();
 
-            if (dgvSuppliers.Rows.Count > 0)
+            dgvSuppliers.AutoGenerateColumns = false;
+            dgvSuppliers.Columns.Clear();
+
+            dgvSuppliers.Columns.Add(new DataGridViewTextBoxColumn
             {
-                dgvSuppliers.Columns[0].HeaderText = "معرف المورد";
-                dgvSuppliers.Columns[0].Width = 100;
+                Name = "SupplierID",
+                HeaderText = "معرف المورد",
+                DataPropertyName = "SupplierID",
+                ReadOnly = true
 
-                dgvSuppliers.Columns[1].HeaderText = "الاسم الكامل";
-                dgvSuppliers.Columns[1].Width = 200;
-
-                dgvSuppliers.Columns[2].HeaderText = "رقم الهاتف";
-                dgvSuppliers.Columns[2].Width = 200;
+            });
 
 
-                dgvSuppliers.Columns[3].HeaderText = "العنوان";
-                dgvSuppliers.Columns[3].Width = 200;
+            dgvSuppliers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "FullName",
+                HeaderText = "الاسم الكامل",
+                DataPropertyName = "FullName",
+                ReadOnly = true
+            });
+            dgvSuppliers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Phone",
+                HeaderText = "رقم الهاتف",
+                DataPropertyName = "Phone",
+                ReadOnly = true
+            }); dgvSuppliers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Address",
+                HeaderText = "العنوان",
+                DataPropertyName = "Address",
+                ReadOnly = true
+            });
+            dgvSuppliers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IsActive",
+                HeaderText = "هل نشط",
+                DataPropertyName = "IsActive",
+                ReadOnly = true
+            });
+            dgvSuppliers.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TotalRemainingDebt",
+                HeaderText = "الدين الكلي",
+                DataPropertyName = "TotalRemainingDebt",
+                ReadOnly = true
+            }); 
+            RefreshForm();
 
 
-                dgvSuppliers.Columns[4].HeaderText = "هل نشط";
-                dgvSuppliers.Columns[4].Width = 100;
-
-
-
-                dgvSuppliers.Columns[5].HeaderText = "الدين الكلي";
-                dgvSuppliers.Columns[5].Width = 100;
-
-
-
-            }
-
+             
 
         }
         private void RefreshForm()
         {
 
-            _AllSuppliers = clsSupplier.GetAllSuppliersList();
+            _AllSuppliers = clsSupplier.GetAllSuppliersList(Convert.ToInt32(lblPageNumber.Text),10);
             dgvSuppliers.DataSource = _AllSuppliers;
+            lblCountDebtSuppliers.Text = clsSupplier.CountDebtSuppliers().ToString ();
+            lblDebt.Text=clsSupplier.GetAllSuppliersDebt().ToString();
+            lblDiscountToday.Text = clsPurchase.TotalDiscountToday().ToString();
+            lblSuppliersToday.Text=clsSupplier.CountSuppliersToday().ToString();
+            
+            
             lblRecordsCount.Text = dgvSuppliers.Rows.Count.ToString();
 
         }
@@ -192,6 +219,25 @@ namespace PosAndAccountantProject.Suppliers
             }
             lblRecordsCount.Text = dgvSuppliers.Rows.Count.ToString();
 
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkNext_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) + 1).ToString();
+
+        }
+
+        private void lnkPrivios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) - 1).ToString();
 
         }
     }
