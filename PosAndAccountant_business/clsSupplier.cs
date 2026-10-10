@@ -185,6 +185,9 @@ namespace PosAndAccountant_business
         {
             return clsSupplierData.GetSuppliersLowSaled(PageNumber, PageSize);
         }
-
+        public static DataTable GetSupplierNameAndDebt()
+        {
+            return clsSupplierData.GetSupplierNameAndDebt();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using PosAndAccountant_business;
+﻿using Guna.Charts.WinForms;
+using PosAndAccountant_business;
 using PosAndAccountantProject.Customers;
 using System;
 using System.Collections.Generic;
@@ -83,6 +84,44 @@ namespace PosAndAccountantProject.Suppliers
              
 
         }
+        private void _SuppliersDebtChart()
+        {
+            DataTable dt = clsSupplier.GetSupplierNameAndDebt();
+
+              
+                
+                
+                
+                lblEmpty.AutoSize = false;
+                lblEmpty.TextAlign = ContentAlignment.MiddleCenter;
+                lblEmpty.ForeColor = Color.Gray;
+                lblEmpty.Bounds = chartSuppliers.Bounds;
+                lblEmpty.Anchor = chartSuppliers.Anchor;
+                chartSuppliers.Parent.Controls.Add(lblEmpty);
+                lblEmpty.BringToFront();
+          
+            lblEmpty.Visible = (dt.Rows.Count == 0);
+
+             chartSuppliers.Title.Text = "أكثر الموردين ديناً";
+            chartSuppliers.Legend.Display = true;
+            chartSuppliers.Legend.Position = LegendPosition.Right;
+
+ 
+            chartSuppliers.Datasets.Clear();
+            if (dt.Rows.Count > 0)
+            {
+                GunaDoughnutDataset dataset = new GunaDoughnutDataset();
+                foreach (DataRow row in dt.Rows)
+                {
+                    dataset.DataPoints.Add(
+                        row["FullName"].ToString(),
+                        Convert.ToDouble(row["TotalRemainingDebt"]));
+                }
+                chartSuppliers.Datasets.Add(dataset);
+            }
+            chartSuppliers.Update();
+        }
+
         private void RefreshForm()
         {
 
@@ -95,7 +134,7 @@ namespace PosAndAccountantProject.Suppliers
             
             
             lblRecordsCount.Text = dgvSuppliers.Rows.Count.ToString();
-
+            _SuppliersDebtChart();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
