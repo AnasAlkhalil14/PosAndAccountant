@@ -177,6 +177,14 @@ namespace PosAndAccountant_business
         {
             return clsSupplierData.CountDebtSuppliers();
         }
+        public static DataTable GetSuppliersMostSaled(int PageNumber, int PageSize)
+        {
+            return clsSupplierData.GetSuppliersMostSaled(PageNumber, PageSize);
+        }
+        public static DataTable GetSuppliersLowSaled(int PageNumber, int PageSize)
+        {
+            return clsSupplierData.GetSuppliersLowSaled(PageNumber, PageSize);
+        }
 
     }
 }

@@ -32,21 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont17 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont18 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont19 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont20 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid7 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick7 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont21 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid8 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick8 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont22 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid9 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel3 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont23 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick9 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont24 = new Guna.Charts.WinForms.ChartFont();
             this.dgvSuppliers = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsCustomers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,8 +72,8 @@
             this.pnlSalesOverview = new Guna.UI2.WinForms.Guna2Panel();
             this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
             this.label4 = new System.Windows.Forms.Label();
-            this.lnkEveryProduct = new System.Windows.Forms.LinkLabel();
-            this.lnkMostSold = new System.Windows.Forms.LinkLabel();
+            this.lnkEverySupplier = new System.Windows.Forms.LinkLabel();
+            this.lnkMostPurchase = new System.Windows.Forms.LinkLabel();
             this.lnkSlowMoving = new System.Windows.Forms.LinkLabel();
             this.lnkDebt = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
@@ -362,12 +362,13 @@
             // 
             this.lblPageNumber.AutoSize = true;
             this.lblPageNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNumber.Location = new System.Drawing.Point(127, 402);
+            this.lblPageNumber.Location = new System.Drawing.Point(124, 408);
             this.lblPageNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNumber.Name = "lblPageNumber";
             this.lblPageNumber.Size = new System.Drawing.Size(18, 30);
             this.lblPageNumber.TabIndex = 141;
             this.lblPageNumber.Text = "1";
+            this.lblPageNumber.TextChanged += new System.EventHandler(this.lblPageNumber_TextChanged);
             // 
             // label3
             // 
@@ -403,37 +404,37 @@
             // 
             // gunaChart1
             // 
-            chartFont1.FontName = "Arial";
-            this.gunaChart1.Legend.LabelFont = chartFont1;
+            chartFont17.FontName = "Arial";
+            this.gunaChart1.Legend.LabelFont = chartFont17;
             this.gunaChart1.Location = new System.Drawing.Point(11, 32);
             this.gunaChart1.Name = "gunaChart1";
             this.gunaChart1.Size = new System.Drawing.Size(407, 182);
             this.gunaChart1.TabIndex = 16;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            this.gunaChart1.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Tooltips.TitleFont = chartFont4;
-            this.gunaChart1.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            this.gunaChart1.XAxes.Ticks = tick1;
-            this.gunaChart1.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            this.gunaChart1.YAxes.Ticks = tick2;
-            this.gunaChart1.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            this.gunaChart1.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            this.gunaChart1.ZAxes.Ticks = tick3;
+            chartFont18.FontName = "Arial";
+            chartFont18.Size = 12;
+            chartFont18.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Title.Font = chartFont18;
+            chartFont19.FontName = "Arial";
+            this.gunaChart1.Tooltips.BodyFont = chartFont19;
+            chartFont20.FontName = "Arial";
+            chartFont20.Size = 9;
+            chartFont20.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Tooltips.TitleFont = chartFont20;
+            this.gunaChart1.XAxes.GridLines = grid7;
+            chartFont21.FontName = "Arial";
+            tick7.Font = chartFont21;
+            this.gunaChart1.XAxes.Ticks = tick7;
+            this.gunaChart1.YAxes.GridLines = grid8;
+            chartFont22.FontName = "Arial";
+            tick8.Font = chartFont22;
+            this.gunaChart1.YAxes.Ticks = tick8;
+            this.gunaChart1.ZAxes.GridLines = grid9;
+            chartFont23.FontName = "Arial";
+            pointLabel3.Font = chartFont23;
+            this.gunaChart1.ZAxes.PointLabels = pointLabel3;
+            chartFont24.FontName = "Arial";
+            tick9.Font = chartFont24;
+            this.gunaChart1.ZAxes.Ticks = tick9;
             // 
             // label4
             // 
@@ -445,34 +446,37 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "مؤشر الزبائن";
             // 
-            // lnkEveryProduct
+            // lnkEverySupplier
             // 
-            this.lnkEveryProduct.AutoSize = true;
-            this.lnkEveryProduct.BackColor = System.Drawing.Color.Silver;
-            this.lnkEveryProduct.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lnkEveryProduct.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkEveryProduct.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lnkEveryProduct.Location = new System.Drawing.Point(408, 255);
-            this.lnkEveryProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lnkEveryProduct.Name = "lnkEveryProduct";
-            this.lnkEveryProduct.Size = new System.Drawing.Size(71, 19);
-            this.lnkEveryProduct.TabIndex = 159;
-            this.lnkEveryProduct.TabStop = true;
-            this.lnkEveryProduct.Text = "كل الزبائن ";
+            this.lnkEverySupplier.AutoSize = true;
+            this.lnkEverySupplier.BackColor = System.Drawing.Color.Silver;
+            this.lnkEverySupplier.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lnkEverySupplier.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkEverySupplier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.lnkEverySupplier.Location = new System.Drawing.Point(408, 255);
+            this.lnkEverySupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnkEverySupplier.Name = "lnkEverySupplier";
+            this.lnkEverySupplier.Size = new System.Drawing.Size(71, 19);
+            this.lnkEverySupplier.TabIndex = 159;
+            this.lnkEverySupplier.TabStop = true;
+            this.lnkEverySupplier.Text = "كل الزبائن ";
+            this.lnkEverySupplier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkEveryProduct_LinkClicked);
             // 
-            // lnkMostSold
+            // lnkMostPurchase
             // 
-            this.lnkMostSold.AutoSize = true;
-            this.lnkMostSold.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lnkMostSold.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkMostSold.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lnkMostSold.Location = new System.Drawing.Point(318, 329);
-            this.lnkMostSold.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lnkMostSold.Name = "lnkMostSold";
-            this.lnkMostSold.Size = new System.Drawing.Size(86, 19);
-            this.lnkMostSold.TabIndex = 154;
-            this.lnkMostSold.TabStop = true;
-            this.lnkMostSold.Text = "الأكثر شراءاً ↑";
+            this.lnkMostPurchase.AccessibleDescription = " ";
+            this.lnkMostPurchase.AutoSize = true;
+            this.lnkMostPurchase.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lnkMostPurchase.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkMostPurchase.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.lnkMostPurchase.Location = new System.Drawing.Point(318, 329);
+            this.lnkMostPurchase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnkMostPurchase.Name = "lnkMostPurchase";
+            this.lnkMostPurchase.Size = new System.Drawing.Size(86, 19);
+            this.lnkMostPurchase.TabIndex = 154;
+            this.lnkMostPurchase.TabStop = true;
+            this.lnkMostPurchase.Text = "الأكثر شراءاً ↑";
+            this.lnkMostPurchase.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMostSold_LinkClicked);
             // 
             // lnkSlowMoving
             // 
@@ -487,6 +491,7 @@
             this.lnkSlowMoving.TabIndex = 156;
             this.lnkSlowMoving.TabStop = true;
             this.lnkSlowMoving.Text = "الأقل  شراءاً ↓";
+            this.lnkSlowMoving.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSlowMoving_LinkClicked);
             // 
             // lnkDebt
             // 
@@ -501,6 +506,7 @@
             this.lnkDebt.TabIndex = 157;
             this.lnkDebt.TabStop = true;
             this.lnkDebt.Text = "عليهم ديون";
+            this.lnkDebt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDebt_LinkClicked);
             // 
             // label5
             // 
@@ -718,8 +724,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.pnlSalesOverview);
-            this.Controls.Add(this.lnkEveryProduct);
-            this.Controls.Add(this.lnkMostSold);
+            this.Controls.Add(this.lnkEverySupplier);
+            this.Controls.Add(this.lnkMostPurchase);
             this.Controls.Add(this.lnkSlowMoving);
             this.Controls.Add(this.lnkDebt);
             this.Controls.Add(this.label5);
@@ -797,8 +803,8 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Panel pnlSalesOverview;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel lnkEveryProduct;
-        private System.Windows.Forms.LinkLabel lnkMostSold;
+        private System.Windows.Forms.LinkLabel lnkEverySupplier;
+        private System.Windows.Forms.LinkLabel lnkMostPurchase;
         private System.Windows.Forms.LinkLabel lnkSlowMoving;
         private System.Windows.Forms.LinkLabel lnkDebt;
         private System.Windows.Forms.Label label5;

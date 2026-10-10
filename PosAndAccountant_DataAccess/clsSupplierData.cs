@@ -538,5 +538,136 @@ where TotalRemainingDebt>0
             return TotalDebt;
 
         }
+        public static DataTable GetSuppliersMostSaled(int PageNumber, int PageSize)
+        {
+            string query = @" SELECT sp.[SupplierID], FullName=CONCAT_WS(' ',p.FirstName,p.SecondName,p.LastName),case when p.Phone is null then 'لا يوجد' else p.Phone end as Phone ,
+	case when p.Address is null then 'لا يوجد' else p.Address end as Address,
+	
+	[IsActive],FORMAT( [TotalRemainingDebt],'0.##') as [TotalRemainingDebt]
+    FROM [dbo].[Suppliers] s join People p on s.PersonID=p.PersonID
+    join (
+select SupplierID,sum(TotalAmount-DiscountAmount) as Total from Purchases	
+group by SupplierID) sp on s.SupplierID=sp.SupplierID
+order by sp.Total desc  
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+        public static DataTable GetSuppliersLowSaled(int PageNumber, int PageSize)
+        {
+            string query = @" SELECT sp.[SupplierID], FullName=CONCAT_WS(' ',p.FirstName,p.SecondName,p.LastName),case when p.Phone is null then 'لا يوجد' else p.Phone end as Phone ,
+	case when p.Address is null then 'لا يوجد' else p.Address end as Address,
+	
+	[IsActive],FORMAT( [TotalRemainingDebt],'0.##') as [TotalRemainingDebt]
+    FROM [dbo].[Suppliers] s join People p on s.PersonID=p.PersonID
+    join (
+select SupplierID,sum(TotalAmount-DiscountAmount) as Total from Purchases	
+group by SupplierID) sp on s.SupplierID=sp.SupplierID
+order by sp.Total asc  
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
+
     }
 }
