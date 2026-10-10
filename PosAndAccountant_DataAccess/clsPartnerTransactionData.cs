@@ -66,7 +66,74 @@ namespace PosAndAccountant_DataAccess
 
         }
 
+        public static DataTable GetAllPartnerTransactions(int PageNumber, int PageSize)
+        {
+            string query = @" SELECT   [PartnerTransactionID]
+      ,pe.FirstName +' '+pe.LastName as FullName
+      , case [TransactionType] when 1 then 'سحب' when 2 then 
+	  'ايداع' when 3 then 'ربح' else 'مصروف' end as [TransactionType]
+      ,Format([Amount],'0.##') as Amount
+      ,t.[CreatedDate]
+      ,ISNULL( [Notes],'لا يوجد') AS Notes
+  FROM [AccountantDB].[dbo].[PartnerTransactions] t 
+  join Partners p on t.PartnerID=p.PartnerID join People pe on
+  pe.PersonID=p.PersonID
+  order by t.CreatedDate desc
 
+ offset(@PageNumber - 1) * @PageSize rows
+ fetch next @PageSize rows only";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
 
 
     }

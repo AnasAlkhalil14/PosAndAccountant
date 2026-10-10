@@ -95,7 +95,7 @@ namespace PosAndAccountantProject
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmListPartners());
+            OpenChildForm(new frmPartnerTransactionsList());
 
         }
 

@@ -2,6 +2,7 @@
 using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Text;
@@ -76,7 +77,10 @@ namespace PosAndAccountant_business
             return false;
 
         }
-
+        public static DataTable GetAllPartnerTransactions(int PageNumber, int PageSize)
+        {
+            return clsPartnerTransactionData.GetAllPartnerTransactions(PageNumber, PageSize);
+        }
 
     }
 }
