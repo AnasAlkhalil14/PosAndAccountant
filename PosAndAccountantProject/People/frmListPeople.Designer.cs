@@ -100,7 +100,7 @@
             "الكنية",
             "الهاتف"});
             this.cbFilterBy.Location = new System.Drawing.Point(101, 187);
-            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbFilterBy.Size = new System.Drawing.Size(158, 36);
@@ -233,7 +233,7 @@
             this.dgvPeople.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPeople.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPeople.Location = new System.Drawing.Point(22, 228);
-            this.dgvPeople.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPeople.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPeople.MultiSelect = false;
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
@@ -284,7 +284,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(836, 524);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 37);
             this.btnClose.TabIndex = 102;
@@ -303,7 +303,7 @@
             this.btnAddPerson.Image = global::PosAndAccountantProject.Properties.Resources.Add_Person_40;
             this.btnAddPerson.ImageSize = new System.Drawing.Size(50, 50);
             this.btnAddPerson.Location = new System.Drawing.Point(881, 158);
-            this.btnAddPerson.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddPerson.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(56, 61);
             this.btnAddPerson.TabIndex = 101;
@@ -314,7 +314,7 @@
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.People_400;
             this.pbPersonImage.ImageRotate = 0F;
             this.pbPersonImage.Location = new System.Drawing.Point(409, 4);
-            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(2);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(150, 122);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPeople);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmListPeople";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
