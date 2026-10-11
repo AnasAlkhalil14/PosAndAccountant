@@ -50,10 +50,9 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(338, 126);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle.Location = new System.Drawing.Point(451, 155);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(290, 45);
+            this.lblTitle.Size = new System.Drawing.Size(387, 55);
             this.lblTitle.TabIndex = 100;
             this.lblTitle.Text = "إدارة الأشخاص";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,8 +62,7 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lblRecordsCount.Location = new System.Drawing.Point(125, 538);
-            this.lblRecordsCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecordsCount.Location = new System.Drawing.Point(167, 662);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(26, 21);
             this.lblRecordsCount.TabIndex = 98;
@@ -75,8 +73,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(26, 535);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(35, 658);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 21);
             this.label2.TabIndex = 97;
@@ -99,11 +96,11 @@
             "الاسم الأول",
             "الكنية",
             "الهاتف"});
-            this.cbFilterBy.Location = new System.Drawing.Point(101, 187);
-            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilterBy.Location = new System.Drawing.Point(135, 230);
+            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbFilterBy.Size = new System.Drawing.Size(158, 36);
+            this.cbFilterBy.Size = new System.Drawing.Size(209, 36);
             this.cbFilterBy.StartIndex = 0;
             this.cbFilterBy.TabIndex = 96;
             this.cbFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -118,12 +115,12 @@
             this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtFilterValue.ForeColor = System.Drawing.Color.Black;
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(270, 187);
-            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtFilterValue.Location = new System.Drawing.Point(360, 230);
+            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "ابحث هنا...";
             this.txtFilterValue.SelectedText = "";
-            this.txtFilterValue.Size = new System.Drawing.Size(210, 29);
+            this.txtFilterValue.Size = new System.Drawing.Size(280, 36);
             this.txtFilterValue.TabIndex = 95;
             this.txtFilterValue.Visible = false;
             this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
@@ -134,8 +131,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(26, 191);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(35, 235);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 21);
             this.label1.TabIndex = 94;
@@ -232,8 +228,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPeople.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPeople.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPeople.Location = new System.Drawing.Point(22, 228);
-            this.dgvPeople.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPeople.Location = new System.Drawing.Point(29, 281);
+            this.dgvPeople.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPeople.MultiSelect = false;
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
@@ -250,7 +246,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPeople.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPeople.RowTemplate.Height = 35;
-            this.dgvPeople.Size = new System.Drawing.Size(915, 284);
+            this.dgvPeople.Size = new System.Drawing.Size(1220, 350);
             this.dgvPeople.TabIndex = 93;
             this.dgvPeople.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPeople.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -283,10 +279,10 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(836, 524);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(1115, 645);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(101, 37);
+            this.btnClose.Size = new System.Drawing.Size(135, 46);
             this.btnClose.TabIndex = 102;
             this.btnClose.Text = "إغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -302,10 +298,10 @@
             this.btnAddPerson.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnAddPerson.Image = global::PosAndAccountantProject.Properties.Resources.Add_Person_40;
             this.btnAddPerson.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAddPerson.Location = new System.Drawing.Point(881, 158);
-            this.btnAddPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddPerson.Location = new System.Drawing.Point(1175, 194);
+            this.btnAddPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(56, 61);
+            this.btnAddPerson.Size = new System.Drawing.Size(75, 75);
             this.btnAddPerson.TabIndex = 101;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
@@ -313,20 +309,20 @@
             // 
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.People_400;
             this.pbPersonImage.ImageRotate = 0F;
-            this.pbPersonImage.Location = new System.Drawing.Point(409, 4);
-            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pbPersonImage.Location = new System.Drawing.Point(545, 5);
+            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(150, 122);
+            this.pbPersonImage.Size = new System.Drawing.Size(200, 150);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 99;
             this.pbPersonImage.TabStop = false;
             // 
             // frmListPeople
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(960, 577);
+            this.ClientSize = new System.Drawing.Size(1280, 710);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.lblTitle);
@@ -338,7 +334,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPeople);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmListPeople";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

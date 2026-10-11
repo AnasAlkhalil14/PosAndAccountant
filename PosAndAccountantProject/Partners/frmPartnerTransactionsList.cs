@@ -97,6 +97,7 @@ namespace PosAndAccountantProject.Partners
         private void RefreshForm()
         {_AllTransactions= clsPartnerTransaction.GetAllPartnerTransactions(1, 10);
             dgvTransactions.DataSource = _AllTransactions;
+            lblProfitThisMonth.Text = clsPartnerTransaction.ProfitDistriputedThisMonth().ToString();
         }
 
         private void lnkAddNewTransaction_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

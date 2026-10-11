@@ -135,6 +135,38 @@ namespace PosAndAccountant_DataAccess
 
         }
 
+        public static decimal ProfitDistriputedThisMonth()
+        {
+            {
+                decimal Total = 0;
+                string query = @" 
+select FORMAT( sum (NetProfit),'0.##') as ProfitMonth from ProfitRuns
+  WHERE CreatedDate >= DATEADD(DAY, -30, CAST(GETDATE() AS DATE))
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
 
+
+        }
     }
 }

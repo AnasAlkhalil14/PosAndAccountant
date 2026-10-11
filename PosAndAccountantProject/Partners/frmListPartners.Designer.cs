@@ -80,7 +80,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPartners.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPartners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartners.Location = new System.Drawing.Point(12, 304);
+            this.dgvPartners.Location = new System.Drawing.Point(16, 374);
+            this.dgvPartners.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPartners.MultiSelect = false;
             this.dgvPartners.Name = "dgvPartners";
             this.dgvPartners.ReadOnly = true;
@@ -88,7 +89,7 @@
             this.dgvPartners.RowHeadersVisible = false;
             this.dgvPartners.RowHeadersWidth = 51;
             this.dgvPartners.RowTemplate.Height = 35;
-            this.dgvPartners.Size = new System.Drawing.Size(913, 360);
+            this.dgvPartners.Size = new System.Drawing.Size(1217, 443);
             this.dgvPartners.TabIndex = 128;
             this.dgvPartners.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPartners.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -174,7 +175,8 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblRecordsCount.Location = new System.Drawing.Point(168, 715);
+            this.lblRecordsCount.Location = new System.Drawing.Point(224, 880);
+            this.lblRecordsCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(26, 21);
             this.lblRecordsCount.TabIndex = 133;
@@ -184,7 +186,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 715);
+            this.label2.Location = new System.Drawing.Point(16, 880);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 21);
             this.label2.TabIndex = 132;
@@ -205,9 +208,10 @@
             "لا شيء",
             "معرف الشريك",
             "اسم الشريك"});
-            this.cbFilterBy.Location = new System.Drawing.Point(131, 262);
+            this.cbFilterBy.Location = new System.Drawing.Point(175, 322);
+            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(188, 36);
+            this.cbFilterBy.Size = new System.Drawing.Size(249, 36);
             this.cbFilterBy.StartIndex = 0;
             this.cbFilterBy.TabIndex = 131;
             // 
@@ -215,7 +219,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(31, 262);
+            this.label1.Location = new System.Drawing.Point(41, 322);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 21);
             this.label1.TabIndex = 129;
@@ -225,9 +230,10 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(114, 167);
+            this.lblTitle.Location = new System.Drawing.Point(152, 206);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(789, 50);
+            this.lblTitle.Size = new System.Drawing.Size(1052, 62);
             this.lblTitle.TabIndex = 135;
             this.lblTitle.Text = "إدارة الشركاء";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -244,9 +250,10 @@
             this.btnAddPartner.ForeColor = System.Drawing.Color.YellowGreen;
             this.btnAddPartner.Image = global::PosAndAccountantProject.Properties.Resources.addCustomer;
             this.btnAddPartner.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddPartner.Location = new System.Drawing.Point(841, 247);
+            this.btnAddPartner.Location = new System.Drawing.Point(1121, 304);
+            this.btnAddPartner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddPartner.Name = "btnAddPartner";
-            this.btnAddPartner.Size = new System.Drawing.Size(84, 51);
+            this.btnAddPartner.Size = new System.Drawing.Size(112, 63);
             this.btnAddPartner.TabIndex = 137;
             this.btnAddPartner.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
@@ -254,19 +261,20 @@
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.PartnersList;
-            this.pbPersonImage.Location = new System.Drawing.Point(355, 12);
+            this.pbPersonImage.Location = new System.Drawing.Point(473, 15);
+            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(310, 152);
+            this.pbPersonImage.Size = new System.Drawing.Size(413, 187);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 134;
             this.pbPersonImage.TabStop = false;
             // 
             // frmListPartners
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(953, 811);
+            this.ClientSize = new System.Drawing.Size(1271, 998);
             this.Controls.Add(this.btnAddPartner);
             this.Controls.Add(this.dgvPartners);
             this.Controls.Add(this.pbPersonImage);
@@ -275,6 +283,7 @@
             this.Controls.Add(this.cbFilterBy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmListPartners";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

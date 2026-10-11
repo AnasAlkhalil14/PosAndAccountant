@@ -81,6 +81,9 @@ namespace PosAndAccountant_business
         {
             return clsPartnerTransactionData.GetAllPartnerTransactions(PageNumber, PageSize);
         }
-
+        public static decimal ProfitDistriputedThisMonth()
+        {
+            return clsPartnerTransactionData.ProfitDistriputedThisMonth();
+        }
     }
 }
