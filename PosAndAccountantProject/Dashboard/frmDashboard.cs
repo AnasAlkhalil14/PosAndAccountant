@@ -24,11 +24,11 @@ namespace PosAndAccountantProject.Dashboard
             decimal diff = clsSale.GetDiffPercentDaySale();
             if (diff > 0)
             {
-                lblTodaySalesTrend.Text = $"▲ {diff}% عن أمس";
+                lblTodaySalesTrend.Text = $"▲ {diff.ToString("0.##")}% عن أمس";
             }
             else if (diff < 0)
             {
-                lblTodaySalesTrend.Text = $"▼ {diff}% عن أمس";
+                lblTodaySalesTrend.Text = $"▼ {diff.ToString("0.##")}% عن أمس";
 
             }
             else
@@ -44,11 +44,11 @@ namespace PosAndAccountantProject.Dashboard
             double diff = clsSale.GetDiffPercentCountDaySale();
             if (diff > 0)
             {
-                lblTotalOrdersTrend.Text = $"▲ {diff}% عن أمس";
+                lblTotalOrdersTrend.Text = $"▲ {diff.ToString("0.##")}% عن أمس";
             }
             else if (diff < 0)
             {
-                lblTotalOrdersTrend.Text = $"▼ {diff}% عن أمس";
+                lblTotalOrdersTrend.Text = $"▼ {diff.ToString("0.##")}% عن أمس";
 
             }
             else
@@ -65,11 +65,11 @@ namespace PosAndAccountantProject.Dashboard
             decimal diff = clsSale.GetDiffPercentDayProfit();
             if (diff > 0)
             {
-                lblProfitTrend.Text = $"▲ {diff}% عن أمس";
+                lblProfitTrend.Text = $"▲ {diff.ToString("0.##")}% عن أمس";
             }
             else if (diff < 0)
             {
-                lblProfitTrend.Text = $"▼ {diff}% عن أمس";
+                lblProfitTrend.Text = $"▼ {diff.ToString("0.##")}% عن أمس";
 
             }
             else
@@ -87,11 +87,11 @@ namespace PosAndAccountantProject.Dashboard
             decimal diff = clsSale.GetDiffPercentDayPaid();
             if (diff > 0)
             {
-                lblCashBalanceTrend.Text = $"▲ {diff}% عن أمس";
+                lblCashBalanceTrend.Text = $"▲ {diff.ToString("0.##")}% عن أمس";
             }
             else if (diff < 0)
             {
-                lblCashBalanceTrend.Text = $"▼ {diff}% عن أمس";
+                lblCashBalanceTrend.Text = $"▼ {diff.ToString("0.##")}% عن أمس";
 
             }
             else
@@ -190,11 +190,11 @@ namespace PosAndAccountantProject.Dashboard
             decimal diff = clsPurchase.GetDiffPercentDayPurchase();
             if (diff > 0)
             {
-                lblTodayPurchasesTrend.Text = $"▲ {diff}% عن أمس";
+                lblTodayPurchasesTrend.Text = $"▲ {diff.ToString("0.##")}% عن أمس";
             }
             else if (diff < 0)
             {
-                lblTodayPurchasesTrend.Text = $"▼ {diff}% عن أمس";
+                lblTodayPurchasesTrend.Text = $"▼ {diff.ToString("0.##")}% عن أمس";
 
             }
             else

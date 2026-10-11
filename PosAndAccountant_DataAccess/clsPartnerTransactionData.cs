@@ -236,6 +236,7 @@ where TransactionType=4 and CreatedDate>=cast(DATEADD(day,-30,getdate()) as date
         {
             string query = @" select FirstName+' '+LastName as FullName,CurrentBalance  from Partners pa join People pe
 on pa.PersonID=pe.PersonID
+ORDER BY CurrentBalance ASC
 ";
             DataTable dataTable = new DataTable();
 

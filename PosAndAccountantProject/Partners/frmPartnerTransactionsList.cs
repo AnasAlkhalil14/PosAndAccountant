@@ -123,7 +123,7 @@ namespace PosAndAccountantProject.Partners
                 ds.CornerRadius = 6;
                 ds.BarPercentage = 0.6;
 
-                var view = new System.Data.DataView(dt) { Sort = valueCol + " DESC" };
+                var view = new System.Data.DataView(dt)  ;
 
                 foreach (System.Data.DataRowView r in view)
                 {
@@ -150,6 +150,10 @@ namespace PosAndAccountantProject.Partners
         {
            frmWithdrawDeposite frm= new frmWithdrawDeposite();
             frm.ShowDialog();
+            if(true)
+            {
+                RefreshForm();  
+            }
         }
 
         private void lnkManagePartners_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -199,6 +203,13 @@ namespace PosAndAccountantProject.Partners
         {
             _ApplyFilter();
         }
+
+        private void lblPageNumber_TextChanged(object sender, EventArgs e)
+        {
+          
+            _AllTransactions = clsPartnerTransaction.GetAllPartnerTransactions(Convert.ToInt32(lblPageNumber.Text), 10);
+        dgvTransactions.DataSource = _AllTransactions;
+    }
     }
     }
 
