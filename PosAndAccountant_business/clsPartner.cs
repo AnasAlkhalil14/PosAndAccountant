@@ -152,7 +152,10 @@ namespace PosAndAccountant_business
             return clsPartnerData.IsPersonPartner(PersonID);
         }
 
-
+        public static decimal AllPartnersBalance()
+        {
+            return clsPartnerData.AllPartnersBalance();
+        }
 
 
     }
