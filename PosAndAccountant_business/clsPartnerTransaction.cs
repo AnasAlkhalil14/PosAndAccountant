@@ -93,7 +93,10 @@ namespace PosAndAccountant_business
         {
             return clsPartnerTransactionData.ExpensesThisMonth();
         }
-
+        public static DataTable GetAllPartnerNameWithBalance()
+        {
+            return clsPartnerTransactionData.GetAllPartnerNameWithBalance();
+        }
 
     }
 }

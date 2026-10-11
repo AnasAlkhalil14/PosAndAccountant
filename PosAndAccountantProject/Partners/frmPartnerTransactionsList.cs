@@ -93,15 +93,58 @@ namespace PosAndAccountantProject.Partners
 
             
         }
+        private void LoadPartnersBalanceChart( )
+        {
+            DataTable dt = clsPartnerTransaction.GetAllPartnerNameWithBalance();
 
+            // change these two to your column names
+            const string nameCol = "FullName";
+            const string valueCol = "CurrentBalance";
+
+            var good = System.Drawing.Color.FromArgb(26, 188, 156);   // positive balance
+            var bad = System.Drawing.Color.FromArgb(231, 76, 60);    // negative balance
+            var text = System.Drawing.Color.FromArgb(90, 100, 110);
+            var grid = System.Drawing.Color.FromArgb(232, 236, 238);
+
+            chart.Datasets.Clear();
+
+            // look
+            chart.Legend.Display = false;
+            chart.Title.Display = false;
+             chart.XAxes.GridLines.Display = false;
+            chart.YAxes.GridLines.Color = grid;
+            chart.XAxes.Ticks.ForeColor = text;
+            chart.YAxes.Ticks.ForeColor = text;
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                var ds = new Guna.Charts.WinForms.GunaBarDataset();
+                ds.Label = "الرصيد";
+                ds.CornerRadius = 6;
+                ds.BarPercentage = 0.6;
+
+                var view = new System.Data.DataView(dt) { Sort = valueCol + " DESC" };
+
+                foreach (System.Data.DataRowView r in view)
+                {
+                    double v = r[valueCol] == System.DBNull.Value ? 0 : System.Convert.ToDouble(r[valueCol]);
+                    ds.DataPoints.Add(r[nameCol].ToString(), v);
+                    ds.FillColors.Add(v < 0 ? bad : good);
+                }
+
+                chart.Datasets.Add(ds);
+            }
+
+            chart.Update();
+        }
         private void RefreshForm()
         {_AllTransactions= clsPartnerTransaction.GetAllPartnerTransactions(1, 10);
             dgvTransactions.DataSource = _AllTransactions;
             lblProfitThisMonth.Text = clsPartnerTransaction.ProfitDistriputedThisMonth().ToString();
        lblPartnersBalance.Text=clsPartner.AllPartnersBalance().ToString();
         lblExpensesThisMonth.Text=clsPartnerTransaction.ExpensesThisMonth().ToString();
-            lblWithDrawMonth.Text=clsPartnerTransaction.WithDrawDistriputedThisMonth().ToString(); 
-        }
+            lblWithDrawMonth.Text=clsPartnerTransaction.WithDrawDistriputedThisMonth().ToString();
+       LoadPartnersBalanceChart();  }
 
         private void lnkAddNewTransaction_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

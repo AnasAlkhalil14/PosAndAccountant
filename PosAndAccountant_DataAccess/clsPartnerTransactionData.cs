@@ -204,7 +204,7 @@ where TransactionType=1 and CreatedDate>=cast(DATEADD(day,-30,getdate()) as date
         {
             {
                 decimal Total = 0;
-                string query = @"select format(IsNULL(sum(Amount),0),'0.##') as WithDrawThisMonth from PartnerTransactions
+                string query = @"select format(IsNULL(sum(Amount),0),'0.##') as ExpensesThisMonth from PartnerTransactions
 where TransactionType=4 and CreatedDate>=cast(DATEADD(day,-30,getdate()) as date) 
 ;";
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -229,6 +229,61 @@ where TransactionType=4 and CreatedDate>=cast(DATEADD(day,-30,getdate()) as date
                 }
                 return Total;
             }
+
+
+        }
+        public static DataTable GetAllPartnerNameWithBalance( )
+        {
+            string query = @" select FirstName+' '+LastName as FullName,CurrentBalance  from Partners pa join People pe
+on pa.PersonID=pe.PersonID
+";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
 
 
         }
