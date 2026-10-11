@@ -99,6 +99,8 @@ namespace PosAndAccountantProject.Partners
             dgvTransactions.DataSource = _AllTransactions;
             lblProfitThisMonth.Text = clsPartnerTransaction.ProfitDistriputedThisMonth().ToString();
        lblPartnersBalance.Text=clsPartner.AllPartnersBalance().ToString();
+        lblExpensesThisMonth.Text=clsPartnerTransaction.ExpensesThisMonth().ToString();
+            lblWithDrawMonth.Text=clsPartnerTransaction.WithDrawDistriputedThisMonth().ToString(); 
         }
 
         private void lnkAddNewTransaction_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

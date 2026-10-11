@@ -85,5 +85,15 @@ namespace PosAndAccountant_business
         {
             return clsPartnerTransactionData.ProfitDistriputedThisMonth();
         }
+        public static decimal WithDrawDistriputedThisMonth()
+        {
+            return clsPartnerTransactionData.WithDrawDistriputedThisMonth();
+        }
+        public static decimal ExpensesThisMonth()
+        {
+            return clsPartnerTransactionData.ExpensesThisMonth();
+        }
+
+
     }
 }
