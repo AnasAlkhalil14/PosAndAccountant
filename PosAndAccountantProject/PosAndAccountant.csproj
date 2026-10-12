@@ -182,12 +182,6 @@
     <Compile Include="Partners\frmPartnerTransactionsList.Designer.cs">
       <DependentUpon>frmPartnerTransactionsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Partners\frmSetPartnersProfitPercentage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Partners\frmSetPartnersProfitPercentage.Designer.cs">
-      <DependentUpon>frmSetPartnersProfitPercentage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Partners\frmWithdrawDeposite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,9 +423,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Partners\frmPartnerTransactionsList.resx">
       <DependentUpon>frmPartnerTransactionsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Partners\frmSetPartnersProfitPercentage.resx">
-      <DependentUpon>frmSetPartnersProfitPercentage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Partners\frmWithdrawDeposite.resx">
       <DependentUpon>frmWithdrawDeposite.cs</DependentUpon>
