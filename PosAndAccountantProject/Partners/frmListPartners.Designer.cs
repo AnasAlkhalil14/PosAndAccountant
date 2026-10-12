@@ -81,7 +81,7 @@
             this.dgvPartners.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPartners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPartners.Location = new System.Drawing.Point(16, 374);
-            this.dgvPartners.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPartners.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPartners.MultiSelect = false;
             this.dgvPartners.Name = "dgvPartners";
             this.dgvPartners.ReadOnly = true;
@@ -209,7 +209,7 @@
             "معرف الشريك",
             "اسم الشريك"});
             this.cbFilterBy.Location = new System.Drawing.Point(175, 322);
-            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(4);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(249, 36);
             this.cbFilterBy.StartIndex = 0;
@@ -251,7 +251,7 @@
             this.btnAddPartner.Image = global::PosAndAccountantProject.Properties.Resources.addCustomer;
             this.btnAddPartner.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddPartner.Location = new System.Drawing.Point(1121, 304);
-            this.btnAddPartner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddPartner.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddPartner.Name = "btnAddPartner";
             this.btnAddPartner.Size = new System.Drawing.Size(112, 63);
             this.btnAddPartner.TabIndex = 137;
@@ -262,7 +262,7 @@
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.PartnersList;
             this.pbPersonImage.Location = new System.Drawing.Point(473, 15);
-            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(413, 187);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -283,7 +283,7 @@
             this.Controls.Add(this.cbFilterBy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListPartners";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

@@ -156,7 +156,10 @@ namespace PosAndAccountant_business
         {
             return clsPartnerData.AllPartnersBalance();
         }
-
+        public static DataTable GetAllPartnersShortWithPercentage()
+        {
+            return clsPartnerData.GetAllPartnersShortWithPercentage();
+        }
 
     }
 }

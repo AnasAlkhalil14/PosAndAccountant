@@ -209,7 +209,8 @@ namespace PosAndAccountantProject.Partners
           
             _AllTransactions = clsPartnerTransaction.GetAllPartnerTransactions(Convert.ToInt32(lblPageNumber.Text), 10);
         dgvTransactions.DataSource = _AllTransactions;
-    }
+    _ApplyFilter() ; 
+        }
     }
     }
 

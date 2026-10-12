@@ -44,7 +44,7 @@ namespace PosAndAccountantProject.Partners
             if(dgvPartners.Rows.Count > 0)
             {
 
-                dgvPartners.Columns[0].HeaderText = "معرف العميل";
+                dgvPartners.Columns[0].HeaderText = "معرف الشريك";
 
                 dgvPartners.Columns[1].HeaderText = "الاسم الكامل";
 

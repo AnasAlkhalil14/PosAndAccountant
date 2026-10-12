@@ -185,7 +185,68 @@ namespace PosAndAccountant_DataAccess
 
 
         }
+        public static DataTable GetAllPartnersShortWithPercentage()
+        {
 
+            DataTable dataTable = new DataTable();
+            string query = @"SELECT  [PartnerID]
+      , FirstName+' '+LastName as FullName
+       
+      ,[ProfitPercentage]
+      
+  FROM [AccountantDB].[dbo].[Partners] 
+  join People on People.PersonID=Partners.PersonID
+  where IsActive=1
+";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+ 
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dataTable.Load(reader);
+                                return dataTable;
+
+                            }
+                            else
+                            {
+                                return null;
+                            }
+
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+        }
         public static bool DeletePartnerByID(int PartnerID)
         {
             bool IsDeleted = false;
