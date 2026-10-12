@@ -1246,7 +1246,8 @@ namespace PosAndAccountantProject.Sales
         private void dgvSaleDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["Quantity"].Index
-                || dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["ReturnQ"].Index)
+                || dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["ReturnQ"].Index||
+                dgvSaleDetails.CurrentCell.ColumnIndex == dgvSaleDetails.Columns["DiscountAmount"].Index)
             {
                 TextBox txt = e.Control as TextBox;
                 if (txt != null)

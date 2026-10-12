@@ -192,7 +192,7 @@ namespace PosAndAccountant_DataAccess
             string query = @"SELECT  [PartnerID]
       , FirstName+' '+LastName as FullName
        
-      ,[ProfitPercentage]
+      , [ProfitPercentage] 
       
   FROM [AccountantDB].[dbo].[Partners] 
   join People on People.PersonID=Partners.PersonID
