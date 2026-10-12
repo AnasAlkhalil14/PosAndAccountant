@@ -45,16 +45,23 @@
             this.lblPartnerID = new System.Windows.Forms.Label();
             this.tsIsActive = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
+            this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ctrlEditPartnersProfitPercentage1 = new PosAndAccountantProject.Partners.Controls.ctrlEditPartnersProfitPercentage();
             this.gbCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProfitPercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBalance)).BeginInit();
+            this.guna2TabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
-            this.lblTitle.Location = new System.Drawing.Point(61, 10);
+            this.lblTitle.Location = new System.Drawing.Point(187, 9);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(584, 41);
@@ -68,7 +75,7 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(418, 620);
+            this.btnClose.Location = new System.Drawing.Point(440, 644);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 37);
@@ -82,7 +89,7 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(202, 620);
+            this.btnSave.Location = new System.Drawing.Point(224, 644);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(105, 37);
@@ -108,7 +115,7 @@
             this.gbCustomerInfo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.gbCustomerInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gbCustomerInfo.ForeColor = System.Drawing.Color.White;
-            this.gbCustomerInfo.Location = new System.Drawing.Point(41, 397);
+            this.gbCustomerInfo.Location = new System.Drawing.Point(29, 336);
             this.gbCustomerInfo.Margin = new System.Windows.Forms.Padding(2);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
             this.gbCustomerInfo.Size = new System.Drawing.Size(593, 204);
@@ -178,6 +185,7 @@
             this.numProfitPercentage.Size = new System.Drawing.Size(108, 29);
             this.numProfitPercentage.TabIndex = 25;
             this.numProfitPercentage.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.numProfitPercentage.Validating += new System.ComponentModel.CancelEventHandler(this.numProfitPercentage_Validating);
             // 
             // numBalance
             // 
@@ -271,7 +279,7 @@
             // ctrlPersonCardWithFilter1
             // 
             this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(8, 66);
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(14, 5);
             this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(640, 327);
@@ -279,14 +287,77 @@
             this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
             this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
             // 
+            // guna2TabControl1
+            // 
+            this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Right;
+            this.guna2TabControl1.Controls.Add(this.tabPage1);
+            this.guna2TabControl1.Controls.Add(this.tabPage2);
+            this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
+            this.guna2TabControl1.Location = new System.Drawing.Point(10, 73);
+            this.guna2TabControl1.Name = "guna2TabControl1";
+            this.guna2TabControl1.SelectedIndex = 0;
+            this.guna2TabControl1.Size = new System.Drawing.Size(858, 563);
+            this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
+            this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
+            this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
+            this.guna2TabControl1.TabIndex = 130;
+            this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.VerticalRight;
+            this.guna2TabControl1.SelectedIndexChanged += new System.EventHandler(this.guna2TabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.ctrlPersonCardWithFilter1);
+            this.tabPage1.Controls.Add(this.gbCustomerInfo);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(670, 555);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "بيانات الشريك";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.ctrlEditPartnersProfitPercentage1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(670, 555);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "تعديل نسبة ربح الشركاء";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ctrlEditPartnersProfitPercentage1
+            // 
+            this.ctrlEditPartnersProfitPercentage1.BackColor = System.Drawing.Color.White;
+            this.ctrlEditPartnersProfitPercentage1.Location = new System.Drawing.Point(18, 136);
+            this.ctrlEditPartnersProfitPercentage1.Margin = new System.Windows.Forms.Padding(2);
+            this.ctrlEditPartnersProfitPercentage1.Name = "ctrlEditPartnersProfitPercentage1";
+            this.ctrlEditPartnersProfitPercentage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ctrlEditPartnersProfitPercentage1.Size = new System.Drawing.Size(622, 271);
+            this.ctrlEditPartnersProfitPercentage1.TabIndex = 0;
+            // 
             // frmAddUpdatePartners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(658, 692);
-            this.Controls.Add(this.gbCustomerInfo);
-            this.Controls.Add(this.ctrlPersonCardWithFilter1);
+            this.ClientSize = new System.Drawing.Size(874, 692);
+            this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
@@ -300,6 +371,9 @@
             this.gbCustomerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProfitPercentage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBalance)).EndInit();
+            this.guna2TabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -323,5 +397,9 @@
         private System.Windows.Forms.Label lblCreatedDate;
         private System.Windows.Forms.Label lblPartnerID;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tsIsActive;
+        private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Controls.ctrlEditPartnersProfitPercentage ctrlEditPartnersProfitPercentage1;
     }
 }

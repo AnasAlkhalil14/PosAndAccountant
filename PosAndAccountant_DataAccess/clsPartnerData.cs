@@ -71,10 +71,69 @@ namespace PosAndAccountant_DataAccess
 
             return PartnerDTO;
         }
+        public static clsPartnerDTO FindPartnerByPersonID(int PersonID)
+        {
+
+            clsPartnerDTO PartnerDTO = null;
+            string query = @"  SELECT PartnerID, PersonID, CurrentBalance, ProfitPercentage, CreatedDate, ModifiedDate, IsActive
+    FROM Partners
+    WHERE PersonID = @PersonID;";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+ 
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                PartnerDTO = new clsPartnerDTO();
+
+                                PartnerDTO.PartnerID = Convert.ToInt32(reader["PartnerID"]); ;
+                                PartnerDTO.PersonID =PersonID;
+                                PartnerDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
+                                PartnerDTO.CurrentBalance = Convert.ToDouble(reader["CurrentBalance"]);
+                                PartnerDTO.ProfitPercentage = Convert.ToDouble(reader["ProfitPercentage"]);
+                                PartnerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
+                                PartnerDTO.ModifiedDate = reader["CreatedDate"] != DBNull.Value ? Convert.ToDateTime(reader["CreatedDate"]) : PartnerDTO.CreatedDate;
+
+                            }
+
+                        }
 
 
 
-        
+                    }
+                    catch (Exception ex)
+                    {
+                        //Loging in event lopg
+                        return null;
+
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+            return PartnerDTO;
+        }
+
+
+
         public static DataTable GetAllPartnersShort()
         {
 
@@ -458,6 +517,61 @@ namespace PosAndAccountant_DataAccess
             }
 
 
+        }
+        public static bool UpdatePartnerPercentagByID(int  PartnerID,decimal ProfitPercentage)
+        {
+            int RowAffected = 0;
+            string query = @" UPDATE Partners
+    SET  
+        ProfitPercentage = @ProfitPercentage,
+       
+        ModifiedDate = SYSDATETIME()
+    WHERE PartnerID = @PartnerID;
+
+	select @@ROWCOUNT";
+            try
+            {
+
+
+
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using (SqlCommand command = new SqlCommand("[Partners].[SP_UpdatePartnerByID]", connection))
+                    {
+                        command.Parameters.AddWithValue("@PartnerID",  PartnerID);
+
+                          command.Parameters.AddWithValue("@ProfitPercentage", ProfitPercentage );
+
+
+
+
+ 
+                        connection.Open();
+
+                        object resutl = command.ExecuteScalar();
+                        if (resutl != null)
+                        {
+                            RowAffected = Convert.ToInt32(resutl);
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
+                    }
+
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //log;
+            }
+
+            return RowAffected > 0;
         }
 
     }

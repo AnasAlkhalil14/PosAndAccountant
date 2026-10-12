@@ -47,7 +47,16 @@ namespace PosAndAccountant_business
 
         public clsPerson PersonInfo { get; set; }
         public int PartnerID { get; set; }
-        public int PersonID { get; set; }
+        public int PersonID
+        {
+            get { return _PersonID; }
+            set
+            {
+                _PersonID = value;
+                PersonInfo = clsPerson.FindPersonByID(value);
+            }
+        }
+        private int _PersonID;
         public bool IsActive { get; set; }
         public double ProfitPercentage { get; set; }
        
@@ -81,8 +90,7 @@ namespace PosAndAccountant_business
          
             CreatedDate = PartnerDTO.CreatedDate;
             ModifiedDate = PartnerDTO.ModifiedDate;
-            PersonInfo = clsPerson.FindPersonByID(PersonID);
-            Mode = enMode.eUpdate;
+             Mode = enMode.eUpdate;
 
         }
 
@@ -145,7 +153,18 @@ namespace PosAndAccountant_business
 
 
         }
-     
+        public static clsPartner FindPartnerByPersonID(int PersonID)
+        {
+            clsPartnerDTO PartnerDTO = clsPartnerData.FindPartnerByPersonID(PersonID);
+            if (PartnerDTO != null)
+            {
+                return new clsPartner(PartnerDTO);
+            }
+            return null;
+
+
+        }
+
 
         public static bool IsPersonPartner(int PersonID)
         {

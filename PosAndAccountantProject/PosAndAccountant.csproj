@@ -146,6 +146,12 @@
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Partners\Controls\ctrlEditPartnersProfitPercentage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Partners\Controls\ctrlEditPartnersProfitPercentage.Designer.cs">
+      <DependentUpon>ctrlEditPartnersProfitPercentage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Partners\Controls\ctrlPartnerCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -405,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partners\Controls\ctrlEditPartnersProfitPercentage.resx">
+      <DependentUpon>ctrlEditPartnersProfitPercentage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Partners\Controls\ctrlPartnerCard.resx">
       <DependentUpon>ctrlPartnerCard.cs</DependentUpon>

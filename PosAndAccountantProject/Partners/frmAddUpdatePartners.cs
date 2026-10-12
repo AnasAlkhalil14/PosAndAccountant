@@ -45,23 +45,38 @@ namespace PosAndAccountantProject.Partners
                     MessageBox.Show("هذا الشخص هو شريك لدينا مسبقا يرجى اختيار شخص اخر", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ctrlPersonCardWithFilter1.ResetePersonInfo();
 
-
-                }
-                _SetEnability(false);
+                    _SetEnability(false);
 
                     return;
+                }
+               
                 
 
             }
-            else if (e.PersonID != _Partner.PersonID && clsPartner.DeletePartnerByID(e.PersonID))
+            else if (e.PersonID != _Partner.PersonID && !clsPartner.IsPersonPartner(e.PersonID))
             {
 
-                MessageBox.Show("هذا الشخص هو شريك لدينا مسبقا يرجى اختيار شخص اخر", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("هذا الشخص ليس شريك لدينا مسبقا يرجى اختيار شخص اخر", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ctrlPersonCardWithFilter1.ResetePersonInfo();
                 _SetEnability(false);
                 return;
 
 
+            }
+            else if(e.PersonID!=_Partner.PersonID)
+            {
+                _Partner = clsPartner.FindPartnerByPersonID(e.PersonID);
+                if (_Partner != null)
+                {
+                    
+                    _SetEnability(true);
+                    lblPartnerID.Text = _PartnerID.ToString();
+                    lblCreatedDate.Text = _Partner.CreatedDate.ToShortDateString();
+                    numBalance.Value = Convert.ToDecimal(_Partner.CurrentBalance);
+                    numProfitPercentage.Value = Convert.ToDecimal(_Partner.ProfitPercentage);
+                    tsIsActive.Checked = _Partner.IsActive;
+                    return;
+                }
             }
 
             _SetEnability(true);
@@ -106,7 +121,7 @@ namespace PosAndAccountantProject.Partners
                 _Partner = new clsPartner();
                 _SetEnability(false);
             }
-
+            ctrlEditPartnersProfitPercentage1._LoadToControl();
 
         }
 
@@ -120,7 +135,19 @@ namespace PosAndAccountantProject.Partners
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(_SavePartner())
+            if (_Partner.Mode == clsPartner.enMode.eAdd  )
+            {
+                ctrlEditPartnersProfitPercentage1.SetCurrentPartner(_Partner.PersonInfo.FullName, numProfitPercentage.Value);
+            }
+            if(!ctrlEditPartnersProfitPercentage1.IsPercentage100())
+            {
+                MessageBox.Show("يجب عليك التاكد ان مجموع نسب ربح الشركاء يساوي 100", "خطأ في نسب الربح", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                guna2TabControl1.SelectedTab = tabPage2;
+                return;
+            }
+
+
+            if (_SavePartner())
             {
                 lblPartnerID.Text = _Partner.PartnerID.ToString();
                 lblTitle.Text = "تعديل بيانات الشريك";
@@ -140,6 +167,22 @@ namespace PosAndAccountantProject.Partners
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (guna2TabControl1.SelectedTab != tabPage2) return;
+           
+            if (_Partner.Mode==clsPartner.enMode.eAdd&&btnSave.Enabled)
+            {
+                ctrlEditPartnersProfitPercentage1.SetCurrentPartner(_Partner.PersonInfo.FullName, numProfitPercentage.Value);
+            }
+        }
+
+        private void numProfitPercentage_Validating(object sender, CancelEventArgs e)
+        {
+            if(_Partner.Mode==clsPartner.enMode.eUpdate)
+            ctrlEditPartnersProfitPercentage1.EditPercentage(_PartnerID, numProfitPercentage.Value);
         }
     }
 }
