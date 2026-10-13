@@ -125,7 +125,20 @@ EditDone = true;
             frm.OnSaveTrue -= Frm_OnSaveTrue;
             frm.OnSaveTrue += Frm_OnSaveTrue;
         }
-
         
+        private void lnkManagePartners_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {this.Close();
+         }
+
+        private void lnkAddNewTransaction_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmWithdrawDeposite frm = new frmWithdrawDeposite();
+            frm.ShowDialog(); 
+            if(frm.WasSaved)
+            {
+                EditDone = true;
+                _RefreshForm();
+            }
+        }
     }
 }
