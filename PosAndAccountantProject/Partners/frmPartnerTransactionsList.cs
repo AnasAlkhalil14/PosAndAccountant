@@ -150,7 +150,7 @@ namespace PosAndAccountantProject.Partners
         {
            frmWithdrawDeposite frm= new frmWithdrawDeposite();
             frm.ShowDialog();
-            if(true)
+            if(frm.WasSaved)
             {
                 RefreshForm();  
             }
@@ -160,6 +160,10 @@ namespace PosAndAccountantProject.Partners
         {
             frmListPartners frm= new frmListPartners();
             frm.ShowDialog();
+            if(frm.EditDone)
+            {
+                RefreshForm();
+            }
         }
 
         private void lnkNext_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

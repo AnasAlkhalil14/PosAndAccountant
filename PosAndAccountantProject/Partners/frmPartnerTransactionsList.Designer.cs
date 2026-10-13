@@ -313,7 +313,7 @@
             this.lnkPrivios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lnkPrivios.Location = new System.Drawing.Point(232, 379);
             this.lnkPrivios.Name = "lnkPrivios";
-            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4);
             this.lnkPrivios.Size = new System.Drawing.Size(61, 30);
             this.lnkPrivios.TabIndex = 137;
             this.lnkPrivios.TabStop = true;
@@ -327,7 +327,7 @@
             this.lnkNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lnkNext.Location = new System.Drawing.Point(171, 379);
             this.lnkNext.Name = "lnkNext";
-            this.lnkNext.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnkNext.Padding = new System.Windows.Forms.Padding(4);
             this.lnkNext.Size = new System.Drawing.Size(55, 30);
             this.lnkNext.TabIndex = 136;
             this.lnkNext.TabStop = true;
@@ -361,7 +361,7 @@
             this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator2.Location = new System.Drawing.Point(30, 358);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(894, 10);
             this.guna2Separator2.TabIndex = 142;
@@ -373,7 +373,7 @@
             this.pnlSalesOverview.Controls.Add(this.chart);
             this.pnlSalesOverview.FillColor = System.Drawing.Color.White;
             this.pnlSalesOverview.Location = new System.Drawing.Point(358, 148);
-            this.pnlSalesOverview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSalesOverview.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSalesOverview.Name = "pnlSalesOverview";
             this.pnlSalesOverview.Size = new System.Drawing.Size(582, 204);
             this.pnlSalesOverview.TabIndex = 160;
@@ -396,7 +396,7 @@
             chartFont9.FontName = "Arial";
             this.chart.Legend.LabelFont = chartFont9;
             this.chart.Location = new System.Drawing.Point(14, 21);
-            this.chart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart.Margin = new System.Windows.Forms.Padding(4);
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(544, 179);
             this.chart.TabIndex = 11;
@@ -433,7 +433,7 @@
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2Panel1.Location = new System.Drawing.Point(7, 261);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(135, 65);
             this.guna2Panel1.TabIndex = 153;
@@ -471,7 +471,7 @@
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.guna2Panel2.Location = new System.Drawing.Point(170, 261);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(135, 65);
             this.guna2Panel2.TabIndex = 152;
@@ -511,7 +511,7 @@
             this.cardOutOfStock.FillColor = System.Drawing.Color.Gray;
             this.cardOutOfStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cardOutOfStock.Location = new System.Drawing.Point(170, 177);
-            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2);
             this.cardOutOfStock.Name = "cardOutOfStock";
             this.cardOutOfStock.Size = new System.Drawing.Size(135, 65);
             this.cardOutOfStock.TabIndex = 151;
@@ -549,7 +549,7 @@
             this.cardTotal.Controls.Add(this.lblTotalDebt);
             this.cardTotal.FillColor = System.Drawing.Color.Red;
             this.cardTotal.Location = new System.Drawing.Point(7, 177);
-            this.cardTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardTotal.Margin = new System.Windows.Forms.Padding(2);
             this.cardTotal.Name = "cardTotal";
             this.cardTotal.Size = new System.Drawing.Size(135, 65);
             this.cardTotal.TabIndex = 150;

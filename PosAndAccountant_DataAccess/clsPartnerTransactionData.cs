@@ -28,6 +28,10 @@ namespace PosAndAccountant_DataAccess
                     command.Parameters.AddWithValue("@PartnerID", partnerTransactionDTO.PartnerID);
                     command.Parameters.AddWithValue("@TransactionType", partnerTransactionDTO.TransactionType);
                     command.Parameters.AddWithValue("@Amount", partnerTransactionDTO.Amount);
+                    if(string.IsNullOrEmpty(partnerTransactionDTO.Notes.Trim()))
+                     
+                        command.Parameters.AddWithValue("@Notes", DBNull.Value);
+                    else
                     command.Parameters.AddWithValue("@Notes", partnerTransactionDTO.Notes);
 
 

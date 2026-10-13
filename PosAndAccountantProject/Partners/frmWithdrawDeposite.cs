@@ -26,7 +26,8 @@ namespace PosAndAccountantProject.Partners
         }
 
         clsPartnerTransaction partnerTransaction;
-
+        public bool WasSaved = false;
+        public event EventHandler OnSaveTrue;
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar)&&!char.IsDigit(e.KeyChar))
@@ -49,8 +50,18 @@ namespace PosAndAccountantProject.Partners
           
             dtpDate.Value = DateTime.Now;
         }
-
-      
+        public void MakeDeposite()
+        {
+            rbDeposit.Checked = true;
+        }
+      public void MakeWithDraw()
+        {
+            rbWithdraw.Checked = true;
+        }
+        public void SelectPartner(int PartnerID)
+        {
+            cbxPartner.SelectedValue= PartnerID;
+        }
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
@@ -71,6 +82,8 @@ namespace PosAndAccountantProject.Partners
                 _AllPartners = clsPartner.GetAllPartnersShort();
                 int PartnerIndex = cbxPartner.SelectedIndex;
                 _LoadPartnersToCompoBox();
+                WasSaved = true;
+                OnSaveTrue?.Invoke(null,null);
                 cbxPartner.SelectedIndex = PartnerIndex;
             }
             else

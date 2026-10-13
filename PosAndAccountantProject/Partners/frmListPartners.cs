@@ -19,7 +19,7 @@ namespace PosAndAccountantProject.Partners
         }
 
         private DataTable _AllPartners ;
-
+        public bool EditDone = false;
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             frmAddUpdatePartners frm = new frmAddUpdatePartners();
@@ -27,6 +27,7 @@ namespace PosAndAccountantProject.Partners
             if(frm.WasSaved)
             {
                 _RefreshForm();
+                EditDone = true;
             }
         }
 
@@ -76,6 +77,7 @@ namespace PosAndAccountantProject.Partners
             frm.ShowDialog(); 
             if (frm.WasSaved)
             {
+                EditDone = true;
                 _RefreshForm();
             }
         }
@@ -87,7 +89,7 @@ namespace PosAndAccountantProject.Partners
             if (MessageBox.Show($"هل متاكد من حذف الشريك ذو المعرف:{PartnerID}", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 if (clsPerson.DeletePersonByID(PartnerID))
-                {
+                {EditDone = true;
                     _RefreshForm();
                     MessageBox.Show($"الشريك ذو المعرف={PartnerID} حذف بنجاح", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -100,6 +102,30 @@ namespace PosAndAccountantProject.Partners
             }
         }
 
-      
+        private void عمليةسحبToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+       frmWithdrawDeposite frm = new frmWithdrawDeposite();
+               frm.Show(); frm.MakeWithDraw();
+            frm.SelectPartner(Convert.ToInt32(dgvPartners.CurrentRow.Cells[0].Value));
+            frm.OnSaveTrue -= Frm_OnSaveTrue;
+            frm.OnSaveTrue += Frm_OnSaveTrue;
+        }
+
+        private void Frm_OnSaveTrue(object sender, EventArgs e)
+        {
+EditDone = true;
+            _RefreshForm();
+        }
+
+        private void عمليةايداعToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmWithdrawDeposite frm = new frmWithdrawDeposite();
+            frm.Show(); frm.MakeDeposite();
+            frm.SelectPartner(Convert.ToInt32(dgvPartners.CurrentRow.Cells[0].Value));
+            frm.OnSaveTrue -= Frm_OnSaveTrue;
+            frm.OnSaveTrue += Frm_OnSaveTrue;
+        }
+
+        
     }
 }
