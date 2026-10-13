@@ -3,9 +3,11 @@ using PosAndAccountant_DataTransfer;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PosAndAccountant_business
 {
@@ -14,32 +16,21 @@ namespace PosAndAccountant_business
         public enum enMode { eAdd, eUpdate }
         public enMode Mode;
 
-        private bool _AddPartner()
+        private bool _AddPartner(DataTable OtherPartners,out string Error )
         {
-            clsPartnerDTO PartnerDTO = new clsPartnerDTO();
-            PartnerDTO.PersonID = this.PersonID;
-            PartnerDTO.CurrentBalance = this.CurrentBalance;
-            PartnerDTO.IsActive = this.IsActive;
-            PartnerDTO.ProfitPercentage = this.ProfitPercentage;
-        
+
+            this.PartnerID = clsPartnerData.SavePartnerWithPercentages(null, this.PersonID, this.CurrentBalance, this.ProfitPercentage, OtherPartners, out Error);
 
 
-            this.PartnerID = clsPartnerData.AddNewPartner(PartnerDTO);
-            return this.PartnerID != -1;
+             return this.PartnerID != -1;
         }
-        private bool _UpdatePartner()
+        private bool _UpdatePartner(DataTable Other,out string Error)
         {
 
-            clsPartnerDTO PartnerDTO = new clsPartnerDTO();
-            PartnerDTO.PartnerID = this.PartnerID;
-            PartnerDTO.PersonID = this.PersonID;
-            PartnerDTO.CurrentBalance = this.CurrentBalance;
-            PartnerDTO.IsActive = this.IsActive;
-            PartnerDTO.ProfitPercentage = this.ProfitPercentage;
+            this.PartnerID = clsPartnerData.SavePartnerWithPercentages(PartnerID, this.PersonID, this.CurrentBalance, this.ProfitPercentage, Other, out Error);
 
 
-
-            return clsPartnerData.UpdatePartnerByID(PartnerDTO);
+            return this.PartnerID != -1;
 
         }
 
@@ -58,9 +49,9 @@ namespace PosAndAccountant_business
         }
         private int _PersonID;
         public bool IsActive { get; set; }
-        public double ProfitPercentage { get; set; }
+        public decimal ProfitPercentage { get; set; }
        
-        public double CurrentBalance { get; set; }
+        public decimal CurrentBalance { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
 
@@ -94,14 +85,14 @@ namespace PosAndAccountant_business
 
         }
 
-        public bool Save()
+        public bool Save(DataTable OtherPartners,out string Error)
         {
 
             switch (Mode)
             {
                 case enMode.eAdd:
                     {
-                        if (_AddPartner())
+                        if (_AddPartner(OtherPartners,out Error))
                         {
                             Mode = enMode.eUpdate;
                             return true;
@@ -115,11 +106,12 @@ namespace PosAndAccountant_business
 
                 case enMode.eUpdate:
                     {
-                        return _UpdatePartner();
+                        return _UpdatePartner(OtherPartners, out Error);
 
                     }
                 default:
                     {
+                        Error = "An Error in Mode Occure";
                         return false;
                     }
 
@@ -179,6 +171,16 @@ namespace PosAndAccountant_business
         {
             return clsPartnerData.GetAllPartnersShortWithPercentage();
         }
-
+        public static int SavePartnerWithPercentages(
+ int? partnerID,              // null = new partner, value = edit
+ int personID,
+ decimal currentBalance,      // used only for a new partner (pass 0 when editing)
+ decimal profitPercentage,    // this partner's own percentage
+ DataTable otherPartners,     // columns in this order: PartnerID (int), ProfitPercentage (decimal)
+ out string error,bool IsActive=true)
+        {
+            error = "";
+            return clsPartnerData.SavePartnerWithPercentages(partnerID, personID, currentBalance, profitPercentage, otherPartners,out error,IsActive);
+        }
     }
 }

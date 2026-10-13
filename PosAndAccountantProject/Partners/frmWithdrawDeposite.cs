@@ -54,9 +54,7 @@ namespace PosAndAccountantProject.Partners
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            frmSetPartnersProfitPercentage frm = new frmSetPartnersProfitPercentage();
-            frm.ShowDialog();
-
+             
             if(!this.ValidateChildren())
                 {
                 MessageBox.Show("يوجد بيانات غيير مكتملة او خاطئة لا يمكن اكمال العملية", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;

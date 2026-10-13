@@ -125,13 +125,13 @@ namespace PosAndAccountantProject.Partners
 
         }
 
-        private bool _SavePartner()
+        private bool _SavePartner(out string  Error)
         {
-            _Partner.CurrentBalance = Convert.ToDouble(numBalance.Value);
-            _Partner.ProfitPercentage = Convert.ToDouble(numProfitPercentage.Value);
+            _Partner.CurrentBalance = Convert.ToDecimal(numBalance.Value);
+            _Partner.ProfitPercentage = Convert.ToDecimal(numProfitPercentage.Value);
             _Partner.IsActive = tsIsActive.Checked;
-
-            return _Partner.Save();
+            DataTable Others=ctrlEditPartnersProfitPercentage1.BuildPartnersTable();
+            return _Partner.Save(Others,out Error);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -146,8 +146,8 @@ namespace PosAndAccountantProject.Partners
                 return;
             }
 
-
-            if (_SavePartner())
+            string Error="";
+            if (_SavePartner(out Error))
             {
                 lblPartnerID.Text = _Partner.PartnerID.ToString();
                 lblTitle.Text = "تعديل بيانات الشريك";
@@ -158,7 +158,7 @@ namespace PosAndAccountantProject.Partners
             else
             {
                 
-                MessageBox.Show("حدث خطا,فشل في حفظ بيانات الشريك", "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("حدث خطا,فشل في حفظ بيانات الشريك : "+Error, "النتيجة", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

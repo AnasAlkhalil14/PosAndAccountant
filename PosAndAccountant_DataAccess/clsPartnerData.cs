@@ -38,8 +38,8 @@ namespace PosAndAccountant_DataAccess
                                 PartnerDTO.PartnerID = PartnerID;
                                 PartnerDTO.PersonID = Convert.ToInt32(reader["PersonID"]);
                                 PartnerDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
-                                PartnerDTO.CurrentBalance = Convert.ToDouble(reader["CurrentBalance"]);
-                                PartnerDTO.ProfitPercentage = Convert.ToDouble(reader["ProfitPercentage"]);
+                                PartnerDTO.CurrentBalance = Convert.ToDecimal(reader["CurrentBalance"]);
+                                PartnerDTO.ProfitPercentage = Convert.ToDecimal(reader["ProfitPercentage"]);
                                 PartnerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
                                 PartnerDTO.ModifiedDate = reader["CreatedDate"]!=DBNull.Value?Convert.ToDateTime(reader["CreatedDate"]):PartnerDTO.CreatedDate;
 
@@ -98,8 +98,8 @@ namespace PosAndAccountant_DataAccess
                                 PartnerDTO.PartnerID = Convert.ToInt32(reader["PartnerID"]); ;
                                 PartnerDTO.PersonID =PersonID;
                                 PartnerDTO.IsActive = Convert.ToBoolean(reader["IsActive"]);
-                                PartnerDTO.CurrentBalance = Convert.ToDouble(reader["CurrentBalance"]);
-                                PartnerDTO.ProfitPercentage = Convert.ToDouble(reader["ProfitPercentage"]);
+                                PartnerDTO.CurrentBalance = Convert.ToDecimal(reader["CurrentBalance"]);
+                                PartnerDTO.ProfitPercentage = Convert.ToDecimal(reader["ProfitPercentage"]);
                                 PartnerDTO.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
                                 PartnerDTO.ModifiedDate = reader["CreatedDate"] != DBNull.Value ? Convert.ToDateTime(reader["CreatedDate"]) : PartnerDTO.CreatedDate;
 
@@ -573,6 +573,60 @@ namespace PosAndAccountant_DataAccess
 
             return RowAffected > 0;
         }
+        public static int SavePartnerWithPercentages(
+    int? partnerID,              // null = new partner, value = edit
+    int personID,
+    decimal currentBalance,      // used only for a new partner (pass 0 when editing)
+    decimal profitPercentage,    // this partner's own percentage
+    DataTable otherPartners,     // columns in this order: PartnerID (int), ProfitPercentage (decimal)
+    out string error,bool IsActive=true)
+        {
+            error = null;
 
+            // an empty TVP is valid, so never send null
+            if (otherPartners == null)
+            {
+                otherPartners = new DataTable();
+                otherPartners.Columns.Add("PartnerID", typeof(int));
+                otherPartners.Columns.Add("ProfitPercentage", typeof(decimal));
+            }
+
+            using (SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand("Partners.SP_SavePartnerWithPercentages", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@PartnerID", SqlDbType.Int)
+                { Value = (object)partnerID ?? DBNull.Value });
+
+                cmd.Parameters.Add(new SqlParameter("@PersonID", SqlDbType.Int) { Value = personID });
+                cmd.Parameters.Add(new SqlParameter("@IsActive", SqlDbType.Bit) { Value = IsActive });
+
+                cmd.Parameters.Add(new SqlParameter("@CurrentBalance", SqlDbType.Decimal)
+                { Precision = 18, Scale = 2, Value = currentBalance });
+
+                cmd.Parameters.Add(new SqlParameter("@ProfitPercentage", SqlDbType.Decimal)
+                { Precision = 5, Scale = 2, Value = profitPercentage });
+
+                cmd.Parameters.Add(new SqlParameter("@OtherPartners", SqlDbType.Structured)
+                { TypeName = "Partners.PartnerPercentageType", Value = otherPartners });
+
+                SqlParameter newId = new SqlParameter("@NewPartnerID", SqlDbType.Int)
+                { Direction = ParameterDirection.Output };
+                cmd.Parameters.Add(newId);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return (int)newId.Value;      // the partner's ID (new or existing)
+                }
+                catch (Exception ex)
+                {
+                    error = ex.Message;           // includes "Total profit percentage must equal 100."
+                    return -1;
+                }
+            }
+        }
     }
 }

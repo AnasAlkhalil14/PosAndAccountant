@@ -106,7 +106,7 @@ namespace PosAndAccountantProject.Partners.Controls
             }
 
             lblTotal.Text = total.ToString("0.##");
-            lblTotal.BackColor = total == 100 ? Color.SeaGreen : Color.Red;
+            lblTotal.BackColor = total == 100 ? Color.LightGreen : Color.Red;
             lblTotal.ForeColor = Color.White;
            
 

@@ -11,8 +11,8 @@ namespace PosAndAccountant_DataTransfer
     {
         public int PartnerID {  get; set; }
         public int PersonID {  get; set; }
-public double CurrentBalance {  get; set; }
-            public double ProfitPercentage {  get; set; }
+public decimal CurrentBalance {  get; set; }
+            public decimal ProfitPercentage {  get; set; }
          public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }   
 

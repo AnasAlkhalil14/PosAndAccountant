@@ -42,7 +42,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Red;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(410, 10);
+            this.lblTotal.Location = new System.Drawing.Point(290, 10);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(21, 24);
@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(469, 10);
+            this.label1.Location = new System.Drawing.Point(349, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -93,13 +93,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPartners.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPartners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartners.Location = new System.Drawing.Point(10, 47);
+            this.dgvPartners.Location = new System.Drawing.Point(17, 47);
             this.dgvPartners.MultiSelect = false;
             this.dgvPartners.Name = "dgvPartners";
             this.dgvPartners.RowHeadersVisible = false;
             this.dgvPartners.RowTemplate.Height = 40;
             this.dgvPartners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPartners.Size = new System.Drawing.Size(598, 210);
+            this.dgvPartners.Size = new System.Drawing.Size(490, 210);
             this.dgvPartners.TabIndex = 18;
             this.dgvPartners.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPartners.ThemeStyle.AlternatingRowsStyle.Font = null;
