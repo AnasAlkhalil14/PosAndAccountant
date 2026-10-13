@@ -46,9 +46,9 @@
             this.tsIsActive = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.ctrlPersonCardWithFilter1 = new PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter();
             this.ctrlEditPartnersProfitPercentage1 = new PosAndAccountantProject.Partners.Controls.ctrlEditPartnersProfitPercentage();
             this.gbCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProfitPercentage)).BeginInit();
@@ -322,17 +322,6 @@
             this.tabPage1.Text = "معلومات الشريك";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(13, 5);
-            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(837, 421);
-            this.ctrlPersonCardWithFilter1.TabIndex = 125;
-            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
-            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label1);
@@ -357,6 +346,17 @@
             this.label1.Text = "يمكنك تعديل نسب ربح الشركاء من القائمة مباشرة وتأاكد ان يكون المجموع الكلي يساوي " +
     "100";
             // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(13, 5);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(837, 421);
+            this.ctrlPersonCardWithFilter1.TabIndex = 125;
+            this.ctrlPersonCardWithFilter1.PersonSelected += new System.EventHandler<PosAndAccountantProject.People.Controls.ctrlPersonCardWithFilter.PersonSelectedEventArgs>(this.ctrlPersonCardWithFilter1_PersonSelected);
+            this.ctrlPersonCardWithFilter1.PersonNotFound += new System.EventHandler(this.ctrlPersonCardWithFilter1_PersonNotFound);
+            // 
             // ctrlEditPartnersProfitPercentage1
             // 
             this.ctrlEditPartnersProfitPercentage1.BackColor = System.Drawing.Color.White;
@@ -377,6 +377,8 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmAddUpdatePartners";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

@@ -143,6 +143,26 @@ namespace PosAndAccountantProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap budget_management {
+            get {
+                object obj = ResourceManager.GetObject("budget-management", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap budget_management__1_ {
+            get {
+                object obj = ResourceManager.GetObject("budget-management (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap business_chart {
             get {
                 object obj = ResourceManager.GetObject("business-chart", resourceCulture);
@@ -166,6 +186,16 @@ namespace PosAndAccountantProject.Properties {
         internal static System.Drawing.Bitmap buying {
             get {
                 object obj = ResourceManager.GetObject("buying", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calculation {
+            get {
+                object obj = ResourceManager.GetObject("calculation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

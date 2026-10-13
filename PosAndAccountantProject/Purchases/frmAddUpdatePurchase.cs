@@ -147,6 +147,7 @@ namespace PosAndAccountantProject.Purchases
             dgvProductList.Columns["BarCode"].Visible = false;
             dgvProductList.Columns["MinimumQuantityForWarning"].Visible = false;
             dgvProductList.Columns["CreateDate"].Visible = false;
+            dgvProductList.Columns["ProductCategoryID"].Visible = false;
 
             LoadCategoriesToCobmoBox();
 

@@ -169,7 +169,7 @@ namespace PosAndAccountantProject.Products
             "الباركود",
             "التصنيف"});
             this.cbFilterBy.Location = new System.Drawing.Point(400, 351);
-            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(121, 36);
             this.cbFilterBy.StartIndex = 0;
@@ -213,7 +213,7 @@ namespace PosAndAccountantProject.Products
             this.btnAddProduct.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnAddProduct.ForeColor = System.Drawing.Color.White;
             this.btnAddProduct.Location = new System.Drawing.Point(823, 354);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(112, 29);
             this.btnAddProduct.TabIndex = 6;
@@ -236,7 +236,7 @@ namespace PosAndAccountantProject.Products
             this.pnlPreview.Controls.Add(this.pbProductImage);
             this.pnlPreview.FillColor = System.Drawing.Color.WhiteSmoke;
             this.pnlPreview.Location = new System.Drawing.Point(0, 411);
-            this.pnlPreview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPreview.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPreview.Name = "pnlPreview";
             this.pnlPreview.Size = new System.Drawing.Size(165, 389);
             this.pnlPreview.TabIndex = 7;
@@ -318,7 +318,7 @@ namespace PosAndAccountantProject.Products
             this.pbProductImage.Image = global::PosAndAccountantProject.Properties.Resources.default_product;
             this.pbProductImage.ImageRotate = 0F;
             this.pbProductImage.Location = new System.Drawing.Point(15, 16);
-            this.pbProductImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbProductImage.Margin = new System.Windows.Forms.Padding(2);
             this.pbProductImage.Name = "pbProductImage";
             this.pbProductImage.Size = new System.Drawing.Size(135, 138);
             this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -332,7 +332,7 @@ namespace PosAndAccountantProject.Products
             this.cardTotal.Controls.Add(this.label3);
             this.cardTotal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.cardTotal.Location = new System.Drawing.Point(0, 264);
-            this.cardTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardTotal.Margin = new System.Windows.Forms.Padding(2);
             this.cardTotal.Name = "cardTotal";
             this.cardTotal.Size = new System.Drawing.Size(135, 65);
             this.cardTotal.TabIndex = 8;
@@ -370,7 +370,7 @@ namespace PosAndAccountantProject.Products
             this.cardOutOfStock.Controls.Add(this.label5);
             this.cardOutOfStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardOutOfStock.Location = new System.Drawing.Point(146, 264);
-            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2);
             this.cardOutOfStock.Name = "cardOutOfStock";
             this.cardOutOfStock.Size = new System.Drawing.Size(135, 65);
             this.cardOutOfStock.TabIndex = 9;
@@ -406,7 +406,7 @@ namespace PosAndAccountantProject.Products
             this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.Location = new System.Drawing.Point(16, 333);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(913, 8);
             this.guna2Separator1.TabIndex = 10;
@@ -511,7 +511,7 @@ namespace PosAndAccountantProject.Products
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProducts.Location = new System.Drawing.Point(189, 411);
-            this.dgvProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
@@ -579,7 +579,7 @@ namespace PosAndAccountantProject.Products
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 185);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(135, 65);
             this.guna2Panel1.TabIndex = 30;
@@ -618,7 +618,7 @@ namespace PosAndAccountantProject.Products
             this.guna2Panel2.FillColor = System.Drawing.Color.Gray;
             this.guna2Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.guna2Panel2.Location = new System.Drawing.Point(146, 185);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(135, 65);
             this.guna2Panel2.TabIndex = 29;
@@ -672,7 +672,7 @@ namespace PosAndAccountantProject.Products
             this.lnkPrivios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lnkPrivios.Location = new System.Drawing.Point(237, 351);
             this.lnkPrivios.Name = "lnkPrivios";
-            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4);
             this.lnkPrivios.Size = new System.Drawing.Size(61, 30);
             this.lnkPrivios.TabIndex = 113;
             this.lnkPrivios.TabStop = true;
@@ -686,7 +686,7 @@ namespace PosAndAccountantProject.Products
             this.lnkNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lnkNext.Location = new System.Drawing.Point(176, 351);
             this.lnkNext.Name = "lnkNext";
-            this.lnkNext.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnkNext.Padding = new System.Windows.Forms.Padding(4);
             this.lnkNext.Size = new System.Drawing.Size(55, 30);
             this.lnkNext.TabIndex = 112;
             this.lnkNext.TabStop = true;
@@ -761,7 +761,7 @@ namespace PosAndAccountantProject.Products
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.cbFilterBy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmListProducts";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

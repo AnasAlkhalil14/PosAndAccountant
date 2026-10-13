@@ -2,6 +2,7 @@
 using PosAndAccountant_business;
 using PosAndAccountantProject.Customers;
 using PosAndAccountantProject.Dashboard;
+using PosAndAccountantProject.Expenses;
 using PosAndAccountantProject.Partners;
 using PosAndAccountantProject.Products;
 using PosAndAccountantProject.Purchases;
@@ -119,6 +120,12 @@ namespace PosAndAccountantProject
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnExpenses_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmListExpenses());
+
         }
     }
 }

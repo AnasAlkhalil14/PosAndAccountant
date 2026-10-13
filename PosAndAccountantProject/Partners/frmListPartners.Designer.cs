@@ -329,6 +329,8 @@
             this.Controls.Add(this.dgvPartners);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmListPartners";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

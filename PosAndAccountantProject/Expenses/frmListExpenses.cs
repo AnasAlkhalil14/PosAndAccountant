@@ -36,10 +36,26 @@ namespace PosAndAccountantProject.Expenses
 
         private void _LoadTypesToComboBox()
         {
-            cbType.DataSource = clsExpense.GetAllExpenseTypes();
+               
+
+            DataTable dtNew = clsExpense.GetAllExpenseTypes(); ;
+            dtNew.PrimaryKey = null;
+            foreach (DataColumn col in dtNew.Columns)
+                col.AllowDBNull = true;
+            DataRow row = dtNew.NewRow();
+            row["ExpenseTypeID"] = Convert.ChangeType(0, dtNew.Columns["ExpenseTypeID"].DataType);
+            row["Type"] = "الكل";
+            dtNew.Rows.InsertAt(row, 0);
+
             cbType.DisplayMember = "Type";
             cbType.ValueMember = "ExpenseTypeID";
-          
+            cbType.DataSource = dtNew;
+
+            cbType.SelectedIndex = 0;
+
+
+            //
+            
 
         }
 
@@ -89,7 +105,11 @@ namespace PosAndAccountantProject.Expenses
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
- 
+ if(cbType.SelectedIndex == 0)
+            {
+                _AllExpenses.DefaultView.RowFilter = "";
+                
+            } else
             _AllExpenses.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "Type", cbType.Text);
 
             lblRecordsCount.Text = dgvExpenses.Rows.Count.ToString();

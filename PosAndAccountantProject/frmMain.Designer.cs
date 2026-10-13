@@ -3231,6 +3231,8 @@ namespace PosAndAccountantProject
             this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.btnExpenses = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -3243,7 +3245,6 @@ namespace PosAndAccountantProject
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
             this.btnٍSales = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashBord = new Guna.UI2.WinForms.Guna2Button();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -3317,6 +3318,7 @@ namespace PosAndAccountantProject
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.btnExpenses);
             this.panel1.Controls.Add(this.guna2Button3);
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.guna2Button1);
@@ -3335,6 +3337,46 @@ namespace PosAndAccountantProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(215, 850);
             this.panel1.TabIndex = 1;
+            // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(215, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(969, 850);
+            this.panelContent.TabIndex = 2;
+            // 
+            // btnExpenses
+            // 
+            this.btnExpenses.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpenses.BorderRadius = 20;
+            this.btnExpenses.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnExpenses.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnExpenses.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExpenses.CheckedState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnExpenses.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.budget_management__1_;
+            this.btnExpenses.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpenses.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpenses.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExpenses.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExpenses.FillColor = System.Drawing.Color.Transparent;
+            this.btnExpenses.FocusedColor = System.Drawing.Color.White;
+            this.btnExpenses.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnExpenses.ForeColor = System.Drawing.Color.White;
+            this.btnExpenses.Image = global::PosAndAccountantProject.Properties.Resources.budget_management;
+            this.btnExpenses.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExpenses.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnExpenses.Location = new System.Drawing.Point(7, 288);
+            this.btnExpenses.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExpenses.Name = "btnExpenses";
+            this.btnExpenses.PressedColor = System.Drawing.Color.White;
+            this.btnExpenses.Size = new System.Drawing.Size(208, 69);
+            this.btnExpenses.TabIndex = 12;
+            this.btnExpenses.Text = "المصروفات";
+            this.btnExpenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExpenses.UseTransparentBackground = true;
+            this.btnExpenses.Click += new System.EventHandler(this.btnExpenses_Click);
             // 
             // guna2Button3
             // 
@@ -3356,7 +3398,7 @@ namespace PosAndAccountantProject
             this.guna2Button3.Image = global::PosAndAccountantProject.Properties.Resources.settings;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button3.Location = new System.Drawing.Point(5, 749);
+            this.guna2Button3.Location = new System.Drawing.Point(3, 757);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.PressedColor = System.Drawing.Color.White;
@@ -3386,7 +3428,7 @@ namespace PosAndAccountantProject
             this.guna2Button2.Image = global::PosAndAccountantProject.Properties.Resources.business_chart;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(2, 691);
+            this.guna2Button2.Location = new System.Drawing.Point(7, 699);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedColor = System.Drawing.Color.White;
@@ -3417,11 +3459,11 @@ namespace PosAndAccountantProject
             this.guna2Button1.Image = global::PosAndAccountantProject.Properties.Resources.cooperation__2_;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(7, 618);
+            this.guna2Button1.Location = new System.Drawing.Point(7, 642);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.PressedColor = System.Drawing.Color.White;
-            this.guna2Button1.Size = new System.Drawing.Size(208, 69);
+            this.guna2Button1.Size = new System.Drawing.Size(208, 53);
             this.guna2Button1.TabIndex = 9;
             this.guna2Button1.Text = "الشركاء";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -3448,7 +3490,7 @@ namespace PosAndAccountantProject
             this.btnVehicles.Image = global::PosAndAccountantProject.Properties.Resources.supplier;
             this.btnVehicles.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnVehicles.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnVehicles.Location = new System.Drawing.Point(7, 484);
+            this.btnVehicles.Location = new System.Drawing.Point(7, 508);
             this.btnVehicles.Margin = new System.Windows.Forms.Padding(2);
             this.btnVehicles.Name = "btnVehicles";
             this.btnVehicles.PressedColor = System.Drawing.Color.White;
@@ -3466,7 +3508,7 @@ namespace PosAndAccountantProject
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(215, 126);
+            this.pictureBox3.Size = new System.Drawing.Size(215, 73);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
@@ -3491,11 +3533,11 @@ namespace PosAndAccountantProject
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnLogOut.Location = new System.Drawing.Point(7, 791);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 799);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.PressedColor = System.Drawing.Color.White;
-            this.btnLogOut.Size = new System.Drawing.Size(208, 57);
+            this.btnLogOut.Size = new System.Drawing.Size(208, 49);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -3522,11 +3564,11 @@ namespace PosAndAccountantProject
             this.btnUsers.Image = global::PosAndAccountantProject.Properties.Resources.user;
             this.btnUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUsers.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnUsers.Location = new System.Drawing.Point(7, 545);
+            this.btnUsers.Location = new System.Drawing.Point(7, 581);
             this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.PressedColor = System.Drawing.Color.White;
-            this.btnUsers.Size = new System.Drawing.Size(208, 69);
+            this.btnUsers.Size = new System.Drawing.Size(208, 57);
             this.btnUsers.TabIndex = 6;
             this.btnUsers.Text = "المستخدمين";
             this.btnUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -3553,7 +3595,7 @@ namespace PosAndAccountantProject
             this.btnCustomers.Image = global::PosAndAccountantProject.Properties.Resources.People_512;
             this.btnCustomers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomers.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCustomers.Location = new System.Drawing.Point(7, 411);
+            this.btnCustomers.Location = new System.Drawing.Point(7, 435);
             this.btnCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.PressedColor = System.Drawing.Color.White;
@@ -3584,7 +3626,7 @@ namespace PosAndAccountantProject
             this.btnTransaction.Image = global::PosAndAccountantProject.Properties.Resources.package_box__2_;
             this.btnTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTransaction.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnTransaction.Location = new System.Drawing.Point(7, 338);
+            this.btnTransaction.Location = new System.Drawing.Point(7, 362);
             this.btnTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.PressedColor = System.Drawing.Color.White;
@@ -3615,7 +3657,7 @@ namespace PosAndAccountantProject
             this.btnReturn.Image = global::PosAndAccountantProject.Properties.Resources.PurchaseBlue;
             this.btnReturn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReturn.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnReturn.Location = new System.Drawing.Point(7, 269);
+            this.btnReturn.Location = new System.Drawing.Point(7, 215);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.PressedColor = System.Drawing.Color.White;
@@ -3646,7 +3688,7 @@ namespace PosAndAccountantProject
             this.btnٍSales.Image = global::PosAndAccountantProject.Properties.Resources.growth;
             this.btnٍSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnٍSales.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnٍSales.Location = new System.Drawing.Point(7, 200);
+            this.btnٍSales.Location = new System.Drawing.Point(7, 146);
             this.btnٍSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnٍSales.Name = "btnٍSales";
             this.btnٍSales.PressedColor = System.Drawing.Color.White;
@@ -3677,7 +3719,7 @@ namespace PosAndAccountantProject
             this.btnDashBord.Image = global::PosAndAccountantProject.Properties.Resources.dashboards;
             this.btnDashBord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashBord.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDashBord.Location = new System.Drawing.Point(7, 131);
+            this.btnDashBord.Location = new System.Drawing.Point(7, 77);
             this.btnDashBord.Margin = new System.Windows.Forms.Padding(2);
             this.btnDashBord.Name = "btnDashBord";
             this.btnDashBord.PressedColor = System.Drawing.Color.White;
@@ -3687,15 +3729,6 @@ namespace PosAndAccountantProject
             this.btnDashBord.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDashBord.UseTransparentBackground = true;
             this.btnDashBord.CheckedChanged += new System.EventHandler(this.btnDashBord_CheckedChanged);
-            // 
-            // panelContent
-            // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(215, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(969, 850);
-            this.panelContent.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -3746,6 +3779,7 @@ namespace PosAndAccountantProject
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnExpenses;
     }
 }
 
