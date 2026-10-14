@@ -69,7 +69,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.cardOutOfStock = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblOutOfStockCount = new System.Windows.Forms.Label();
+            this.lblMaxExpenseMonth = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cardTotal = new Guna.UI2.WinForms.Guna2Panel();
@@ -388,7 +388,7 @@
             // cardOutOfStock
             // 
             this.cardOutOfStock.BorderRadius = 12;
-            this.cardOutOfStock.Controls.Add(this.lblOutOfStockCount);
+            this.cardOutOfStock.Controls.Add(this.lblMaxExpenseMonth);
             this.cardOutOfStock.Controls.Add(this.label8);
             this.cardOutOfStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardOutOfStock.Location = new System.Drawing.Point(171, 283);
@@ -397,18 +397,18 @@
             this.cardOutOfStock.Size = new System.Drawing.Size(135, 65);
             this.cardOutOfStock.TabIndex = 145;
             // 
-            // lblOutOfStockCount
+            // lblMaxExpenseMonth
             // 
-            this.lblOutOfStockCount.AutoSize = true;
-            this.lblOutOfStockCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblOutOfStockCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblOutOfStockCount.ForeColor = System.Drawing.Color.White;
-            this.lblOutOfStockCount.Location = new System.Drawing.Point(11, 24);
-            this.lblOutOfStockCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblOutOfStockCount.Name = "lblOutOfStockCount";
-            this.lblOutOfStockCount.Size = new System.Drawing.Size(22, 30);
-            this.lblOutOfStockCount.TabIndex = 1;
-            this.lblOutOfStockCount.Text = "0";
+            this.lblMaxExpenseMonth.AutoSize = true;
+            this.lblMaxExpenseMonth.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaxExpenseMonth.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblMaxExpenseMonth.ForeColor = System.Drawing.Color.White;
+            this.lblMaxExpenseMonth.Location = new System.Drawing.Point(11, 24);
+            this.lblMaxExpenseMonth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMaxExpenseMonth.Name = "lblMaxExpenseMonth";
+            this.lblMaxExpenseMonth.Size = new System.Drawing.Size(22, 30);
+            this.lblMaxExpenseMonth.TabIndex = 1;
+            this.lblMaxExpenseMonth.Text = "0";
             // 
             // label8
             // 
@@ -565,7 +565,7 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Panel cardOutOfStock;
-        private System.Windows.Forms.Label lblOutOfStockCount;
+        private System.Windows.Forms.Label lblMaxExpenseMonth;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Panel cardTotal;
         private System.Windows.Forms.Label lblDayAVG;

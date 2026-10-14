@@ -361,6 +361,109 @@ CreatedDate<dateadd(day,1,CAST(GETDATE() as date))
 
 
         }
+        public static decimal TotalExpenseThisMonth()
+        {
+            {
+                decimal Total = 0;
+                string query = @"
+
+select Format( Sum(Amount) ,'0.##')as Total from Expenses
+where CreatedDate>=DATEADD(day,-30,GETDATE());
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
+
+
+        }
+        public static decimal MaxExpenseThisMonth()
+        {
+            {
+                decimal Total = 0;
+                string query = @"
+
+select Format( Max(Amount) ,'0.##')as Total from Expenses
+where CreatedDate>=DATEADD(day,-30,GETDATE());
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
+
+
+        }
+        public static decimal AverageDayExpense()
+        {
+            {
+                decimal Total = 0;
+                string query = @"
+select format(isnull(avg(r.Total),0),'0.##') as AVGDAyExpense
+from(
+select   Sum(Amount)  as Total from Expenses
+group by cast(CreatedDate as date)) r
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
+
+
+        }
     }
 
 }

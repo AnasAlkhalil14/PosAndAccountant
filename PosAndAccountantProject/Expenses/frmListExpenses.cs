@@ -89,6 +89,10 @@ namespace PosAndAccountantProject.Expenses
             _AllExpenses=clsExpense.GetAllExpenses();
             dgvExpenses.DataSource = _AllExpenses;
             lblRecordsCount.Text=dgvExpenses.Rows.Count.ToString();
+            lblDayAVG.Text = clsExpense.AverageDayExpense().ToString("0");
+            lblExpenseThisMonth.Text = clsExpense.TotalExpenseThisMonth().ToString("0");
+            lblExpenseToday.Text=clsExpense.TotalExpenseToday().ToString("0");
+            lblMaxExpenseMonth.Text = clsExpense.MaxExpenseThisMonth().ToString("0");
             _ExpensesChart();
         }
 

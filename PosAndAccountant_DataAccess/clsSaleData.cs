@@ -655,7 +655,7 @@ CreateDate<dateadd(day,1,CAST(GETDATE() as date))";
 where   CreateDate >=cast(GETDATE() as date)and
 CreateDate<dateadd(day,1,CAST(GETDATE() as date))
 
-;"; x
+;"; 
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))

@@ -118,5 +118,17 @@ public enum enMode { eAdd,eUpdate}
         {
             return clsExpneseData.TotalExpenseToday();
         }
+        public static decimal TotalExpenseThisMonth()
+        {
+            return clsExpneseData.TotalExpenseThisMonth();
+        }
+        public static decimal MaxExpenseThisMonth()
+        {
+            return clsExpneseData.MaxExpenseThisMonth();
+        }
+        public static decimal AverageDayExpense()
+        {
+            return clsExpneseData.AverageDayExpense();
+        }
     }
 }
