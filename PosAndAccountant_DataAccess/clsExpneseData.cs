@@ -46,13 +46,16 @@ namespace PosAndAccountant_DataAccess
 
 
         }
-        public static DataTable GetAllExpenses()
+        public static DataTable GetAllExpenses(int PageNumber,int PageSize)
         {
             DataTable dt = new DataTable();
-            string query = @"SELECT   Expenses.ExpenseID, Expenses.Amount, ExpenseTypes.Type, Expenses.ExpenseDescription, Expenses.CreatedDate, Users.UserName
+            string query = @"SELECT   Expenses.ExpenseID,format( Expenses.Amount ,'0.##') as Amount, ExpenseTypes.Type, Expenses.ExpenseDescription, Expenses.CreatedDate, Users.UserName
 FROM         Expenses INNER JOIN
                          ExpenseTypes ON Expenses.ExpenseTypeID = ExpenseTypes.ExpenseTypeID INNER JOIN
-                         Users ON Expenses.UserID = Users.UserID";
+                         Users ON Expenses.UserID = Users.UserID
+ order by Expenses.CreatedDate desc
+						 offset(@PageNumber - 1) * @PageSize rows
+						 fetch next @PageSize rows only";
 
             try
             {
@@ -60,6 +63,8 @@ FROM         Expenses INNER JOIN
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

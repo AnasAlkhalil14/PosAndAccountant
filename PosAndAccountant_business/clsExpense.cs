@@ -98,9 +98,9 @@ public enum enMode { eAdd,eUpdate}
             if( dto == null )return null;
             return new clsExpense(dto);
         }
-        public static DataTable GetAllExpenses()
+        public static DataTable GetAllExpenses(int PageNumber,int PageSize)
         {
-            return clsExpneseData.GetAllExpenses();
+            return clsExpneseData.GetAllExpenses(PageNumber,PageSize);
         }
         public static DataTable GetAllExpenseTypes()
         {

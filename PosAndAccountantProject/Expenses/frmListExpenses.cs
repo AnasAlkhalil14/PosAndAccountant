@@ -86,7 +86,7 @@ namespace PosAndAccountantProject.Expenses
         }
         private void _RefreshForm()
         {
-            _AllExpenses=clsExpense.GetAllExpenses();
+            _AllExpenses=clsExpense.GetAllExpenses(Convert.ToInt32(lblPageNumber.Text),10);
             dgvExpenses.DataSource = _AllExpenses;
             lblRecordsCount.Text=dgvExpenses.Rows.Count.ToString();
             lblDayAVG.Text = clsExpense.AverageDayExpense().ToString("0");
@@ -129,35 +129,54 @@ namespace PosAndAccountantProject.Expenses
 
         private void frmListExpenses_Load(object sender, EventArgs e)
         {
+            dgvExpenses.AutoGenerateColumns = false;
+            dgvExpenses.Columns.Clear();
+
+            dgvExpenses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ExpenseID",
+                HeaderText = "معرف المصروف",
+                DataPropertyName = "ExpenseID",
+                ReadOnly = true
+
+            });
+
+
+            dgvExpenses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Amount",
+                HeaderText = "المبلغ",
+                DataPropertyName = "Amount",
+                ReadOnly = true
+            }); dgvExpenses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Type",
+                HeaderText = "النوع",
+                DataPropertyName = "Type",
+                ReadOnly = true
+            });
+            dgvExpenses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ExpenseDescription",
+                HeaderText = "ملاحظات",
+                DataPropertyName = "ExpenseDescription",
+                ReadOnly = true
+            }); dgvExpenses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreatedDate",
+                HeaderText = "تاريخ الانشاء",
+                DataPropertyName = "CreatedDate",
+                ReadOnly = true
+            }); dgvExpenses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UserName",
+                HeaderText = "صنع بواسطة",
+                DataPropertyName = "UserName",
+                ReadOnly = true
+            });
             _RefreshForm();
             _LoadTypesToComboBox();
-            if (dgvExpenses.Rows.Count > 0)
-            {
-                dgvExpenses.Columns[0].HeaderText = "معرف المصروف";
-                dgvExpenses.Columns[0].Width = 100;
-
-                dgvExpenses.Columns[1].HeaderText = "المبلغ";
-                dgvExpenses.Columns[1].Width = 100;
-
-                dgvExpenses.Columns[2].HeaderText = "النوع";
-                dgvExpenses.Columns[2].Width = 200;
-
-
-                dgvExpenses.Columns[3].HeaderText = "ملاحظات";
-                dgvExpenses.Columns[3].Width = 300;
-
-
-                dgvExpenses.Columns[4].HeaderText = "تاريخ الانشاء";
-                dgvExpenses.Columns[4].Width = 250;
-
-
-
-                dgvExpenses.Columns[5].HeaderText = "صنع بواسطة";
-                dgvExpenses.Columns[5].Width = 100;
-
-            }
-
-            cbType.SelectedIndex = 0;
+             
 
         }
 
@@ -173,7 +192,7 @@ namespace PosAndAccountantProject.Expenses
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
- if(cbType.SelectedIndex == 0)
+        if(cbType.SelectedIndex == 0)
             {
                 _AllExpenses.DefaultView.RowFilter = "";
                 
@@ -190,6 +209,27 @@ namespace PosAndAccountantProject.Expenses
             frm.ShowDialog();
             
         
+        }
+
+        private void lnkNext_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) + 1).ToString();
+ 
+         }
+
+        private void lnkPrivios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lblPageNumber.Text != "1")
+                lblPageNumber.Text = (Convert.ToInt32(lblPageNumber.Text) - 1).ToString();
+
+        }
+
+        private void lblPageNumber_TextChanged(object sender, EventArgs e)
+        {
+            _AllExpenses = clsExpense.GetAllExpenses(Convert.ToInt32(lblPageNumber.Text), 10);
+            dgvExpenses.DataSource = _AllExpenses;
+            cbType.SelectedIndex = 0; lblRecordsCount.Text = dgvExpenses.Rows.Count.ToString();
+
         }
     }
 }
