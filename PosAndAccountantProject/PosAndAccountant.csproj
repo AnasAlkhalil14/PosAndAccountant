@@ -534,6 +534,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="secrets.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

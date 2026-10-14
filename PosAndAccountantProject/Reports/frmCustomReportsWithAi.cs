@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -131,10 +132,9 @@ namespace PosAndAccountantProject.Reports
             host.BringToFront();
         }
 
-
-        private async void btnGenerateReport_Click(object sender, EventArgs e)
+         private async void btnGenerateReport_Click(object sender, EventArgs e)
         {
-            string userPrompt = txtUserPrompt.Text.Trim();
+             string userPrompt = txtUserPrompt.Text.Trim();
 
             // 1. التحقق من مدخلات المستخدم
             if (string.IsNullOrEmpty(userPrompt))

@@ -99,59 +99,131 @@ namespace PosAndAccountant_business
                 "4. Column Limit: Never return more than 8 columns in a single query. Choose the most relevant ones.\n" +
                 "5. Fallback: If the request is unrelated to the schema, impossible, or not even a question, return the exact word: 'ERROR'.";
         }
-
         private static async Task<string> GetSqlFieldsFromAiAsync(string userPrompt)
         {
             try
             {
+                string apiKey = ConfigurationManager.AppSettings["GeminiApiKey"];
+                string[] models = { "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite" };
+
+                var requestBody = new
+                {
+                    systemInstruction = new { parts = new[] { new { text = GetSystemPrompt() } } },
+                    contents = new[] { new { role = "user", parts = new[] { new { text = userPrompt } } } },
+                    generationConfig = new
+                    {
+                        temperature = 0.1,
+                        thinkingConfig = new { thinkingLevel = "minimal" }
+                    }
+                };
+                string json = JsonConvert.SerializeObject(requestBody);
+                string lastError = "ERROR: no response";
+
                 using (HttpClient client = new HttpClient())
                 {
-                    // إضافة الـ Authorization Header الخاص بـ OpenAI
-                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
+                    client.Timeout = TimeSpan.FromSeconds(60);
+                    client.DefaultRequestHeaders.Add("x-goog-api-key", apiKey);
 
-                    string systemPrompt = GetSystemPrompt();
-                    // الهيكلية الصحيحة لطلب OpenAI (Chat Completions)
-                    var requestBody = new
+                    for (int round = 0; round < 2; round++)
                     {
-                        model = "openai/gpt-oss-120b",
-                        messages = new[]
-    {
-        new { role = "system", content = systemPrompt },
-        new { role = "user", content = userPrompt }
-    },
-                        temperature = 0.1
-                    };
+                        foreach (string model in models)
+                        {
+                            string url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent";
+                            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    string jsonPayload = JsonConvert.SerializeObject(requestBody);
-                    var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+                            HttpResponseMessage response = await client.PostAsync(url, content);
+                            string body = await response.Content.ReadAsStringAsync();
+                            int code = (int)response.StatusCode;
 
-                    HttpResponseMessage response = await client.PostAsync(_uri, content);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                dynamic data = JsonConvert.DeserializeObject(body);
+                                if (data.candidates == null)
+                                {
+                                    lastError = "ERROR: " + body;
+                                    continue;
+                                }
 
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        string errorContent = await response.Content.ReadAsStringAsync();
-                        return "ERROR: السيرفر رفض الطلب -> " + errorContent;
+                                var sb = new StringBuilder();
+                                foreach (var part in data.candidates[0].content.parts)
+                                    sb.Append((string)part.text);
+
+                                string rawSql = sb.ToString().Replace("```sql", "").Replace("```", "").Trim();
+
+                                if (rawSql != "ERROR" && IsQueryDangerous(rawSql)) return "FORBIDDEN";
+                                return rawSql;
+                            }
+
+                            lastError = "ERROR: السيرفر رفض الطلب (" + model + ") -> " + body;
+
+                            // model missing or server busy: try the next model
+                            if (code == 404 || code == 429 || code == 500 || code == 503) continue;
+
+                            // other errors (400, 401, 403) will not be fixed by retrying
+                            return lastError;
+                        }
+
+                        await Task.Delay(2000);
                     }
 
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                    // تفكيك الـ JSON الخاص بـ OpenAI لطباعة النص الصافي
-                    dynamic dynamicObject = JsonConvert.DeserializeObject(jsonResponse);
-                    string rawSql = dynamicObject.choices[0].message.content;
-
-                    rawSql = rawSql.Trim();
-                    if (rawSql != "ERROR")
-
-                        if (IsQueryDangerous(rawSql)) return "FORBIDDEN";
-
-                    return rawSql;
+                    return lastError;
                 }
             }
             catch (Exception ex)
             {
                 return "ERROR: " + ex.Message;
             }
-        }
+        }        //    {
+        //        try
+        //        {
+        //            using (HttpClient client = new HttpClient())
+        //            {
+        //                // إضافة الـ Authorization Header الخاص بـ OpenAI
+        //                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
+
+        //                string systemPrompt = GetSystemPrompt();
+        //                // الهيكلية الصحيحة لطلب OpenAI (Chat Completions)
+        //                var requestBody = new
+        //                {
+        //                    model = "openai/gpt-oss-120b",
+        //                    messages = new[]
+        //{
+        //    new { role = "system", content = systemPrompt },
+        //    new { role = "user", content = userPrompt }
+        //},
+        //                    temperature = 0.1
+        //                };
+
+        //                string jsonPayload = JsonConvert.SerializeObject(requestBody);
+        //                var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+        //                HttpResponseMessage response = await client.PostAsync(_uri, content);
+
+        //                if (!response.IsSuccessStatusCode)
+        //                {
+        //                    string errorContent = await response.Content.ReadAsStringAsync();
+        //                    return "ERROR: السيرفر رفض الطلب -> " + errorContent;
+        //                }
+
+        //                string jsonResponse = await response.Content.ReadAsStringAsync();
+
+        //                // تفكيك الـ JSON الخاص بـ OpenAI لطباعة النص الصافي
+        //                dynamic dynamicObject = JsonConvert.DeserializeObject(jsonResponse);
+        //                string rawSql = dynamicObject.choices[0].message.content;
+
+        //                rawSql = rawSql.Trim();
+        //                if (rawSql != "ERROR")
+
+        //                    if (IsQueryDangerous(rawSql)) return "FORBIDDEN";
+
+        //                return rawSql;
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return "ERROR: " + ex.Message;
+        //        }
+        //    }
 
         private static bool IsQueryDangerous(string query)
         {
