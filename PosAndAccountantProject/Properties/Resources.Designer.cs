@@ -133,6 +133,26 @@ namespace PosAndAccountantProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ai {
+            get {
+                object obj = ResourceManager.GetObject("ai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap artificial_intelligence__1_ {
+            get {
+                object obj = ResourceManager.GetObject("artificial-intelligence (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box {
             get {
                 object obj = ResourceManager.GetObject("box", resourceCulture);
@@ -406,6 +426,16 @@ namespace PosAndAccountantProject.Properties {
         internal static System.Drawing.Bitmap Male_5121 {
             get {
                 object obj = ResourceManager.GetObject("Male 5121", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microchip {
+            get {
+                object obj = ResourceManager.GetObject("microchip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -3416,7 +3416,7 @@ namespace PosAndAccountantProject
             this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.White;
             this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2Button2.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.business_chart__1_;
+            this.guna2Button2.CheckedState.Image = global::PosAndAccountantProject.Properties.Resources.artificial_intelligence__1_;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -3425,7 +3425,7 @@ namespace PosAndAccountantProject
             this.guna2Button2.FocusedColor = System.Drawing.Color.White;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::PosAndAccountantProject.Properties.Resources.business_chart;
+            this.guna2Button2.Image = global::PosAndAccountantProject.Properties.Resources.microchip;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button2.Location = new System.Drawing.Point(7, 699);
@@ -3434,7 +3434,7 @@ namespace PosAndAccountantProject
             this.guna2Button2.PressedColor = System.Drawing.Color.White;
             this.guna2Button2.Size = new System.Drawing.Size(208, 54);
             this.guna2Button2.TabIndex = 10;
-            this.guna2Button2.Text = "التقارير";
+            this.guna2Button2.Text = "تقارير ال AI";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2Button2.UseTransparentBackground = true;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);

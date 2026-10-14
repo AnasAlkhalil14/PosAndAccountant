@@ -49,7 +49,7 @@ namespace PosAndAccountant_DataAccess
         public static DataTable GetAllExpenses(int PageNumber,int PageSize)
         {
             DataTable dt = new DataTable();
-            string query = @"SELECT   Expenses.ExpenseID,format( Expenses.Amount ,'0.##') as Amount, ExpenseTypes.Type, Expenses.ExpenseDescription, Expenses.CreatedDate, Users.UserName
+            string query = @"SELECT   Expenses.ExpenseID,format( Expenses.Amount ,'0.##') as Amount, ExpenseTypes.Type,IsNull( Expenses.ExpenseDescription,'لا يوجد') as ExpenseDescription, Expenses.CreatedDate, Users.UserName
 FROM         Expenses INNER JOIN
                          ExpenseTypes ON Expenses.ExpenseTypeID = ExpenseTypes.ExpenseTypeID INNER JOIN
                          Users ON Expenses.UserID = Users.UserID

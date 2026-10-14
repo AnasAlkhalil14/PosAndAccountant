@@ -743,5 +743,14 @@
   <ItemGroup>
     <None Include="Resources\budget-management %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microchip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artificial-intelligence %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
