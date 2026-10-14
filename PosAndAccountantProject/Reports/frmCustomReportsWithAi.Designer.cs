@@ -60,7 +60,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1053, 85);
+            this.pnlHeader.Size = new System.Drawing.Size(953, 85);
             this.pnlHeader.TabIndex = 0;
             // 
             // pictureBox1
@@ -79,7 +79,7 @@
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(190)))), ((int)(((byte)(205)))));
-            this.lblSubTitle.Location = new System.Drawing.Point(593, 47);
+            this.lblSubTitle.Location = new System.Drawing.Point(493, 47);
             this.lblSubTitle.Name = "lblSubTitle";
             this.lblSubTitle.Size = new System.Drawing.Size(449, 17);
             this.lblSubTitle.TabIndex = 1;
@@ -92,7 +92,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(744, 12);
+            this.lblTitle.Location = new System.Drawing.Point(644, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(277, 32);
             this.lblTitle.TabIndex = 0;
@@ -106,7 +106,7 @@
             this.pnlTopInput.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopInput.Location = new System.Drawing.Point(0, 85);
             this.pnlTopInput.Name = "pnlTopInput";
-            this.pnlTopInput.Size = new System.Drawing.Size(1053, 110);
+            this.pnlTopInput.Size = new System.Drawing.Size(953, 262);
             this.pnlTopInput.TabIndex = 1;
             // 
             // btnGenerateReport
@@ -149,7 +149,7 @@
             this.txtUserPrompt.PlaceholderText = "مثال: أريد عرض أسماء العملاء الذين لديهم ديون متبقية أكثر من 5000 مرتبين من الأكب" +
     "ر إلى الأصغر...";
             this.txtUserPrompt.SelectedText = "";
-            this.txtUserPrompt.Size = new System.Drawing.Size(834, 50);
+            this.txtUserPrompt.Size = new System.Drawing.Size(734, 50);
             this.txtUserPrompt.TabIndex = 0;
             // 
             // pnlGridContainer
@@ -157,10 +157,10 @@
             this.pnlGridContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlGridContainer.Controls.Add(this.dgvResult);
             this.pnlGridContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGridContainer.Location = new System.Drawing.Point(0, 195);
+            this.pnlGridContainer.Location = new System.Drawing.Point(0, 347);
             this.pnlGridContainer.Name = "pnlGridContainer";
             this.pnlGridContainer.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlGridContainer.Size = new System.Drawing.Size(1053, 515);
+            this.pnlGridContainer.Size = new System.Drawing.Size(953, 429);
             this.pnlGridContainer.TabIndex = 2;
             // 
             // dgvResult
@@ -170,17 +170,17 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvResult.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResult.ColumnHeadersHeight = 35;
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
@@ -188,14 +188,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvResult.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(242)))));
-            this.dgvResult.Location = new System.Drawing.Point(20, 20);
+            this.dgvResult.Location = new System.Drawing.Point(17, 23);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.ReadOnly = true;
             this.dgvResult.RowHeadersVisible = false;
             this.dgvResult.RowTemplate.Height = 30;
-            this.dgvResult.Size = new System.Drawing.Size(1013, 475);
+            this.dgvResult.Size = new System.Drawing.Size(913, 361);
             this.dgvResult.TabIndex = 0;
             this.dgvResult.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.dgvResult.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -225,9 +224,9 @@
             this.pnlStatus.Controls.Add(this.label1);
             this.pnlStatus.Controls.Add(this.lblStatusText);
             this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlStatus.Location = new System.Drawing.Point(0, 710);
+            this.pnlStatus.Location = new System.Drawing.Point(0, 776);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(1053, 35);
+            this.pnlStatus.Size = new System.Drawing.Size(953, 35);
             this.pnlStatus.TabIndex = 3;
             // 
             // label1
@@ -248,7 +247,7 @@
             this.lblStatusText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblStatusText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(104)))));
-            this.lblStatusText.Location = new System.Drawing.Point(808, 11);
+            this.lblStatusText.Location = new System.Drawing.Point(708, 11);
             this.lblStatusText.Name = "lblStatusText";
             this.lblStatusText.Size = new System.Drawing.Size(113, 15);
             this.lblStatusText.TabIndex = 0;
@@ -259,7 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1053, 745);
+            this.ClientSize = new System.Drawing.Size(953, 811);
             this.Controls.Add(this.pnlGridContainer);
             this.Controls.Add(this.pnlStatus);
             this.Controls.Add(this.pnlTopInput);
@@ -269,6 +268,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "نظام الماهر - التقارير الذكية عبر الـ AI";
+            this.Load += new System.EventHandler(this.frmCustomReportsWithAi_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
