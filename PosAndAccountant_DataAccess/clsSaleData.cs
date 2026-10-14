@@ -586,7 +586,8 @@ FROM            Sales INNER JOIN
             {
                 decimal TotalAmount = 0;
                 string query = @"select FORMAT(ISNULL( max(TotalAmount),0), '0.##')  AS TotalAmount  from Sales
-where day(getdate())=day(CreateDate);";
+where CreateDate >=cast(GETDATE() as date)and
+CreateDate<dateadd(day,1,CAST(GETDATE() as date));";
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -617,7 +618,8 @@ where day(getdate())=day(CreateDate);";
             {
                 decimal TotalDebt = 0;
                 string query = @"select FORMAT(ISNULL( ISNULL( Sum(TotalAmount-PaidAmount-DiscountAmount),0),0), '0.##')    AS TotalDebt  from Sales
-where day(getdate())=day(CreateDate	);";
+where CreateDate >=cast(GETDATE() as date)and
+CreateDate<dateadd(day,1,CAST(GETDATE() as date))";
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -650,9 +652,10 @@ where day(getdate())=day(CreateDate	);";
                 string query = @" 
 
 	select FORMAT( ISNULL( Sum(s.DiscountAmount),0) +ISNULL(sum(sd.[DiscountAmount]),0), '0.##')   as TotalDiscount  from SaleDetails  sd join Sales s on sd.SaleID=s.SaleID
-where day(getdate())=day(CreateDate	)
+where   CreateDate >=cast(GETDATE() as date)and
+CreateDate<dateadd(day,1,CAST(GETDATE() as date))
 
-;";
+;"; x
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))

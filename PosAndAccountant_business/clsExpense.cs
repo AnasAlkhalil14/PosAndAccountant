@@ -110,6 +110,13 @@ public enum enMode { eAdd,eUpdate}
         {
             return clsExpneseData.AddExpneseType(Type, Note)!=-1;
         }
-
+        public static DataTable GetAllExpensesTypesWithTotalExpenses()
+        {
+            return clsExpneseData.GetAllExpensesTypesWithTotalExpenses();
+        }
+        public static decimal TotalExpenseToday()
+        {
+            return clsExpneseData.TotalExpenseToday();
+        }
     }
 }

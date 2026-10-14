@@ -170,13 +170,7 @@ return (Type, Note);
                 }
             }
         }
-
-
-
-
-
-
-            
+ 
 
         public static int AddExpense(clsExpenseDTO expenseDTO)
         {
@@ -291,6 +285,80 @@ FROM Expenses INNER JOIN
 
 
             }
+
+        }
+
+        public static DataTable GetAllExpensesTypesWithTotalExpenses()
+        {
+            DataTable dt = new DataTable();
+            string query = @"select t.Type as ExpenseCategory,sum(e.Amount) as TotalExpense from Expenses e join ExpenseTypes t
+on e.ExpenseTypeID=t.ExpenseTypeID
+where e.CreatedDate>=DATEADD(day,-30,cast(getdate() as date))
+group by t.Type
+
+order by TotalExpense desc";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dt.Load(reader);
+                                return dt;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;
+
+
+        }
+        public static decimal TotalExpenseToday()
+        {
+            {
+                decimal Total = 0;
+                string query = @"
+
+select Format(IsNull( Sum(Amount),0) ,'0.##')as Total from Expenses
+where CreatedDate >=cast(GETDATE() as date)and
+CreatedDate<dateadd(day,1,CAST(GETDATE() as date))
+;";
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if (result != null && decimal.TryParse(result.ToString(), out decimal total))
+                            {
+                                Total = total;
+                            }
+                            else
+                            {
+                                Total = 0;
+                            }
+                        }
+                        catch { return -1; }
+                    }
+                }
+                return Total;
+            }
+
 
         }
     }

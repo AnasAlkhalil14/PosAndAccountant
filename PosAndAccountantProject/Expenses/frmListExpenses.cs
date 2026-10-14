@@ -1,4 +1,5 @@
-﻿using PosAndAccountant_business;
+﻿using Guna.Charts.WinForms;
+using PosAndAccountant_business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +20,76 @@ namespace PosAndAccountantProject.Expenses
         }
 
         private DataTable _AllExpenses;
+        private void _ExpensesChart()
+        {
+            DataTable dt=clsExpense.GetAllExpensesTypesWithTotalExpenses();
+ 
+             gunaChart1.Datasets.Clear();
 
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                gunaChart1.Update();
+                return;
+            }
+
+            // Colors (cycled if there are more categories than colors)
+            Color[] palette =
+            {
+        Color.FromArgb(94, 148, 255),
+        Color.FromArgb(255, 99, 132),
+        Color.FromArgb(255, 205, 86),
+        Color.FromArgb(75, 192, 192),
+        Color.FromArgb(153, 102, 255),
+        Color.FromArgb(255, 159, 64),
+        Color.FromArgb(46, 204, 113),
+        Color.FromArgb(149, 165, 166)
+    };
+
+            var dataset = new GunaDoughnutDataset();
+            double total = 0;
+            int i = 0;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string category = row["ExpenseCategory"].ToString();
+                double amount = Convert.ToDouble(row["TotalExpense"]);
+
+                dataset.DataPoints.Add(category, amount);
+                dataset.FillColors.Add(palette[i % palette.Length]);
+
+                total += amount;
+                i++;
+            }
+
+             dataset.BorderWidth = 2;
+
+            gunaChart1.Datasets.Add(dataset);
+
+            // Title
+            gunaChart1.Title.Display = true;
+            gunaChart1.Title.Text = "المصروفات حسب التصنيف - " + total.ToString("N0");
+            gunaChart1.Title.Font = new  ChartFont("Segoe UI", 12, ChartFontStyle.Bold);
+            gunaChart1.Title.ForeColor = Color.FromArgb(40, 40, 40);
+
+            // Legend
+            gunaChart1.Legend.Display = true;
+            gunaChart1.Legend.Position = LegendPosition.Right;
+            gunaChart1.Legend.LabelFont = new ChartFont("Segoe UI", 10);
+            gunaChart1.Legend.LabelForeColor = Color.FromArgb(40, 40, 40);
+ 
+
+            // Doughnut has no axes
+            gunaChart1.XAxes.Display = false;
+            gunaChart1.YAxes.Display = false;
+
+            gunaChart1.Update();
+        }
         private void _RefreshForm()
         {
             _AllExpenses=clsExpense.GetAllExpenses();
             dgvExpenses.DataSource = _AllExpenses;
             lblRecordsCount.Text=dgvExpenses.Rows.Count.ToString();
-
+            _ExpensesChart();
         }
 
 
