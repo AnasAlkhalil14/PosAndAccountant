@@ -97,7 +97,7 @@ namespace PosAndAccountantProject.Customers
             _Customer.DiscountPercentage= (double)numDiscount.Value;
             _Customer.CreditLimit = (double)numCreditLimit.Value;
             _Customer.IsActive = tsIsActive.Checked;
-            _Customer.CustomerType = cbCustomerType.SelectedIndex;
+            _Customer.CustomerType = cbCustomerType.SelectedIndex+1;
             _Customer.Notes= txtNotes.Text; 
 
             if(_Customer.Save())

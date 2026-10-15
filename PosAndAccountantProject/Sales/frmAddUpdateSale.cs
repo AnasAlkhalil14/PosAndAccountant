@@ -898,8 +898,16 @@ namespace PosAndAccountantProject.Sales
             _Sale.PaymentMethodID = Convert.ToInt32(cbPayBy.SelectedValue);
 
         }
+        private  void _SelectDefaultCustomer()
+        {
+            frmFindCustomer frm = new frmFindCustomer(6);
+            frm.SelectCustomer += Frm_CustomerSelected;
+            frm.Show();
+            frm.Close();
+          }
         private void frmAddUpdateSale_Load(object sender, EventArgs e)
         {
+            _SelectDefaultCustomer();
             _SettleTheProductSideOnFormLoad();
             _LoadPaymentMethodToCompoBox();
             if (_Sale.Mode == clsSale.enMode.eUpdate)
@@ -964,7 +972,8 @@ namespace PosAndAccountantProject.Sales
             lblTotalAmountWithOutDebtAndDiscout.Text = _Sale.TotalAmount.ToString();
             lblTotalQuantity.Text = _Sale.TotalQ.ToString();
             txtDiscount.Text = _Sale.DiscountAmount.ToString();
-            
+            txtPaidAmount.Text = lblTotalAmountWithDiscoount.Text;
+            _Sale.PaidAmount = Convert.ToDecimal(txtPaidAmount.Text.Trim());
         }
         void LoadCategoriesToCobmoBox()
         {
@@ -1445,7 +1454,7 @@ namespace PosAndAccountantProject.Sales
 
         private void _ReseteForOpnenNewSale()
         {
-
+            _SelectDefaultCustomer();
             _Sale = new clsSale(); ;
             _Sale.PaymentMethodID = 1;
             dgvSaleDetails.DataSource = null;

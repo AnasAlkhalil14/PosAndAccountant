@@ -16,7 +16,13 @@ namespace PosAndAccountantProject.Customers
         {
             InitializeComponent();
         }
-        private int _CustomerID;
+        public frmFindCustomer(int CustomerID)
+        {
+            InitializeComponent();
+            ctrlCustomerCardWithFilter1.FindNow(CustomerID);
+            _CustomerID = CustomerID;
+        }
+        private int _CustomerID=-1;
 
         private void ctrlCustomerCardWithFilter1_Load(object sender, EventArgs e)
         {
@@ -42,6 +48,11 @@ namespace PosAndAccountantProject.Customers
         private void frmFindCustomer_Load(object sender, EventArgs e)
         {
             btnSelect.Enabled=false;
+            if (_CustomerID != -1)
+            {
+                SelectCustomer?.Invoke(this, new CustomerSelectedEventArgs(_CustomerID));
+
+            }
         }
         
         public class CustomerSelectedEventArgs : EventArgs

@@ -49,7 +49,11 @@ namespace PosAndAccountant_business
 
         public string CustomerTypeString()
         {
-            return "Customer Typ String will be implemented soon";
+            if (CustomerType == 1)
+                return "عميل نقدي";
+            else if (CustomerType == 2) return "عميل اجل";
+            else if(CustomerType==3) return "VIP";
+            return "غير محدد";
         }
 
         public clsPerson PersonInfo {  get; set; }
