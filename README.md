@@ -40,6 +40,8 @@ AlMaher/
 2. Run the SQL script File in `Database/` on your SQL Server instance.
 3. Set your connection string in `App.config`.
 4. Open the solution in Visual Studio and run.
+5.Copy secrets.config.example to secrets.config and add your Gemini API key. This is only needed for AI reports.
+
 
 ## Roadmap
 
