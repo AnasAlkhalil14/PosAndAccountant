@@ -34,8 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPurchaseToday = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,8 +55,8 @@
             this.cardOutOfStock = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPurchaseList = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.cardTotal.SuspendLayout();
@@ -66,27 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.cardOutOfStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Panel3.Controls.Add(this.pictureBox1);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(953, 128);
-            this.guna2Panel3.TabIndex = 43;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.PurchaseList;
-            this.pictureBox1.Location = new System.Drawing.Point(328, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 122);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
             // 
             // lblPurchaseToday
             // 
@@ -108,7 +88,7 @@
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.guna2Panel2.Location = new System.Drawing.Point(818, 177);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(135, 65);
             this.guna2Panel2.TabIndex = 40;
@@ -159,7 +139,7 @@
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Panel1.Location = new System.Drawing.Point(818, 261);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(135, 65);
             this.guna2Panel1.TabIndex = 41;
@@ -197,7 +177,7 @@
             this.cardTotal.Controls.Add(this.label3);
             this.cardTotal.FillColor = System.Drawing.Color.Red;
             this.cardTotal.Location = new System.Drawing.Point(652, 177);
-            this.cardTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardTotal.Margin = new System.Windows.Forms.Padding(2);
             this.cardTotal.Name = "cardTotal";
             this.cardTotal.Size = new System.Drawing.Size(135, 65);
             this.cardTotal.TabIndex = 38;
@@ -222,7 +202,7 @@
             this.lnkPrivios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lnkPrivios.Location = new System.Drawing.Point(652, 426);
             this.lnkPrivios.Name = "lnkPrivios";
-            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnkPrivios.Padding = new System.Windows.Forms.Padding(4);
             this.lnkPrivios.Size = new System.Drawing.Size(61, 30);
             this.lnkPrivios.TabIndex = 37;
             this.lnkPrivios.TabStop = true;
@@ -249,7 +229,7 @@
             this.lnkNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lnkNext.Location = new System.Drawing.Point(726, 426);
             this.lnkNext.Name = "lnkNext";
-            this.lnkNext.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnkNext.Padding = new System.Windows.Forms.Padding(4);
             this.lnkNext.Size = new System.Drawing.Size(55, 30);
             this.lnkNext.TabIndex = 36;
             this.lnkNext.TabStop = true;
@@ -309,13 +289,13 @@
             this.chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart.Legends.Add(legend1);
-            this.chart.Location = new System.Drawing.Point(69, 148);
+            this.chart.Location = new System.Drawing.Point(13, 148);
             this.chart.Name = "chart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(476, 229);
+            this.chart.Size = new System.Drawing.Size(623, 229);
             this.chart.TabIndex = 42;
             this.chart.Text = " ";
             // 
@@ -326,7 +306,7 @@
             this.cardOutOfStock.Controls.Add(this.label5);
             this.cardOutOfStock.FillColor = System.Drawing.Color.Maroon;
             this.cardOutOfStock.Location = new System.Drawing.Point(652, 261);
-            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardOutOfStock.Margin = new System.Windows.Forms.Padding(2);
             this.cardOutOfStock.Name = "cardOutOfStock";
             this.cardOutOfStock.Size = new System.Drawing.Size(135, 65);
             this.cardOutOfStock.TabIndex = 39;
@@ -403,13 +383,35 @@
             this.dgvPurchaseList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvPurchaseList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::PosAndAccountantProject.Properties.Resources.PurchaseList;
+            this.pictureBox1.Location = new System.Drawing.Point(345, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(265, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BorderRadius = 15;
+            this.pnlHeader.Controls.Add(this.pictureBox1);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(953, 133);
+            this.pnlHeader.TabIndex = 117;
+            // 
             // frmPurchasesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(953, 811);
-            this.Controls.Add(this.guna2Panel3);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.cardTotal);
@@ -424,8 +426,6 @@
             this.Name = "frmPurchasesList";
             this.Text = "frmPurchasesList";
             this.Load += new System.EventHandler(this.frmPurchasesList_Load);
-            this.guna2Panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -437,15 +437,14 @@
             this.cardOutOfStock.ResumeLayout(false);
             this.cardOutOfStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPurchaseToday;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label8;
@@ -467,5 +466,7 @@
         private Guna.UI2.WinForms.Guna2Panel cardOutOfStock;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPurchaseList;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel pnlHeader;
     }
 }

@@ -91,7 +91,7 @@ namespace PosAndAccountantProject.Purchases
 
         private void _LoadProfitChart()
         {
-            DataTable dt=clsPurchase.GetLast10TotalSaleAndPurchase();
+            DataTable dt=clsPurchase.GetLast7TotalSaleAndPurchase();
 
             chart.Series.Clear();
             chart.Legends.Clear();

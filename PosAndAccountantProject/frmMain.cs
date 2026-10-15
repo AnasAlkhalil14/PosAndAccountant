@@ -127,5 +127,11 @@ namespace PosAndAccountantProject
             OpenChildForm(new frmListExpenses());
 
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmSetting());
+
+        }
     }
 }

@@ -51,7 +51,6 @@
             this.dgvCustomers = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAddCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lnkPrivios = new System.Windows.Forms.LinkLabel();
             this.lnkNext = new System.Windows.Forms.LinkLabel();
             this.lblPageNumber = new System.Windows.Forms.Label();
@@ -79,15 +78,16 @@
             this.pnlSalesOverview = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.chartSales = new Guna.Charts.WinForms.GunaChart();
+            this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.cmsCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
-            this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.cardOutOfStock.SuspendLayout();
             this.cardTotal.SuspendLayout();
             this.pnlSalesOverview.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRecordsCount
@@ -306,24 +306,15 @@
             // 
             // pbPersonImage
             // 
+            this.pbPersonImage.BackColor = System.Drawing.Color.Transparent;
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::PosAndAccountantProject.Properties.Resources.Customers;
-            this.pbPersonImage.Location = new System.Drawing.Point(315, 0);
+            this.pbPersonImage.Location = new System.Drawing.Point(349, 3);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(272, 115);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 122;
             this.pbPersonImage.TabStop = false;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Panel3.Controls.Add(this.pbPersonImage);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(953, 128);
-            this.guna2Panel3.TabIndex = 129;
             // 
             // lnkPrivios
             // 
@@ -697,10 +688,22 @@
             tick3.Font = chartFont8;
             this.chartSales.ZAxes.Ticks = tick3;
             // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BorderRadius = 15;
+            this.pnlHeader.Controls.Add(this.pbPersonImage);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(953, 133);
+            this.pnlHeader.TabIndex = 151;
+            // 
             // frmListCustomers
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(953, 824);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSalesOverview);
             this.Controls.Add(this.lnkEveryCustomer);
             this.Controls.Add(this.lnkMostSold);
@@ -718,7 +721,6 @@
             this.Controls.Add(this.lnkNext);
             this.Controls.Add(this.lblPageNumber);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
@@ -735,7 +737,6 @@
             this.cmsCustomers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
-            this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
@@ -746,6 +747,7 @@
             this.cardTotal.PerformLayout();
             this.pnlSalesOverview.ResumeLayout(false);
             this.pnlSalesOverview.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -767,7 +769,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem انشاءفاتورةToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2Button btnAddCustomer;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.LinkLabel lnkPrivios;
         private System.Windows.Forms.LinkLabel lnkNext;
         private System.Windows.Forms.Label lblPageNumber;
@@ -795,6 +796,7 @@
         private Guna.UI2.WinForms.Guna2Panel pnlSalesOverview;
         private System.Windows.Forms.Label label4;
         private Guna.Charts.WinForms.GunaChart chartSales;
+        private Guna.UI2.WinForms.Guna2Panel pnlHeader;
     }
         #endregion
 }

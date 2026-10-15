@@ -15,11 +15,7 @@ namespace PosAndAccountant_business
 {
     public class clsAiReportManager
     {
-        private static readonly string _apiKey = ConfigurationManager.AppSettings["GroqApiKey"];
-       
-        // الرابط الموحد والمتوافق مع سيرفر Groq لكسر الحظر
-        private static readonly string _uri = "https://api.groq.com/openai/v1/chat/completions";                                                                                                                                                                       /// الدالة الرئيسية والوحيدة التي ستراها طبقة الـ Presentation.
-
+        
 
         public static async Task<DataTable> GetReportDataTableFromAiAsync(string userPrompt, Action<string> onErrorOrForbidden)
         {
@@ -174,56 +170,7 @@ namespace PosAndAccountant_business
                 return "ERROR: " + ex.Message;
             }
         }        //    {
-        //        try
-        //        {
-        //            using (HttpClient client = new HttpClient())
-        //            {
-        //                // إضافة الـ Authorization Header الخاص بـ OpenAI
-        //                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
-
-        //                string systemPrompt = GetSystemPrompt();
-        //                // الهيكلية الصحيحة لطلب OpenAI (Chat Completions)
-        //                var requestBody = new
-        //                {
-        //                    model = "openai/gpt-oss-120b",
-        //                    messages = new[]
-        //{
-        //    new { role = "system", content = systemPrompt },
-        //    new { role = "user", content = userPrompt }
-        //},
-        //                    temperature = 0.1
-        //                };
-
-        //                string jsonPayload = JsonConvert.SerializeObject(requestBody);
-        //                var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-        //                HttpResponseMessage response = await client.PostAsync(_uri, content);
-
-        //                if (!response.IsSuccessStatusCode)
-        //                {
-        //                    string errorContent = await response.Content.ReadAsStringAsync();
-        //                    return "ERROR: السيرفر رفض الطلب -> " + errorContent;
-        //                }
-
-        //                string jsonResponse = await response.Content.ReadAsStringAsync();
-
-        //                // تفكيك الـ JSON الخاص بـ OpenAI لطباعة النص الصافي
-        //                dynamic dynamicObject = JsonConvert.DeserializeObject(jsonResponse);
-        //                string rawSql = dynamicObject.choices[0].message.content;
-
-        //                rawSql = rawSql.Trim();
-        //                if (rawSql != "ERROR")
-
-        //                    if (IsQueryDangerous(rawSql)) return "FORBIDDEN";
-
-        //                return rawSql;
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            return "ERROR: " + ex.Message;
-        //        }
-        //    }
+      
 
         private static bool IsQueryDangerous(string query)
         {

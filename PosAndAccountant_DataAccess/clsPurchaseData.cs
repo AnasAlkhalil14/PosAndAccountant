@@ -392,30 +392,36 @@ where day(getdate())=day(CreateDate	);";
 
 
         }
-        public static DataTable GetLast10TotalSaleAndPurchase()
+        public static DataTable GetLast7TotalSaleAndPurchase()
 
         {
             DataTable dt = new DataTable();
-            string query = @" 
-   select top 10 TotalSale=FORmat( IsnUll(s.TotalSale,0),'0.##'), 
-  TotalPurchase=Format( IsNUll(p.TotalPurchase,0),'0.##'),Date=coalesce(s.Date,p.Date) from (
- select Cast(  Sum(TotalAmount)   as decimal(16,2)) as TotalSale,
- cast(CreateDate  as date) Date 
- from Sales
- 
- group by cast(CreateDate as date)
- ) S 
-
- Full join (
-
- select Cast(   Sum(TotalAmount)    as decimal(16,2)) as TotalPurchase,
- cast(CreateDate  as date) Date 
- from Purchases
- 
- group by cast(CreateDate as date)
-  ) P on S.Date=P.Date
-order by coalesce(s.Date, p.Date) asc
-
+            string query = @" SELECT
+    TotalSale = FORMAT(ISNULL(TotalSale, 0), '0.##'),
+    TotalPurchase = FORMAT(ISNULL(TotalPurchase, 0), '0.##'),
+    Date
+FROM (
+    SELECT TOP 7
+        TotalSale = s.TotalSale,
+        TotalPurchase = p.TotalPurchase,
+        Date = COALESCE(s.Date, p.Date)
+    FROM (
+        SELECT
+            CAST(SUM(TotalAmount) AS DECIMAL(16,2)) AS TotalSale,
+            CAST(CreateDate AS DATE) AS Date
+        FROM Sales
+        GROUP BY CAST(CreateDate AS DATE)
+    ) s
+    FULL JOIN (
+        SELECT
+            CAST(SUM(TotalAmount) AS DECIMAL(16,2)) AS TotalPurchase,
+            CAST(CreateDate AS DATE) AS Date
+        FROM Purchases
+        GROUP BY CAST(CreateDate AS DATE)
+    ) p ON s.Date = p.Date
+    ORDER BY COALESCE(s.Date, p.Date) DESC
+) AS Latest7
+ORDER BY Date ASC;
 ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {

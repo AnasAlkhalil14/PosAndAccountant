@@ -529,8 +529,11 @@ FROM            Sales INNER JOIN
         public static DataTable GetLast10TotalSaleByDay()
         {
             DataTable dt = new DataTable();
-            string query = @"select top 10 FORMAT(sum(totalAmount), '0.##')  as TotalSale,cast(CreateDate as date) as SaleDate from Sales
-  group by CAST(CreateDate as date)";
+            string query = @"select format(r.TotalSale,'0.##') as TotalSale,r.SaleDate from (
+select top 10  sum(totalAmount)   as TotalSale,cast(CreateDate as date) as SaleDate from Sales
+  group by CAST(CreateDate as date)
+  order by SaleDate desc)r
+  order by SaleDate asc";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -684,10 +687,18 @@ CreateDate<dateadd(day,1,CAST(GETDATE() as date))
         public static DataTable GetLast10TotalProfitByDay()
         {
             DataTable dt = new DataTable();
-            string query = @"
-    select top 10 FORMAT(ISNULL( Sum(NetProfit),0), '0.##') as Profit,cast(CreatedDate  as date) Date from ProfitRuns 
-     group by cast(CreatedDate as date)
-     order by Date asc
+            string query = @"SELECT
+    FORMAT(ISNULL(Profit, 0), '0.##') AS Profit,
+    Date
+FROM (
+    SELECT TOP 10
+        ISNULL(SUM(NetProfit), 0) AS Profit,
+        CAST(CreatedDate AS DATE) AS Date
+    FROM ProfitRuns
+    GROUP BY CAST(CreatedDate AS DATE)
+    ORDER BY CAST(CreatedDate AS DATE) DESC
+) AS Latest10
+ORDER BY Date ASC;
 ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {

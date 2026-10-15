@@ -219,9 +219,9 @@ namespace PosAndAccountant_business
         {
             return clsPurchaseData.TotalDebtToday();
         }
-        public static DataTable GetLast10TotalSaleAndPurchase()
+        public static DataTable GetLast7TotalSaleAndPurchase()
         {
-            return clsPurchaseData.GetLast10TotalSaleAndPurchase();
+            return clsPurchaseData.GetLast7TotalSaleAndPurchase();
         }
         public static decimal TotalDiscountToday()
         {

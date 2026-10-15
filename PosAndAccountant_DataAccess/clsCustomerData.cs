@@ -862,11 +862,12 @@ order by TotalRemainingDebt desc
         public static DataTable GetCustomersCountWithDate( )
         {
             string query = @" 
- 
+ select r.date1,r.CountDayCustomers from(
    select top 10  date1,count(1) as CountDayCustomers from(
   select distinct CustomerID,cast(  CreateDate as date) as date1 from Sales
    ) r
    group by r.date1  
+   order by r.date1 desc) r
    order by r.date1 asc
 ";
             DataTable dataTable = new DataTable();

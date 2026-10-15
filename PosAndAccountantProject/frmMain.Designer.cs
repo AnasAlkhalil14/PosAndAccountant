@@ -3231,7 +3231,6 @@ namespace PosAndAccountantProject
             this.colInvoiceCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.btnExpenses = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -3245,6 +3244,7 @@ namespace PosAndAccountantProject
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
             this.btnٍSales = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashBord = new Guna.UI2.WinForms.Guna2Button();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -3338,15 +3338,6 @@ namespace PosAndAccountantProject
             this.panel1.Size = new System.Drawing.Size(215, 850);
             this.panel1.TabIndex = 1;
             // 
-            // panelContent
-            // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(215, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(969, 850);
-            this.panelContent.TabIndex = 2;
-            // 
             // btnExpenses
             // 
             this.btnExpenses.BackColor = System.Drawing.Color.Transparent;
@@ -3407,6 +3398,7 @@ namespace PosAndAccountantProject
             this.guna2Button3.Text = "الاعدادات";
             this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2Button3.UseTransparentBackground = true;
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 
@@ -3729,6 +3721,15 @@ namespace PosAndAccountantProject
             this.btnDashBord.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDashBord.UseTransparentBackground = true;
             this.btnDashBord.CheckedChanged += new System.EventHandler(this.btnDashBord_CheckedChanged);
+            // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(215, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(969, 850);
+            this.panelContent.TabIndex = 2;
             // 
             // frmMain
             // 
