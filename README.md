@@ -37,11 +37,12 @@ AlMaher/
 ```
    git clone https://github.com/AnasAlkhalil14/PosAndAccountant
 ```
-2. Run the SQL script File in `Database/PosDatabaseScript.sql`  to generate the database tables, relationships, and stored procedures.on your SQL Server instance.
+2. Run `Database/PosDatabaseScript.sql` on your SQL Server instance to create the tables, relationships, and stored procedures.
 3. Set your connection string in `App.config`.
-4.Copy secrets.config.example to secrets.config and add your Gemini API key. This is only needed for AI reports.
-5. Open the solution in Visual Studio and run.
-
+4. Create two empty folders for images (people and products) and set their paths in `App.config`:
+   `DestinationPeopleImagesFolder` and `DestinationProductsImagesFolder`.
+5. Copy `secrets.config.example` to `secrets.config` and add your Gemini API key. This is only needed for AI reports.
+6. Open the solution in Visual Studio and run.
 ## Roadmap
 
 - [ ] Roles and permissions (in progress)
