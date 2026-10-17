@@ -32,9 +32,9 @@ namespace PosAndAccountantProject.Users
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.gbForPermissions = new Guna.UI2.WinForms.Guna2GroupBox();
             this.chbManageTransaction = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.chbManageReturn = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.chbManageBooking = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.chbManageVehicles = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chbManageSales = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chbManagePartners = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chbManageSuppliers = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chbManageUsers = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chbManageCustomer = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -80,7 +80,7 @@ namespace PosAndAccountantProject.Users
             this.tcUserInfo.Controls.Add(this.tpLoginInfo);
             this.tcUserInfo.ItemSize = new System.Drawing.Size(180, 40);
             this.tcUserInfo.Location = new System.Drawing.Point(4, 77);
-            this.tcUserInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcUserInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tcUserInfo.Name = "tcUserInfo";
             this.tcUserInfo.SelectedIndex = 0;
             this.tcUserInfo.Size = new System.Drawing.Size(857, 439);
@@ -109,9 +109,9 @@ namespace PosAndAccountantProject.Users
             this.tpPersonalInfo.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.tpPersonalInfo.Controls.Add(this.btnPersonInfoNext);
             this.tpPersonalInfo.Location = new System.Drawing.Point(184, 4);
-            this.tpPersonalInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPersonalInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tpPersonalInfo.Name = "tpPersonalInfo";
-            this.tpPersonalInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPersonalInfo.Padding = new System.Windows.Forms.Padding(2);
             this.tpPersonalInfo.Size = new System.Drawing.Size(669, 431);
             this.tpPersonalInfo.TabIndex = 0;
             this.tpPersonalInfo.Text = "المعلومات الشخصية";
@@ -134,7 +134,7 @@ namespace PosAndAccountantProject.Users
             this.btnPersonInfoNext.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnPersonInfoNext.ForeColor = System.Drawing.Color.White;
             this.btnPersonInfoNext.Location = new System.Drawing.Point(15, 382);
-            this.btnPersonInfoNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPersonInfoNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnPersonInfoNext.Name = "btnPersonInfoNext";
             this.btnPersonInfoNext.Size = new System.Drawing.Size(98, 37);
             this.btnPersonInfoNext.TabIndex = 119;
@@ -158,9 +158,9 @@ namespace PosAndAccountantProject.Users
             this.tpLoginInfo.Controls.Add(this.label2);
             this.tpLoginInfo.Controls.Add(this.txtPassword);
             this.tpLoginInfo.Location = new System.Drawing.Point(184, 4);
-            this.tpLoginInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoginInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tpLoginInfo.Name = "tpLoginInfo";
-            this.tpLoginInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoginInfo.Padding = new System.Windows.Forms.Padding(2);
             this.tpLoginInfo.Size = new System.Drawing.Size(669, 431);
             this.tpLoginInfo.TabIndex = 1;
             this.tpLoginInfo.Text = "بيانات الحساب";
@@ -199,7 +199,7 @@ namespace PosAndAccountantProject.Users
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrevious.ForeColor = System.Drawing.Color.White;
             this.btnPrevious.Location = new System.Drawing.Point(20, 383);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(98, 37);
             this.btnPrevious.TabIndex = 131;
@@ -212,9 +212,9 @@ namespace PosAndAccountantProject.Users
             this.gbForPermissions.BorderColor = System.Drawing.Color.Black;
             this.gbForPermissions.BorderRadius = 20;
             this.gbForPermissions.Controls.Add(this.chbManageTransaction);
-            this.gbForPermissions.Controls.Add(this.chbManageReturn);
-            this.gbForPermissions.Controls.Add(this.chbManageBooking);
-            this.gbForPermissions.Controls.Add(this.chbManageVehicles);
+            this.gbForPermissions.Controls.Add(this.chbManageSales);
+            this.gbForPermissions.Controls.Add(this.chbManagePartners);
+            this.gbForPermissions.Controls.Add(this.chbManageSuppliers);
             this.gbForPermissions.Controls.Add(this.chbManageUsers);
             this.gbForPermissions.Controls.Add(this.label5);
             this.gbForPermissions.Controls.Add(this.chbManageCustomer);
@@ -223,7 +223,7 @@ namespace PosAndAccountantProject.Users
             this.gbForPermissions.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gbForPermissions.ForeColor = System.Drawing.Color.Black;
             this.gbForPermissions.Location = new System.Drawing.Point(118, 74);
-            this.gbForPermissions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbForPermissions.Margin = new System.Windows.Forms.Padding(2);
             this.gbForPermissions.Name = "gbForPermissions";
             this.gbForPermissions.Size = new System.Drawing.Size(196, 253);
             this.gbForPermissions.TabIndex = 130;
@@ -240,7 +240,7 @@ namespace PosAndAccountantProject.Users
             this.chbManageTransaction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageTransaction.ForeColor = System.Drawing.Color.Black;
             this.chbManageTransaction.Location = new System.Drawing.Point(13, 223);
-            this.chbManageTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbManageTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.chbManageTransaction.Name = "chbManageTransaction";
             this.chbManageTransaction.Size = new System.Drawing.Size(168, 25);
             this.chbManageTransaction.TabIndex = 12;
@@ -250,71 +250,71 @@ namespace PosAndAccountantProject.Users
             this.chbManageTransaction.UncheckedState.BorderThickness = 0;
             this.chbManageTransaction.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // chbManageReturn
+            // chbManageSales
             // 
-            this.chbManageReturn.AutoSize = true;
-            this.chbManageReturn.Checked = true;
-            this.chbManageReturn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbManageReturn.CheckedState.BorderRadius = 0;
-            this.chbManageReturn.CheckedState.BorderThickness = 0;
-            this.chbManageReturn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbManageReturn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbManageReturn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbManageReturn.ForeColor = System.Drawing.Color.Black;
-            this.chbManageReturn.Location = new System.Drawing.Point(13, 193);
-            this.chbManageReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chbManageReturn.Name = "chbManageReturn";
-            this.chbManageReturn.Size = new System.Drawing.Size(136, 25);
-            this.chbManageReturn.TabIndex = 11;
-            this.chbManageReturn.Text = "Manage Return";
-            this.chbManageReturn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbManageReturn.UncheckedState.BorderRadius = 0;
-            this.chbManageReturn.UncheckedState.BorderThickness = 0;
-            this.chbManageReturn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbManageSales.AutoSize = true;
+            this.chbManageSales.Checked = true;
+            this.chbManageSales.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbManageSales.CheckedState.BorderRadius = 0;
+            this.chbManageSales.CheckedState.BorderThickness = 0;
+            this.chbManageSales.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbManageSales.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbManageSales.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbManageSales.ForeColor = System.Drawing.Color.Black;
+            this.chbManageSales.Location = new System.Drawing.Point(13, 193);
+            this.chbManageSales.Margin = new System.Windows.Forms.Padding(2);
+            this.chbManageSales.Name = "chbManageSales";
+            this.chbManageSales.Size = new System.Drawing.Size(125, 25);
+            this.chbManageSales.TabIndex = 11;
+            this.chbManageSales.Text = "Manage Sales";
+            this.chbManageSales.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbManageSales.UncheckedState.BorderRadius = 0;
+            this.chbManageSales.UncheckedState.BorderThickness = 0;
+            this.chbManageSales.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // chbManageBooking
+            // chbManagePartners
             // 
-            this.chbManageBooking.AutoSize = true;
-            this.chbManageBooking.Checked = true;
-            this.chbManageBooking.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbManageBooking.CheckedState.BorderRadius = 0;
-            this.chbManageBooking.CheckedState.BorderThickness = 0;
-            this.chbManageBooking.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbManageBooking.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbManageBooking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbManageBooking.ForeColor = System.Drawing.Color.Black;
-            this.chbManageBooking.Location = new System.Drawing.Point(13, 162);
-            this.chbManageBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chbManageBooking.Name = "chbManageBooking";
-            this.chbManageBooking.Size = new System.Drawing.Size(146, 25);
-            this.chbManageBooking.TabIndex = 10;
-            this.chbManageBooking.Text = "Manage Booking";
-            this.chbManageBooking.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbManageBooking.UncheckedState.BorderRadius = 0;
-            this.chbManageBooking.UncheckedState.BorderThickness = 0;
-            this.chbManageBooking.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbManagePartners.AutoSize = true;
+            this.chbManagePartners.Checked = true;
+            this.chbManagePartners.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbManagePartners.CheckedState.BorderRadius = 0;
+            this.chbManagePartners.CheckedState.BorderThickness = 0;
+            this.chbManagePartners.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbManagePartners.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbManagePartners.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbManagePartners.ForeColor = System.Drawing.Color.Black;
+            this.chbManagePartners.Location = new System.Drawing.Point(13, 162);
+            this.chbManagePartners.Margin = new System.Windows.Forms.Padding(2);
+            this.chbManagePartners.Name = "chbManagePartners";
+            this.chbManagePartners.Size = new System.Drawing.Size(146, 25);
+            this.chbManagePartners.TabIndex = 10;
+            this.chbManagePartners.Text = "Manage Partners";
+            this.chbManagePartners.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbManagePartners.UncheckedState.BorderRadius = 0;
+            this.chbManagePartners.UncheckedState.BorderThickness = 0;
+            this.chbManagePartners.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // chbManageVehicles
+            // chbManageSuppliers
             // 
-            this.chbManageVehicles.AutoSize = true;
-            this.chbManageVehicles.Checked = true;
-            this.chbManageVehicles.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbManageVehicles.CheckedState.BorderRadius = 0;
-            this.chbManageVehicles.CheckedState.BorderThickness = 0;
-            this.chbManageVehicles.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbManageVehicles.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbManageVehicles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbManageVehicles.ForeColor = System.Drawing.Color.Black;
-            this.chbManageVehicles.Location = new System.Drawing.Point(13, 131);
-            this.chbManageVehicles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chbManageVehicles.Name = "chbManageVehicles";
-            this.chbManageVehicles.Size = new System.Drawing.Size(145, 25);
-            this.chbManageVehicles.TabIndex = 9;
-            this.chbManageVehicles.Text = "Manage Vehicles";
-            this.chbManageVehicles.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbManageVehicles.UncheckedState.BorderRadius = 0;
-            this.chbManageVehicles.UncheckedState.BorderThickness = 0;
-            this.chbManageVehicles.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbManageSuppliers.AutoSize = true;
+            this.chbManageSuppliers.Checked = true;
+            this.chbManageSuppliers.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbManageSuppliers.CheckedState.BorderRadius = 0;
+            this.chbManageSuppliers.CheckedState.BorderThickness = 0;
+            this.chbManageSuppliers.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbManageSuppliers.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbManageSuppliers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbManageSuppliers.ForeColor = System.Drawing.Color.Black;
+            this.chbManageSuppliers.Location = new System.Drawing.Point(13, 131);
+            this.chbManageSuppliers.Margin = new System.Windows.Forms.Padding(2);
+            this.chbManageSuppliers.Name = "chbManageSuppliers";
+            this.chbManageSuppliers.Size = new System.Drawing.Size(154, 25);
+            this.chbManageSuppliers.TabIndex = 9;
+            this.chbManageSuppliers.Text = "Manage Suppliers";
+            this.chbManageSuppliers.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbManageSuppliers.UncheckedState.BorderRadius = 0;
+            this.chbManageSuppliers.UncheckedState.BorderThickness = 0;
+            this.chbManageSuppliers.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // chbManageUsers
             // 
@@ -328,7 +328,7 @@ namespace PosAndAccountantProject.Users
             this.chbManageUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageUsers.ForeColor = System.Drawing.Color.Black;
             this.chbManageUsers.Location = new System.Drawing.Point(13, 100);
-            this.chbManageUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbManageUsers.Margin = new System.Windows.Forms.Padding(2);
             this.chbManageUsers.Name = "chbManageUsers";
             this.chbManageUsers.Size = new System.Drawing.Size(128, 25);
             this.chbManageUsers.TabIndex = 8;
@@ -363,7 +363,7 @@ namespace PosAndAccountantProject.Users
             this.chbManageCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbManageCustomer.ForeColor = System.Drawing.Color.Black;
             this.chbManageCustomer.Location = new System.Drawing.Point(13, 69);
-            this.chbManageCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbManageCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.chbManageCustomer.Name = "chbManageCustomer";
             this.chbManageCustomer.Size = new System.Drawing.Size(164, 25);
             this.chbManageCustomer.TabIndex = 7;
@@ -385,7 +385,7 @@ namespace PosAndAccountantProject.Users
             this.chbAllPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbAllPermission.ForeColor = System.Drawing.Color.Red;
             this.chbAllPermission.Location = new System.Drawing.Point(13, 39);
-            this.chbAllPermission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbAllPermission.Margin = new System.Windows.Forms.Padding(2);
             this.chbAllPermission.Name = "chbAllPermission";
             this.chbAllPermission.Size = new System.Drawing.Size(130, 25);
             this.chbAllPermission.TabIndex = 6;
@@ -427,7 +427,7 @@ namespace PosAndAccountantProject.Users
             this.chkIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.chkIsActive.Location = new System.Drawing.Point(440, 307);
-            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(75, 20);
             this.chkIsActive.TabIndex = 127;
@@ -529,7 +529,7 @@ namespace PosAndAccountantProject.Users
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(38, 524);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 32);
             this.btnSave.TabIndex = 119;
@@ -543,7 +543,7 @@ namespace PosAndAccountantProject.Users
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(155, 524);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 32);
             this.btnClose.TabIndex = 120;
@@ -561,7 +561,7 @@ namespace PosAndAccountantProject.Users
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tcUserInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddUpdatUser";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -601,9 +601,9 @@ namespace PosAndAccountantProject.Users
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2GroupBox gbForPermissions;
         private Guna.UI2.WinForms.Guna2CheckBox chbManageTransaction;
-        private Guna.UI2.WinForms.Guna2CheckBox chbManageReturn;
-        private Guna.UI2.WinForms.Guna2CheckBox chbManageBooking;
-        private Guna.UI2.WinForms.Guna2CheckBox chbManageVehicles;
+        private Guna.UI2.WinForms.Guna2CheckBox chbManageSales;
+        private Guna.UI2.WinForms.Guna2CheckBox chbManagePartners;
+        private Guna.UI2.WinForms.Guna2CheckBox chbManageSuppliers;
         private Guna.UI2.WinForms.Guna2CheckBox chbManageUsers;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2CheckBox chbManageCustomer;

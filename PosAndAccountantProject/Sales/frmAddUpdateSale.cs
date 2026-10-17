@@ -885,7 +885,7 @@ namespace PosAndAccountantProject.Sales
 
         public bool WasSaved=false;
             private clsSale _Sale;
-        private BindingList<clsProductDTO> _FilterProductList;
+         
         private PosAndAccountantProject.Printing.ctrlSaleInvoice _currentReceipt = null;
 
         private void _LoadPaymentMethodToCompoBox()
@@ -986,87 +986,140 @@ namespace PosAndAccountantProject.Sales
 
         }
         private void FilterProductForCategory()
-        {
-            int categoryId;
-            if (int.TryParse(cbProductCategory.SelectedValue.ToString(),out categoryId))
+        {txtProductName.Clear();
+             string category = cbProductCategory.Text.Trim();
+
+            var result = new BindingList<clsProductDTO>();
+
+            foreach (var p in _Sale.ProductList)
             {
-                txtProductName.Clear();
+              
+                bool catOk =  
+                    (p.CategoryName ?? "").IndexOf(category, StringComparison.OrdinalIgnoreCase) >= 0;
 
-                 var result = _Sale.ProductList
-                    .Where(p =>
-                        p.ProductCategoryID == categoryId);
-                {
-                    _FilterProductList = new BindingList<clsProductDTO>(result.ToList());
-                    dgvProductList.DataSource = null;
-
-                    dgvProductList.DataSource = _FilterProductList;
-                    _SettleColumnProducts();
-                }
-
-
-
+                if (  catOk)
+                    result.Add(p);
             }
-           
+
+            dgvProductList.DataSource = result;
+
 
         }
    
-        void _SettleColumnProducts()
-        {
-            {
-                dgvProductList.Columns["SellingPrice"].HeaderText = "سعر البيع";
-                dgvProductList.Columns["ProductName"].HeaderText = "اسم المنتج";
-                dgvProductList.Columns["QuantityInStock"].HeaderText = "الكمية المتاحة";
-
-            }
-            dgvProductList.Columns["ProductCategoryID"].Visible = false;
-            dgvProductList.Columns["IsActive"].Visible = false;
-            dgvProductList.Columns["ModifyDate"].Visible = false;
-            dgvProductList.Columns["IsActive"].Visible = false;
-            dgvProductList.Columns["Description"].Visible = false;
-
-
-            dgvProductList.Columns["CategoryName"].Visible = false;
-            dgvProductList.Columns["CostPrice"].Visible = false;
-            dgvProductList.Columns["ProductID"].Visible = false;
-            dgvProductList.Columns["UnitOfSale"].Visible = false;
-            dgvProductList.Columns["ImagePath"].Visible = false;
-            dgvProductList.Columns["BarCode"].Visible = false;
-            dgvProductList.Columns["MinimumQuantityForWarning"].Visible = false;
-            dgvProductList.Columns["CreateDate"].Visible = false;
-            dgvProductList.Columns["ProductCategoryID"].Visible = false;
-        }
+        
 
         void _SettleTheProductSideOnFormLoad()
         {
+            dgvProductList.AutoGenerateColumns = false;
+            dgvProductList.Columns.Clear();
 
-            dgvProductList.DataSource = null;
-
-            dgvProductList.DataSource = _Sale.ProductList;
-
-            if (dgvProductList.Rows.Count > 0)
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
             {
-                dgvProductList.Columns["SellingPrice"].HeaderText = "سعر البيع";
-                dgvProductList.Columns["ProductName"].HeaderText = "اسم المنتج";
-                dgvProductList.Columns["QuantityInStock"].HeaderText = "الكمية المتاحة";
+                Name = "SellingPrice",
+                HeaderText = "سعر البيع",
+                DataPropertyName = "SellingPrice",
+                ReadOnly = true
 
-            }
-            dgvProductList.Columns["ProductCategoryID"].Visible = false;
-            dgvProductList.Columns["IsActive"].Visible = false;
-            dgvProductList.Columns["ModifyDate"].Visible = false;
-            dgvProductList.Columns["IsActive"].Visible = false;
-            dgvProductList.Columns["Description"].Visible = false;
+            });
+
+
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ProductName",
+                HeaderText = "اسم المنتج",
+                DataPropertyName = "ProductName",
+                ReadOnly = true
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "QuantityInStock",
+                HeaderText = "الكمية المتاحة",
+                DataPropertyName = "QuantityInStock",
+                ReadOnly = true
+            }); 
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ProductCategoryID",
+                 DataPropertyName = "ProductCategoryID",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IsActive",
+                DataPropertyName = "IsActive",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ModifyDate",
+                DataPropertyName = "ModifyDate",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Description",
+                DataPropertyName = "Description",
+                Visible = false
+            }); dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CategoryName",
+                DataPropertyName = "CategoryName",
+                Visible = false
+            }); dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CostPrice",
+                DataPropertyName = "CostPrice",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ProductID",
+                DataPropertyName = "ProductID",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UnitOfSale",
+                DataPropertyName = "UnitOfSale",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ImagePath",
+                DataPropertyName = "ImagePath",
+                Visible = false
+            }); 
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "BarCode",
+                DataPropertyName = "BarCode",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "MinimumQuantityForWarning",
+                DataPropertyName = "MinimumQuantityForWarning",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreateDate",
+                DataPropertyName = "CreateDate",
+                Visible = false
+            });
+            dgvProductList.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ProductCategoryID",
+                DataPropertyName = "ProductCategoryID",
+                Visible = false
+            });
+
 
             
-            dgvProductList.Columns["CategoryName"].Visible = false;
-            dgvProductList.Columns["CostPrice"].Visible = false;
-            dgvProductList.Columns["ProductID"].Visible = false;
-            dgvProductList.Columns["UnitOfSale"].Visible = false;
-            dgvProductList.Columns["ImagePath"].Visible = false;
-            dgvProductList.Columns["BarCode"].Visible = false;
-            dgvProductList.Columns["MinimumQuantityForWarning"].Visible = false;
-            dgvProductList.Columns["CreateDate"].Visible = false;
-            dgvProductList.Columns["ProductCategoryID"].Visible=false;
+ 
+            dgvProductList.DataSource = _Sale.ProductList;
 
+           
             LoadCategoriesToCobmoBox();
 
              FilterProductForCategory();
@@ -1078,34 +1131,33 @@ namespace PosAndAccountantProject.Sales
             {
                 FilterProductForCategory();
             }
+      
 
         private void txtProductName_TextChanged(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(txtProductName.Text.Trim()))
             {
                 FilterProductForCategory();
                 return;
             }
 
-
-
- 
-            string productName = cbProductCategory.Text;
-
-            var result = _Sale.ProductList
-                .Where(p =>
-                    p.ProductName.ToLower().Contains(productName.ToLower()));
-
-            if(result.Count() > 0)
+            string name = txtProductName.Text.Trim();
+            var result = new BindingList<clsProductDTO>();
+            foreach (var p in _Sale.ProductList)
             {
-                _FilterProductList = new BindingList<clsProductDTO>(result.ToList());
+                bool nameOk = 
+                    (p.ProductName ?? "").IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0;
 
-                dgvProductList.DataSource = null;
-                dgvProductList.DataSource = _FilterProductList;
-
-
+                 
+                if (nameOk  )
+                    result.Add(p);
             }
+
+            dgvProductList.DataSource = result;
+
+
+
+
 
 
         }
