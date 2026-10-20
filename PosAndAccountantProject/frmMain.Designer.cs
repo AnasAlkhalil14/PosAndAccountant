@@ -3689,7 +3689,7 @@ namespace PosAndAccountantProject
             this.btnٍSales.Text = "المبيعات";
             this.btnٍSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnٍSales.UseTransparentBackground = true;
-            this.btnٍSales.Click += new System.EventHandler(this.btnBooking_Click);
+            this.btnٍSales.Click += new System.EventHandler(this.btnAddNewSale_Click);
             // 
             // btnDashBord
             // 

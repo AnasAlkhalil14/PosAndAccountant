@@ -42,7 +42,6 @@ namespace PosAndAccountantProject
 
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ChildForm);
-            panelContent.Tag = ChildForm;
             ChildForm.BringToFront();
             ChildForm.Show();
 
@@ -55,18 +54,12 @@ namespace PosAndAccountantProject
 
         private void btnAddNewSale_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmSalesList());
         }
 
         private void btnDashBord_CheckedChanged(object sender, EventArgs e)
         {
             OpenChildForm(new frmDashboard( ));
-        }
-
-        private void btnBooking_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frmSalesList());
-
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
